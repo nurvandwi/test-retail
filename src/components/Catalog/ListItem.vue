@@ -132,60 +132,70 @@
       </div>
     </div>
     <div v-if="contentFor === 'ListTransaksi'">
-      <div class="card mb-2 shadow-sm radius border border-white rounded">
-        <div class="row no-gutters  px-3">
-          <div class="col-md-4 col-3 align-self-center ">
-            <img src="../../assets/dana.png" class="size-image" />
+    <div class="col-12 col-md-12 m-0 px-0 shadow-item">
+        <div
+          class="  text-left  d-flex flex-row align-items-center my-3 py-3 px-3"
+        >
+          <img class="imagecustom pr-3" src="../../assets/dana.png" alt />
+          <div class="align-items-center col-md-6 col-6">
+            <h5 class="font14 caption4 p-0 font-weight-bold m-0 text-dark">Dana (100000)</h5>
+            <p class="text-dark card-text font11">22 Agustus 2020</p>
           </div>
-          <div class="col-md-6 col-7 align-self-center">
-            <div class="card-body ">
-              <h5 class="card-title font12 font-weight-bold">Dana (10000)</h5>
-              <p class="card-text font11">22 Agustus 2020</p>
-            </div>
-          </div>
-          <div class="col-md-2 col-2 align-self-center ">
+          <div class="col-md-2 col align-self-center ">
             <p
-              class="text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-otorisasi float-right"
+              class="text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-otorisasi "
             >
-              Otorisasi
+            Otorisasi
             </p>
           </div>
         </div>
       </div>
-      <div class="card mb-2 shadow-sm radius border border-white rounded">
-        <div class="row no-gutters  px-3">
-          <div class="col-md-4 col-3 align-self-center ">
-            <img src="../../assets/icon-rebate v-2.png" class="size-image" />
+    <div class="col-12 col-md-12 m-0 px-0 shadow-item">
+        <div
+          class="  text-left  d-flex flex-row align-items-center my-3 py-3 px-3"
+        >
+          <img class="imagecustom pr-3" src="../../assets/dana.png" alt />
+          <div class="align-items-center col-md-6 col-6">
+            <h5 class="font14 caption4 p-0 m-0 font-weight-bold text-dark">Rebate (100000)</h5>
+            <p class="text-dark card-text font11">22 Agustus 2020</p>
           </div>
-          <div class="col-md-6 col-7 align-self-center">
-            <div class="card-body ">
-              <h5 class="card-title font12 font-weight-bold">Rebate (10000)</h5>
-              <p class="card-text font11">22 Agustus 2020</p>
-            </div>
-          </div>
-          <div class="col-md-2 col-2 align-self-center ">
+          <div class="col-md-2 col align-self-center px-0">
             <p
-              class="text-center font12 m-0 py-1 px-3 text-white rounded-pill badge bg-success float-right"
+              class="text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-success float-right"
             >
-              Sukses
+             Sukses
             </p>
           </div>
         </div>
       </div>
-      <div class="card mb-2 shadow-sm radius border border-white rounded">
-        <div class="row no-gutters  px-3">
-          <div class="col-md-4 col-3 align-self-center ">
-            <img src="../../assets/money.png" class="size-image" />
+     <div class="col-12 col-md-12 m-0 px-0 shadow-item">
+        <div
+          class="  text-left  d-flex flex-row align-items-center my-3 py-3 px-3"
+        >
+          <img class="imagecustom pr-3" src="../../assets/dana.png" alt />
+          <div class="align-items-center col-md-6 col-6">
+            <h5 class="font14 caption4 p-0 m-0 font-weight-bold text-dark ">Point 2 Cash(100000)</h5>
+            <p class="text-dark card-text font11">22 Agustus 2020</p>
           </div>
-          <div class="col-md-6 col-7 align-self-center">
-            <div class="card-body ">
-              <h5 class="card-title font12 font-weight-bold">
-                Poin 2 cash (10000)
-              </h5>
-              <p class="card-text font11">22 Agustus 2020</p>
-            </div>
+          <div class="col-md-2 col align-self-center px-0">
+            <p
+              class="text-center font12 py-1 px-3 text-white rounded-pill badge bg-process float-right"
+            >
+              Proses
+            </p>
           </div>
-          <div class="col-md-2 col-2  align-self-center ">
+        </div>
+      </div>
+      <div class="col-12 col-md-12 m-0 px-0 shadow-item">
+        <div
+          class="text-left d-flex flex-row align-items-center my-3 py-3 px-3"
+        >
+          <img class="imagecustom pr-3" src="../../assets/dana.png" alt />
+          <div class="align-items-center col-md-6 col-6">
+            <h5 class="font14 caption4 p-0 m-0 font-weight-bold text-dark">Dana (100000)</h5>
+            <p class="text-dark card-text font11">22 Agustus 2020</p>
+          </div>
+          <div class="col-md-2 col align-self-center px-0">
             <p
               class="text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-process float-right"
             >
@@ -205,6 +215,9 @@ export default {
 </script>
 
 <style scoped>
+.shadow-item {
+  box-shadow: 0 0.1rem 0.8rem rgba(17, 0, 255, 0.15) !important;
+}
 .size-image {
   max-width: 50%;
 }
@@ -213,7 +226,7 @@ export default {
 }
 
 .bg-success {
-  background-color: #49d233;
+  background-color: #40C351 !important;
 }
 
 .bg-otorisasi {
@@ -245,6 +258,12 @@ export default {
 .icon-delete {
   width: 15%;
 }
+
+.imagecustom {
+  background-size: cover;
+  height: 46px;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .size-image {
     max-width: 50%;

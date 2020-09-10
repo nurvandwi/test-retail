@@ -1,10 +1,10 @@
 <template>
-  <div class="mb-5 pb-3">
-    <div class="col-12 font14 bg-blue d-flex justify-content-between font-weight-bold">
-      <h1 class="font16 pt-2 font-weight-bold pl-2">List Transaksi</h1>
-      <div>
-        <p class="rounded-pill font12 py-2 px-2 bg-purple">Lihat Semua</p>
-      </div>
+  <div class=" mt-4 pt-1 ">
+    <div class="col-12 align-self-center font14 bg-blue d-flex justify-content-between font-weight-bold">
+      <h1 class="font16 m-0 align-self-center font-weight-bold py-0 px-2">List Transaksi</h1>
+
+        <p class="rounded-pill  m-0 font12 py-2 px-2 bg-purple">Lihat Semua</p>
+  
     </div>
     <listItem :contentFor="'ListTransaksi'" />
   </div>

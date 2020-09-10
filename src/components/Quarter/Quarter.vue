@@ -29,7 +29,7 @@
       </div>
     </section>
     <section>
-      <div class="col-md-12 text-center mb-3 btn-month">
+      <!-- <div class="col-md-12 text-center mb-3 btn-month">
         <div class="row table-bordered bg-violet round h-53">
           <div class="col py-1 col-md-6 stats-details border-right">
             <div>
@@ -37,9 +37,6 @@
               <p class="text-blue font16 font-weight-bold m-0">8.796.000</p>
             </div>
           </div>
-          <!-- <div class="col-2 m-0 p-0  d-flex justify-content-center">
-            <hr class="m-0" />
-          </div>-->
           <div class="col-6 py-1 col-md-6 m-0 p-0 stats-details">
             <div>
               <h2 class="font11 m-0 font-custom text-white pt-1 font-weight-bold">SALDO REBATE</h2>
@@ -47,7 +44,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
   </div>
 </template>
@@ -65,10 +62,6 @@ export default {
 .h-53 {
   height: 53px;
 }
-
-/* .mb-custom {
-  margin-bottom: 40px;
-} */
 
 .jumbotron {
   background-color: #ffffff !important;
@@ -142,6 +135,12 @@ hr {
 .section-stats {
   min-height: 35vh;
   background-color: #41009a;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: auto;
+  z-index: 1030 !important;
 }
 .btn-month {
   margin-top: -30px;

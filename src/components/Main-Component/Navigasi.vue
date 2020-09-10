@@ -84,9 +84,9 @@
         </router-link>
       </li>
       <li>
-        <router-link v-bind:to="'/categories'" style="color: #FFF; " class="mx-auto font18">
+        <router-link v-bind:to="'/categories'" style="color: #FFF; height:40px" class="mx-auto font18">
           <div class="whatsapp-icon">
-            <img src="https://img.icons8.com/color/65/000000/whatsapp.png" />
+            <img class="size-wa" src="../../assets/icon-wa v-2.png" />
             <span class="menu-navigation"></span>
           </div>
         </router-link>
@@ -225,6 +225,10 @@ export default {};
   left: 15%;
 }
 
+.size-wa{
+  width: 85% !important;
+}
+
 .nav-bar {
   border-top: 1px solid transparent;
   background: #ffffff;
@@ -339,7 +343,7 @@ export default {};
   .whatsapp-icon {
     position: relative;
     top: -4.5vh;
-    left: 15%;
+    left: 10%;
   }
   .nav-bar svg {
     height: 1.5rem;

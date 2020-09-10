@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Quarter />
-    <DetailPenjualan title="Penjualan Per Quarter" class="mb-3" />
+    <DetailPenjualan title="Penjualan Per Quarter" class="mb-3 mt-custom" />
     <DetailPoin title="Poin Per Quarter" />
     <Tarif />
     <BulanTransaksi />
@@ -38,5 +38,9 @@ export default {
 <style scoped>
 .mb-custom {
   margin-bottom: 4rem;
+}
+
+.mt-custom{
+  margin-top:20rem;
 }
 </style>

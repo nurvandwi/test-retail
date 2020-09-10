@@ -7,20 +7,19 @@
           <img class="imagecustom pr-3" src="../../assets/icon-ktp.png" alt />
 
           <div class="align-items-center">
-            <h5 class="font14 formh2 caption4 p-0 m-0 text-dark">Data E-KTP & Data Bank</h5>
+            <h5 class="font14 formh2 caption4 p-0 m-0 text-dark font-weight-bold">Data E-KTP & Data Bank</h5>
           </div>
           <img class="iconcustom ml-auto" src="https://i.imgur.com/5qg2kk5.png" alt />
         </div>
       </router-link>
     </div>
-
     <div class="col-12">
       <router-link :to="{ path: 'posm'}">
         <div class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3">
           <img class="imagecustom pr-3" src="../../assets/icon-posm.png" alt />
 
           <div class="align-items-center">
-            <h5 class="font14 formh2 caption4 p-0 m-0 text-dark">Upload Foto POSM & INVOICE</h5>
+            <h5 class="font14 caption4 p-0 m-0 text-dark font-weight-bold">Upload Foto POSM & INVOICE</h5>
           </div>
           <img class="iconcustom ml-auto" src="https://i.imgur.com/5qg2kk5.png" alt />
         </div>
@@ -29,6 +28,7 @@
   </div>
 </template>
 <script>
+/* eslint-disable */ 
 export default {};
 </script>
 <style scoped>
