@@ -3,10 +3,10 @@
     <div class="d-flex align-items-center">
       <h3 class="font22 m-0" style="font-weight:bolder;">Input Data</h3>
 
-      <div v-if="no==='0877'">
+      <div v-if="no === '0877'">
         <img src="../../assets/xl.png" class="icon-pulsa pl-2" alt="..." />
       </div>
-      <div v-else-if="no==='0856'">
+      <div v-else-if="no === '0856'">
         <img src="../../assets/indosat.png" class="icon-pulsa pl-2" alt="..." />
       </div>
       <div v-else></div>
@@ -15,7 +15,12 @@
     <form>
       <div class="form-row mt-3">
         <div class="col-12">
-          <input v-model="no" type="number" class="form-control" placeholder="Nomor Pulsa" />
+          <input
+            v-model="no"
+            type="number"
+            class="form-control"
+            placeholder="Nomor Pulsa"
+          />
         </div>
         <!-- <div class="col-12 mt-2">
           <select class="form-control" v-model="selected" id="exampleFormControlSelect1">
@@ -27,10 +32,10 @@
           </select>
         </div>-->
 
-        <div class="col-md-12 mt-3" v-if="no==='0877'">
+        <div class="col-md-12 mt-3" v-if="no === '0877'">
           <div class="row px-2 pt-2">
             <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card w-100">
+              <div class="card border w-100">
                 <div class="card-body p-3">
                   <h5 class="card-title text-center m-0">5.000</h5>
                 </div>
@@ -38,7 +43,7 @@
             </div>
             <div class="col-md-6 col-6 px-2 pb-3">
               <router-link v-bind:to="'/pulsadetails'" class="text-dark">
-                <div class="card w-100">
+                <div class="card border w-100">
                   <div class="card-body p-3">
                     <h5 class="card-title text-center m-0">10.000</h5>
                   </div>
@@ -46,28 +51,28 @@
               </router-link>
             </div>
             <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card w-100">
+              <div class="card border w-100">
                 <div class="card-body p-3">
                   <h5 class="card-title text-center m-0">25000</h5>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card w-100">
+              <div class="card border w-100">
                 <div class="card-body p-3">
                   <h5 class="card-title text-center m-0">50000</h5>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card w-100">
+              <div class="card border w-100">
                 <div class="card-body p-3">
                   <h5 class="card-title text-center m-0">100000</h5>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card w-100">
+              <div class="card border w-100">
                 <div class="card-body p-3">
                   <h5 class="card-title text-center m-0">150000</h5>
                 </div>
@@ -75,31 +80,31 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12 mt-3" v-if="no==='0856'">
+        <div class="col-md-12 mt-3" v-if="no === '0856'">
           <div class="row px-2 pt-2">
             <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card w-100">
+              <div class="card border w-100">
                 <div class="card-body p-3">
                   <h5 class="card-title text-center m-0">5.000</h5>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card w-100">
+              <div class="card border w-100">
                 <div class="card-body p-3">
                   <h5 class="card-title text-center m-0">10.000</h5>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card w-100">
+              <div class="card border w-100">
                 <div class="card-body p-3">
                   <h5 class="card-title text-center m-0">25000</h5>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card w-100">
+              <div class="card border w-100">
                 <div class="card-body p-3">
                   <h5 class="card-title text-center m-0">50000</h5>
                 </div>
@@ -121,10 +126,10 @@ export default {
       options: [
         { text: "Pilih Jenis Provider", value: "Pulsa" },
         { text: "Indosat", value: "Indosat" },
-        { text: "Xl", value: "Xl" }
-      ]
+        { text: "Xl", value: "Xl" },
+      ],
     };
-  }
+  },
 };
 </script>
 

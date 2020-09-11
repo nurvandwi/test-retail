@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <div class="row text-center rows-col-3">
-      <div class="col bg-blue text-white py-2 font-custom">DETAIL PENJUALAN PER BULAN</div>
+  <div class="container" >
+    <div class="row text-center rows-col-3" >
+      <div class="col bg-blue text-white py-2 font-custom">{{title}}</div>
       <div class="table-bordered col-12">
         <div class="row text-center mt-2">
           <div class="col font10" style="border-right: 1px solid #d3d3d3; ">
@@ -53,11 +53,14 @@
         </div>
       </div>
     </div>
+  
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props:['title']
+};
 </script>
 
 <style scoped>

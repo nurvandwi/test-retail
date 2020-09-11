@@ -1,53 +1,53 @@
 <template>
-  <div class="container mt-custom mb-3">
+  <div class="container mb-3">
     <div class="row text-center rows-col-3">
-      <div class="col bg-blue text-white py-2 font-custom">DETAIL PENJUALAN PER BULAN</div>
-      <div class="table-bordered col-12">
+      <div class="col font-custom bg-blue text-white py-2">{{title}}</div>
+      <div class="table-bordered col-12 rounded-bottom">
         <div class="row text-center mt-2">
           <div class="col font10" style="border-right: 1px solid #d3d3d3; ">
-            <h2 class="font10 text-gray font-custom font-weight-bolder">HISTORIKAL PENJUALAN</h2>
+            <h2 class="font10 text-gray font-weight-bolder font-custom">PEROLEHAN</h2>
           </div>
           <div class="col">
-            <h2 class="font10 text-gray font-custom font-weight-bolder">TARGET PENJUALAN</h2>
+            <h2 class="font10 text-gray font-weight-bolder font-custom">CARRY OVER</h2>
           </div>
         </div>
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-black font-weight-bolder">Rp 172.999.999.000</h2>
+            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-weight-bolder">Rp 172.999.999.000</h2>
+            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
           </div>
         </div>
         <div class="row text-center mt-2">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font10 text-gray font-custom font-weight-bolder">SELISIH PENJUALAN</h2>
+            <h2 class="font10 text-gray font-weight-bolder font-custom">POIN TERSEDIA</h2>
           </div>
           <div class="col">
-            <h2 class="font10 text-gray font-custom font-weight-bolder">AKTUAL PENJUALAN</h2>
+            <h2 class="font10 text-gray font-weight-bolder font-custom">PENUKARAN POIN</h2>
           </div>
         </div>
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-danger font-weight-bolder">Rp -172.999.999.000</h2>
+            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-weight-bolder">Rp 172.999.999.000</h2>
+            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
           </div>
         </div>
         <div class="row text-center mt-2">
           <div class="col font10">
-            <h2 class="font10 text-gray font-custom font-weight-bolder">SELISIH PENJUALAN</h2>
+            <h2 class="font10 text-gray font-weight-bolder font-custom">SISA POIN</h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-custom font-weight-bolder">159,20%</h2>
+            <h2 class="font14 text-black font-weight-bolder font-custom">260.885.65</h2>
           </div>
         </div>
         <div class="text-center mb-2">
           <div class="col font10">
             <h2 class="font10 text-black-50 font-weight-bolder">
               <!-- eslint-disable -->
-              (STATUS SUKSES >= 100%, GAGAL < 100%)
+              (CARRY OVER KE QUARTER BERIKUTNYA)
             </h2>
           </div>
         </div>
@@ -57,32 +57,30 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props:['title']
+};
 </script>
 
 <style scoped>
 .bg-blue {
   background-color: #6a813d;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.mt-custom {
-  margin-top: -2rem;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
 }
 
 .table-bordered {
   border-color: #6a813d !important;
-  border-bottom-left-radius: 12px !important;
-  border-bottom-right-radius: 12px !important;
-}
-
-.text-blue {
-  color: #7fceeb;
+  border-bottom-left-radius: 18px !important;
+  border-bottom-right-radius: 18px !important;
 }
 
 .text-gray {
   color: #6c757d;
+}
+
+.text-blue {
+  color: #7fceeb;
 }
 
 .text-yellow {

@@ -1,17 +1,19 @@
 <template>
   <div class="mb-5">
-    <nav
-      class="navbar m-auto navbar-Container navbar-light backtheme d-flex justify-content-center footerstyle"
-    >
-      <div class="col-md-3 col-2 pl-0 pr-0">
-        <router-link class="text-dark" v-bind:to="'/categories/' ">
+    <router-link v-bind:to="'/categories/'">
+      <nav
+        class="navbar m-auto navbar-Container navbar-light backtheme py-3 d-flex justify-content-center footerstyle"
+      >
+        <div class="col-md-3 col-2 pl-0 pr-0">
           <img class="img-back" src="../../assets/icon-back.png" alt />
-        </router-link>
-      </div>
-      <div class="col-md-7 col-8 mr-auto">
-        <h1 class="font20 fontipad mb-0 text-white text-center">{{title}}</h1>
-      </div>
-    </nav>
+        </div>
+        <div class="col-md-7 col-8 mr-auto">
+          <h1 class="font20 fontipad mb-0 text-white text-center">
+            {{ title }}
+          </h1>
+        </div>
+      </nav>
+    </router-link>
   </div>
 </template>
 
@@ -21,8 +23,8 @@ export default {
   computed: {
     cartItemCount() {
       return this.$store.getters.cartItemCount;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -46,7 +48,7 @@ export default {
 }
 @media screen and (max-width: 1000px) {
   .img-back {
-    width: 25% !important;
+    width: 15% !important;
   }
   .footerstyle {
     position: fixed !important;

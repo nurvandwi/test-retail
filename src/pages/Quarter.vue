@@ -1,37 +1,33 @@
 <template>
   <div class="container">
     <Quarter />
-    <DetailPenjualan title="Penjualan Per Quarter" class="mb-3 mt-custom" />
-    <DetailPoin title="Poin Per Quarter" />
-    <Tarif />
+    <DetailPenjualan title="PENJUALAN PER QUARTER" class="mt-custom" />
+    <Poin title="POIN PER QUARTER" class="mt-3" />
+    <Tarif title class="mt-3" />
     <BulanTransaksi />
-    <DetailPenjualan class="mb-5 mt-3" />
-    <div class="mb-3">
-      <DetailMedio />
-    </div>
-    <DetailPoin />
-    <TotalRebate class="mb-custom" />
+    <DetailPenjualan title="PENJUALAN PER BULAN" class="mt-3" />
+    <DetailPenjualan title="DETAIL PENJUALAN MEDIO BULAN" class="mt-3" />
+    <Poin title="POIN PER BULAN" class="mt-3" />
+    <TotalRebate title class="mb-custom" />
   </div>
 </template>
 
 <script>
-import Tarif from "@/components/Quarter/Tarif.vue";
 import Quarter from "@/components/Quarter/Quarter.vue";
-import TotalRebate from "@/components/Quarter/TotalRebate.vue";
-import DetailPoin from "@/components/Quarter/DetailPoin.vue";
-import DetailMedio from "@/components/Quarter/DetailMedio.vue";
 import DetailPenjualan from "@/components/Quarter/DetailPenjualan.vue";
+import Poin from "@/components/Quarter/Poin.vue";
+import TotalRebate from "@/components/Quarter/TotalRebate.vue";
 import BulanTransaksi from "@/components/Quarter/BulanTransaksi.vue";
+import Tarif from "@/components/Quarter/Tarif.vue";
 export default {
   components: {
     Quarter,
-    BulanTransaksi,
     DetailPenjualan,
-    DetailMedio,
-    DetailPoin,
+    Poin,
     TotalRebate,
-    Tarif
-  }
+    BulanTransaksi,
+    Tarif,
+  },
 };
 </script>
 
@@ -40,7 +36,13 @@ export default {
   margin-bottom: 4rem;
 }
 
-.mt-custom{
-  margin-top:20rem;
+.mt-custom {
+  margin-top: 2rem;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .mt-custom {
+    margin-top: 41vh;
+  }
 }
 </style>

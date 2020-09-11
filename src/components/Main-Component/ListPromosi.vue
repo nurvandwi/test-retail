@@ -1,34 +1,54 @@
 <template>
   <div class="mb-3">
-    <h1 class="font16 font-weight-bold mt-4 ml-4">Data Kegiatan Promosi</h1>
+    <h1 class="font16 font-weight-bold mt-4 mb-0 ml-4">Data Kegiatan</h1>
+    <p class="font12 ml-4">Lengkapi data dibawah ini.</p>
     <div class="col-12">
-      <router-link :to="{ path: 'registrasi'}">
-        <div class="col shadow1 br text-left d-flex flex-row align-items-center my-3 py-2 px-3">
+      <router-link :to="{ path: 'registrasi' }">
+        <div
+          class="col shadow1 br text-left d-flex flex-row align-items-center my-3 py-2 px-3"
+        >
           <img class="imagecustom pr-3" src="../../assets/icon-ktp.png" alt />
 
           <div class="align-items-center">
-            <h5 class="font14 formh2 caption4 p-0 m-0 text-dark font-weight-bold">Data E-KTP & Data Bank</h5>
+            <h5
+              class="font14 formh2 caption4 p-0 m-0 text-dark font-weight-bold"
+            >
+              Data E-KTP & Data Bank
+            </h5>
           </div>
-          <img class="iconcustom ml-auto" src="https://i.imgur.com/5qg2kk5.png" alt />
+          <img
+            class="iconcustom ml-auto"
+            src="https://i.imgur.com/5qg2kk5.png"
+            alt
+          />
         </div>
       </router-link>
     </div>
     <div class="col-12">
-      <router-link :to="{ path: 'posm'}">
-        <div class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3">
+      <router-link :to="{ path: 'posm' }">
+        <div
+          class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
+        >
           <img class="imagecustom pr-3" src="../../assets/icon-posm.png" alt />
 
           <div class="align-items-center">
-            <h5 class="font14 caption4 p-0 m-0 text-dark font-weight-bold">Upload Foto POSM & INVOICE</h5>
+            <h5 class="font14 caption4 p-0 m-0 text-dark font-weight-bold">
+              Upload Foto POSM & INVOICE
+            </h5>
           </div>
-          <img class="iconcustom ml-auto" src="https://i.imgur.com/5qg2kk5.png" alt />
+          <img
+            class="iconcustom ml-auto"
+            src="https://i.imgur.com/5qg2kk5.png"
+            alt
+          />
         </div>
       </router-link>
     </div>
   </div>
 </template>
 <script>
-/* eslint-disable */ 
+/* eslint-disable */
+
 export default {};
 </script>
 <style scoped>
@@ -38,11 +58,10 @@ export default {};
 }
 
 .shadow1 {
-  filter: drop-shadow(0px 10px 10px rgba(240, 248, 255, 0.1));
+  box-shadow: 0 0.1rem 0.3rem rgba(182, 189, 255, 0.308) !important;
 }
 
 .br {
-  border: 1px #d3d3d3 solid;
   border-radius: 15px;
 }
 
