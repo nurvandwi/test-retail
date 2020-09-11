@@ -127,16 +127,9 @@ form {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-
   .login-content h2 {
     font-size: 2.4rem;
     margin: 8px 0;
-  }
-  .container {
-    grid-gap: 5rem;
   }
 
   .height-icon {

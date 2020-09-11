@@ -325,14 +325,6 @@ export default {};
   font-weight: bolder;
 }
 
-/* .nav-bar ul li.active svg {
-  transform: scale(1.12) translate3d(0, -10px, 0);
-}
-
-.nav-bar ul li:not(.active):hover svg {
-  transform: scale(1.049) translate3d(0, -4px, 0);
-} */
-
 .nav-bar ul li svg path {
   transition: all 0.4s;
 }
