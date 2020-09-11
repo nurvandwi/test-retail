@@ -4,7 +4,7 @@
     <CategoriesEwallet />
     <dataEwallet />
   </div>
-</template>                                                                         
+</template>
 
 <script>
 import Header from "../components/Catalog/Header";
@@ -19,13 +19,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.test {
-  margin-top: 6rem;
-}
-@media screen and (max-width: 1000px) {
-  .test {
-    margin-top: 4rem;
-  }
-}
-</style>
+<style scoped></style>

@@ -27,8 +27,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.mb-custom {
-  margin-bottom: 10rem;
-}
-</style>
+<style scoped></style>
