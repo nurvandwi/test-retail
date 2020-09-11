@@ -43,7 +43,5 @@ export default {
 </script>
 
 <style scoped>
-.lineBorder {
-  border: 0.1px solid #dedede;
-}
+
 </style>
