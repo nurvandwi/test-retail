@@ -238,7 +238,6 @@ export default {};
 .whatsapp-icon {
   position: relative;
   top: -4.5vh;
-  left: 15%;
 }
 
 .size-wa {
