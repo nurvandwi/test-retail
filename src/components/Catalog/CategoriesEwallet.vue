@@ -2,7 +2,7 @@
   <div class="marginTitle container">
     <h3 style="font-weight:bolder;" class="font22">List Category</h3>
     <div class="row mt-4 px-2">
-      <div class="col-md-6 col-6 px-1">
+      <div class="col-md-6 col-6 px-1 ">
         <div class="card text-white">
           <router-link class="text-white" v-bind:to="'/pulsa'">
             <div>
