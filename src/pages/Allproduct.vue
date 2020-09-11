@@ -9,7 +9,9 @@
         <h1>{{ product.name }}</h1>
         <h3>{{ product.price }}</h3>
         <input type="number" class="text-center col-3 mr-2 p-1" />
-        <button class="btn btn-primary" @click="addToCart()">Add to Cart</button>
+        <button class="btn btn-primary" @click="addToCart()">
+          Add to Cart
+        </button>
         <p class="mt-3" v-html="product.description"></p>
       </div>
     </div>
@@ -42,8 +44,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.lineBorder {
-  border: 0.1px solid #dedede;
-}
-</style>
+<style scoped></style>

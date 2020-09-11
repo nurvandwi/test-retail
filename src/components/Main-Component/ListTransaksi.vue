@@ -4,7 +4,7 @@
       <h1 class="font16 m-0 align-self-center font-weight-bold py-0 px-2">List Transaksi</h1>
 
         <p class="rounded-pill  m-0 font12 py-2 px-2 bg-purple">Lihat Semua</p>
-  
+
     </div>
     <listItem :contentFor="'ListTransaksi'" />
   </div>
@@ -18,24 +18,6 @@ export default {
 };
 </script>
 <style scoped>
-.imagecustom {
-  background-size: cover;
-  height: 46px;
-}
-
-.shadow1 {
-  filter: drop-shadow(0px 10px 10px rgba(240, 248, 255, 0.1));
-}
-
-.br {
-  border: 1px #d3d3d3 solid;
-  border-radius: 15px;
-}
-
-.iconcustom {
-  background-size: cover;
-  height: 15px;
-}
 
 .bg-purple {
   background-color: #e3eeff;

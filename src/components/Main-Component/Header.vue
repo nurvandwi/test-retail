@@ -61,7 +61,7 @@
           <img
             src="../../assets/hero-login.png"
             class="img-fluid"
-            style="max-width:100"
+            style="max-width:100;"
           />
         </div>
       </div>
@@ -71,7 +71,7 @@
 
 <script>
 export default {
-  props: ["contentFor"],
+  props: ["contentFor"]
 };
 </script>
 
@@ -98,22 +98,11 @@ export default {
   .font12 {
     font-size: 12px;
   }
-  .font16 {
-    font-size: 16px;
-  }
   .font18 {
     font-size: 18px;
   }
   .font14 {
     font-size: 14px;
-  }
-  .h1,
-  .h3,
-  .h4,
-  .h5,
-  .h6,
-  .p {
-    font-family: "Montserrat", sans-serif !important;
   }
 
   .font-26 {
@@ -124,19 +113,9 @@ export default {
     font-size: 12px;
   }
 
-  .mt-custom {
-    margin-top: 5rem;
-  }
-
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    .font16 {
-      font-size: 16px;
-    }
     .font-19 {
       font-size: 19px;
-    }
-    .mt-custom {
-      margin-top: 5rem;
     }
   }
 }

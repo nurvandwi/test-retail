@@ -130,9 +130,6 @@ export default {
   background-color: #653366;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .font10 {
-    font-size: 10px;
-  }
   .icon-user {
     height: 50px;
   }
