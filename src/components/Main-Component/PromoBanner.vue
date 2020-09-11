@@ -6,8 +6,8 @@
       data-ride="carousel"
     >
       <div>
-        <h1 class="font16 ml-4 mb-0 mt-2 font-weight-bold">Promo</h1>
-        <p class="font12 ml-4">Temukan penawaran menarik dibawah ini.</p>
+        <h3 class="font16 ml-4 mb-0 mt-2 font-weight-bold">Promo</h3>
+        <p class="font-12 ml-4">Temukan penawaran menarik dibawah ini.</p>
       </div>
       <div class="carousel-inner px-4">
         <div class="carousel-item table-bordered active radius">
@@ -20,10 +20,10 @@
             />
             <div class="row justify-content-center d-flex spaceCarousel mt-3">
               <div class="col px-4">
-                <h4 class="font-weight-bold font12 text-left font13 my-0 py-0">
+                <h4 class="font-weight-bold font-12 text-left font13 my-0 py-0">
                   Promo Oreo
                 </h4>
-                <p class="font12 text-left font10 text-black-50">
+                <p class="font-12 text-left font10 text-black-50">
                   Nikmati promo Oreo dari kami
                 </p>
               </div>
@@ -40,10 +40,10 @@
             />
             <div class="row justify-content-center d-flex spaceCarousel mt-3">
               <div class="col px-4">
-                <h4 class="font-weight-bold font12 text-left font13 my-0 py-0">
+                <h4 class="font-weight-bold font-12 text-left font13 my-0 py-0">
                   Promo Oreo
                 </h4>
-                <p class="font12 text-left font10 text-black-50">
+                <p class="font-12 text-left font10 text-black-50">
                   Nikmati promo Oreo dari kami
                 </p>
               </div>
@@ -79,19 +79,22 @@ export default {};
 </script>
 
 <style scoped>
-.font16 {
-  font-size: 16px;
-}
-
 .radius {
   border-radius: 24px;
 }
 
-.font12 {
-  font-size: 12px;
-}
-
 .table-bordered {
   border: 1px solid #d3d3d3 !important;
+}
+@media screen and (max-width: 1000px) {
+  .font-12 {
+    font-size: 12px;
+  }
+  .font16 {
+    font-size: 16px;
+  }
+  .font14 {
+    font-size: 14px;
+  }
 }
 </style>

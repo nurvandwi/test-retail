@@ -1,7 +1,7 @@
 <template>
   <div class="mb-3">
-    <h1 class="font16 font-weight-bold mt-4 mb-0 ml-4">Data Kegiatan</h1>
-    <p class="font12 ml-4">Lengkapi data dibawah ini.</p>
+    <h3 class="font16 font-weight-bold mt-4 mb-0 ml-4">Data Kegiatan</h3>
+    <p class="font-12 ml-4">Lengkapi data dibawah ini.</p>
     <div class="col-12">
       <router-link :to="{ path: 'registrasi' }">
         <div
@@ -70,11 +70,16 @@ export default {};
   height: 15px;
 }
 
-.font16 {
-  font-size: 16px;
-}
+@media screen and (max-width: 1000px) {
+  .font16 {
+    font-size: 16px;
+  }
 
-.font14 {
-  font-size: 14px;
+  .font14 {
+    font-size: 14px;
+  }
+  .font-12 {
+    font-size: 12px;
+  }
 }
 </style>
