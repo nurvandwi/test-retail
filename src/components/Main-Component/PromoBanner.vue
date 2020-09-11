@@ -1,8 +1,13 @@
 <template>
   <div class="col-md-12 col-12 p-0">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-ride="carousel"
+    >
       <div>
-        <h1 class="font16 ml-4 mb-2 mt-2 font-weight-bold">Promo Kami</h1>
+        <h1 class="font16 ml-4 mb-0 mt-2 font-weight-bold">Promo</h1>
+        <p class="font12 ml-4">Temukan penawaran menarik dibawah ini.</p>
       </div>
       <div class="carousel-inner px-4">
         <div class="carousel-item table-bordered active radius">
@@ -15,8 +20,12 @@
             />
             <div class="row justify-content-center d-flex spaceCarousel mt-3">
               <div class="col px-4">
-                <h4 class="font-weight-bold font12 text-left font13 my-0 py-0">Promo Oreo</h4>
-                <p class="font12 text-left font10 text-black-50">Nikmati promo Oreo dari kami</p>
+                <h4 class="font-weight-bold font12 text-left font13 my-0 py-0">
+                  Promo Oreo
+                </h4>
+                <p class="font12 text-left font10 text-black-50">
+                  Nikmati promo Oreo dari kami
+                </p>
               </div>
             </div>
           </div>
@@ -31,8 +40,12 @@
             />
             <div class="row justify-content-center d-flex spaceCarousel mt-3">
               <div class="col px-4">
-                <h4 class="font-weight-bold font12 text-left font13 my-0 py-0">Promo Oreo</h4>
-                <p class="font12 text-left font10 text-black-50">Nikmati promo Oreo dari kami</p>
+                <h4 class="font-weight-bold font12 text-left font13 my-0 py-0">
+                  Promo Oreo
+                </h4>
+                <p class="font12 text-left font10 text-black-50">
+                  Nikmati promo Oreo dari kami
+                </p>
               </div>
             </div>
           </div>

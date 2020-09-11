@@ -2,7 +2,11 @@
   <div class="nav-bar">
     <ul class="px-0">
       <li>
-        <router-link v-bind:to="'/'" style="color: #FFF;" class="mx-auto font18">
+        <router-link
+          v-bind:to="'/'"
+          style="color: #FFF;"
+          class="mx-auto font18"
+        >
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +48,11 @@
       </li>
 
       <li>
-        <router-link v-bind:to="'/categories'" style="color: #FFF;" class="mx-auto font18">
+        <router-link
+          v-bind:to="'/categories'"
+          style="color: #FFF;"
+          class="mx-auto font18"
+        >
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -79,12 +87,16 @@
                 </g>
               </g>
             </svg>
-            <span class="menu-navigation">Category</span>
+            <span class="menu-navigation">Reward</span>
           </div>
         </router-link>
       </li>
       <li>
-        <router-link v-bind:to="'/categories'" style="color: #FFF; height:40px" class="mx-auto font18">
+        <router-link
+          v-bind:to="'/categories'"
+          style="color: #FFF; height:40px"
+          class="mx-auto font18"
+        >
           <div class="whatsapp-icon">
             <img class="size-wa" src="../../assets/icon-wa v-2.png" />
             <span class="menu-navigation"></span>
@@ -92,7 +104,11 @@
         </router-link>
       </li>
       <li>
-        <router-link v-bind:to="'/quarter'" style="color: #FFF;" class="mx-auto font18">
+        <router-link
+          v-bind:to="'/quarter'"
+          style="color: #FFF;"
+          class="mx-auto font18"
+        >
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -182,14 +198,14 @@ let menuItems = document.querySelectorAll(".nav-bar ul li svg");
 const navItemClick = function(el) {
   let element = this;
 
-  menuItems.forEach(item => {
+  menuItems.forEach((item) => {
     item.classList.remove("active");
   });
 
   element.classList.add("active");
 };
 
-menuItems.forEach(item => {
+menuItems.forEach((item) => {
   item.addEventListener("click", navItemClick);
 });
 export default {};
@@ -221,12 +237,12 @@ export default {};
 
 .whatsapp-icon {
   position: relative;
-  top: -2.5vh;
+  top: -4.5vh;
   left: 15%;
 }
 
-.size-wa{
-  width: 85% !important;
+.size-wa {
+  width: 55% !important;
 }
 
 .nav-bar {
@@ -338,6 +354,10 @@ export default {};
     -webkit-box-shadow: 0px 3px 8px 0px #bababa;
     box-shadow: 0px 3px 8px 0px #bababa;
     display: block;
+  }
+
+  .size-wa {
+    width: 85% !important;
   }
 
   .whatsapp-icon {

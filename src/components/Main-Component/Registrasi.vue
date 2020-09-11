@@ -3,7 +3,7 @@
     <div class="col-md-8 text-left d-flex flex-row align-items-center mt-2 p-0">
       <img
         class="mr-3 icon-user"
-        src="https://img.icons8.com/offices/80/000000/gender-neutral-user.png"
+        src="../../assets/user-logo.png"
       />
       <div>
         <h2 class="font18 font-weight-bold mb-0">Data Registrasi</h2>
@@ -18,17 +18,17 @@
       <p class="p-0 my-0 text-left font12">Nomor EKTP & Nomor Handphone/WA wajib diisi</p>
       <form action class="mb-5 pb-5">
         <div class="form-row mt-4">
-          <div class="form-group col-md-12 col-12 text-left mb-3">
+          <div class="form-group col-md-12 col-12 p-0 text-left mb-3">
             <input type="text" class="form-control" placeholder="Nama Pemilik" />
           </div>
-          <div class="form-group col-md-6 col-6 text-left mb-3">
+          <div class="form-group col-md-6 col-6 pr-3 text-left mb-3 p-0">
             <input type="number" class="form-control" placeholder="No EKTP" />
           </div>
-          <div class="form-group col-md-6 col-6 text-left mb-3">
+          <div class="form-group col-md-6 col-6 text-left mb-3 p-0">
             <input type="number" class="form-control" placeholder="No HP" />
           </div>
           <div
-            class="form-group m-auto justify-content-center grid-image border mb-0 col-md-12 col-12"
+            class="form-group justify-content-center grid-image border mb-0 col-md-12 col-12"
           >
             <div class>
               <image-uploader
@@ -44,7 +44,7 @@
                 doNotResize="['gif', 'svg']"
               >
                 <label for="fileInput" slot="upload-label" class="mt-3 mb-0">
-                  <figure class="m-0">
+                  <figure class="">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="300"
@@ -66,9 +66,9 @@
           </div>
           <h4 class="font-weight-bold font16 mx-2 mt-4 mb-0">Input Data Bank</h4>
           <p class="font10 mx-2">Data Rekening Bank wajib diisi sesuai dengan data di buku bank</p>
-          <div class="form-group col-md-12 col-12 text-left mb-3">
+          <div class="form-group col-md-12 p-0 col-12 text-left mb-3">
             <div class="input-group mb-0">
-              <div class="input-group-prepend">
+              <div class="input-group-prepend ">
                 <label class="input-group-text" for="inputGroupSelect01">Pilih Bank</label>
               </div>
               <select class="custom-select" id="inputGroupSelect01">
@@ -79,16 +79,16 @@
               </select>
             </div>
           </div>
-          <div class="form-group col-md-6 col-6 text-left mb-3">
-            <input type="text" class="form-control" placeholder="Cabang Nasabah" />
+          <div class="form-group col-md-6 col-6 p-0 pr-3 text-left mb-3">
+            <input type="text" class="form-control" placeholder="Cabang " />
           </div>
-          <div class="form-group col-md-6 col-6 text-left mb-3">
+          <div class="form-group col-md-6 col-6 p-0 text-left mb-3">
             <input type="number" class="form-control" placeholder="Nomor Rekening" />
           </div>
-          <div class="form-group col-md-6 col-6 text-left mb-3">
+          <div class="form-group col-md-6 col-6 p-0 pr-3 text-left mb-3">
             <input type="text" class="form-control" placeholder="Nama Nasabah" />
           </div>
-          <div class="form-group col-md-6 col-6 text-left mb-3">
+          <div class="form-group col-md-6 col-6 p-0 text-left mb-3">
             <input type="text" class="form-control" placeholder="Kota Tujuan" />
           </div>
           <div
@@ -165,7 +165,7 @@ export default {
     font-size: 10px;
   }
   .icon-user {
-    height: 50px;
+    height: 40px;
   }
   .font12 {
     font-size: 12px;
