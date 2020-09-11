@@ -37,7 +37,7 @@
           >
             Hi, Adam Jaya
           </h1>
-          <p class="mb-0 font12 font-weight-normal">
+          <p class="mb-0 font12 font-weight-normal"   data-aos="fade-down">
             Ini Jumlah Poin dan Rebate anda.
           </p>
           <div class="d-flex mt-4" data-aos="zoom-in">
