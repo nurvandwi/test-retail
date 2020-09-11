@@ -25,14 +25,14 @@
         <div class="card text-white">
           <router-link class="text-white" v-bind:to="'/Ewallet'">
             <div>
-              <img src="../../assets/Banner-Ewallet.png" class="card-img" alt="..." />
+              <img id="wallet" src="../../assets/Banner-Ewallet.png" class="card-img" alt="..." />
             </div>
             <div class="card-img-overlay d-flex">
               <div class="row">
                 <div class="col-md-12 col-12 d-flex align-items-center space-content">
                   <div class="align-self-center d-flex flex-column">
                     <h4 class="card-title font-weight-normal font20 pb-1 m-0">E-wallet</h4>
-                    <img src="../../assets/e-wallet-icon.png" class="card-img size-icon" alt="..." />
+                    <img id="pulsa" src="../../assets/e-wallet-icon.png" class="card-img size-icon" alt="..." />
                   </div>
                 </div>
               </div>
@@ -55,6 +55,14 @@ export default {};
 .size-icon {
   width: 5rem;
 }
+a:active{
+  box-shadow: 0px 4px 10px rgba(78, 55, 178, 0.25);
+}
+
+a:focus{
+  box-shadow: 0px 4px 10px rgba(78, 55, 178, 0.25);
+}
+
 @media screen and (max-width: 1000px) {
   .size-icon {
     width: 2.5rem;
