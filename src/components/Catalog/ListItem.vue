@@ -141,7 +141,7 @@
             src="../../assets/dana.png"
             alt
           />
-          <div class="align-items-center col-md-8 col-7 pl-3">
+          <div class="align-items-center col-md-8 col-7 pl-1">
             <h5 class="font14 caption4 p-0 font-weight-bold m-0 text-dark">
               Dana (100000)
             </h5>
@@ -165,7 +165,7 @@
             src="../../assets/dana.png"
             alt
           />
-          <div class="align-items-center col-md-8 col-7 pl-3">
+          <div class="align-items-center col-md-8 col-7 pl-1">
             <h5 class="font14 caption4 p-0 font-weight-bold m-0 text-dark">
               Rebate (1000000)
             </h5>
@@ -189,7 +189,7 @@
             src="../../assets/dana.png"
             alt
           />
-          <div class="align-items-center col-md-8 col-7 pl-3">
+          <div class="align-items-center col-md-8 col-7 pl-1">
             <h5 class="font14 caption4 p-0 font-weight-bold m-0 text-dark">
               Point 2 Cash (100000)
             </h5>
@@ -213,7 +213,7 @@
             src="../../assets/dana.png"
             alt
           />
-          <div class="align-items-center col-md-8 col-7 pl-3">
+          <div class="align-items-center col-md-8 col-7 pl-1">
             <h5 class="font14 caption4 p-0 font-weight-bold m-0 text-dark">
               Dana (100000)
             </h5>
