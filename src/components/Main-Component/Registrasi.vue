@@ -1,10 +1,7 @@
 <template>
   <div class="row justify-content-center mx-2">
     <div class="col-md-8 text-left d-flex flex-row align-items-center mt-2 p-0">
-      <img
-        class="mr-3 icon-user"
-        src="../../assets/user-logo.png"
-      />
+      <img class="mr-3 icon-user" src="../../assets/user-logo.png" />
       <div>
         <h2 class="font18 font-weight-bold mb-0">Data Registrasi</h2>
         <p class="font14 mb-0">Mohon Lengkapi Data dibawah ini</p>
@@ -14,19 +11,46 @@
       <div class="theme-color p-2 rounded mt-2">
         <h3 class="font18 mb-0 pb-0 text-white text-center">100000-ANE003</h3>
       </div>
-      <h4 class="mt-4 text-left font16 font-weight-bold mb-0">Input Data Outlet</h4>
-      <p class="p-0 my-0 text-left font12">Nomor EKTP & Nomor Handphone/WA wajib diisi</p>
+      <h4 class="mt-4 text-left font16 font-weight-bold mb-0">
+        Input Data Outlet
+      </h4>
+      <p class="p-0 my-0 text-left font12">
+        Nomor EKTP & Nomor Handphone/WA wajib diisi
+      </p>
       <form action class="mb-5 pb-5">
         <div class="form-row mt-4">
-          <div class="form-group col-md-12 col-12 p-0 text-left mb-3">
-            <input type="text" class="form-control" placeholder="Nama Pemilik" />
+          <div class="form-group col-md-12 col-12 p-0 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">Nama Pemilik</h5>
+              </legend>
+              <input type="text" class="form-control input-lg p-0 border-0 " />
+            </fieldset>
           </div>
-          <div class="form-group col-md-6 col-6 pr-3 text-left mb-3 p-0">
-            <input type="number" class="form-control" placeholder="No EKTP" />
+
+          <div class="form-group col-md-6 col-6 pl-0 pr-2 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">No EKTP</h5>
+              </legend>
+              <input
+                type="number"
+                class="form-control input-lg p-0 border-0 "
+              />
+            </fieldset>
           </div>
-          <div class="form-group col-md-6 col-6 text-left mb-3 p-0">
-            <input type="number" class="form-control" placeholder="No HP" />
+          <div class="form-group col-md-6 col-6 px-0 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">No HP</h5>
+              </legend>
+              <input
+                type="number"
+                class="form-control input-lg p-0 border-0 "
+              />
+            </fieldset>
           </div>
+
           <div
             class="form-group justify-content-center grid-image border mb-0 col-md-12 col-12"
           >
@@ -38,7 +62,7 @@
                 :autoRotate="true"
                 outputFormat="string"
                 :preview="false"
-                :className="['fileinput', { 'fileinput--loaded' : hasImage }]"
+                :className="['fileinput', { 'fileinput--loaded': hasImage }]"
                 capture="environment"
                 accept="video/*, image/*"
                 doNotResize="['gif', 'svg']"
@@ -59,17 +83,24 @@
                   </figure>
                   <span
                     class="upload-caption d-flex justify-content-center pb-3 font-weight-bold"
-                  >{{ 'Upload KTP' }}</span>
+                    >{{ "Upload KTP" }}</span
+                  >
                 </label>
               </image-uploader>
             </div>
           </div>
-          <h4 class="font-weight-bold font16 mx-2 mt-4 mb-0">Input Data Bank</h4>
-          <p class="font10 mx-2">Data Rekening Bank wajib diisi sesuai dengan data di buku bank</p>
+          <h4 class="font-weight-bold font16 mx-2 mt-4 mb-0">
+            Input Data Bank
+          </h4>
+          <p class="font10 mx-2">
+            Data Rekening Bank wajib diisi sesuai dengan data di buku bank
+          </p>
           <div class="form-group col-md-12 p-0 col-12 text-left mb-3">
             <div class="input-group mb-0">
               <div class="input-group-prepend ">
-                <label class="input-group-text" for="inputGroupSelect01">Pilih Bank</label>
+                <label class="input-group-text" for="inputGroupSelect01"
+                  >Pilih Bank</label
+                >
               </div>
               <select class="custom-select" id="inputGroupSelect01">
                 <option selected>Choose...</option>
@@ -79,17 +110,40 @@
               </select>
             </div>
           </div>
-          <div class="form-group col-md-6 col-6 p-0 pr-3 text-left mb-3">
-            <input type="text" class="form-control" placeholder="Cabang " />
+          <div class="form-group col-md-6 col-6 pl-0 pr-2 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">Cabang</h5>
+              </legend>
+              <input type="text" class="form-control input-lg p-0 border-0 " />
+            </fieldset>
           </div>
-          <div class="form-group col-md-6 col-6 p-0 text-left mb-3">
-            <input type="number" class="form-control" placeholder="Nomor Rekening" />
+          <div class="form-group col-md-6 col-6 px-0 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">No Rekening</h5>
+              </legend>
+              <input
+                type="number"
+                class="form-control input-lg p-0 border-0 "
+              />
+            </fieldset>
           </div>
-          <div class="form-group col-md-6 col-6 p-0 pr-3 text-left mb-3">
-            <input type="text" class="form-control" placeholder="Nama Nasabah" />
+          <div class="form-group col-md-6 col-6 pl-0 pr-2 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">Nama Nasabah</h5>
+              </legend>
+              <input type="text" class="form-control input-lg p-0 border-0 " />
+            </fieldset>
           </div>
-          <div class="form-group col-md-6 col-6 p-0 text-left mb-3">
-            <input type="text" class="form-control" placeholder="Kota Tujuan" />
+          <div class="form-group col-md-6 col-6 px-0 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">Kota Tujuan</h5>
+              </legend>
+              <input type="text" class="form-control input-lg p-0 border-0 " />
+            </fieldset>
           </div>
           <div
             class="form-group col-md-12 col-12 py-2 grid-image m-auto justify-content-center border mb-0"
@@ -102,7 +156,7 @@
                 :autoRotate="true"
                 outputFormat="string"
                 :preview="false"
-                :className="['fileinput', { 'fileinput--loaded' : hasImage }]"
+                :className="['fileinput', { 'fileinput--loaded': hasImage }]"
                 capture="environment"
                 accept="video/*, image/*"
                 doNotResize="['gif', 'svg']"
@@ -123,13 +177,16 @@
                   </figure>
                   <span
                     class="upload-caption d-flex justify-content-center font-weight-bold pb-3"
-                  >{{ 'Upload BUKU BANK' }}</span>
+                    >{{ "Upload BUKU BANK" }}</span
+                  >
                 </label>
               </image-uploader>
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary col-md-12 col-12 mt-3">Submit</button>
+        <button type="button" class="btn btn-primary col-md-12 col-12 mt-3">
+          Submit
+        </button>
       </form>
     </div>
   </div>

@@ -6,18 +6,18 @@
           <img
             class="img-fluid px-3 heightpicTab"
             style="max-width:100%;"
-            src="../../assets/xiaomi.png"
+            :src="product.galleries[0].photo"
             alt="Card image cap"
           />
         </div>
         <div class="card-body pb-0">
           <p class="card-title m-0">MVG2020-001</p>
           <h5 class="card-title mb-0 font16" style="font-weight:bolder">
-            <router-link class="text-dark" v-bind:to="'/product/' + product.id">Xiaomi</router-link>
+            <router-link class="text-dark" v-bind:to="'/product/' + product.id">{{product.name}}</router-link>
           </h5>
         </div>
         <div class="card-body d-flex justify-content-between align-items-center pb-0">
-          <h5 class="card-title m-0 font16">22 Poin</h5>
+          <h5 class="card-title m-0 font16">{{product.price}}</h5>
           <button class="btn" @click="addToCart()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
