@@ -18,6 +18,39 @@
         Nomor EKTP & Nomor Handphone/WA wajib diisi
       </p>
       <form action class="mb-5 pb-5">
+
+        <div class="form-row mt-4">
+          <div class="form-group col-md-12 col-12 p-0 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">Nama Pemilik</h5>
+              </legend>
+              <input type="text" class="form-control input-lg p-0 border-0 " />
+            </fieldset>
+          </div>
+
+          <div class="form-group col-md-6 col-6 pl-0 pr-2 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">No EKTP</h5>
+              </legend>
+              <input
+                type="number"
+                class="form-control input-lg p-0 border-0 "
+              />
+            </fieldset>
+          </div>
+          <div class="form-group col-md-6 col-6 px-0 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">No HP</h5>
+              </legend>
+              <input
+                type="number"
+                class="form-control input-lg p-0 border-0 "
+              />
+            </fieldset>
+=======
         <div class="form-row mt-4 d-flex justify-content-between">
           <div class="form-group col-md-12 col-12">
             <label class="m-0">Nama Pemilik</label>
@@ -30,6 +63,7 @@
           <div class="form-group col-md-5 col-5">
             <label class="m-0">No HP</label>
             <input type="number" class="form-control p-0" />
+
           </div>
 
           <div
@@ -64,7 +98,11 @@
                   </figure>
                   <span
                     class="upload-caption d-flex justify-content-center pb-3 font-weight-bold"
+
+                    >{{ "Upload KTP" }}</span
+=======
                     >{{ 'Upload KTP' }}</span
+
                   >
                 </label>
               </image-uploader>
@@ -91,6 +129,42 @@
               </select>
             </div>
           </div>
+
+          <div class="form-group col-md-6 col-6 pl-0 pr-2 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">Cabang</h5>
+              </legend>
+              <input type="text" class="form-control input-lg p-0 border-0 " />
+            </fieldset>
+          </div>
+          <div class="form-group col-md-6 col-6 px-0 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">No Rekening</h5>
+              </legend>
+              <input
+                type="number"
+                class="form-control input-lg p-0 border-0 "
+              />
+            </fieldset>
+          </div>
+          <div class="form-group col-md-6 col-6 pl-0 pr-2 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">Nama Nasabah</h5>
+              </legend>
+              <input type="text" class="form-control input-lg p-0 border-0 " />
+            </fieldset>
+          </div>
+          <div class="form-group col-md-6 col-6 px-0 text-left mb-1">
+            <fieldset class="border p-0 mb-2">
+              <legend class="w-auto m-0 ml-3">
+                <h5 class="m-0 font16">Kota Tujuan</h5>
+              </legend>
+              <input type="text" class="form-control input-lg p-0 border-0 " />
+            </fieldset>
+=======
           <div class="form-group col-md-5 col-5">
             <label class="m-0">Cabang</label>
             <input type="text" class="form-control p-0" />
@@ -106,6 +180,7 @@
           <div class="form-group col-md-5 col-5">
             <label class="m-0">Kota Tujuan</label>
             <input type="text" class="form-control p-0 " />
+
           </div>
 
           <div
@@ -140,7 +215,11 @@
                   </figure>
                   <span
                     class="upload-caption d-flex justify-content-center font-weight-bold pb-3"
+
+                    >{{ "Upload BUKU BANK" }}</span
+=======
                     >{{ 'Upload BUKU BANK' }}</span
+
                   >
                 </label>
               </image-uploader>
