@@ -1,13 +1,13 @@
 <template>
   <div class="row justify-content-center mx-2">
-    <div class="col-md-8 text-left d-flex flex-row align-items-center mt-2 p-0">
+    <div class="col-md-8 text-left d-flex flex-row align-items-center mt-2 px-3 pt-3">
       <img class="mr-3 icon-user" src="../../assets/user-logo.png" />
       <div>
         <h2 class="font18 font-weight-bold mb-0">Data Registrasi</h2>
         <p class="font14 mb-0">Mohon Lengkapi Data dibawah ini</p>
       </div>
     </div>
-    <div class="col-md-12 col-12 p-0 m-0">
+    <div class="col-md-12 col-12 px-3 m-0">
       <div class="theme-color p-2 rounded mt-2">
         <h3 class="font18 mb-0 pb-0 text-white text-center">100000-ANE003</h3>
       </div>
