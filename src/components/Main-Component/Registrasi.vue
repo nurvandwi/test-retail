@@ -18,6 +18,7 @@
         Nomor EKTP & Nomor Handphone/WA wajib diisi
       </p>
       <form action class="mb-5 pb-5">
+
         <div class="form-row mt-4">
           <div class="form-group col-md-12 col-12 p-0 text-left mb-1">
             <fieldset class="border p-0 mb-2">
@@ -49,6 +50,20 @@
                 class="form-control input-lg p-0 border-0 "
               />
             </fieldset>
+=======
+        <div class="form-row mt-4 d-flex justify-content-between">
+          <div class="form-group col-md-12 col-12">
+            <label class="m-0">Nama Pemilik</label>
+            <input type="text" class="form-control input-lg p-0" />
+          </div>
+          <div class="form-group col-md-5 col-5">
+            <label class="m-0">No EKTP</label>
+            <input type="number" class="form-control p-0" />
+          </div>
+          <div class="form-group col-md-5 col-5">
+            <label class="m-0">No HP</label>
+            <input type="number" class="form-control p-0" />
+
           </div>
 
           <div
@@ -83,7 +98,11 @@
                   </figure>
                   <span
                     class="upload-caption d-flex justify-content-center pb-3 font-weight-bold"
+
                     >{{ "Upload KTP" }}</span
+=======
+                    >{{ 'Upload KTP' }}</span
+
                   >
                 </label>
               </image-uploader>
@@ -110,6 +129,7 @@
               </select>
             </div>
           </div>
+
           <div class="form-group col-md-6 col-6 pl-0 pr-2 text-left mb-1">
             <fieldset class="border p-0 mb-2">
               <legend class="w-auto m-0 ml-3">
@@ -144,7 +164,25 @@
               </legend>
               <input type="text" class="form-control input-lg p-0 border-0 " />
             </fieldset>
+=======
+          <div class="form-group col-md-5 col-5">
+            <label class="m-0">Cabang</label>
+            <input type="text" class="form-control p-0" />
           </div>
+          <div class="form-group col-md-5 col-5">
+            <label class="m-0">No Rekening</label>
+            <input type="number" class="form-control p-0 " />
+          </div>
+          <div class="form-group col-md-5 col-5">
+            <label class="m-0">Nama Nasabah</label>
+            <input type="text" class="form-control p-0 " />
+          </div>
+          <div class="form-group col-md-5 col-5">
+            <label class="m-0">Kota Tujuan</label>
+            <input type="text" class="form-control p-0 " />
+
+          </div>
+
           <div
             class="form-group col-md-12 col-12 py-2 grid-image m-auto justify-content-center border mb-0"
           >
@@ -177,7 +215,11 @@
                   </figure>
                   <span
                     class="upload-caption d-flex justify-content-center font-weight-bold pb-3"
+
                     >{{ "Upload BUKU BANK" }}</span
+=======
+                    >{{ 'Upload BUKU BANK' }}</span
+
                   >
                 </label>
               </image-uploader>
@@ -193,16 +235,33 @@
 </template>
 
 <script>
-import ImageUploader from "vue-image-upload-resize";
+import ImageUploader from 'vue-image-upload-resize'
 export default {
-  name: "Registrasi",
+  name: 'Registrasi',
   components: {
     ImageUploader
   }
-};
+}
 </script>
 
 <style>
+.form-group {
+  padding: 0px;
+  border: 1px solid #ced4da;
+  margin: 10px 0px;
+}
+.form-group > label {
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+  top: -14px;
+  left: 20px;
+  background-color: white;
+}
+
+.form-group > input {
+  border: none;
+}
 .icon-user {
   height: 60px;
 }
