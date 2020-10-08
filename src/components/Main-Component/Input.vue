@@ -18,7 +18,7 @@
             <input placeholder="Password" type="password" class="input" />
           </div>
         </div>
-        <button type="button" class="btn text-white mt-4">login</button>
+        <button type="button" class="btn text-white mt-5">login</button>
       </form>
     </div>
   </div>
