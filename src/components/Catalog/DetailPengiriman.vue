@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div v-if="contentFor === 'OrderDetails'" class="card mt-4 mb-5">
+    <div v-if="contentFor === 'OrderDetails'" class="card mt-4 mb-details">
       <div class="row no-gutters bg radius">
         <div class="col-md-12 col-12 mb-5">
-          <h1 class="card-title font16 font-weight-bold">Detail Pengiriman</h1>
+          <h5 class="card-title font16 font-weight-bold pt-3">Detail Pengiriman</h5>
           <table class="table table-borderless">
             <tbody class="py-0">
               <tr>
@@ -65,11 +65,11 @@
         </div>
       </div>
     </div>
-    <div v-if="contentFor === 'PulsaDetails'">
+    <div v-if="contentFor === 'PulsaDetails'" class="card mt-4 mb-details">
       <div class="card mt-4">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
-            <h1 class="card-title font16 font-weight-bold">Detail Pengiriman</h1>
+            <h5 class="card-title font16 font-weight-bold pt-3">Detail Pengiriman</h5>
             <table class="table table-borderless">
               <tbody class>
                 <tr>
@@ -95,11 +95,11 @@
         </div>
       </div>
     </div>
-    <div v-if="contentFor === 'EwalletDetails'">
+    <div v-if="contentFor === 'EwalletDetails'" class="card mt-4 mb-details">
       <div class="card mt-4">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
-            <h1 class="card-title font16 font-weight-bold">Detail Pengiriman</h1>
+            <h5 class="card-title font16 font-weight-bold pt-3">Detail Pengiriman</h5>
             <table class="table table-borderless">
               <tbody class>
                 <tr>
@@ -125,11 +125,11 @@
         </div>
       </div>
     </div>
-    <div v-if="contentFor === 'PointCashDetails'">
+    <div v-if="contentFor === 'PointCashDetails'" class="card mt-4 mb-details">
       <div class="card mt-4">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
-            <h1 class="card-title font16 font-weight-bold">Detail Pengiriman</h1>
+            <h5 class="card-title font16 font-weight-bold pt-3">Detail Pengiriman</h5>
             <table class="table table-borderless">
               <tbody class>
                 <tr>
@@ -161,11 +161,11 @@
         </div>
       </div>
     </div>
-    <div v-if="contentFor === 'RebateDetails'">
+    <div v-if="contentFor === 'RebateDetails'" class="card mt-4 mb-details">
       <div class="card mt-4">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
-            <h1 class="card-title font16 font-weight-bold">Detail Pengiriman</h1>
+            <h5 class="card-title font16 font-weight-bold pt-3">Detail Pengiriman</h5>
             <table class="table table-borderless">
               <tbody class>
                 <tr>
@@ -228,7 +228,13 @@ export default {
 .font12 {
   font-size: 12px;
 }
+.mb-details{
+  margin-bottom:7rem;
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .mb-details{
+    margin-bottom:2rem;
+  }
   .font16 {
     font-size: 16px !important;
   }

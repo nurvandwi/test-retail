@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header :contentFor="'Login'" />
-    <Input />
+    <Input class="mt-form"/>
   </div>
 </template>
 
@@ -17,4 +17,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+  .mt-form{
+    margin-top:6rem
+  }
+</style>

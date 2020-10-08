@@ -1,12 +1,12 @@
 <template>
-  <div class="col-md-12 col-12 p-0">
+  <div class="col-md-12 col-12 p-0 mt-alert">
     <div class="card mb-1 shadow1" v-if="contentFor === 'OrderDetails'">
       <div class="row no-gutters bg radius">
         <div class="col-md-4 col-4 align-self-center pl-5">
           <img src="../../assets/icon-cart v-2.png" class="hw26" />
         </div>
         <div class="col-md-8 col-8">
-          <div class="card-body py-2">
+          <div class="card-body py-2 ">
             <h1 class="card-title font14 mb-1">Total Penukaran Poin</h1>
             <p class="card-text font14 font-weight-bold">1200 poin</p>
           </div>
@@ -104,5 +104,13 @@ export default {
 .font12 {
   font-size: 12px;
   color: #4e37b2;
+}
+.mt-alert{
+  margin-top: 5rem;
+}
+@media screen and (max-width: 1000px) {
+  .mt-alert{
+    margin-top: 1rem;
+  }
 }
 </style>
