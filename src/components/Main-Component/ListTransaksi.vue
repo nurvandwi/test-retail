@@ -10,14 +10,38 @@
         <p class="rounded-pill  m-0 font12 py-2 px-2 bg-purple">Lihat Semua</p>
       </router-link>
     </div>
-    <listItem :contentFor="'ListTransaksi'" />
+    <listItem :contentFor="'ListTransaksi'" :alltransaction="alltransaction"/>
   </div>
 </template>
 <script>
+  import  axios from 'axios'
 import listItem from "@/components/Catalog/ListItem.vue";
 export default {
+  data(){
+    return{
+      alltransaction:[]
+    }
+  },
   components: {
     listItem
+  },
+  methods:{
+    allItem(){
+      axios
+              .get(`https://www.inosis.co.id/mv_demo_api/api.php/view_transaksi`,{
+                params:{
+                  outlet_id:this.$route.params.outlet_id,
+                  token:localStorage.token,
+                }
+              })
+              .then((res)=>{
+                this.alltransaction=res.data
+              })
+              .catch((err)=>console.log(err))
+    }
+  },
+  mounted() {
+    this.allItem()
   }
 };
 </script>
