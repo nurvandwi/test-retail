@@ -3,7 +3,8 @@
     <Header :contentFor="'home'" />
     <PromoBanner />
     <ListPromosi />
-    <ListTransaksi class="mb-5 pb-5"/>
+
+    <ListTransaksi class="mb-5 pb-5" />
   </div>
 </template>
 

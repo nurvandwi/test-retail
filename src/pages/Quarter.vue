@@ -26,8 +26,8 @@ export default {
     Poin,
     TotalRebate,
     BulanTransaksi,
-    Tarif,
-  },
+    Tarif
+  }
 };
 </script>
 
