@@ -6,7 +6,9 @@
       <h3 class="font16 m-0 align-self-center font-weight-bold py-0 px-2">
         List Transaksi
       </h3>
-      <p class="rounded-pill  m-0 font12 py-2 px-2 bg-purple">Lihat Semua</p>
+      <router-link class="text-white" v-bind:to="'TransactionProduct'">
+        <p class="rounded-pill  m-0 font12 py-2 px-2 bg-purple">Lihat Semua</p>
+      </router-link>
     </div>
     <listItem :contentFor="'ListTransaksi'" :alltransaction="alltransaction"/>
   </div>
