@@ -123,18 +123,18 @@
       </div>
     </div>
     <div v-if="contentFor === 'ListTransaksi'" class="col-12 col-md-12">
-      <div class="col-12 col-md-12 m-0 px-0 shadow-item">
+      <div class="col-12 col-md-12 m-0 px-0 shadow-item" v-for="all in alltransaction.data.produk" :key="all.id">
         <div
                 class="  text-left  d-flex flex-row align-items-center my-3 py-3 pl-3 pr-0"
         >
           <img
                   class="imagecustom px-2 col-md-2 col-3"
-                  src="../../assets/dana.png"
+                  :src="all.img"
                   alt
           />
           <div class="align-items-center col-md-8 col-7 pl-1">
             <h5 class="font14 caption4 p-0 font-weight-bold m-0 text-dark">
-              Dana (100000)
+           {{all.nama_produk}}
             </h5>
             <p class="text-dark card-text font11">22 Agustus 2020</p>
           </div>
@@ -147,85 +147,13 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-12 m-0 px-0 shadow-item">
-        <div
-                class="  text-left  d-flex flex-row align-items-center my-3 py-3 pl-3 pr-0"
-        >
-          <img
-                  class="imagecustom px-2 col-md-2 col-3"
-                  src="../../assets/dana.png"
-                  alt
-          />
-          <div class="align-items-center col-md-8 col-7 pl-1">
-            <h5 class="font14 caption4 p-0 font-weight-bold m-0 text-dark">
-              Rebate (1000000)
-            </h5>
-            <p class="text-dark card-text font11">22 Agustus 2020</p>
-          </div>
-          <div class="col-md-2 col-2 align-self-center pr-2">
-            <p
-                    class="text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-success float-right"
-            >
-              Sukses
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-12 m-0 px-0 shadow-item">
-        <div
-                class="  text-left  d-flex flex-row align-items-center my-3 py-3 pl-3 pr-0"
-        >
-          <img
-                  class="imagecustom px-2 col-md-2 col-3"
-                  src="../../assets/dana.png"
-                  alt
-          />
-          <div class="align-items-center col-md-8 col-7 pl-1">
-            <h5 class="font14 caption4 p-0 font-weight-bold m-0 text-dark">
-              Point 2 Cash (100000)
-            </h5>
-            <p class="text-dark card-text font11">22 Agustus 2020</p>
-          </div>
-          <div class="col-md-2 col-2 align-self-center pr-2">
-            <p
-                    class="text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-warning float-right"
-            >
-              Proses
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-12 m-0 px-0 shadow-item">
-        <div
-                class="  text-left  d-flex flex-row align-items-center my-3 py-3 pl-3 pr-0"
-        >
-          <img
-                  class="imagecustom px-2 col-md-2 col-3"
-                  src="../../assets/dana.png"
-                  alt
-          />
-          <div class="align-items-center col-md-8 col-7 pl-1">
-            <h5 class="font14 caption4 p-0 font-weight-bold m-0 text-dark">
-              Dana (100000)
-            </h5>
-            <p class="text-dark card-text font11">22 Agustus 2020</p>
-          </div>
-          <div class="col-md-2 col-2 align-self-center pr-2">
-            <p
-                    class="text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-warning float-right"
-            >
-              Proses
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    props: ["contentFor"]
+    props: ["contentFor","alltransaction"]
   };
 </script>
 

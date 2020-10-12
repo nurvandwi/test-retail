@@ -25,9 +25,17 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/Home/:outlet_id",
+      props:true,
     name: "Home",
-    component: Home
+    component: Home,
+      beforeEnter: (to, from, next) => {
+          if (localStorage.getItem("token") == null) {
+              next("/");
+          } else {
+              next();
+          }
+      },
   },
   {
     path: "/about",
@@ -92,7 +100,7 @@ const routes = [
     props: true
 },
 {
-    path: '/Login',
+    path: '/',
     component: Login,
     name: 'login',
     props: true

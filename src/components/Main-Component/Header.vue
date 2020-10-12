@@ -35,18 +35,18 @@
             class="card-title font18 font-weight-bolder mb-0"
             data-aos="fade-down"
           >
-            Hi, Adam Jaya
+        Hai,   {{outlet_name}}
           </h1>
           <p class="mb-0 font12 font-weight-normal"   data-aos="fade-down">
             Ini Jumlah Poin dan Rebate anda.
           </p>
           <div class="d-flex mt-4" data-aos="zoom-in">
             <img class="img-logo" src="../../assets/poin-logo.png" alt="" />
-            <p class="font18 align-self-center mb-0 px-2">100 Poin</p>
+            <p class="font18 align-self-center mb-0 px-2">{{outlet_point}}</p>
           </div>
           <div class="d-flex mt-2" data-aos="zoom-in">
             <img class="img-logo" src="../../assets/rebate-logo.png" alt="" />
-            <p class="font18 align-self-center mb-0 px-2">Rp. 1.000.000.000</p>
+            <p class="font18 align-self-center mb-0 px-2">{{outlet_rebate}}</p>
           </div>
         </div>
       </div>
@@ -71,7 +71,8 @@
 
 <script>
 export default {
-  props: ["contentFor"]
+  name:"Header",
+  props: ["contentFor","outlet_name","outlet_point","outlet_rebate"]
 };
 </script>
 

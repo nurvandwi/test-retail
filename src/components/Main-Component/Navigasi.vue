@@ -3,7 +3,7 @@
     <ul class="px-0">
       <li>
         <router-link
-          v-bind:to="'/'"
+          v-bind:to="'/Home/'+`${$route.params.outlet_id}`"
           style="color: #FFF;"
           class="mx-auto font18"
         >
