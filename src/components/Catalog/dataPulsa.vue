@@ -3,10 +3,10 @@
     <div class="d-flex align-items-center">
       <h3 class="font22 m-0" style="font-weight:bolder;">Input Data</h3>
 
-      <div v-if="no.slice(0,4) === '0877'">
+      <div v-if="no.slice(0, 4) === '0877'">
         <img src="../../assets/xl.png" class="icon-pulsa pl-2" alt="..." />
       </div>
-      <div v-else-if="no.slice(0,4) === '0856'">
+      <div v-else-if="no.slice(0, 4) === '0856'">
         <img src="../../assets/indosat.png" class="icon-pulsa pl-2" alt="..." />
       </div>
       <div v-else></div>
@@ -31,8 +31,8 @@
             >{{ option.text }}</option>
           </select>
         </div>-->
- 
-        <div class="col-md-12 mt-3" v-if="no.slice(0,4) === '0877'">
+
+        <div class="col-md-12 mt-3" v-if="no.slice(0, 4) === '0877'">
           <div class="row px-2 pt-2">
             <div class="col-md-6 col-6 px-2 pb-3">
               <div class="card border w-100">
@@ -80,7 +80,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12 mt-3" v-if="no.slice(0,4) === '0856'">
+        <div class="col-md-12 mt-3" v-if="no.slice(0, 4) === '0856'">
           <div class="row px-2 pt-2">
             <div class="col-md-6 col-6 px-2 pb-3">
               <div class="card border w-100">
@@ -126,10 +126,10 @@ export default {
       options: [
         { text: "Pilih Jenis Provider", value: "Pulsa" },
         { text: "Indosat", value: "Indosat" },
-        { text: "Xl", value: "Xl" },
-      ],
+        { text: "Xl", value: "Xl" }
+      ]
     };
-  },
+  }
 };
 </script>
 
