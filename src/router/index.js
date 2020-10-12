@@ -20,6 +20,7 @@ import TransactionDetails from '../pages/TransactionDetails.vue'
 import SuccessPage from '../pages/SuccessPage.vue'
 import Registrasi from '../pages/Registrasi.vue'
 import Posm from '../pages/Posm.vue'
+import TransactionProduct from '../pages/TransactionProduct.vue'
 
 Vue.use(VueRouter);
 
@@ -159,6 +160,12 @@ const routes = [
     name: 'Posm',
     props: true
 },
+    {
+        path: '/TransactionProduct',
+        component: TransactionProduct,
+        name: 'TransactionProduct',
+        props: true
+    }
 ];
 
 const router = new VueRouter({
