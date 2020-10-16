@@ -14,8 +14,8 @@ export const SET_PRODUCT = (state, product) => {
   state.product = product;
 };
 export const ADD_TO_CART = (state, { product, quantity }) => {
-  let productInCart = state.cart.find((item) => {
-    return item.product.id === product.id;
+  let productInCart = state.cart.find(item => {
+    return item.product.kd_produk === product.id;
   });
   if (productInCart) {
     productInCart.quantity += quantity;
@@ -23,12 +23,12 @@ export const ADD_TO_CART = (state, { product, quantity }) => {
   }
   state.cart.push({
     product,
-    quantity,
+    quantity
   });
 };
 
 export const ADD_TO_EWALLET = (state, { ewallet, quantity }) => {
-  let ewalletInCart = state.cartEwallet.find((item) => {
+  let ewalletInCart = state.cartEwallet.find(item => {
     return item.ewallet.id === ewallet.id;
   });
   if (ewalletInCart) {
@@ -37,12 +37,12 @@ export const ADD_TO_EWALLET = (state, { ewallet, quantity }) => {
   }
   state.cartEwallet.push({
     ewallet,
-    quantity,
+    quantity
   });
 };
 export const ADD_TO_POINCASH = (state, { poincash, quantity }) => {
-  let poincashInCart = state.cartPoincash.find((item) => {
-    return item.poincash.id === poincash.id;
+  let poincashInCart = state.cartPoincash.find(item => {
+    return item.poincash.kd_produk === poincash.id;
   });
   if (poincashInCart) {
     poincashInCart.quantity += quantity;
@@ -50,12 +50,12 @@ export const ADD_TO_POINCASH = (state, { poincash, quantity }) => {
   }
   state.cartPoincash.push({
     poincash,
-    quantity,
+    quantity
   });
 };
 export const ADD_TO_REBATE = (state, { rebate, quantity }) => {
-  let rebateInCart = state.cartRebate.find((item) => {
-    return item.rebate.id === rebate.id;
+  let rebateInCart = state.cartRebate.find(item => {
+    return item.rebate.periode === rebate.periode;
   });
   if (rebateInCart) {
     rebateInCart.quantity != quantity;
@@ -65,7 +65,7 @@ export const ADD_TO_REBATE = (state, { rebate, quantity }) => {
 
   state.cartRebate.push({
     rebate,
-    quantity,
+    quantity
   });
 };
 export const SET_CART = (state, cartItems) => {
@@ -81,10 +81,10 @@ export const SET_REBATE = (state, rebateItems) => {
   state.rebateItems = rebateItems;
 };
 export const REMOVE_PRODUCT_FROM_CART = (state, product) => {
-  state.cart = state.cart.filter((item) => {
+  state.cart = state.cart.filter(item => {
     return item.product.id !== product.id;
   });
 };
-export const CLEAR_CART_ITEMS = (state) => {
+export const CLEAR_CART_ITEMS = state => {
   state.cart = [];
 };

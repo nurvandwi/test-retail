@@ -6,7 +6,7 @@
       :outlet_point="OutletData.Poin"
       :outlet_rebate="OutletData.Rebate"
     />
-    <PromoBanner />
+    <PromoBanner :slider="Slider"/>
     <ListPromosi />
     <ListTransaksi class="mb-5 pb-5" />
   </div>
@@ -31,16 +31,32 @@ export default {
       OutletData: {
         data: []
       },
-      AllTransaction:{
+      AllTransaction: {
+        data: []
+      },
+      Slider:{
         data:[]
       }
     };
   },
   mounted() {
     this.getOutlet();
-    this.getAllTransaction()
+    this.getAllTransaction();
+    this.getSlider();
   },
   methods: {
+    getSlider() {
+      axios
+
+        .get("https://www.inosis.co.id/mv_demo_api/api.php/banner", {
+          params: {
+            outlet_id: this.$route.params.outlet_id,
+            token: localStorage.token
+          }
+        })
+        .then(res => (this.Slider = res.data))
+        .catch(err => console.log(err));
+    },
     getOutlet() {
       axios
         .get(
