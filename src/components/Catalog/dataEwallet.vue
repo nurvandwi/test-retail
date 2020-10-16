@@ -143,6 +143,18 @@ export default {
 </script>
 
 <style scoped>
+  .icon-link {
+    height: 32px;
+  }
+  .icon-dana {
+    height: 28px;
+  }
+  .icon-gopay {
+    height: 18px;
+  }
+  .icon-ovo {
+    height: 20px;
+  }
 ::-webkit-input-placeholder {
   color: #9e9eff !important;
 }
