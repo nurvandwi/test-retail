@@ -4,7 +4,7 @@ export const cartItemCount = (state) => {
 export const cartTotalPrice = (state) => {
   let total = 0;
   state.cart.forEach((item) => {
-    total += item.product.price * item.quantity;
+    total += item.product.poin * item.quantity;
   });
   return total;
 };
@@ -24,7 +24,7 @@ export const cartPoincashCount = (state) => {
 export const cartPoincashPrice = (state) => {
   let total = 0;
   state.cartPoincash.forEach((item) => {
-    total += item.poincash.price * item.quantity;
+    total += item.poincash.poin * item.quantity;
   });
   return total;
 };
@@ -34,7 +34,7 @@ export const cartRebateCount = (state) => {
 export const cartRebatePrice = (state) => {
   let total = 0;
   state.cartRebate.forEach((item) => {
-    total += item.rebate.price * item.quantity;
+    total += item.rebate.rebate_value * item.quantity;
   });
   return total;
 };

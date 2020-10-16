@@ -69,15 +69,24 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch("getProducts");
+    this.$store.dispatch("getProducts", {
+      outlet_id: this.$route.params.outlet_id,
+      token: localStorage.token
+    });
     this.$store.dispatch("getEwallets");
-    this.$store.dispatch("getPoinCashs");
-    this.$store.dispatch("getRebates");
+    this.$store.dispatch("getPoinCashs", {
+      outlet_id: this.$route.params.outlet_id,
+      token: localStorage.token
+    });
+    this.$store.dispatch("getRebates", {
+      outlet_id: this.$route.params.outlet_id,
+      token: localStorage.token
+    });
   }
 };
 </script>
 
-<style >
+<style>
 .margin-wrapper {
   margin-bottom: 8rem !important;
 }

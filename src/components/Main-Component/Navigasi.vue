@@ -3,7 +3,7 @@
     <ul class="px-0">
       <li>
         <router-link
-          v-bind:to="'/Home/'+`${$route.params.outlet_id}`"
+          v-bind:to="'/Home/' + `${$route.params.outlet_id}`"
           style="color: #FFF;"
           class="mx-auto font18"
         >
@@ -49,7 +49,7 @@
 
       <li>
         <router-link
-          v-bind:to="'/categories'"
+          v-bind:to="'/categories/' + `${$route.params.outlet_id}`"
           style="color: #FFF;"
           class="mx-auto font18"
         >
@@ -198,14 +198,14 @@ let menuItems = document.querySelectorAll(".nav-bar ul li svg");
 const navItemClick = function(el) {
   let element = this;
 
-  menuItems.forEach((item) => {
+  menuItems.forEach(item => {
     item.classList.remove("active");
   });
 
   element.classList.add("active");
 };
 
-menuItems.forEach((item) => {
+menuItems.forEach(item => {
   item.addEventListener("click", navItemClick);
 });
 export default {};

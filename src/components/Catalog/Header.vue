@@ -1,6 +1,6 @@
 <template>
   <div class="mb-5">
-    <router-link v-bind:to="'/categories/'">
+    <router-link v-bind:to="'/categories/' + `${$route.params.outlet_id}`">
       <nav
         class="navbar m-auto navbar-Container navbar-light backtheme py-3 d-flex justify-content-center footerstyle"
       >

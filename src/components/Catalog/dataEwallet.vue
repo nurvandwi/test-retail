@@ -3,18 +3,32 @@
     <div class="d-flex align-items-center">
       <h3 class="font22 m-0" style="font-weight:bolder;">Input Data</h3>
 
-      <div v-if="selected === 'Dana'">
+      <div v-if="state.ewallet === 'DANA'">
         <img
-          src="../../assets/icon-dana.png"
-          class="icon-ewallet pl-2"
+          src="../../assets/dana v-1.png"
+          class="icon-dana pl-2"
           alt="..."
         />
       </div>
-      <div v-else-if="selected === 'Ovo'">
+      <div v-else-if="state.ewallet === 'OVO'">
         <img
           src="../../assets/icon-ovo.png"
-          class="icon-ewallet pl-2"
+          class="icon-ovo pl-2"
           alt="..."
+        />
+      </div>
+      <div v-else-if="state.ewallet === 'LINK'">
+        <img
+          src="../../assets/link-aja v-2.png"
+          class="icon-link pl-2"
+          alt="..."
+        />
+      </div>
+      <div v-else-if="state.ewallet === 'GOPAY'">
+        <img
+                src="../../assets/gopay.png"
+                class="icon-gopay pl-2"
+                alt="..."
         />
       </div>
       <div v-else></div>
@@ -30,96 +44,44 @@
         </div>
         <div class="col-12 mt-2">
           <select
-            v-model="selected"
+            @change="getList()"
+            v-model="state.ewallet"
             class="form-control"
-            id="exampleFormControlSelect1"
+            name="dataEwallet"
           >
             <option
-              v-for="option in options"
-              :key="option.index"
-              v-bind:value="option.value"
-              >{{ option.text }}</option
+              v-for="(row, i) in list"
+              :key="i"
+              v-bind:value="row.nama_produk"
+              >{{ row.nama_produk }}</option
             >
           </select>
         </div>
-        <div class="col-md-12" v-if="selected === 'Dana'">
+        <div class="col-md-12">
           <div class="row px-2 pt-4">
-            <div class="col-md-6 col-6 px-2 pb-3">
+            <div
+              class="col-md-6 col-6 px-2 pb-3"
+              v-for="(row, i) in listContents.data"
+              :value="row.id"
+              :key="i"
+            >
               <div class="card border w-100">
                 <div class="card-body p-3">
-                  <h5 class="card-title text-center m-0">5.000</h5>
+                  <h5 class="card-title text-center m-0">
+                    {{ row.value }}
+                  </h5>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card border w-100">
-                <div class="card-body p-3">
-                  <h5 class="card-title text-center m-0">10.000</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card border w-100">
-                <div class="card-body p-3">
-                  <h5 class="card-title text-center m-0">25000</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card border w-100">
-                <div class="card-body p-3">
-                  <h5 class="card-title text-center m-0">50000</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-6 px-2 pb-3">
-              <router-link v-bind:to="'/ewalletdetails'" class="text-dark">
-                <div class="card border w-100">
-                  <div class="card-body p-3">
-                    <h5 class="card-title text-center m-0">100000</h5>
-                  </div>
-                </div>
-              </router-link>
-            </div>
-            <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card border w-100">
-                <div class="card-body p-3">
-                  <h5 class="card-title text-center m-0">150000</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12" v-if="selected === 'Ovo'">
-          <div class="row px-2 pt-4">
-            <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card border w-100">
-                <div class="card-body p-3">
-                  <h5 class="card-title text-center m-0">5.000</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card border w-100">
-                <div class="card-body p-3">
-                  <h5 class="card-title text-center m-0">10.000</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card border w-100">
-                <div class="card-body p-3">
-                  <h5 class="card-title text-center m-0">25000</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-6 px-2 pb-3">
-              <div class="card border w-100">
-                <div class="card-body p-3">
-                  <h5 class="card-title text-center m-0">50000</h5>
-                </div>
-              </div>
-            </div>
+            <!--            <div class="col-md-6 col-6 px-2 pb-3">-->
+            <!--              <router-link v-bind:to="'/ewalletdetails'" class="text-dark">-->
+            <!--                <div class="card border w-100">-->
+            <!--                  <div class="card-body p-3">-->
+            <!--                    <h5 class="card-title text-center m-0">100000</h5>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </router-link>-->
+            <!--            </div>-->
           </div>
         </div>
       </div>
@@ -128,6 +90,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -136,15 +99,50 @@ export default {
       options: [
         { text: "Pilih Jenis E-wallet", value: "Pilih Jenis E-wallet" },
         { text: "Dana", value: "Dana" },
-        { text: "Ovo", value: "Ovo" },
+        { text: "Ovo", value: "Ovo" }
       ],
+      list: [],
+      listContents: [],
+      state: {
+        ewallet: "Test"
+      }
     };
   },
+  methods: {
+    getEwallet() {
+      axios
+        .get(`https://www.inosis.co.id/mv_demo_api/api.php/list-ewallet`, {
+          params: {
+            outlet_id: this.$route.params.outlet_id,
+            token: localStorage.token
+          }
+        })
+        .then(res => (this.list = res.data.data))
+        .catch(err => console.log(err));
+    },
+    getList() {
+      axios
+        .get(
+          `https://www.inosis.co.id/mv_demo_api/api.php/list-ewallet-hadiah?nama_ewallet=${this.state.ewallet}`,
+          {
+            params: {
+              outlet_id: this.$route.params.outlet_id,
+              token: localStorage.token
+            }
+          }
+        )
+        .then(res => (this.listContents = res.data))
+        .catch(err => console.log(err));
+    }
+  },
+  mounted() {
+    this.getEwallet();
+    this.getList();
+  }
 };
 </script>
 
 <style scoped>
-
 ::-webkit-input-placeholder {
   color: #9e9eff !important;
 }
@@ -179,8 +177,17 @@ export default {
   .font22 {
     font-size: 22px;
   }
-  .icon-ewallet {
-    height: 27px;
+  .icon-link {
+    height: 32px;
+  }
+  .icon-dana {
+    height: 28px;
+  }
+  .icon-gopay {
+    height: 18px;
+  }
+  .icon-ovo {
+    height: 20px;
   }
 }
 </style>

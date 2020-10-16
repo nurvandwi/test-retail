@@ -10,46 +10,34 @@
         <p class="font-12 ml-4">Temukan penawaran menarik dibawah ini.</p>
       </div>
       <div class="carousel-inner px-4">
-        <div class="carousel-item table-bordered active radius">
+        <div
+          v-bind:class="[
+            'carousel-item table-bordered radius',
+            { active: index === 0 }
+          ]"
+          v-for="(list, index) in slider.data"
+          :key="index"
+        >
           <div class="col p-0">
             <img
-              src="../../assets/image-promo.png"
-              class="w-100 p-0 m-0"
+              v-bind:src="list.img_url"
+              class="w-100 p-0 m-0 radius-img"
               style="min-height:100%"
               alt
             />
             <div class="row justify-content-center d-flex spaceCarousel mt-3">
               <div class="col px-4">
                 <h4 class="font-weight-bold font-12 text-left font13 my-0 py-0">
-                  Promo Oreo
+                  {{ list.title }}
                 </h4>
                 <p class="font-12 text-left font10 text-black-50">
-                  Nikmati promo Oreo dari kami
+                  {{ list.deskripsi }}
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-item table-bordered radius">
-          <div class="col p-0">
-            <img
-              src="../../assets/image-promo.png"
-              class="w-100 p-0 m-0"
-              style="min-height:100%"
-              alt
-            />
-            <div class="row justify-content-center d-flex spaceCarousel mt-3">
-              <div class="col px-4">
-                <h4 class="font-weight-bold font-12 text-left font13 my-0 py-0">
-                  Promo Oreo
-                </h4>
-                <p class="font-12 text-left font10 text-black-50">
-                  Nikmati promo Oreo dari kami
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
 
       <a
@@ -75,14 +63,21 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "PromoBanner",
+  props: {
+    slider: Object
+  }
+};
 </script>
 
 <style scoped>
 .radius {
   border-radius: 24px;
 }
-
+.radius-img {
+  border-radius: 24px 24px 0px 0px;
+}
 .table-bordered {
   border: 1px solid #d3d3d3 !important;
 }

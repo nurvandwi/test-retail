@@ -1,23 +1,36 @@
 <template>
   <div class="col-md-6 col-6 px-0">
-    <div class="px-1" data-aos="fade-up" data-aos-duration="1200" v-if="contentFor === 'product'">
+    <div
+      class="px-1"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      v-if="contentFor === 'product'"
+    >
       <div class="card mx-auto mb-2 mt-0 py-3 width-card">
-        <div class="border border-white border-card p-2 mx-3 rounded-box color-card">
+        <div
+          class="border border-white border-card p-2 mx-3 rounded-box color-card"
+        >
           <img
-            class="img-fluid px-3 heightpicTab"
+            class="img-fluid px-3 py-3 heightpicTab"
             style="max-width:100%;"
-            :src="product.galleries[0].photo"
+            :src="product.img"
             alt="Card image cap"
           />
         </div>
         <div class="card-body pb-0">
-          <p class="card-title m-0">MVG2020-001</p>
-          <h5 class="card-title mb-0 font16" style="font-weight:bolder">
-            <router-link class="text-dark" v-bind:to="'/product/' + product.id">{{product.name}}</router-link>
+          <p class="card-title m-0">{{ product.kd_produk }}</p>
+          <h5 class="card-title mb-0 font14px" style="font-weight:bolder">
+            <router-link
+              class="text-dark"
+              v-bind:to="'/product/' + product.kd_produk"
+              >{{ product.nama_produk }}</router-link
+            >
           </h5>
         </div>
-        <div class="card-body d-flex justify-content-between align-items-center pb-0">
-          <h5 class="card-title m-0 font16">{{product.price}}</h5>
+        <div
+          class="card-body d-flex justify-content-between align-items-center pb-0"
+        >
+          <h5 class="card-title m-0 font16">{{ product.poin }}</h5>
           <button class="btn" @click="addToCart()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
@@ -25,7 +38,12 @@
       </div>
     </div>
 
-    <div class="px-1" data-aos="fade-up" data-aos-duration="1200" v-if="contentFor === 'ewallet'">
+    <div
+      class="px-1"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      v-if="contentFor === 'ewallet'"
+    >
       <div class="card mx-auto mb-2 mt-0 py-3 width-card">
         <img
           class="img-fluid px-3"
@@ -36,11 +54,17 @@
         <div class="card-body pb-0">
           <p class="card-title m-0">MVG2020-001</p>
           <h5 class="card-title mb-0 font16" style="font-weight:bolder">
-            <router-link class="text-dark" v-bind:to="'/product/' + ewallet.id">{{ewallet.name}}</router-link>
+            <router-link
+              class="text-dark"
+              v-bind:to="'/product/' + ewallet.id"
+              >{{ ewallet.name }}</router-link
+            >
           </h5>
         </div>
-        <div class="card-body d-flex justify-content-between align-items-center pb-0">
-          <h5 class="card-title m-0 font16">{{ewallet.price}} Poin</h5>
+        <div
+          class="card-body d-flex justify-content-between align-items-center pb-0"
+        >
+          <h5 class="card-title m-0 font16">{{ ewallet.price }} Poin</h5>
           <button class="btn" @click="addToEwallet()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
@@ -48,22 +72,37 @@
       </div>
     </div>
 
-    <div class="px-1" data-aos="fade-up" data-aos-duration="1200" v-if="contentFor === 'PoinCash'">
+    <div
+      class="px-1"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      v-if="contentFor === 'PoinCash'"
+    >
       <div class="card mx-auto mb-2 mt-0 py-3 width-card">
-        <img
-          class="img-fluid px-3"
-          style="max-width:100%;"
-          :src="poincash.galleries[0].photo"
-          alt="Card image cap"
-        />
+        <div
+          class="border border-white border-card p-2 mx-3 rounded-box color-card"
+        >
+          <img
+            class="img-fluid px-3 py-4 m-auto d-flex heightpicTab"
+            style="max-width:100%;"
+            :src="poincash.img"
+            alt="Card image cap"
+          />
+        </div>
         <div class="card-body pb-0">
-          <p class="card-title m-0">MVG2020-001</p>
-          <h5 class="card-title mb-0 font16" style="font-weight:bolder">
-            <router-link class="text-dark" v-bind:to="'/product/' + poincash.id">{{poincash.name}}</router-link>
+          <p class="card-title m-0">{{ poincash.kd_produk }}</p>
+          <h5 class="card-title mb-0 font12px" style="font-weight:bolder">
+            <router-link
+              class="text-dark"
+              v-bind:to="'/product/' + poincash.id"
+              >{{ poincash.nama_produk }}</router-link
+            >
           </h5>
         </div>
-        <div class="card-body d-flex justify-content-between align-items-center pb-0">
-          <h5 class="card-title m-0 font16">{{poincash.price}} Poin</h5>
+        <div
+          class="card-body d-flex justify-content-between align-items-center pb-0"
+        >
+          <h5 class="card-title m-0 font16">{{ poincash.poin }} Poin</h5>
           <button class="btn" @click="addToPoinCash()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
@@ -71,21 +110,34 @@
       </div>
     </div>
 
-    <div class="px-1" data-aos="fade-up" data-aos-duration="1200" v-if="contentFor === 'Rebate'">
+    <div
+      class="px-1"
+      data-aos="fade-up"
+      data-aos-duration="1200"
+      v-if="contentFor === 'Rebate'"
+    >
       <div class="card mx-auto mb-2 mt-0 py-3 width-card">
-        <img
-          class="img-fluid px-3"
-          style="max-width:100%;"
-          :src="rebate.galleries[0].photo"
-          alt="Card image cap"
-        />
+        <div
+          class="border border-white border-card p-2 mx-3 rounded-box color-card"
+        >
+          <img
+            class="img-fluid px-3 py-3 m-auto d-flex heightpicTab w-rebate"
+            style="max-width:100%;"
+            :src="rebate.img"
+            alt="Card image cap"
+          />
+        </div>
         <div class="card-body pb-0">
-          <p class="card-title m-0">MVG2020-001</p>
           <h5 class="card-title mb-0 font16" style="font-weight:bolder">
-            <router-link class="text-dark" v-bind:to="'/rebate/' + rebate.id">{{rebate.name}}</router-link>
+            <router-link class="text-dark" v-bind:to="'/rebate/' + rebate.id">{{
+              rebate.periode
+            }}</router-link>
           </h5>
         </div>
-        <div class="card-body d-flex justify-content-between align-items-center pb-0">
+        <div
+          class="card-body d-flex justify-content-between align-items-center pb-0"
+        >
+          <h5 class="card-title m-0 font16">{{ rebate.rebate_text }} Poin</h5>
           <button class="btn ml-auto py-0" @click="addToRebate()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
@@ -129,6 +181,9 @@ export default {
 </script>
 
 <style>
+  .w-rebate{
+    width: 50%;
+  }
 .color-card {
   background-color: #f1f5ff;
 }
@@ -157,13 +212,16 @@ export default {
   width: 18rem;
 }
 @media screen and (max-width: 1000px) {
+  .w-rebate{
+    width: 75%;
+  }
   .width-card {
     width: auto;
   }
-  .font12 {
+  .font12px {
     font-size: 12px !important;
   }
-  .font14 {
+  .font14px {
     font-size: 14px !important;
   }
   .font16 {

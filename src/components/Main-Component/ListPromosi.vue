@@ -3,7 +3,7 @@
     <h3 class="font16 font-weight-bold mt-4 mb-0 ml-4">Data Kegiatan</h3>
     <p class="font-12 ml-4">Lengkapi data dibawah ini.</p>
     <div class="col-12">
-      <router-link :to="{ path: 'registrasi' }">
+      <router-link v-bind:to="'/registrasi/' + `${$route.params.outlet_id}`">
         <div
           class="col shadow1 br text-left d-flex flex-row align-items-center my-3 py-4 px-3"
         >
@@ -25,7 +25,7 @@
       </router-link>
     </div>
     <div class="col-12">
-      <router-link :to="{ path: 'posm' }">
+      <router-link v-bind:to="'/posm/' + `${$route.params.outlet_id}`">
         <div
           class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-4 px-3"
         >
@@ -53,8 +53,7 @@ export default {};
 </script>
 <style scoped>
 .imagecustom {
-  background-size: cover;
-  height: 46px;
+  width: 15%;
 }
 
 .shadow1 {
@@ -71,6 +70,9 @@ export default {};
 }
 
 @media screen and (max-width: 1000px) {
+  .imagecustom {
+    width: 20%;
+  }
   .font16 {
     font-size: 16px;
   }
