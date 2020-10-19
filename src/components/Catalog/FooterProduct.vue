@@ -2,7 +2,7 @@
   <div class="container">
     <nav
       v-if="$route.name != 'categories' && $route.name != 'ewallet'"
-      class="navbar-Container mx-auto mb-4 margin-desktop navbar navbar-expand navbar-dark backtheme footerstyle col-md-8 col-10 col-sm-10 col-lg-5"
+      class="navbar-Container mx-auto mb-2 margin-desktop navbar navbar-expand navbar-dark backtheme footerstyle col-md-8 col-10 col-sm-10 col-lg-5"
     >
       <div
         class="container justify-content-center py-2"

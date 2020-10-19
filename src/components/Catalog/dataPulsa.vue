@@ -1,26 +1,32 @@
 <template>
   <div class="container mt-4" data-aos="fade-up">
-    <div class="d-flex align-items-center">
-      <h3 class="font22 m-0" style="font-weight:bolder;">Input Data</h3>
+    <h3 class="font22 m-0" style="font-weight:bolder;">Input Data</h3>
 
-      <div v-if="no.slice(0, 4) === '0877'">
-        <img src="../../assets/xl.png" class="icon-pulsa pl-2" alt="..." />
-      </div>
-      <div v-else-if="no.slice(0, 4) === '0856'">
-        <img src="../../assets/indosat.png" class="icon-pulsa pl-2" alt="..." />
-      </div>
-      <div v-else></div>
-    </div>
+    <p class="font14">Masukkan nomor handphone yang akan di Top Up</p>
+    <div class="d-flex align-items-center"></div>
 
     <form>
       <div class="form-row mt-3">
-        <div class="col-12">
+        <div class="col-8 col-md-8">
           <input
             v-model="no"
             type="number"
             class="form-control"
             placeholder="Nomor Pulsa"
           />
+        </div>
+        <div class="col-md-4 col-4 d-flex align-items-center">
+          <div v-if="no.slice(0, 4) === '0877'">
+            <img src="../../assets/xl.png" class="icon-pulsa pl-2" alt="..." />
+          </div>
+          <div v-else-if="no.slice(0, 4) === '0856'">
+            <img
+              src="../../assets/indosat.png"
+              class="icon-pulsa pl-2"
+              alt="..."
+            />
+          </div>
+          <div v-else></div>
         </div>
         <!-- <div class="col-12 mt-2">
           <select class="form-control" v-model="selected" id="exampleFormControlSelect1">
@@ -169,7 +175,7 @@ export default {
     width: 50px;
   }
   .icon-pulsa {
-    height: 27px;
+    height: 35x;
   }
   .font22 {
     font-size: 22px;

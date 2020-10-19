@@ -2,7 +2,7 @@
   <div id="app">
     <router-view></router-view>
     <div
-      v-if="$route.name!='product' && $route.name !='rebate'  && $route.name !='ewallet'  && $route.name !='pulsa' && $route.name !='poincash'&& $route.name !='Login'&& $route.name !='productdetail'&& $route.name !='RebateDetails'&& $route.name !='pointcashdetails'&& $route.name !='PulsaDetails'&& $route.name !='EwalletDetails'&& $route.name !='SuccessPage'"
+      v-if="$route.name!='product' && $route.name !='rebate'  && $route.name !='ewallet'  && $route.name !='pulsa' && $route.name !='poincash'&& $route.name !='login'&& $route.name !='productdetail'&& $route.name !='RebateDetails'&& $route.name !='pointcashdetails'&& $route.name !='PulsaDetails'&& $route.name !='EwalletDetails'&& $route.name !='SuccessPage'"
     >
       <Navigasi />
     </div>

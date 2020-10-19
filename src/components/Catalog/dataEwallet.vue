@@ -1,46 +1,47 @@
 <template>
   <div class="container mt-4" data-aos="fade-up">
-    <div class="d-flex align-items-center">
-      <h3 class="font22 m-0" style="font-weight:bolder;">Input Data</h3>
+    <h3 class="font22 m-0" style="font-weight:bolder;">Input Data</h3>
+    <p class="font14">Masukkan nomor handphone yang akan di Top Up</p>
 
-      <div v-if="state.ewallet === 'DANA'">
-        <img
-          src="../../assets/dana v-1.png"
-          class="icon-dana pl-2"
-          alt="..."
-        />
-      </div>
-      <div v-else-if="state.ewallet === 'OVO'">
-        <img
-          src="../../assets/icon-ovo.png"
-          class="icon-ovo pl-2"
-          alt="..."
-        />
-      </div>
-      <div v-else-if="state.ewallet === 'LINK'">
-        <img
-          src="../../assets/link-aja v-2.png"
-          class="icon-link pl-2"
-          alt="..."
-        />
-      </div>
-      <div v-else-if="state.ewallet === 'GOPAY'">
-        <img
-                src="../../assets/gopay.png"
-                class="icon-gopay pl-2"
-                alt="..."
-        />
-      </div>
-      <div v-else></div>
-    </div>
     <form>
       <div class="form-row mt-3">
-        <div class="col-12">
+        <div class="col-8 col-md-8">
           <input
             type="number"
             class="form-control"
             placeholder="Nomor Account"
           />
+        </div>
+        <div class="col-md-4 col-4 d-flex align-items-center">
+          <div v-if="state.ewallet === 'DANA'">
+            <img
+              src="../../assets/dana v-1.png"
+              class="icon-dana pl-2"
+              alt="..."
+            />
+          </div>
+          <div v-else-if="state.ewallet === 'OVO'">
+            <img
+              src="../../assets/icon-ovo.png"
+              class="icon-ovo pl-2"
+              alt="..."
+            />
+          </div>
+          <div v-else-if="state.ewallet === 'LINK'">
+            <img
+              src="../../assets/link-aja v-2.png"
+              class="icon-link pl-2 "
+              alt="..."
+            />
+          </div>
+          <div v-else-if="state.ewallet === 'GOPAY'">
+            <img
+              src="../../assets/gopay.png"
+              class="icon-gopay pl-2"
+              alt="..."
+            />
+          </div>
+          <div v-else></div>
         </div>
         <div class="col-12 mt-2">
           <select
@@ -143,6 +144,18 @@ export default {
 </script>
 
 <style scoped>
+.icon-link {
+  height: 32px;
+}
+.icon-dana {
+  height: 28px;
+}
+.icon-gopay {
+  height: 18px;
+}
+.icon-ovo {
+  height: 20px;
+}
 ::-webkit-input-placeholder {
   color: #9e9eff !important;
 }
@@ -178,16 +191,16 @@ export default {
     font-size: 22px;
   }
   .icon-link {
-    height: 32px;
+    height: 50px;
   }
   .icon-dana {
     height: 28px;
   }
   .icon-gopay {
-    height: 18px;
+    height: 22px;
   }
   .icon-ovo {
-    height: 20px;
+    height: 22px;
   }
 }
 </style>

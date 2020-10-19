@@ -37,7 +37,7 @@
           >
         Hai,   {{outlet_name}}
           </h1>
-          <p class="mb-0 font12 font-weight-normal"   data-aos="fade-down">
+          <p class="mb-0 font12px font-weight-normal"   data-aos="fade-down">
             Ini Jumlah Poin dan Rebate anda.
           </p>
           <div class="d-flex mt-4" data-aos="zoom-in">
@@ -55,7 +55,7 @@
       <div class="row d-flex">
         <div class="col-md-8 col-7 align-self-center">
           <h1 class="font-26 font-19 font-weight-bold">Hi, Selamat Datang</h1>
-          <p class="font12">Pantau Poin Anda Sekarang</p>
+          <p class="font12px">Pantau Poin Anda Sekarang</p>
         </div>
         <div class="col-md-4 col-5 p-0 m-0">
           <img
@@ -96,7 +96,7 @@ export default {
     max-width: 100vw;
     min-height: 10vh !important;
   }
-  .font12 {
+  .font12px {
     font-size: 12px;
   }
   .font18 {
@@ -110,9 +110,6 @@ export default {
     font-size: 26px;
   }
 
-  .font12 {
-    font-size: 12px;
-  }
 
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .font-19 {

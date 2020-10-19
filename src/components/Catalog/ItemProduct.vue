@@ -18,8 +18,8 @@
           />
         </div>
         <div class="card-body pb-0">
-          <p class="card-title m-0">{{ product.kd_produk }}</p>
-          <h5 class="card-title mb-0 font14px" style="font-weight:bolder">
+          <p class="card-title m-0 font14">{{ product.kd_produk }}</p>
+          <h5 class="card-title mb-0 font16" style="font-weight:bolder">
             <router-link
               class="text-dark"
               v-bind:to="'/product/' + product.kd_produk"
@@ -30,7 +30,7 @@
         <div
           class="card-body d-flex justify-content-between align-items-center pb-0"
         >
-          <h5 class="card-title m-0 font16">{{ product.poin }}</h5>
+          <h5 class="card-title m-0 font18 font-weight-bold">{{ product.poin }}</h5>
           <button class="btn" @click="addToCart()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
@@ -90,7 +90,7 @@
           />
         </div>
         <div class="card-body pb-0">
-          <p class="card-title m-0">{{ poincash.kd_produk }}</p>
+          <p class="card-title m-0 font12px">{{ poincash.kd_produk }}</p>
           <h5 class="card-title mb-0 font12px" style="font-weight:bolder">
             <router-link
               class="text-dark"
@@ -102,7 +102,7 @@
         <div
           class="card-body d-flex justify-content-between align-items-center pb-0"
         >
-          <h5 class="card-title m-0 font16">{{ poincash.poin }} Poin</h5>
+          <h5 class="card-title m-0 font16 font-weight-bold">{{ poincash.poin }} Poin</h5>
           <button class="btn" @click="addToPoinCash()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
@@ -137,7 +137,7 @@
         <div
           class="card-body d-flex justify-content-between align-items-center pb-0"
         >
-          <h5 class="card-title m-0 font16">{{ rebate.rebate_text }} Poin</h5>
+          <h5 class="card-title m-0 font16">Rp. {{ rebate.rebate_text }}</h5>
           <button class="btn ml-auto py-0" @click="addToRebate()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
@@ -221,11 +221,14 @@ export default {
   .font12px {
     font-size: 12px !important;
   }
-  .font14px {
+  .font14 {
     font-size: 14px !important;
   }
   .font16 {
     font-size: 16px !important;
+  }
+  .font18 {
+    font-size: 18px !important;
   }
   .img-cart {
     width: 40px;
