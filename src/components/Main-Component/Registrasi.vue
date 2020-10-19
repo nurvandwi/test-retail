@@ -287,7 +287,7 @@
             </label>
           </div>
 
-          <div class="form-group col-md-6 col-6 text-left pl-0 mt-1">
+          <div class="form-group mb-0 col-md-12 col-12 px-0 mb-4">
             <label
               class="custom-field one col-md-12 col-12 px-0 d-flex justify-content-center pb-0 mb-0"
             >
@@ -300,12 +300,12 @@
               <span class="placeholder">No Rekening</span>
             </label>
           </div>
-          <div class="form-group col-md-6 col-6 text-left pr-0 mt-4">
+
+          <div class="form-group col-md-12 col-12 text-left p-0 mb-1">
             <select
-              name="dataBank"
               class="form-control"
-              @change="getBank()"
               v-model="data_outlet.data.nama_bank"
+              @change="getBank()"
             >
               <option disabled selected value="0">Pilih Bank</option>
               <option
@@ -316,6 +316,7 @@
               >
             </select>
           </div>
+
           <div class="form-group col-md-6 col-6 text-left pl-0 mb-3">
             <label
               class="custom-field one col-md-12 col-12 px-0 d-flex justify-content-center pb-0 mb-0"
@@ -421,7 +422,7 @@
         </div>
         <button
           type="submit"
-          class="btn btn-lg col-md-12 col-12 mt-5 mb-submit py-2 btn-theme font-button px-0"
+          class="btn btn-lg col-md-12 col-12 mt-2 mb-submit py-2 btn-theme font-button px-0"
         >
           Submit
         </button>
@@ -661,7 +662,7 @@ export default {
 
 <style>
 .mb-submit {
-  margin-bottom: 9rem;
+  margin-bottom: 6rem;
 }
 .icon-user {
   height: 60px;
@@ -745,7 +746,7 @@ export default {
 .custom-field.one input:focus + .placeholder {
   top: 20px;
   font-size: 10px;
-  color: #d3d3d3;
+  color: black;
   background: #fff;
 }
 .grid-image {

@@ -105,7 +105,9 @@
       </li>
       <li>
         <router-link
-          v-bind:to="'/quarter'"
+          :to="{
+            path: '/Quarter/1/' + `${$route.params.outlet_id}`
+          }"
           style="color: #FFF;"
           class="mx-auto font18"
         >

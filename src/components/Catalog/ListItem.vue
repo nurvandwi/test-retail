@@ -130,14 +130,14 @@
       </div>
     </div>
 
-    <div v-if="contentFor === 'ListTransaksi'" class="col-12 col-md-12">
+    <div v-if="contentFor === 'ListTransaksi'" class="col-12 col-md-12 mt-4">
       <div
-        class="col-12 col-md-12 m-0 px-0 shadow-item"
+        class="col-12 col-md-12 mx-0 mt-2 rounded-custom px-0 shadow-item"
         v-for="all in alltransaction"
         :key="all.id"
       >
         <div
-          class="  text-left  d-flex flex-row align-items-center my-3 py-3 pl-3 pr-0"
+          class="  text-left  d-flex flex-row align-items-center my-3 py-0  pl-3 pr-0"
         >
           <img class="imagecustom pr-3 " :src="all.img" alt />
           <div class="align-items-center col-md-8 col-8 pl-1">
@@ -179,8 +179,11 @@ export default {
 
 .shadow1 {
   box-shadow: 0 0.1rem 0.3rem rgba(182, 189, 255, 0.308) !important;
-}
 
+}
+.rounded-custom{
+  border-radius: 15px;
+}
 .br {
   border-radius: 15px;
 }
@@ -193,7 +196,8 @@ export default {
   background-color: #f1f5ff;
 }
 .shadow-item {
-  box-shadow: 0 0.1rem 0.8rem rgba(150, 142, 255, 0.15) !important;
+  /*box-shadow: 0 0.1rem 0.8rem rgba(150, 142, 255, 0.15) !important;*/
+  border: 0.7px solid #dedede;
 }
 .size-image {
   max-width: 50%;

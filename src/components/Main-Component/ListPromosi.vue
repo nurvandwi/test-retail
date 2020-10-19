@@ -5,7 +5,7 @@
     <div class="col-12">
       <router-link v-bind:to="'/registrasi/' + `${$route.params.outlet_id}`">
         <div
-          class="col shadow1 br text-left d-flex flex-row align-items-center my-3 py-4 px-3"
+          class="col shadow1 br text-left d-flex flex-row align-items-center my-3 py-2 px-3"
         >
           <img class="imagecustom pr-3" src="../../assets/icon-ktp.png" alt />
 
@@ -27,7 +27,7 @@
     <div class="col-12">
       <router-link v-bind:to="'/posm/' + `${$route.params.outlet_id}`">
         <div
-          class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-4 px-3"
+          class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
         >
           <img class="imagecustom pr-3" src="../../assets/icon-posm.png" alt />
 
@@ -58,6 +58,7 @@ export default {};
 
 .shadow1 {
   box-shadow: 0 0.1rem 0.3rem rgba(182, 189, 255, 0.308) !important;
+  border: 0.7px solid #dedede;
 }
 
 .br {

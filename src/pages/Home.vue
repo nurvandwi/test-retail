@@ -6,7 +6,7 @@
       :outlet_point="OutletData.Poin"
       :outlet_rebate="OutletData.Rebate"
     />
-    <PromoBanner :slider="Slider"/>
+    <PromoBanner :slider="Slider" />
     <ListPromosi />
     <ListTransaksi class="mb-5 pb-5" />
   </div>
@@ -34,8 +34,8 @@ export default {
       AllTransaction: {
         data: []
       },
-      Slider:{
-        data:[]
+      Slider: {
+        data: []
       }
     };
   },

@@ -97,9 +97,9 @@ const routes = [
     props: true,
   },
   {
-    path: "/Quarter",
+    path: "/Quarter/:version/:outlet_id",
     component: Quarter,
-    name: "quarter",
+    name: "Quarter",
     props: true,
   },
   {

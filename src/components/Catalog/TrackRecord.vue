@@ -1,17 +1,25 @@
 <template>
-  <div class="col-md-12 col-12 p-0">
+  <div class="col-md-12 col-12 p-0 mt-track">
     <div class="card mb-1 shadow1">
       <div class="row text-center no-gutters bg radius">
         <div class="col-md-6 col-6">
           <div class="card-body py-2">
-            <h1 class="card-title font12 font-weight-bold mb-1">Proses</h1>
-            <p class="card-text font14 font-weight-light">10/09/2020</p>
+            <h4 class="card-title font-weight-bold font16 mb-1 font-theme">
+              Proses
+            </h4>
+            <p class="card-text font14 font-weight-light font-theme">
+              10/09/2020
+            </p>
           </div>
         </div>
         <div class="col-md-6 col-6">
           <div class="card-body py-2">
-            <h1 class="card-title font-weight-bold font12 mb-1">Selesai</h1>
-            <p class="card-text font14 font-weight-light">11/09/2020</p>
+            <h4 class="card-title font-weight-bold font16 mb-1 font-theme">
+              Selesai
+            </h4>
+            <p class="card-text font14 font-weight-light font-theme">
+              11/09/2020
+            </p>
           </div>
         </div>
       </div>
@@ -24,6 +32,9 @@ export default {};
 </script>
 
 <style scoped>
+.mt-track {
+  margin-top: 5rem;
+}
 .bg {
   background-color: #e8e2ff;
 }
@@ -44,14 +55,22 @@ export default {};
 .radius {
   border-radius: 7px;
 }
-
-.font14 {
-  font-size: 14px;
+.font-theme {
   color: #4e37b2;
 }
+@media screen and (max-width: 1000px) {
+  .mt-track {
+    margin-top: 3.3rem;
+  }
 
-.font12 {
-  font-size: 12px;
-  color: #4e37b2;
+  .font14 {
+    font-size: 14px;
+  }
+  .font16 {
+    font-size: 16px;
+  }
+  .font12px {
+    font-size: 12px;
+  }
 }
 </style>
