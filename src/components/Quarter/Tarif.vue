@@ -20,10 +20,14 @@
             </h2>
           </div>
           <div class="col-4 col-md-4  text-center">
-            <h2 class="font12 font-weight-bolder">1.018.046</h2>
+            <h2 class="font12 font-weight-bolder">
+              {{ formatPrice(rebate_medio) }}
+            </h2>
           </div>
           <div class="col-4 col-md-4 text-center">
-            <h2 class="font12 font-weight-bolder">0,02%</h2>
+            <h2 class="font12 font-weight-bolder">
+              {{ formatTarif(tarif_medio) }} %
+            </h2>
           </div>
         </div>
         <div class="row mt-2 border-bottom">
@@ -36,11 +40,13 @@
           </div>
           <div class="col-4 col-md-4 text-center">
             <h2 class="font12 position-relative font-weight-bolder">
-              1.018.046
+              {{ formatPrice(rebate_bulanan) }}
             </h2>
           </div>
           <div class="col-4 col-md-4 text-center">
-            <h2 class="font12 position-relative font-weight-bolder">0,02%</h2>
+            <h2 class="font12 position-relative font-weight-bolder">
+              {{ formatTarif(tarif_bulanan) }} %
+            </h2>
           </div>
         </div>
         <div class="row mt-2">
@@ -50,7 +56,9 @@
             </h2>
           </div>
           <div class="col-4 col-md-4 text-center">
-            <h2 class="font12 text-black font-weight-bolder">1.018.046</h2>
+            <h2 class="font12 text-black font-weight-bolder">
+              {{ formatPrice(total_rebate) }}
+            </h2>
           </div>
         </div>
       </div>
@@ -59,7 +67,25 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: [
+    "rebate_medio",
+    "rebate_bulanan",
+    "total_rebate",
+    "tarif_bulanan",
+    "tarif_medio"
+  ],
+  methods: {
+    formatPrice(value) {
+      const val = (value / 1).toFixed(2).replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
+    formatTarif(value) {
+      const val = (value / 1).toFixed(1).replace(".", ".");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+  }
+};
 </script>
 
 <style scoped>

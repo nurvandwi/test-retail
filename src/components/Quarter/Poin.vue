@@ -17,10 +17,14 @@
         </div>
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
+            <h2 class="font14 text-black font-weight-bolder">
+              {{ formatPrice(perolehan) }}
+            </h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
+            <h2 class="font14 text-black font-weight-bolder">
+              {{ formatPrice(poin_carry_over) }}
+            </h2>
           </div>
         </div>
         <div class="row text-center mt-2">
@@ -37,10 +41,14 @@
         </div>
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
+            <h2 class="font14 text-black font-weight-bolder">
+              {{ formatPrice(poin_tersedia) }}
+            </h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
+            <h2 class="font14 text-black font-weight-bolder">
+              {{ formatPrice(penukaran_poin) }}
+            </h2>
           </div>
         </div>
         <div class="row text-center mt-2">
@@ -51,7 +59,7 @@
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder font-custom">
-              260.885.65
+              {{ formatPrice(poin_tersedia) }}
             </h2>
           </div>
         </div>
@@ -70,7 +78,19 @@
 
 <script>
 export default {
-  props: ["title"]
+  props: [
+    "title",
+    "poin_carry_over",
+    "perolehan",
+    "penukaran_poin",
+    "poin_tersedia"
+  ],
+  methods: {
+    formatPrice(value) {
+      const val = (value / 1).toFixed(2).replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+  }
 };
 </script>
 
