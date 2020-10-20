@@ -7,8 +7,8 @@
         </div>
         <div class="col-md-8 col-8">
           <div class="card-body py-2 ">
-            <h1 class="card-title font14 mb-1">Total Penukaran Poin</h1>
-            <p class="card-text font14 font-weight-bold">1200 poin</p>
+            <h3 class="card-title font14 mb-1">Total Penukaran Poin</h3>
+            <h4 class="card-text font14 font-weight-bold">{{ cartTotalPrice }} Poin</h4>
           </div>
         </div>
       </div>
@@ -70,7 +70,12 @@
 
 <script>
 export default {
-  props: ["contentFor"]
+  props: ["contentFor"],
+  computed:{
+    cartTotalPrice() {
+      return this.$store.getters.cartTotalPrice;
+    },
+  }
 };
 </script>
 
@@ -88,29 +93,35 @@ export default {
 }
 
 .hw26 {
-  height: 26px;
-  width: 26px;
+  height: 50px;
+  width: 50px;
 }
 
 .radius {
   border-radius: 7px;
 }
 
-.font14 {
-  font-size: 14px;
-  color: #4e37b2;
-}
 
-.font12 {
-  font-size: 12px;
-  color: #4e37b2;
-}
+
 .mt-alert{
   margin-top: 5rem;
 }
 @media screen and (max-width: 1000px) {
+  .hw26 {
+    height: 26px;
+    width: 26px;
+  }
   .mt-alert{
     margin-top: 1rem;
   }
+  .font12 {
+    font-size: 12px;
+    color: #4e37b2;
+  }
+  .font14 {
+    font-size: 14px;
+    color: #4e37b2;
+  }
+
 }
 </style>

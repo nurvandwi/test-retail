@@ -150,7 +150,7 @@
         </router-link>
       </li>
       <li>
-        <button type="button" class="btn p-0">
+        <button type="button" class="btn p-0" v-on:click="logout()">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +210,14 @@ const navItemClick = function(el) {
 menuItems.forEach(item => {
   item.addEventListener("click", navItemClick);
 });
-export default {};
+export default {
+  methods: {
+    logout: function() {
+      localStorage.removeItem("token");
+      this.$router.push("/");
+    }
+  }
+};
 </script>
 <style scoped>
 #app {

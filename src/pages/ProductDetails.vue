@@ -4,7 +4,10 @@
     <Cart :contentFor="'OrderDetails'" class="mb-3 pt-4" />
     <Item :contentFor="'OrderDetails'" />
     <DetailPengiriman :contentFor="'OrderDetails'" class="mb-5" />
-    <FooterProduct :contentFor="'ProductDetails'" />
+
+
+
+    <FooterProduct v-for="cart in carts"  :key="cart.id" :contentFor="'ProductDetails'"   :product="cart" />
   </div>
 </template>
 
@@ -21,6 +24,14 @@ export default {
     Item,
     DetailPengiriman,
     FooterProduct
+  },
+  computed: {
+    carts() {
+      return this.$store.state.cart;
+    }
+  },
+  mounted() {
+    this.$store.dispatch("getCartItems");
   }
 };
 </script>

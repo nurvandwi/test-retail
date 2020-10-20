@@ -1,5 +1,6 @@
 /* eslint-disable */
 import axios from "axios";
+import {SET_CARTV2} from "./mutations";
 export function getProducts({ commit }, { outlet_id, token }) {
   console.log(this);
   axios
@@ -40,13 +41,12 @@ export function getPoinCashs({ commit }, { outlet_id, token }) {
 export function getRebates({ commit }, { outlet_id, token }) {
   console.log(this);
   axios
-    .get("https://www.inosis.co.id/mv_demo_api/api.php/list-rebate-hadiah",
-        {
-          params: {
-            outlet_id,
-            token
-          }
-        })
+    .get("https://www.inosis.co.id/mv_demo_api/api.php/list-rebate-hadiah", {
+      params: {
+        outlet_id,
+        token
+      }
+    })
     .then(response => {
       commit("SET_REBATES", response.data.data);
     });
@@ -63,15 +63,52 @@ export function getProduct({ commit }, { id }) {
       commit("SET_PRODUCT", response.data.data);
     });
 }
-
+export function checkOutCartItems({ commit },{ outlet_id, token}) {
+  axios
+      .get("https://www.inosis.co.id/mv_demo_api/api.php/post-produk-hadiah",{  headers: {
+          "content-type": "application/json",
+        },
+        params: {
+          token
+        }})
+      .then(response => {
+        commit("SET_CARTV2", response.data);
+      });
+  console.log(SET_CARTV2)
+}
 export function addProductToCart({ commit }, { product, quantity }) {
   commit("ADD_TO_CART", {
     product,
     quantity
   });
-  axios.post("http://shayna-backend.belajarkoding.com/api/cart", {
-    product_id: product.id,
+
+}
+export function checkOutCart(
+  { commit },
+  { product, quantity, outlet_id, token }
+) {
+
+  commit("SET_CART", {
+    product,
     quantity
+  });
+  let data = {
+    outlet_id: outlet_id,
+    data: state.cart.map(function(x) { return {kd_produk: x.produk.kd_produk, quantity:x.quantity}})
+  }
+  console.log(data)
+  axios.post("https://www.inosis.co.id/mv_demo_api/api.php/post-produk-hadiah", {
+    data: {
+      outlet_id,
+      data
+    },
+    headers: {
+      "content-type": "application/json",
+    },
+    params: {
+      token
+    }
+
   });
 }
 export function addEwalletToCart({ commit }, { ewallet, quantity }) {

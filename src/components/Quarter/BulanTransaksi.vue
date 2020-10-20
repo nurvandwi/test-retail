@@ -53,7 +53,7 @@
         >
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
             <h2 class="font14 text-black font-weight-bolder">
-             {{monthPoint.total_sales}}
+              {{ monthPoint.total_sales }}
             </h2>
           </div>
           <div class="col">
@@ -335,7 +335,11 @@ export default {
             token: localStorage.token
           }
         })
-        .then(res => (this.points = res.data))
+
+        .then(res => {
+          console.log(res.data);
+          this.points = res.data;
+        })
         .catch(err => console.log(err));
     }
   },

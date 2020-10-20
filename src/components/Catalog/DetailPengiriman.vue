@@ -3,62 +3,92 @@
     <div v-if="contentFor === 'OrderDetails'" class="card mt-4 mb-details">
       <div class="row no-gutters bg radius">
         <div class="col-md-12 col-12 mb-5">
-          <h5 class="card-title font16 font-weight-bold pt-3">Detail Pengiriman</h5>
+          <h4 class="card-title font16 font-weight-bold pt-3">
+            Detail Pengiriman
+          </h4>
           <table class="table table-borderless">
             <tbody class="py-0">
               <tr>
-                <td class="py-0" scope="row">Nama</td>
-                <td class="py-0" scope="row">:</td>
-                <td class="py-0" colspan="10">Robby Benta Tarigan</td>
+                <td class="py-0" scope="row"><h4 class="font16">Nama</h4></td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
+                <td class="py-0" colspan="10">
+                  <h4 class="font16">{{data_user.outlet_name}}</h4>
+                </td>
               </tr>
               <tr>
-                <td class="py-0" scope="row">Alamat</td>
-                <td class="py-0" scope="row">:</td>
-                <td class="py-0" colspan="10">Jln. Muwardi No 45</td>
+                <td class="py-0" scope="row"><h4 class="font16">Alamat</h4></td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
+                <td class="py-0" colspan="10">
+                  <h4 class="font16">{{data_user.alamat2}}</h4>
+                </td>
               </tr>
               <tr>
-                <td class="py-0" scope="row">RT/RW</td>
-                <td class="py-0" scope="row">:</td>
-                <td class="py-0" colspan="10">001/0031</td>
+                <td class="py-0" scope="row"><h4 class="font16">RT/RW</h4></td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
+                <td class="py-0" colspan="10">
+                  <h4 class="font16">{{data_user.rtrw}}</h4>
+                </td>
               </tr>
               <tr>
-                <td class="py-0" scope="row">Kode POS</td>
-                <td class="py-0" scope="row">:</td>
-                <td class="py-0" colspan="10">201756</td>
+                <td class="py-0" scope="row">
+                  <h4 class="font16">Kode Pos</h4>
+                </td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
+                <td class="py-0" colspan="10">
+                  <h4 class="font16">{{data_user.kodepos}}</h4>
+                </td>
               </tr>
               <tr>
-                <td class="py-0" scope="row">Provinsi</td>
-                <td class="py-0" scope="row">:</td>
-                <td class="py-0" colspan="10">Aceh</td>
+                <td class="py-0" scope="row">
+                  <h4 class="font16">Provinsi</h4>
+                </td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
+                <td class="py-0" colspan="10"><h4 class="font16">{{data_user.propinsi}}</h4></td>
               </tr>
               <tr>
-                <td class="py-0" scope="row">Kabupaten</td>
-                <td class="py-0" scope="row">:</td>
-                <td class="py-0" colspan="10">Aceh Singkil</td>
+                <td class="py-0" scope="row">
+                  <h4 class="font16">Kabupaten</h4>
+                </td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
+                <td class="py-0" colspan="10">
+                  <h4 class="font16">{{data_user.kabupaten}}</h4>
+                </td>
               </tr>
               <tr>
-                <td class="py-0" scope="row">Kecamatan</td>
-                <td class="py-0" scope="row">:</td>
-                <td class="py-0" colspan="10">Singkil</td>
+                <td class="py-0" scope="row">
+                  <h4 class="font16">Kecamatan</h4>
+                </td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
+                <td class="py-0" colspan="10">
+                  <h4 class="font16">{{data_user.kecamatan}}</h4>
+                </td>
               </tr>
               <tr>
-                <td class="py-0" scope="row">Kelurahan</td>
-                <td class="py-0" scope="row">:</td>
-                <td class="py-0" colspan="10">Pasar Singkil</td>
+                <td class="py-0" scope="row">
+                  <h4 class="font16">Kelurahan</h4>
+                </td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
+                <td class="py-0" colspan="10">
+                  <h4 class="font16">{{data_user.kelurahan}}</h4>
+                </td>
               </tr>
               <tr>
-                <td class="py-0" scope="row">No HP</td>
-                <td class="py-0" scope="row">:</td>
-                <td class="py-0" colspan="10">08568764563</td>
+                <td class="py-0" scope="row"><h4 class="font16">No HP</h4></td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
+                <td class="py-0" colspan="10">
+                  <h4 class="font16">{{data_user.teleponwali1}}</h4>
+                </td>
               </tr>
               <tr>
-                <td class="py-0" scope="row">Status</td>
-                <td class="py-0" scope="row">:</td>
+                <td class="py-0" scope="row"><h4 class="font16">Status</h4></td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
                 <td
                   class="py-1 px-4 font14 ml-2 font-weight-bold rounded-pill badge badge-info text-center"
                   colspan="12"
                   style="background-color:#4BFF88;"
-                >Sukses</td>
+                >
+                  <h4 class="font16 mb-0">Sukses</h4>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -69,7 +99,9 @@
       <div class="card mt-4">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
-            <h5 class="card-title font16 font-weight-bold pt-3">Detail Pengiriman</h5>
+            <h5 class="card-title font16 font-weight-bold pt-3">
+              Detail Pengiriman
+            </h5>
             <table class="table table-borderless">
               <tbody class>
                 <tr>
@@ -82,7 +114,9 @@
                   <td colspan></td>
                   <td
                     class="py-1 mt-2 mr-custom font-weight-bold rounded-pill badge badge-info"
-                  >Proses</td>
+                  >
+                    Proses
+                  </td>
                 </tr>
                 <tr>
                   <td class="py-1" scope="row">No S/N</td>
@@ -99,7 +133,9 @@
       <div class="card mt-4">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
-            <h5 class="card-title font16 font-weight-bold pt-3">Detail Pengiriman</h5>
+            <h5 class="card-title font16 font-weight-bold pt-3">
+              Detail Pengiriman
+            </h5>
             <table class="table table-borderless">
               <tbody class>
                 <tr>
@@ -112,7 +148,9 @@
                   <td colspan></td>
                   <td
                     class="py-1 mt-2 mr-custom font-weight-bold rounded-pill badge badge-info"
-                  >Proses</td>
+                  >
+                    Proses
+                  </td>
                 </tr>
                 <tr>
                   <td class="py-1" scope="row">No S/N</td>
@@ -129,7 +167,9 @@
       <div class="card mt-4">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
-            <h5 class="card-title font16 font-weight-bold pt-3">Detail Pengiriman</h5>
+            <h5 class="card-title font16 font-weight-bold pt-3">
+              Detail Pengiriman
+            </h5>
             <table class="table table-borderless">
               <tbody class>
                 <tr>
@@ -153,7 +193,9 @@
                   <td colspan></td>
                   <td
                     class="py-1 mt-2 mr-custom font-weight-bold rounded-pill badge badge-info"
-                  >Proses</td>
+                  >
+                    Proses
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -165,7 +207,9 @@
       <div class="card mt-4">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
-            <h5 class="card-title font16 font-weight-bold pt-3">Detail Pengiriman</h5>
+            <h5 class="card-title font16 font-weight-bold pt-3">
+              Detail Pengiriman
+            </h5>
             <table class="table table-borderless">
               <tbody class>
                 <tr>
@@ -189,7 +233,9 @@
                   <td colspan></td>
                   <td
                     class="py-1 mt-2 mr-custom font-weight-bold rounded-pill badge badge-info"
-                  >Proses</td>
+                  >
+                    Proses
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -201,8 +247,28 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  props: ["contentFor"]
+  props: ["contentFor"],
+  data() {
+    return {
+      data_user: {} };
+  },
+  methods: {
+    getDetailUser() {
+      axios
+        .get(`https://www.inosis.co.id/mvg2020_api/api_reg.php/detail-outlet`, {
+          params: {
+            txtKodeOutlet: this.$route.params.outlet_id
+          }
+        })
+        .then(res => (this.data_user = res.data.data))
+        .catch(err => console.log(err));
+    }
+  },
+  mounted() {
+    this.getDetailUser();
+  }
 };
 </script>
 
@@ -221,22 +287,21 @@ export default {
   border: none !important;
 }
 
-.font14 {
-  font-size: 14px;
-}
-
-.font12 {
-  font-size: 12px;
-}
-.mb-details{
-  margin-bottom:7rem;
+.mb-details {
+  margin-bottom: 7rem;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .mb-details{
-    margin-bottom:2rem;
+  .mb-details {
+    margin-bottom: 2rem;
+  }
+  .font12 {
+    font-size: 12px;
   }
   .font16 {
     font-size: 16px !important;
+  }
+  .font14 {
+    font-size: 14px;
   }
 }
 </style>

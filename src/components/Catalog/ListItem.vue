@@ -1,51 +1,27 @@
 <template>
   <div class="col-md-12 col-12 p-0">
     <div v-if="contentFor === 'OrderDetails'">
-      <div class="card mt-2 mb-3 shadow1 radius">
+      <div
+        class="card mt-2 mb-3 shadow1 radius"
+        v-for="item in cart"
+        :key="item.product.id"
+      >
         <div class="row no-gutters bg">
           <div class="col-md-2 col-2 px-2 align-self-center color-card ">
             <img src="../../assets/xiaomi.png" class="w-100 m-auto d-flex" />
           </div>
           <div class="col-md-5 col-5 offset-2">
             <div class="card-body padding-card">
-              <h4 class="card-title font-weight-bold font14">Xiaomi Mi 8</h4>
-              <h5 class="card-text font14px">3 x 200 poin</h5>
+              <h4 class="card-title font-weight-bold font14">
+                {{ item.product.nama_produk }}
+              </h4>
+              <h5 class="card-text font14px">
+                {{ item.quantity }} x {{ item.product.poin }} poin
+              </h5>
             </div>
           </div>
           <div class="col-md-3  col-3 align-self-center pl-5">
-            <img src="../../assets/icon-delete.png" class=" size-delete" />
-          </div>
-        </div>
-      </div>
-      <div class="card mt-2 mb-3 shadow1 radius">
-        <div class="row no-gutters bg">
-          <div class="col-md-2 col-2 px-2 align-self-center color-card ">
-            <img src="../../assets/money.png" class="w-100 m-auto d-flex" />
-          </div>
-          <div class="col-md-5 col-5 offset-2">
-            <div class="card-body padding-card">
-              <h4 class="card-title font-weight-bold font14">Xiaomi Mi 8</h4>
-              <h5 class="card-text font14px">3 x 200 poin</h5>
-            </div>
-          </div>
-          <div class="col-md-3  col-3 align-self-center pl-5">
-            <img src="../../assets/icon-delete.png" class=" size-delete" />
-          </div>
-        </div>
-      </div>
-      <div class="card mt-2 mb-3 shadow1 radius">
-        <div class="row no-gutters bg">
-          <div class="col-md-2 col-2 px-2 align-self-center color-card ">
-            <img src="../../assets/xiaomi.png" class="w-100 m-auto d-flex" />
-          </div>
-          <div class="col-md-5 col-5 offset-2">
-            <div class="card-body padding-card">
-              <h4 class="card-title font-weight-bold font14">Xiaomi Mi 8</h4>
-              <h5 class="card-text font14px">3 x 200 poin</h5>
-            </div>
-          </div>
-          <div class="col-md-3  col-3 align-self-center pl-5">
-            <img src="../../assets/icon-delete.png" class=" size-delete" />
+         <a  @click.prevent="removeProductFromCart(item.product)"><img src="../../assets/icon-delete.png" class=" size-delete" /></a>
           </div>
         </div>
       </div>
@@ -144,7 +120,9 @@
             <h5 class="font12px caption4 p-0 font-weight-bold m-0 text-dark">
               {{ all.nama_produk }}
             </h5>
-            <p class="text-dark card-text font11">  {{ all.tanggal_transaksi }}0</p>
+            <p class="text-dark card-text font11">
+              {{ all.tanggal_transaksi }}0
+            </p>
           </div>
           <div class="col-md-2 col-2 align-self-center pr-2">
             <p
@@ -168,7 +146,23 @@
 
 <script>
 export default {
-  props: ["contentFor", "alltransaction"]
+  props: ["contentFor", "alltransaction"],
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
+    cartItemCount() {
+      return this.$store.getters.cartItemCount;
+    },
+    cartTotalPrice() {
+      return this.$store.getters.cartTotalPrice;
+    },
+  },
+  methods:{
+    removeProductFromCart(product) {
+      this.$store.dispatch("removeProductFromCart", product);
+    },
+  }
 };
 </script>
 
@@ -179,9 +173,8 @@ export default {
 
 .shadow1 {
   box-shadow: 0 0.1rem 0.3rem rgba(182, 189, 255, 0.308) !important;
-
 }
-.rounded-custom{
+.rounded-custom {
   border-radius: 15px;
 }
 .br {
@@ -264,9 +257,9 @@ export default {
   .font14 {
     font-size: 14px;
   }
-    .font12px {
-        font-size: 12px;
-    }
+  .font12px {
+    font-size: 12px;
+  }
   .font14px {
     font-size: 14px;
   }

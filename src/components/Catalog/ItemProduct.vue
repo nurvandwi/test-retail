@@ -152,11 +152,12 @@ export default {
   name: "ItemProduct",
   props: ["product", "ewallet", "poincash", "contentFor", "rebate"],
   methods: {
-    addToCart() {
-      this.$store.dispatch("addProductToCart", {
+
+    addToCart () {
+      this.$store.dispatch('addProductToCart', {
         product: this.product,
         quantity: 1
-      });
+      })
     },
     addToEwallet() {
       this.$store.dispatch("addEwalletToCart", {

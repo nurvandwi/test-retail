@@ -8,7 +8,9 @@
         class="container justify-content-center py-2"
         v-if="contentFor === 'product'"
       >
-        <router-link v-bind:to="'/productdetail'">
+        <router-link
+          v-bind:to="'/productdetail/' + `${$route.params.outlet_id}`"
+        >
           <div class="nav navbar-nav">
             <div class="d-flex align-items-center">
               <div class="col-md-5 col-5">
@@ -184,7 +186,9 @@
           <div class="nav navbar-nav">
             <div class="d-flex align-items-center">
               <div class="col-md-10 col-10">
-                <h5 class="text-white m-0 font16">Checkout</h5>
+                <button class="btn " @click="checkOutFromCart()">
+                  <h5 class="text-white m-0 font16">Checkout</h5>
+                </button>
               </div>
               <div class="col-md-2 col-2">
                 <img
@@ -201,26 +205,28 @@
         class="container justify-content-center py-2"
         v-if="contentFor === 'ProductDetails'"
       >
-        <router-link
-          v-bind:to="'/SuccessPage'"
-          style="color: #FFF;"
-          class="mx-auto font18"
-        >
-          <div class="nav navbar-nav">
-            <div class="d-flex align-items-center">
-              <div class="col-md-10 col-10">
-                <h5 class="text-white m-0 font16">Checkout</h5>
-              </div>
-              <div class="col-md-2 col-2">
-                <img
-                  src="../../assets/icon-next.png"
-                  class="mr-5 img-cart"
-                  alt
-                />
+        <button class="btn py-0" @click="checkOutFromCart()">
+          <router-link
+            v-bind:to="'/SuccessPage/' + `${$route.params.outlet_id}`"
+            style="color: #FFF;"
+            class="mx-auto font18"
+          >
+            <div class="nav navbar-nav">
+              <div class="d-flex align-items-center">
+                <div class="col-md-10 col-10">
+                  <h5 class="text-white m-0 font18">Checkout</h5>
+                </div>
+                <div class="col-md-2 col-2">
+                  <img
+                    src="../../assets/icon-next.png"
+                    class="mr-5 img-cart"
+                    alt
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </router-link>
+          </router-link>
+        </button>
       </div>
       <div
         class="container justify-content-center py-2"
@@ -271,7 +277,16 @@
 
 <script>
 export default {
-  props: ["contentFor"],
+  props: ["contentFor", "product"],
+  methods: {
+    checkOutFromCart() {
+      // console.log(this.product);
+      this.$store.dispatch("checkOutCart", {
+        outlet_id: this.$route.params.outlet_id,
+        token: localStorage.token
+      });
+    }
+  },
   computed: {
     cartItemCount() {
       return this.$store.getters.cartItemCount;
@@ -296,8 +311,8 @@ export default {
     },
     cartRebatePrice() {
       return this.$store.getters.cartRebatePrice;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -320,9 +335,6 @@ export default {
     background: #4e37b2;
     border-radius: 100px;
   }
-  .font16 {
-    font-size: 16px !important;
-  }
 
   .img-cart {
     width: 30px;
@@ -337,6 +349,12 @@ export default {
       min-height: 70px;
       max-width: 100vw;
       z-index: 1030 !important;
+    }
+    .font16 {
+      font-size: 16px !important;
+    }
+    .font18 {
+      font-size: 18px !important;
     }
   }
 }
