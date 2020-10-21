@@ -1,8 +1,8 @@
 <template>
   <div class="container mt-4" data-aos="fade-up">
-    <h3 class="font22 m-0" style="font-weight:bolder;">Input Data</h3>
+    <h3 class="font18 m-0" style="font-weight:bolder;">Input Data</h3>
 
-    <p class="font14">Masukkan nomor handphone yang akan di Top Up</p>
+    <p class="font14">Masukkan nomor handphone  untuk di Top Up</p>
     <div class="d-flex align-items-center"></div>
 
     <form>
@@ -179,6 +179,9 @@ export default {
   }
   .font22 {
     font-size: 22px;
+  }
+  .font18{
+    font-size: 18px;
   }
 }
 </style>
