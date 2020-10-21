@@ -18,12 +18,12 @@
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
             <h2 class="font14 text-black font-weight-bolder">
-              123
+              Rp {{ formatPrice(historikal) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              Rp 172.999.999.000
+              Rp {{ formatPrice(aktual) }}
             </h2>
           </div>
         </div>
@@ -41,13 +41,18 @@
         </div>
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-danger font-weight-bolder">
-              Rp -172.999.999.000
+            <h2
+              class="font14  font-weight-bolder"
+              v-bind:class="
+                parseInt(selisih_penjualan) > 0 ? 'text-dark ' : 'text-danger '
+              "
+            >
+              Rp {{ formatPrice(selisih_penjualan) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              Rp 172.999.999.000
+              Rp {{ formatPrice(aktual) }}
             </h2>
           </div>
         </div>
@@ -58,8 +63,13 @@
             </h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-custom font-weight-bolder">
-              159,20%
+            <h2
+              class="font14 text-black font-custom font-weight-bolder"
+              v-bind:class="
+                parseInt(selisih_penjualan) > 0 ? 'text-dark ' : 'text-danger '
+              "
+            >
+              {{ formatPrice(selisih_penjualan) }}
             </h2>
           </div>
         </div>
@@ -78,7 +88,19 @@
 
 <script>
 export default {
-  props: ["title", "total_sales"]
+  props: [
+    "title",
+    "historikal",
+    "aktual",
+    "selisih_penjualan",
+    "target_penjualan"
+  ],
+  methods: {
+    formatPrice(value) {
+      const val = (value / 1).toFixed(2).replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+  }
 };
 </script>
 

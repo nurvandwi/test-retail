@@ -28,16 +28,6 @@
           </div>
           <div v-else></div>
         </div>
-        <!-- <div class="col-12 mt-2">
-          <select class="form-control" v-model="selected" id="exampleFormControlSelect1">
-            <option
-              v-for="option in options"
-              :key="option.index"
-              v-bind:value="option.value"
-            >{{ option.text }}</option>
-          </select>
-        </div>-->
-
         <div class="col-md-12 mt-3" v-if="no.slice(0, 4) === '0877'">
           <div class="row px-2 pt-2">
             <div class="col-md-6 col-6 px-2 pb-3">

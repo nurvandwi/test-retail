@@ -15,7 +15,7 @@
             <tr>
               <th scope="col" v-for="point in points.data" :key="point.id">
                 <button
-                  @click="selected = point.bulan"
+                  @click="selected = point.id"
                   type="button"
                   class="btn font-custom rounded-pill font-weight-bolder btn-light"
                 >
@@ -53,12 +53,12 @@
         >
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
             <h2 class="font14 text-black font-weight-bolder">
-              {{ monthPoint.total_sales }}
+              Rp {{ formatPrice(monthPoint.last_monthly) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              Rp 172.999.999.000
+              Rp {{ formatPrice(monthPoint.target_monthly) }}
             </h2>
           </div>
         </div>
@@ -74,27 +74,49 @@
             </h2>
           </div>
         </div>
-        <div class="row text-center mb-2 border-bottom">
+        <div
+          class="row text-center mb-2 border-bottom"
+          v-for="monthPoint in selectTab"
+          :key="monthPoint.id"
+        >
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-danger font-weight-bolder">
-              Rp -172.999.999.000
+            <h2
+              class="font14 font-weight-bolder"
+              v-bind:class="
+                parseInt(monthPoint.selisih_monthly) > 0
+                  ? 'text-dark '
+                  : 'text-danger '
+              "
+            >
+              Rp {{ formatPrice(monthPoint.selisih_monthly) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              Rp 172.999.999.000
+              Rp {{ formatPrice(monthPoint.total_sales) }}
             </h2>
           </div>
         </div>
-        <div class="row text-center mt-2">
+        <div
+          class="row text-center mt-2"
+          v-for="monthPoint in selectTab"
+          :key="monthPoint.id"
+        >
           <div class="col font10">
             <h2 class="font10 text-gray font-custom font-weight-bolder">
               SELISIH PENJUALAN
             </h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-custom font-weight-bolder">
-              159,20%
+            <h2
+              class="font14 text-black font-custom font-weight-bolder"
+              v-bind:class="
+                parseInt(monthPoint.selisih_monthly) > 0
+                  ? 'text-dark '
+                  : 'text-danger '
+              "
+            >
+              {{ formatPrice(monthPoint.selisih_monthly) }} %
             </h2>
           </div>
         </div>
@@ -125,15 +147,19 @@
             </h2>
           </div>
         </div>
-        <div class="row text-center mb-2 border-bottom">
+        <div
+          class="row text-center mb-2 border-bottom"
+          v-for="monthPoint in selectTab"
+          :key="monthPoint.id"
+        >
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
             <h2 class="font14 text-black font-weight-bolder">
-              123
+              Rp {{ formatPrice(monthPoint.last_monthly) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              Rp 172.999.999.000
+              Rp {{ formatPrice(monthPoint.target_monthly) }}
             </h2>
           </div>
         </div>
@@ -149,27 +175,49 @@
             </h2>
           </div>
         </div>
-        <div class="row text-center mb-2 border-bottom">
+        <div
+          class="row text-center mb-2 border-bottom"
+          v-for="monthPoint in selectTab"
+          :key="monthPoint.id"
+        >
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-danger font-weight-bolder">
-              Rp -172.999.999.000
+            <h2
+              class="font14 font-weight-bolder"
+              v-bind:class="
+                parseInt(monthPoint.selisih_monthly) > 0
+                  ? 'text-dark '
+                  : 'text-danger '
+              "
+            >
+              Rp {{ formatPrice(monthPoint.selisih_monthly) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              Rp 172.999.999.000
+              Rp{{ formatPrice(monthPoint.total_sales) }}
             </h2>
           </div>
         </div>
-        <div class="row text-center mt-2">
+        <div
+          class="row text-center mt-2"
+          v-for="monthPoint in selectTab"
+          :key="monthPoint.id"
+        >
           <div class="col font10">
             <h2 class="font10 text-gray font-custom font-weight-bolder">
               SELISIH PENJUALAN
             </h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-custom font-weight-bolder">
-              159,20%
+            <h2
+              class="font14 text-black font-custom font-weight-bolder"
+              v-bind:class="
+                parseInt(monthPoint.selisih_monthly) > 0
+                  ? 'text-dark '
+                  : 'text-danger '
+              "
+            >
+              {{ formatPrice(monthPoint.selisih_monthly) }}
             </h2>
           </div>
         </div>
@@ -198,12 +246,18 @@
             </h2>
           </div>
         </div>
-        <div class="row text-center mb-2 border-bottom">
+        <div
+          class="row text-center mb-2 border-bottom"
+          v-for="monthPoint in selectTab"
+          :key="monthPoint.id"
+        >
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
+            <h2 class="font14 text-black font-weight-bolder">
+              {{ formatPrice(monthPoint.archievement) }}
+            </h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
+            <h2 class="font14 text-black font-weight-bolder">0</h2>
           </div>
         </div>
         <div class="row text-center mt-2">
@@ -218,12 +272,18 @@
             </h2>
           </div>
         </div>
-        <div class="row text-center mb-2 border-bottom">
+        <div
+          class="row text-center mb-2 border-bottom"
+          v-for="monthPoint in selectTab"
+          :key="monthPoint.id"
+        >
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
+            <h2 class="font14 text-black font-weight-bolder">
+              {{ formatPrice(monthPoint.point_monthly) }}
+            </h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-weight-bolder">172.999,99</h2>
+            <h2 class="font14 text-black font-weight-bolder">0</h2>
           </div>
         </div>
         <div class="row text-center mt-2">
@@ -232,9 +292,9 @@
               SISA POIN
             </h2>
           </div>
-          <div class="col">
+          <div class="col" v-for="monthPoint in selectTab" :key="monthPoint.id">
             <h2 class="font14 text-black font-weight-bolder font-custom">
-              260.885.65
+              {{ formatPrice(monthPoint.archievement) }}
             </h2>
           </div>
         </div>
@@ -271,11 +331,23 @@
               Rebate Medio
             </h2>
           </div>
-          <div class="col-4 text-center">
-            <h2 class="font12 font-weight-bolder">1.018.046</h2>
+          <div
+            class="col-4 text-center"
+            v-for="monthPoint in selectTab"
+            :key="monthPoint.id"
+          >
+            <h2 class="font12 font-weight-bolder">
+              {{ formatPrice(monthPoint.rebate_medio) }}
+            </h2>
           </div>
-          <div class="col-4 text-center">
-            <h2 class="font12 font-weight-bolder">17/08/2020</h2>
+          <div
+            class="col-4 text-center"
+            v-for="monthPoint in selectTab"
+            :key="monthPoint.id"
+          >
+            <h2 class="font12 font-weight-bolder">
+              {{ monthPoint.rebate_tanggal_transfer }}
+            </h2>
           </div>
         </div>
         <div class="row mt-2 border-bottom">
@@ -286,14 +358,22 @@
               Rebate Bulanan
             </h2>
           </div>
-          <div class="col-4 col-md-4 text-center">
+          <div
+            class="col-4 col-md-4 text-center"
+            v-for="monthPoint in selectTab"
+            :key="monthPoint.id"
+          >
             <h2 class="font12 position-relative font-weight-bolder">
-              1.018.046
+              {{ formatPrice(monthPoint.rebate) }}
             </h2>
           </div>
-          <div class="col-4 col-md-4 text-center">
+          <div
+            class="col-4 col-md-4 text-center"
+            v-for="monthPoint in selectTab"
+            :key="monthPoint.id"
+          >
             <h2 class="font12 position-relative font-weight-bolder">
-              17/08/2020
+              {{ monthPoint.rebate_tanggal_transfer }}
             </h2>
           </div>
         </div>
@@ -303,8 +383,14 @@
               Total Rebate
             </h2>
           </div>
-          <div class="col-4 col-md-4">
-            <h2 class="font12 text-black font-weight-bolder">1.018.046</h2>
+          <div
+            class="col-4 col-md-4"
+            v-for="monthPoint in selectTab"
+            :key="monthPoint.id"
+          >
+            <h2 class="font12 text-black font-weight-bolder">
+              {{ formatPrice(monthPoint.rebate + monthPoint.rebate_medio) }}
+            </h2>
           </div>
         </div>
       </div>
@@ -317,7 +403,8 @@ import axios from "axios";
 export default {
   data() {
     return {
-      selected: "all",
+      selected: 1,
+
       points: {
         data: []
       }
@@ -335,17 +422,17 @@ export default {
             token: localStorage.token
           }
         })
-
-        .then(res => {
-          console.log(res.data);
-          this.points = res.data;
-        })
+        .then(res => (this.points = res.data))
         .catch(err => console.log(err));
+    },
+    formatPrice(value) {
+      const val = (value / 1).toFixed(2).replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
   },
   computed: {
     selectTab() {
-      return this.points.data.filter(x => x.bulan === this.selected);
+      return this.points.data.filter(x => x.id === this.selected);
     }
   },
   mounted() {
