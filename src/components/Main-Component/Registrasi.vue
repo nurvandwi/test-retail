@@ -11,7 +11,6 @@
         <p class="font14 mb-0">Mohon Lengkapi Data dibawah ini</p>
       </div>
     </div>
-    <hr style="width:2000px;margin-top:0px !important" />
     <div class="col-md-12 col-12 p-0 m-0">
       <div class="theme-color p-2 rounded mt-2">
         <h3 class="font18 mb-0 pb-0 text-white text-center">

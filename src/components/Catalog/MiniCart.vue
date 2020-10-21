@@ -3,7 +3,7 @@
     class="dropdown-menu p-2"
     style="min-width:320px;right:0;left:auto"
     aria-labelledby="triggerId"
-  >
+  ><h1>hai</h1>
     <div v-for="item in cart" :key="item.product.id">
       <div class="px-2 d-flex justify-content-between">
         <div>

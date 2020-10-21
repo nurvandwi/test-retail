@@ -13,9 +13,9 @@ export const SET_REBATES = (state, rebates) => {
 export const SET_PRODUCT = (state, product) => {
   state.product = product;
 };
-export const ADD_TO_CART = (state, { product, quantity }) => {
-  let productInCart = state.cart.find(item => {
-    return item.product.kd_produk === product.id;
+export function ADD_TO_CART(state, { product, quantity }) {
+  let productInCart = state.cart.find((item) => {
+    return item.product.id === product.id;
   });
   if (productInCart) {
     productInCart.quantity += quantity;
@@ -23,10 +23,25 @@ export const ADD_TO_CART = (state, { product, quantity }) => {
   }
   state.cart.push({
     product,
-    quantity
+    quantity,
   });
 };
-
+export function CHECKOUT_CART(state, { product, quantity }) {
+  let productInCart = state.cart.find((item) => {
+    return item.product.id === product.id;
+  });
+  if (productInCart) {
+    productInCart.quantity += quantity;
+    return;
+  }
+  state.cart.push({
+    product,
+    quantity,
+  });
+  console.log('hai')
+  console.log(productInCart)
+  // return state.cart=[]
+};
 export const ADD_TO_EWALLET = (state, { ewallet, quantity }) => {
   let ewalletInCart = state.cartEwallet.find(item => {
     return item.ewallet.id === ewallet.id;
