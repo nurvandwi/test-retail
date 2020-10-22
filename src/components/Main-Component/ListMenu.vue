@@ -1,16 +1,16 @@
 <template>
   <div class="container mb-5 pb-3">
     <div class="row">
-      <div class="col-md-10 col-12 m-auto">
-        <div class="row">
+      <div class="col-md-10 col-12 m-auto ">
+        <div class="row " >
           <div
-            class="col-md-6 col-6 p-0"
+            class="col-md-6 col-6 p-0 "
             data-aos="fade-up"
             data-aos-anchor-placement="bottom-bottom"
           >
-            <div class="card text-white">
+            <div class="card text-white ">
               <router-link
-                class="text-white"
+                class="text-white background-theme"
                 v-bind:to="'/product/' + `${$route.params.outlet_id}`"
               >
                 <div>
@@ -47,7 +47,7 @@
             data-aos-anchor-placement="bottom-bottom"
           >
             <div class="card text-white">
-              <router-link class="text-white" v-bind:to="'/rebate/'+ `${$route.params.outlet_id}`">
+              <router-link class="text-white background-theme" v-bind:to="'/rebate/'+ `${$route.params.outlet_id}`">
                 <div>
                   <img
                     src="../../assets/rebate.png"
@@ -86,7 +86,7 @@
             data-aos-anchor-placement="bottom-bottom"
           >
             <div class="card text-white">
-              <router-link class="text-white" v-bind:to="'/Ewallet/' + `${$route.params.outlet_id}`">
+              <router-link class="text-white background-theme" v-bind:to="'/Ewallet/' + `${$route.params.outlet_id}`">
                 <div>
                   <img
                     src="../../assets/e-wallet.png"
@@ -121,7 +121,7 @@
             data-aos-anchor-placement="bottom-bottom"
           >
             <div class="card text-white">
-              <router-link class="text-white" v-bind:to="'/PoinCash/'+ `${$route.params.outlet_id}`">
+              <router-link class="text-white background-theme" v-bind:to="'/PoinCash/'+ `${$route.params.outlet_id}`">
                 <div>
                   <img src="../../assets/cash.png" class="card-img" alt="..." />
                 </div>

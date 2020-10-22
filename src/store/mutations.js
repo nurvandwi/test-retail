@@ -57,7 +57,7 @@ export const ADD_TO_EWALLET = (state, { ewallet, quantity }) => {
 };
 export const ADD_TO_POINCASH = (state, { poincash, quantity }) => {
   let poincashInCart = state.cartPoincash.find(item => {
-    return item.poincash.kd_produk === poincash.id;
+    return item.poincash.kd_produk === poincash.kd_produk;
   });
   if (poincashInCart) {
     poincashInCart.quantity += quantity;
@@ -93,11 +93,21 @@ export const SET_POINCASH = (state, poincashItems) => {
   state.poincashItems = poincashItems;
 };
 export const SET_REBATE = (state, rebateItems) => {
-  state.rebateItems = rebateItems;
+  state.rebate = rebateItems;
 };
 export const REMOVE_PRODUCT_FROM_CART = (state, product) => {
   state.cart = state.cart.filter(item => {
     return item.product.id !== product.id;
+  });
+};
+export const REMOVE_REBATE_FROM_CART = (state, rebate) => {
+  state.cartRebate = state.cartRebate.filter(item => {
+    return item.rebate.id !== rebate.id;
+  });
+};
+export const REMOVE_POINCASH_FROM_CART = (state, poincash) => {
+  state.cartPoincash = state.cartPoincash.filter(item => {
+    return item.poincash.id !== poincash.id;
   });
 };
 export const CLEAR_CART_ITEMS = state => {

@@ -8,7 +8,20 @@ export function cartTotalPrice (state) {
   })
   return total
 }
-
+export function rebateTotalPrice (state) {
+  let total = 0
+  state.cartRebate.forEach(item => {
+    total += item.rebate.rebate_value * item.quantity
+  })
+  return total
+}
+export function poincashTotalPrice (state) {
+  let total = 0
+  state.cartPoincash.forEach(item => {
+    total += item.poincash.poin * item.quantity
+  })
+  return total
+}
 export const cartEwalletCount = (state) => {
   return state.cartEwallet.length;
 };

@@ -115,13 +115,13 @@ const routes = [
     props: true
   },
   {
-    path: "/PointCashDetails",
+    path: "/PointCashDetails/:outlet_id",
     component: PointCashDetails,
     name: "pointcashdetails",
     props: true
   },
   {
-    path: "/RebateDetails",
+    path: "/RebateDetails/:outlet_id",
     component: RebateDetails,
     name: "RebateDetails",
     props: true
@@ -139,7 +139,7 @@ const routes = [
     props: true
   },
   {
-    path: "/TransactionDetails",
+    path: "/TransactionDetails/:outlet_id/:kode_transaksi",
     component: TransactionDetails,
     name: "TransactionDetails",
     props: true

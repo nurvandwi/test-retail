@@ -4,13 +4,14 @@
       id="carouselExampleIndicators"
       class="carousel slide"
       data-ride="carousel"
+
     >
-      <div>
+      <div >
         <h3 class="font16 ml-4 mb-0 mt-2 font-weight-bold">Promo</h3>
         <p class="font-12 ml-4">Temukan penawaran menarik dibawah ini.</p>
       </div>
-      <div class="carousel-inner px-4">
-        <div
+      <div class="carousel-inner px-4" >
+        <div    style="background-color: white"
           v-bind:class="[
             'carousel-item table-bordered radius',
             { active: index === 0 }

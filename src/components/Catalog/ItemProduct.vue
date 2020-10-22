@@ -1,7 +1,7 @@
 <template>
-  <div class="col-md-6 col-6 px-0">
+  <div class="col-md-6 col-6 px-0" >
     <div
-      class="px-1"
+      class="px-1 "
       data-aos="fade-up"
       data-aos-duration="1200"
       v-if="contentFor === 'product'"
@@ -30,7 +30,9 @@
         <div
           class="card-body d-flex justify-content-between align-items-center pb-0"
         >
-          <h5 class="card-title m-0 font18 font-weight-bold">{{ product.poin }}</h5>
+          <h5 class="card-title m-0 font18 font-weight-bold">
+            {{ product.poin }}
+          </h5>
           <button class="btn" @click="addToCart()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
@@ -102,7 +104,9 @@
         <div
           class="card-body d-flex justify-content-between align-items-center pb-0"
         >
-          <h5 class="card-title m-0 font16 font-weight-bold">{{ poincash.poin }} Poin</h5>
+          <h5 class="card-title m-0 font16 font-weight-bold">
+            {{ poincash.poin }} Poin
+          </h5>
           <button class="btn" @click="addToPoinCash()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
@@ -152,12 +156,11 @@ export default {
   name: "ItemProduct",
   props: ["product", "ewallet", "poincash", "contentFor", "rebate"],
   methods: {
-
-    addToCart () {
-      this.$store.dispatch('addProductToCart', {
+    addToCart() {
+      this.$store.dispatch("addProductToCart", {
         product: this.product,
         quantity: 1
-      })
+      });
     },
     addToEwallet() {
       this.$store.dispatch("addEwalletToCart", {
@@ -182,9 +185,9 @@ export default {
 </script>
 
 <style>
-  .w-rebate{
-    width: 50%;
-  }
+.w-rebate {
+  width: 50%;
+}
 .color-card {
   background-color: #f1f5ff;
 }
@@ -203,7 +206,7 @@ export default {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 0.5px solid #eeeeee !important;
+  border: 0.5px solid #dddddd !important;
   border-radius: 12px !important;
 }
 .font12 {
@@ -213,7 +216,7 @@ export default {
   width: 18rem;
 }
 @media screen and (max-width: 1000px) {
-  .w-rebate{
+  .w-rebate {
     width: 75%;
   }
   .width-card {

@@ -1,19 +1,22 @@
 <template>
   <div class="m-0 p-0">
-    <div
-      class="d-flex align-items-stretch mt-5 margin-wrapper pb-5 space-card flex-wrap top-card"
-      v-if="contentFor === 'product'"
-    >
-      <ItemProduct
-        v-for="product in products"
-        :key="product.id"
-        :product="product"
-        :contentFor="'product'"
-      />
+    <div class="" v-if="contentFor === 'product'" style="margin-bottom: 6.5rem">
+      <h4 class="font18 margin-wrapper px-2  space-card mb-1 font-weight-bold">
+        Produk Reward
+      </h4>
+      <p class="px-2 mb-3">Pilih Produk Dibawah ini</p>
+      <div class="d-flex align-items-stretch   flex-wrap top-card">
+        <ItemProduct
+          v-for="product in products"
+          :key="product.id"
+          :product="product"
+          :contentFor="'product'"
+        />
+      </div>
     </div>
     <div
       class="d-flex align-items-stretch mt-5 margin-wrapper pb-5 space-card flex-wrap top-card"
-      v-if="contentFor === 'ewallet'"
+      v-if="contentFor === 'ewallet'" style="margin-bottom: 6.5rem"
     >
       <ItemProduct
         v-for="ewallet in ewallets"
@@ -22,27 +25,33 @@
         :contentFor="'ewallet'"
       />
     </div>
-    <div
-      class="d-flex align-items-stretch mt-5 margin-wrapper pb-5 space-card flex-wrap top-card"
-      v-if="contentFor === 'PoinCash'"
-    >
-      <ItemProduct
-        v-for="poincash in poincashs"
-        :key="poincash.id"
-        :poincash="poincash"
-        :contentFor="'PoinCash'"
-      />
+    <div class="" v-if="contentFor === 'PoinCash'" style="margin-bottom: 6.5rem">
+      <h4 class="font18 margin-wrapper px-2  space-card mb-1 font-weight-bold">
+        Poin Cash
+      </h4>
+      <p class="px-2 mb-3">Pilih nominal poin2cash dibawah ini.</p>
+      <div class="d-flex align-items-stretch   flex-wrap top-card">
+        <ItemProduct
+          v-for="Itempoincash in poincashs"
+          :key="Itempoincash.id"
+          :poincash="Itempoincash"
+          :contentFor="'PoinCash'"
+        />
+      </div>
     </div>
-    <div
-      class="d-flex align-items-stretch mt-5 margin-wrapper pb-5 space-card flex-wrap top-card"
-      v-if="contentFor === 'Rebate'"
-    >
-      <ItemProduct
-        v-for="rebate in rebates"
-        :key="rebate.id"
-        :rebate="rebate"
-        :contentFor="'Rebate'"
-      />
+    <div v-if="contentFor === 'Rebate'" style="margin-bottom: 6.5rem">
+      <h4 class="font18 margin-wrapper px-2  space-card mb-1 font-weight-bold">
+        Rebate Reward
+      </h4>
+      <p class="px-2 mb-3">Pilih bulan atau quarter rebate dibawah ini.</p>
+      <div class="d-flex align-items-stretch   flex-wrap top-card">
+        <ItemProduct
+          v-for="rebate in rebates"
+          :key="rebate.id"
+          :rebate="rebate"
+          :contentFor="'Rebate'"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -98,15 +107,21 @@ export default {
     margin-bottom: 4rem !important;
   }
   .space-card {
-    padding-top: 1.8rem;
+    padding-top: 1.5rem;
   }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    .margin-wrapper {
-      margin-bottom: 4rem !important;
-    }
-    .space-card {
-      padding-top: 3rem;
-    }
+  .font18 {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .margin-wrapper {
+    margin-bottom: 4rem !important;
+  }
+  .space-card {
+    padding-top: 3rem;
+  }
+  .font18 {
+    font-size: 18px;
   }
 }
 </style>

@@ -7,7 +7,7 @@
         List Transaksi
       </h3>
       <router-link class="text-white" :to="'/TransactionProduct/' + `${$route.params.outlet_id}`">
-        <p class="rounded-pill  m-0 font12 py-2 px-2 bg-purple">Lihat Semua</p>
+        <p class="rounded-pill  m-0 font14 py-2 px-3  bg-purple">Lihat Semua</p>
       </router-link>
     </div>
     <listItem :contentFor="'ListTransaksi'" :alltransaction="myLastArray" />

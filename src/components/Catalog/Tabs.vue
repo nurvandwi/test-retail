@@ -49,52 +49,31 @@
                 <h5 class="font14 mb-0 font-weight-bold px-3 py-1">Pulsa</h5>
               </button>
             </th>
+            <th scope="col">
+              <button
+                @click="selected = 'pointocash'"
+                type="button"
+                class="btn font-custom rounded-pill font-weight-bolder btn-menu"
+              >
+                <h5 class="font14 mb-0 font-weight-bold px-3 py-1">
+                  Poin2Cash
+                </h5>
+              </button>
+            </th>
           </tr>
         </thead>
       </table>
     </div>
 
-    <div class="mb-card  container">
-      <div
-        class="col-12 col-md-12 m-0 px-0 shadow-item"
-        v-for="all in selectTab"
-        :key="all.id"
-      >
-        <div
-          class="  text-left  d-flex flex-row align-items-center my-3 py-3 pl-3 pr-0"
-        >
-          <img class="imagecustom pr-3 " :src="all.img" alt />
-          <div class="align-items-center col-md-8 col-8 pl-1">
-            <h5 class="font12px caption4 p-0 font-weight-bold m-0 text-dark">
-              {{ all.nama_produk }}
-            </h5>
-            <p class="text-dark card-text font11">
-              {{ all.tanggal_transaksi }}0
-            </p>
-          </div>
-          <div class="col-md-2 col-2 align-self-center pr-2">
-            <p
-              :class="{
-                'text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-warning float-right':
-                  all.status === 'Proses',
-                'text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-success float-right':
-                  all.status === 'Sukses',
-                'text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-otorisasi float-right':
-                  all.status === 'Otorisasi'
-              }"
-            >
-              {{ all.status }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <list-item  :contentFor="'ListTransaksi'" :alltransaction="selectTab"/>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import ListItem from "./ListItem";
 export default {
+  components: { ListItem },
   data() {
     return {
       selected: null,

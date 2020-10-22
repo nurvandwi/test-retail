@@ -1,11 +1,11 @@
 <template>
   <div class="container mt-custom mt-3">
-    <div class="row text-left rows-col-3">
+    <div class="row text-left rows-col-3" style="background-color: white">
       <div
         class="col bg-blue d-flex justify-content-between font-weight-bold text-blue py-2 font-custom"
       >
         <h5 class="font10 font-theme font-custom font-weight-bold font18 my-2">
-          MVG-2020123456
+          {{ detailTransaksi.kode_transaksi }}
         </h5>
 
         <div>
@@ -26,12 +26,16 @@
             </h5>
           </div>
         </div>
-        <div class="row text-left mb-2">
+        <div class="row text-left mb-3">
           <div class="col font10">
-            <h5 class="font16 text-black font-weight-bolder">Adam Jaya</h5>
+            <h5 class="font14 text-black font-weight-bolder">
+              {{ detailTransaksi.nama_penerima }}
+            </h5>
           </div>
           <div class="col">
-            <h5 class="font16 text-black font-weight-bolder">12/09/2020</h5>
+            <h5 class="font14 text-black font-weight-bolder">
+              {{ detailTransaksi.tanggal_terima }}
+            </h5>
           </div>
         </div>
         <div class="row text-left mt-2">
@@ -46,47 +50,49 @@
             </h5>
           </div>
         </div>
-        <div class="row text-left mb-2">
+        <div class="row text-left mb-3">
           <div class="col font10">
-            <h5 class="font16 text-black font-weight-bolder">0812344567890</h5>
+            <h5 class="font14 text-black font-weight-bolder">{{data_user.telepon2}}</h5>
           </div>
           <div class="col">
-            <h5 class="font16 text-black font-weight-bolder">DKI Jakarta</h5>
+            <h5 class="font14 text-black font-weight-bolder">{{data_user.propinsi}}</h5>
           </div>
         </div>
         <div class="row text-left mt-2">
-          <div class="col font10">
-            <h5 class="font16 font-gray font-custom font-weight-light">
-              Alamat
-            </h5>
-          </div>
           <div class="col">
             <h5 class="font16 font-gray font-custom font-weight-light">
               Kecamatan
             </h5>
           </div>
-        </div>
-        <div class="row text-left mb-2">
-          <div class="col font10">
-            <h5 class="font16 text-black font-weight-bolder">
-              Jln. KH Agus Salim 16
-            </h5>
-          </div>
-          <div class="col">
-            <h5 class="font16 text-black font-weight-bolder">Cempaka Putih</h5>
-          </div>
-        </div>
-        <div class="row text- mt-2">
           <div class="col-6 font10">
             <h5 class="font16 font-gray font-custom font-weight-light">
               Kota/Kab
             </h5>
           </div>
+
+
         </div>
-        <div class="row text-left mb-2">
+        <div class="row text-left mb-3">
           <div class="col font10">
-            <h5 class="font16 text-black font-weight-bolder">
-              Kota Administrasi Jakarta Pusat
+            <h5 class="font14 text-black text-left font-weight-bolder">
+            {{data_user.kelurahan}}
+            </h5>
+          </div>
+          <div class="col">
+            <h5 class="font14 text-black font-weight-bolder">     {{data_user.kota}}</h5>
+          </div>
+        </div>
+        <div class="row text- mt-2">
+          <div class="col font10">
+            <h5 class="font16 font-gray font-custom font-weight-light">
+              Alamat
+            </h5>
+          </div>
+        </div>
+        <div class="row text-left mb-3">
+          <div class="col-8 font10">
+            <h5 class="font14 text-black font-weight-bolder">
+              {{data_user.alamat2}}
             </h5>
           </div>
         </div>
@@ -96,12 +102,35 @@
 </template>
 
 <script>
-export default {};
+  import axios from "axios"
+export default {
+  props: ["detailTransaksi"],
+  data() {
+    return {
+      data_user: {}
+    };
+  },
+  methods: {
+    getDetailUser() {
+      axios
+        .get(`https://www.inosis.co.id/mvg2020_api/api_reg.php/detail-outlet`, {
+          params: {
+            txtKodeOutlet: this.$route.params.outlet_id
+          }
+        })
+        .then(res => (this.data_user = res.data.data))
+        .catch(err => console.log(err));
+    }
+  },
+  mounted() {
+    this.getDetailUser();
+  }
+};
 </script>
 
 <style scoped>
 .bg-blue {
-  background-color: #f8f7ff;
+  background-color: #EEE9FF;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
 }

@@ -84,6 +84,12 @@ export function addProductToCart({ commit }, { product, quantity }) {
     quantity
   });
 }
+export function addPoinCashToCart({ commit }, { poincash, quantity }) {
+    commit("ADD_TO_POINCASH", {
+        poincash,
+        quantity
+    });
+}
 export function checkOutCart({ state }, { outlet_id, token }) {
   console.log(outlet_id, token);
   let data = {
@@ -106,6 +112,56 @@ export function checkOutCart({ state }, { outlet_id, token }) {
       }
     }
   );
+  return state.cart=[]
+}
+export function checkOutRebate({ state }, { outlet_id, token }) {
+  console.log(outlet_id, token);
+  let data = {
+    outlet_id: outlet_id,
+    data: state.cartRebate.map(function(x) {
+      return { periode: x.rebate.periode, quantity: x.quantity };
+    })
+  };
+
+  console.log(data);
+  axios.post(
+    "https://www.inosis.co.id/mv_demo_api/api.php/post-rebate-hadiah",
+    data,
+    {
+      params: {
+        token
+      },
+      headers: {
+        "content-type": "application/json"
+      }
+    }
+  );
+    return state.cartRebate=[]
+}
+
+export function checkOutPoinCash({ state }, { outlet_id, token }) {
+  console.log(outlet_id, token);
+  let data = {
+    outlet_id: outlet_id,
+    data: state.cartPoincash.map(function(x) {
+      return { kd_produk: x.poincash.kd_produk, quantity: x.quantity };
+    })
+  };
+
+  console.log(data);
+  axios.post(
+    "https://www.inosis.co.id/mv_demo_api/api.php/post-pointocash-hadiah",
+    data,
+    {
+      params: {
+        token
+      },
+      headers: {
+        "content-type": "application/json"
+      }
+    }
+  );
+    return state.cartPoincash=[]
 }
 export function addEwalletToCart({ commit }, { ewallet, quantity }) {
   commit("ADD_TO_EWALLET", {
@@ -118,16 +174,7 @@ export function addEwalletToCart({ commit }, { ewallet, quantity }) {
   });
 }
 
-export function addPoinCashToCart({ commit }, { poincash, quantity }) {
-  commit("ADD_TO_POINCASH", {
-    poincash,
-    quantity
-  });
-  axios.post("http://shayna-backend.belajarkoding.com/api/cart", {
-    ewallet_id: poincash.id,
-    quantity
-  });
-}
+
 export function addRebateToCart({ commit }, { rebate, quantity }) {
   commit("ADD_TO_REBATE", {
     rebate,
@@ -145,6 +192,7 @@ export function getCartItems({ commit }) {
       commit("SET_CART", response.data);
     });
 }
+
 export function getEwalletItems({ commit }) {
   axios
     .get("http://shayna-backend.belajarkoding.com/api/cart")
@@ -172,6 +220,20 @@ export function removeProductFromCart({ commit }, product) {
     `http://shayna-backend.belajarkoding.com/api/cart/${product.id}`,
     {}
   );
+}
+export function removeRebateFromCart({ commit }, rebate) {
+  commit("REMOVE_REBATE_FROM_CART", rebate);
+  axios.delete(
+    `http://shayna-backend.belajarkoding.com/api/cart/${rebate.id}`,
+    {}
+  );
+}
+export function removePoincashFromCart({ commit }, poincash) {
+    commit("REMOVE_POINCASH_FROM_CART", poincash);
+    axios.delete(
+        `http://shayna-backend.belajarkoding.com/api/cart/${poincash.id}`,
+        {}
+    );
 }
 export function clearCartItems({ commit }) {
   commit("CLEAR_CART_ITEMS");

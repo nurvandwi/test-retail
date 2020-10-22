@@ -2,9 +2,9 @@
   <div class="mb-3">
     <h3 class="font16 font-weight-bold mt-4 mb-0 ml-4">Data Kegiatan</h3>
     <p class="font-12 ml-4">Lengkapi data dibawah ini.</p>
-    <div class="col-12">
+    <div class="col-12" >
       <router-link v-bind:to="'/registrasi/' + `${$route.params.outlet_id}`">
-        <div
+        <div style="background-color: white"
           class="col shadow1 br text-left d-flex flex-row align-items-center my-3 py-2 px-3"
         >
           <img class="imagecustom pr-3" src="../../assets/icon-ktp.png" alt />
@@ -26,7 +26,7 @@
     </div>
     <div class="col-12">
       <router-link v-bind:to="'/posm/' + `${$route.params.outlet_id}`">
-        <div
+        <div style="background-color: white"
           class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
         >
           <img class="imagecustom pr-3" src="../../assets/icon-posm.png" alt />
