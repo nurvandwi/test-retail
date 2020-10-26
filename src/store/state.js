@@ -1,16 +1,18 @@
 export default {
-  products: [],
-  ewallets: [],
-  poincashs: [],
-  rebates: [],
+    products: [],
+    ewallets: [],
+    poincashs: [],
+    rebates: [],
 
-  product: [],
-  ewallet: [],
-  poincash: [],
-  rebate: [],
+    product: [],
+    ewallet: [],
+    poincash: [],
+    rebate: [],
+    pulsa: [],
 
-  cart: [],
-  cartEwallet: [],
-  cartPoincash: [],
-  cartRebate: [],
+    cart: [],
+    cartEwallet: [],
+    cartPoincash: [],
+    cartRebate: [],
+    cartPulsa: []
 };

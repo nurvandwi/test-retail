@@ -66,7 +66,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet", {
+      .get("https://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet", {
         headers: {
           version: this.$route.params.version,
           bulan: this.$route.params.bulan

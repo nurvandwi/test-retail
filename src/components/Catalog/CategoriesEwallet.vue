@@ -6,7 +6,7 @@
     <div class="row mt-4 px-2">
       <div class="col-md-6 col-6 px-1 ">
         <div class="card text-white">
-          <router-link class="text-white" v-bind:to="'/pulsa'">
+          <router-link class="text-white" v-bind:to="'/pulsa/' + `${$route.params.outlet_id}`">
             <div>
               <img
                 src="../../assets/Banner-Pulsa.png"

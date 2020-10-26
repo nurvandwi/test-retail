@@ -91,7 +91,7 @@ const routes = [
     props: true
   },
   {
-    path: "/Pulsa",
+    path: "/Pulsa/:outlet_id",
     component: Pulsa,
     name: "pulsa",
     props: true
@@ -115,19 +115,19 @@ const routes = [
     props: true
   },
   {
-    path: "/PointCashDetails",
+    path: "/PointCashDetails/:outlet_id",
     component: PointCashDetails,
     name: "pointcashdetails",
     props: true
   },
   {
-    path: "/RebateDetails",
+    path: "/RebateDetails/:outlet_id",
     component: RebateDetails,
     name: "RebateDetails",
     props: true
   },
   {
-    path: "/PulsaDetails",
+    path: "/PulsaDetails/:outlet_id/:nominal",
     component: PulsaDetails,
     name: "PulsaDetails",
     props: true
@@ -139,7 +139,7 @@ const routes = [
     props: true
   },
   {
-    path: "/TransactionDetails",
+    path: "/TransactionDetails/:outlet_id/:kode_transaksi",
     component: TransactionDetails,
     name: "TransactionDetails",
     props: true

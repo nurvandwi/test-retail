@@ -4,7 +4,8 @@
     <Cart :contentFor="'PointCashDetails'" class="pt-4" />
     <Item :contentFor="'PointCashDetails'" />
     <DetailPengiriman :contentFor="'PointCashDetails'" />
-    <FooterProduct :contentFor="'PointCashDetails'" />
+    <FooterProduct v-for="itempoin in poincash" :key="itempoin.id"
+    :contentFor="'PointCashDetails'" :poincash="itempoin"  />
   </div>
 </template>
 
@@ -22,6 +23,14 @@ export default {
     Cart,
     Item,
     FooterProduct
+  },
+  computed: {
+    poincash() {
+      return this.$store.state.cartPoincash;
+    }
+  },
+  mounted() {
+    this.$store.dispatch("getPoincashItems");
   }
 };
 </script>

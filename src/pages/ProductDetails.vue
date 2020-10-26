@@ -4,9 +4,6 @@
     <Cart :contentFor="'OrderDetails'" class="mb-3 pt-4" />
     <Item :contentFor="'OrderDetails'" />
     <DetailPengiriman :contentFor="'OrderDetails'" class="mb-5" />
-
-
-
     <FooterProduct v-for="cart in carts"  :key="cart.id" :contentFor="'ProductDetails'"   :product="cart" />
   </div>
 </template>

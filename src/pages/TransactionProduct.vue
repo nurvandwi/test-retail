@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header title="Semua Transaksi" />
-    <Tabs />
+    <Tabs class="mb-custom"/>
   </div>
 </template>
 
@@ -17,4 +17,7 @@ export default {
 </script>
 
 <style>
+  .mb-custom{
+    margin-bottom: 7rem;
+  }
 </style>

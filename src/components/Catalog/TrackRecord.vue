@@ -7,8 +7,8 @@
             <h4 class="card-title font-weight-bold font16 mb-1 font-theme">
               Proses
             </h4>
-            <p class="card-text font14 font-weight-light font-theme">
-              10/09/2020
+            <p class="card-text font16 font-weight-light font-theme">
+              {{detailTransaksi.tanggal_transaksi}}
             </p>
           </div>
         </div>
@@ -17,8 +17,8 @@
             <h4 class="card-title font-weight-bold font16 mb-1 font-theme">
               Selesai
             </h4>
-            <p class="card-text font14 font-weight-light font-theme">
-              11/09/2020
+            <p class="card-text font16 font-weight-light font-theme">
+              {{detailTransaksi.tanggal_terima}}
             </p>
           </div>
         </div>
@@ -28,7 +28,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["detailTransaksi"],
+};
 </script>
 
 <style scoped>
