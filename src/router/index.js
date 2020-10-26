@@ -91,7 +91,7 @@ const routes = [
     props: true
   },
   {
-    path: "/Pulsa",
+    path: "/Pulsa/:outlet_id",
     component: Pulsa,
     name: "pulsa",
     props: true
@@ -127,7 +127,7 @@ const routes = [
     props: true
   },
   {
-    path: "/PulsaDetails",
+    path: "/PulsaDetails/:outlet_id/:nominal",
     component: PulsaDetails,
     name: "PulsaDetails",
     props: true

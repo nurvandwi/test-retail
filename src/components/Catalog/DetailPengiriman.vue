@@ -85,11 +85,10 @@
               <td class="py-0" scope="row"><h4 class="font16">Status</h4></td>
               <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
               <td
-                      class="py-1 px-4 font14 ml-2 font-weight-bold rounded-pill badge badge-info text-center"
-                      colspan="12"
-                      style="background-color:#4BFF88;"
+                  class="py-1 px-4 font14 ml-2 bg-process font-weight-bold rounded-pill badge badge-info text-center"
+                  colspan="12"
               >
-                <h4 class="font16 mb-0">Sukses</h4>
+                <h4 class="font16 mb-0">Proses</h4>
               </td>
             </tr>
             </tbody>
@@ -97,8 +96,9 @@
         </div>
       </div>
     </div>
-    <div v-if="contentFor === 'PulsaDetails'" class="card mt-4 mb-details">
-      <div class="card mt-4">
+    <div v-if="contentFor === 'PulsaDetails'" class="card mt-4 mb-details" >
+      <div class="card mt-4" v-for="item in cartPulsa"
+           :key="item.id">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
             <h5 class="card-title font16 font-weight-bold pt-3">
@@ -109,7 +109,7 @@
                 <tr>
                   <td class="py-1" scope="row">No HP</td>
 
-                  <td class="py-1" colspan="10">0817777777777</td>
+                  <td class="py-1" colspan="10">{{item.no_hp}}</td>
                 </tr>
                 <tr>
                   <td class="py-1" colspan="9" scope="row">Status</td>
@@ -208,11 +208,10 @@
                </td>
                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
                <td
-                       class="py-1 px-4 font14 ml-2 font-weight-bold rounded-pill badge badge-info text-center"
-                       colspan="12"
-                       style="background-color:#4BFF88;"
+                   class="py-1 px-4 font14 ml-2 bg-process font-weight-bold rounded-pill badge badge-info text-center"
+                   colspan="12"
                >
-                 <h4 class="font16 mb-0">Sukses</h4>
+                 <h4 class="font16 mb-0">Proses</h4>
                </td>
              </tr>
              </tbody>
@@ -264,11 +263,10 @@
                </td>
                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
                <td
-                       class="py-1 px-4 font14 ml-2 font-weight-bold rounded-pill badge badge-info text-center"
-                       colspan="12"
-                       style="background-color:#4BFF88;"
+                   class="py-1 px-4 font14 ml-2 bg-process font-weight-bold rounded-pill badge badge-info text-center"
+                   colspan="12"
                >
-                 <h4 class="font16 mb-0">Sukses</h4>
+                 <h4 class="font16 mb-0">Proses</h4>
                </td>
              </tr>
              </tbody>
@@ -303,11 +301,19 @@ export default {
   },
   mounted() {
     this.getDetailUser();
+  },
+  computed:{
+    cartPulsa() {
+      return this.$store.state.cartPulsa;
+    },
   }
 };
 </script>
 
 <style scoped>
+.bg-success {
+  background-color: #40c351 !important;
+}
 .mr-custom {
   position: relative;
   right: 40px;
@@ -324,6 +330,9 @@ export default {
 
 .mb-details {
   margin-bottom: 7rem;
+}
+.bg-process {
+  background-color: #ffc14b;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .mb-details {

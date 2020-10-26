@@ -95,7 +95,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .margin-wrapper {
   margin-bottom: 8rem !important;
 }
@@ -104,7 +104,7 @@ export default {
 }
 @media screen and (max-width: 1000px) {
   .margin-wrapper {
-    margin-bottom: 4rem !important;
+    margin-bottom: 0rem !important;
   }
   .space-card {
     padding-top: 1.5rem;
@@ -115,7 +115,7 @@ export default {
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .margin-wrapper {
-    margin-bottom: 4rem !important;
+    margin-bottom: 0rem !important;
   }
   .space-card {
     padding-top: 3rem;

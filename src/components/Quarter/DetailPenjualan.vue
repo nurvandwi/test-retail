@@ -59,7 +59,7 @@
         <div class="row text-center mt-2">
           <div class="col font10">
             <h2 class="font10 text-gray font-custom font-weight-bolder">
-              SELISIH PENJUALAN
+            RATIO PENCAPAIAN
             </h2>
           </div>
           <div class="col">
@@ -69,7 +69,7 @@
                 parseInt(selisih_penjualan) > 0 ? 'text-dark ' : 'text-danger '
               "
             >
-              {{ formatPrice(selisih_penjualan) }}
+              {{ formatPrice(selisih_penjualan) }} %
             </h2>
           </div>
         </div>

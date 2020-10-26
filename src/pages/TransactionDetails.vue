@@ -2,7 +2,7 @@
   <div class="container">
     <Header title="Detail Penukaran" class="pt-3" />
     <TrackRecord :detailTransaksi="detailTransaksi"/>
-    <DataPengiriman :detailTransaksi="detailTransaksi"/>
+    <DataPengiriman :detailTransaksi="detailTransaksi" />
     <DetailsPenukaran class="mb-5" :detailTransaksi="detailTransaksi" />
   </div>
 </template>

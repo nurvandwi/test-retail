@@ -104,7 +104,7 @@
         >
           <div class="col font10">
             <h2 class="font10 text-gray font-custom font-weight-bolder">
-              SELISIH PENJUALAN
+              RATIO PENCAPAIAN
             </h2>
           </div>
           <div class="col">
@@ -205,7 +205,7 @@
         >
           <div class="col font10">
             <h2 class="font10 text-gray font-custom font-weight-bolder">
-              SELISIH PENJUALAN
+            RATIO PENJUALAN
             </h2>
           </div>
           <div class="col">
@@ -217,7 +217,7 @@
                   : 'text-danger '
               "
             >
-              {{ formatPrice(monthPoint.selisih_monthly) }}
+              {{ formatPrice(monthPoint.selisih_monthly) }} %
             </h2>
           </div>
         </div>
@@ -413,7 +413,7 @@ export default {
   methods: {
     monthTabs() {
       axios
-        .get(`http://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet`, {
+        .get(`https://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet`, {
           headers: {
             version: this.$route.params.version
           },

@@ -52,8 +52,9 @@ export default {
       if (!Array.isArray(this.alltransaction.data)) {
         return []
       }
-      let length = this.alltransaction.data.length
-      return this.alltransaction.data.slice(length - 5, length)
+      // let length = this.alltransaction.data.length
+      // return this.alltransaction.data.slice(length - 5, length)
+      return this.alltransaction.data.slice(0, 5)
     }
   },
   mounted() {
