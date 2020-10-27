@@ -308,7 +308,7 @@ export default {
   methods: {
     getDetailUser() {
       axios
-        .get(`https://www.inosis.co.id/mvg2020_api/api_reg.php/detail-outlet`, {
+        .get(`https://inosis.co.id/mv_demo_api/api_reg.php/detail-outlet`, {
           params: {
             txtKodeOutlet: this.$route.params.outlet_id
           }
