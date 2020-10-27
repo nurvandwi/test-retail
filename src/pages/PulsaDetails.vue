@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Pulsa Details" />
-    <div class="pt-4">
+    <div>
       <Cart :contentFor="'PulsaDetails'" />
     </div>
     <Item :contentFor="'PulsaDetails'" />

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Rebate" />
-    <Cart :contentFor="'RebateDetails'" class="pt-4" />
+    <Cart :contentFor="'RebateDetails'" />
     <Item :contentFor="'RebateDetails'" />
     <DetailPengiriman :contentFor="'RebateDetails'" />
     <FooterProduct
