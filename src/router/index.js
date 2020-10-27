@@ -133,7 +133,7 @@ const routes = [
     props: true
   },
   {
-    path: "/EwalletDetails",
+    path: "/EwalletDetails/:outlet_id/:nominal",
     component: EwalletDetails,
     name: "EwalletDetails",
     props: true

@@ -4,7 +4,7 @@
             <div
                     class="col bg-blue d-flex justify-content-between border-panel font-weight-bold text-blue py-2 font-custom"
             >
-                <h5 class="font10 font-theme font-custom font-weight-bold font18 my-2">
+                <h5 class="font10 font-theme font-custom font-weight-bold font16 my-2">
                     {{ detailTransaksi.kode_transaksi }}
                 </h5>
 
@@ -16,11 +16,11 @@
             <div class="table-bordered col-12" style="background-color: white"
                  v-if="detailTransaksi.item == 'rebate' || detailTransaksi.item =='pointocash' ">
                 <div class="row text-left mt-2 mb-3">
-                    <div class="col-12 font10">
+                    <div class="col-6 font10">
                         <h5 class="font16 font-gray font-custom font-weight-light">
                             Penerima
                         </h5>
-                        <h5 class="font14 text-black font-weight-bolder">
+                        <h5 class="font14 text-black font-weight-bolder break-word">
                             {{ detailTransaksi.nama_penerima }}
                         </h5>
                     </div>
@@ -97,17 +97,17 @@
                         </h5>
                     </div>
                 </div>
-              <div class="row text-left mt-2 mb-3">
+                <div class="row text-left mt-2 mb-3">
 
-                <div class="col-12">
-                  <h5 class="font16 font-gray font-custom font-weight-light">
-                    Tgl Terima
-                  </h5>
-                  <h5 class="font14 text-black font-weight-bolder">
-                    {{ detailTransaksi.tanggal_terima }}
-                  </h5>
+                    <div class="col-12">
+                        <h5 class="font16 font-gray font-custom font-weight-light">
+                            Tgl Terima
+                        </h5>
+                        <h5 class="font14 text-black font-weight-bolder">
+                            {{ detailTransaksi.tanggal_terima }}
+                        </h5>
+                    </div>
                 </div>
-              </div>
                 <div class="row text-left  mb-3">
                     <div class="col-6">
                         <h5 class="font16 font-gray font-custom font-weight-light">
@@ -180,6 +180,10 @@
 </script>
 
 <style scoped>
+    .break-word {
+        word-wrap: break-word;
+    }
+
     .border-panel {
         border-top: 1.2px solid #dedede;
         border-bottom: 0 solid #dedede;
