@@ -10,6 +10,7 @@ import PoinCash from "../pages/PoinCash.vue";
 import Rebate from "../pages/Rebate.vue";
 import Pulsa from "../pages/Pulsa.vue";
 import Quarter from "../pages/Quarter.vue";
+import QuarterDetails from "../pages/QuarterDetails.vue";
 import Login from "../pages/Login.vue";
 import ProductDetails from "../pages/ProductDetails.vue";
 import PointCashDetails from "../pages/PointCashDetails.vue";
@@ -24,6 +25,8 @@ import TransactionProduct from "../pages/TransactionProduct.vue";
 import TransactionRebate from "../pages/TransactionRebate.vue";
 import TransactionEwallet from "../pages/TransactionEwallet.vue";
 import TransactionPulsa from "../pages/TransactionPulsa.vue";
+import MonthToYear from "../pages/MonthToYear.vue";
+import MonthToMonth from "../pages/MonthToMonth.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -38,7 +41,7 @@ const routes = [
       } else {
         next();
       }
-    }
+    },
   },
   {
     path: "/about",
@@ -47,151 +50,169 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
     path: "/Catalog",
     component: Catalog,
-    name: "catalog"
+    name: "catalog",
   },
   {
     path: "/allproduct/:id",
     component: Allproduct,
     name: "allproduct",
-    props: true
+    props: true,
   },
   {
     path: "/Categories/:outlet_id",
     component: Categories,
     name: "categories",
-    props: true
+    props: true,
   },
   {
     path: "/product/:outlet_id",
     component: Product,
     name: "product",
-    props: true
+    props: true,
   },
   {
     path: "/ewallet/:outlet_id",
     component: Ewallet,
     name: "ewallet",
-    props: true
+    props: true,
   },
   {
     path: "/PoinCash/:outlet_id",
     component: PoinCash,
     name: "poincash",
-    props: true
+    props: true,
   },
   {
     path: "/Rebate/:outlet_id",
     component: Rebate,
     name: "rebate",
-    props: true
+    props: true,
   },
   {
     path: "/Pulsa/:outlet_id",
     component: Pulsa,
     name: "pulsa",
-    props: true
+    props: true,
   },
   {
     path: "/Quarter/:version/:outlet_id",
     component: Quarter,
     name: "Quarter",
-    props: true
+    props: true,
+  },
+  {
+    path: "/MonthToYear/:outlet_id",
+    component: MonthToYear,
+    name: "MonthToYear",
+    props: true,
+  },
+  {
+    path: "/MonthToMonth/:bulan/:outlet_id",
+    component: MonthToMonth,
+    name: "MonthToMonth",
+    props: true,
+  },
+  {
+    path: "/QuarterDetails/:version/:outlet_id",
+    component: QuarterDetails,
+    name: "QuarterDetails",
+    props: true,
   },
   {
     path: "/",
     component: Login,
     name: "login",
-    props: true
+    props: true,
   },
   {
     path: "/ProductDetail/:outlet_id",
     component: ProductDetails,
     name: "productdetail",
-    props: true
+    props: true,
   },
   {
     path: "/PointCashDetails/:outlet_id",
     component: PointCashDetails,
     name: "pointcashdetails",
-    props: true
+    props: true,
   },
   {
     path: "/RebateDetails/:outlet_id",
     component: RebateDetails,
     name: "RebateDetails",
-    props: true
+    props: true,
   },
   {
     path: "/PulsaDetails/:outlet_id/:nominal",
     component: PulsaDetails,
     name: "PulsaDetails",
-    props: true
+    props: true,
   },
   {
     path: "/EwalletDetails",
     component: EwalletDetails,
     name: "EwalletDetails",
-    props: true
+    props: true,
   },
   {
     path: "/TransactionDetails/:outlet_id/:kode_transaksi",
     component: TransactionDetails,
     name: "TransactionDetails",
-    props: true
+    props: true,
   },
   {
     path: "/SuccessPage/:outlet_id",
     component: SuccessPage,
     name: "SuccessPage",
-    props: true
+    props: true,
   },
   {
     path: "/Registrasi/:outlet_id",
     component: Registrasi,
     name: "Registrasi",
-    props: true
+    props: true,
   },
   {
     path: "/Posm/:outlet_id",
     component: Posm,
     name: "Posm",
-    props: true
+    props: true,
   },
   {
     path: "/TransactionProduct/:outlet_id",
     component: TransactionProduct,
     name: "TransactionProduct",
-    props: true
+    props: true,
   },
   {
     path: "/TransactionRebate",
     component: TransactionRebate,
     name: "TransactionRebate",
-    props: true
+    props: true,
   },
   {
     path: "/TransactionEwallet",
     component: TransactionEwallet,
     name: "TransactionEwallet",
-    props: true
+    props: true,
   },
   {
     path: "/TransactionPulsa",
     component: TransactionPulsa,
     name: "TransactionPulsa",
-    props: true
-  }
+    props: true,
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
 
 export default router;

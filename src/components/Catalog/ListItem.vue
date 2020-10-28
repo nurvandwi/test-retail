@@ -2,13 +2,13 @@
   <div class="col-md-12 col-12 p-0">
     <div v-if="contentFor === 'OrderDetails'">
       <div
-          class="card mt-2 mb-3 shadow1 radius"
-          v-for="item in cart"
-          :key="item.product.id"
+        class="card mt-2 mb-3 shadow1 radius"
+        v-for="item in cart"
+        :key="item.product.id"
       >
         <div class="row no-gutters bg">
           <div class="col-md-2 col-3 px-2 align-self-center  ">
-            <img :src="item.product.img" class="w-75 m-auto "/>
+            <img :src="item.product.img" class="w-75 m-auto " />
           </div>
           <div class="col-md-8 col-6 ">
             <div class="card-body padding-card px-1">
@@ -22,18 +22,24 @@
           </div>
           <div class="col-md-2  col-2 align-self-center pl-5">
             <a @click.prevent="removeProductFromCart(item.product)"
-            ><img src="../../assets/icon-delete.png" class=" size-delete"
+              ><img src="../../assets/icon-delete.png" class=" size-delete"
             /></a>
           </div>
         </div>
       </div>
     </div>
     <div v-if="contentFor === 'PulsaDetails'">
-      <div class="card mt-3 mb-3 shadow1 radius" v-for="item in cartPulsa"
-           :key="item.id">
+      <div
+        class="card mt-3 mb-3 shadow1 radius"
+        v-for="item in cartPulsa"
+        :key="item.id"
+      >
         <div class="row no-gutters bg">
-          <div class="col-md-2 col-2 px-2 align-self-center  " v-if="item.no_hp.slice(0, 4) === '0877'">
-            <img src="../../assets/xl.png" class="w-100 m-auto d-flex"/>
+          <div
+            class="col-md-2 col-2 px-2 align-self-center  "
+            v-if="item.no_hp.slice(0, 4) === '0877'"
+          >
+            <img src="../../assets/xl.png" class="w-100 m-auto d-flex" />
           </div>
           <div class="col-md-5 col-5 offset-2">
             <div class="card-body padding-card">
@@ -45,7 +51,7 @@
           </div>
           <div class="col-md-3  col-3 align-self-center pl-5">
             <a @click.prevent="removePulsaFromCart(item.no_hp)"
-            ><img src="../../assets/icon-delete.png" class=" size-delete"
+              ><img src="../../assets/icon-delete.png" class=" size-delete"
             /></a>
           </div>
         </div>
@@ -53,13 +59,13 @@
     </div>
     <div v-if="contentFor === 'PointCashDetails'">
       <div
-          class="card mt-2 mb-3 shadow1 radius"
-          v-for="Poincash in cartPoinCash"
-          :key="Poincash.id"
+        class="card mt-2 mb-3 shadow1 radius"
+        v-for="Poincash in cartPoinCash"
+        :key="Poincash.id"
       >
         <div class="row no-gutters bg">
           <div class="col-md-2 col-3 px-2 align-self-center  ">
-            <img :src="Poincash.poincash.img" class="w-60 m-auto "/>
+            <img :src="Poincash.poincash.img" class="w-60 m-auto " />
           </div>
           <div class="col-md-8 col-6 ">
             <div class="card-body padding-card px-1">
@@ -73,24 +79,21 @@
           </div>
           <div class="col-md-2  col-2 align-self-center pl-5">
             <a @click.prevent="removePoincashFromCart(Poincash.poincash)"
-            ><img src="../../assets/icon-delete.png" class=" size-delete"
+              ><img src="../../assets/icon-delete.png" class=" size-delete"
             /></a>
           </div>
         </div>
       </div>
-
     </div>
     <div v-if="contentFor === 'RebateDetails'">
-
-
       <div
-          class="card mt-2 mb-3 shadow1 radius"
-          v-for="rebate in cartRebates"
-          :key="rebate.id"
+        class="card mt-2 mb-3 shadow1 radius"
+        v-for="rebate in cartRebates"
+        :key="rebate.id"
       >
         <div class="row no-gutters bg">
           <div class="col-md-2 col-3 px-2 align-self-center  ">
-            <img :src="rebate.rebate.img" class="w-60 m-auto "/>
+            <img :src="rebate.rebate.img" class="w-60 m-auto " />
           </div>
           <div class="col-md-8 col-6 ">
             <div class="card-body padding-card px-1">
@@ -104,7 +107,7 @@
           </div>
           <div class="col-md-2  col-2 align-self-center pl-5">
             <a @click.prevent="removeRebateFromCart(rebate.rebate)"
-            ><img src="../../assets/icon-delete.png" class=" size-delete"
+              ><img src="../../assets/icon-delete.png" class=" size-delete"
             /></a>
           </div>
         </div>
@@ -114,7 +117,7 @@
       <div class="card mt-3 mb-3 shadow1 radius">
         <div class="row no-gutters bg">
           <div class="col-md-2 col-2 px-2 align-self-center color-card ">
-            <img src="../../assets/icon-dana.png" class="w-100 m-auto d-flex"/>
+            <img src="../../assets/icon-dana.png" class="w-100 m-auto d-flex" />
           </div>
           <div class="col-md-5 col-5 offset-2">
             <div class="card-body padding-card">
@@ -123,7 +126,7 @@
             </div>
           </div>
           <div class="col-md-3  col-3 align-self-center pl-5">
-            <img src="../../assets/icon-delete.png" class=" size-delete"/>
+            <img src="../../assets/icon-delete.png" class=" size-delete" />
           </div>
         </div>
       </div>
@@ -131,45 +134,48 @@
 
     <div v-if="contentFor === 'ListTransaksi'" class="col-12 col-md-12 mt-4">
       <div
-          class="col-12 col-md-12 mx-0 mt-custom rounded-custom px-0 shadow-item"
-          style="background-color: white"
-          v-for="(all,index) in alltransaction"
-          :key="index"
+        class="col-12 col-md-12 mx-0 mt-custom rounded-custom px-0 shadow-item"
+        style="background-color: white"
+        v-for="(all, index) in alltransaction"
+        :key="index"
       >
         <router-link
-            v-bind:to="
+          v-bind:to="
             '/TransactionDetails/' +
               `${$route.params.outlet_id}/` +
               alltransaction[index].kode_transaksi
           "
         >
           <div
-              class="  text-left  d-flex flex-row align-items-center my-3 py-0  pl-3 pr-0"
+            class="  text-left  d-flex flex-row align-items-center my-3 py-0  pl-3 pr-0"
           >
-            <img class="imagecustom pr-2" :src="all.img" alt/>
+            <img class="imagecustom pr-2" :src="all.img" alt />
             <div class="align-items-center col-md-10 col-10 pl-3">
               <h5 class="font12px caption4 p-0 font-weight-bold m-0 text-dark">
                 {{ all.nama_produk }}
               </h5>
               <div class="d-flex justify-content-between py-2">
-                <div class="d-flex align-items-center"><p class="text-dark card-text font11 ">
-                  {{ all.tanggal_transaksi }}
-                </p></div>
-                <div class="d-flex align-items-center pr-0"><p
+                <div class="d-flex align-items-center">
+                  <p class="text-dark card-text font11 ">
+                    {{ all.tanggal_transaksi }}
+                  </p>
+                </div>
+                <div class="d-flex align-items-center pr-0">
+                  <p
                     :class="{
-                  'text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-warning float-right':
-                    all.status === 'Proses',
-                  'text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-success float-right':
-                    all.status === 'Sukses',
-                  'text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-otorisasi float-right':
-                    all.status === 'Otorisasi'
-                }"
-                >
-                  {{ all.status }}
-                </p></div>
+                      'text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-warning float-right':
+                        all.status === 'Proses',
+                      'text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-success float-right':
+                        all.status === 'Sukses',
+                      'text-center font12 py-1 m-0 px-3 text-white rounded-pill badge bg-otorisasi float-right':
+                        all.status === 'Otorisasi'
+                    }"
+                  >
+                    {{ all.status }}
+                  </p>
+                </div>
               </div>
             </div>
-
           </div>
         </router-link>
       </div>
@@ -227,7 +233,7 @@ export default {
 }
 
 .mt-custom {
-  margin-top: .7rem !important;
+  margin-top: 0.7rem !important;
 }
 
 .shadow1 {

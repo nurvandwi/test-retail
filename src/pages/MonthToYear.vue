@@ -1,41 +1,41 @@
 <template>
   <div class="container">
     <Quarter
-      :contentFor="'Quarter'"
-      :sisa_point="points.sisa_point"
-      :nama_outlet="points.outlet_name"
-      :id_outlet="points.outlet_id"
-      :saldo_rebate="points.saldo_rebate"
+      :contentFor="'MonthToYear'"
+      :sisa_point="year.sisa_point"
+      :nama_outlet="year.outlet_name"
+      :id_outlet="year.outlet_id"
+      :saldo_rebate="year.saldo_rebate"
     />
     <DetailPenjualan
-      :contentFor="'Quarter'"
+      :contentFor="'MonthToYear'"
       title="PENJUALAN PER QUARTER"
       class="mt-custom"
-      :historikal="points.total_last"
-      :aktual="points.total_sales"
-      :selisih_penjualan="points.selisih_sales"
-      :target_penjualan="points.total_target"
+      :historikal="year.total_last"
+      :aktual="year.total_sales"
+      :selisih_penjualan="year.selisih_sales"
+      :target_penjualan="year.total_target"
     />
     <Poin
-      :contentFor="'Quarter'"
-      :poin_carry_over="points.poin_carry_over"
-      :perolehan="points.total_achv"
-      :poin_tersedia="points.sisa_point"
-      :penukaran_poin="points.total_redeem"
+      :contentFor="'MonthToYear'"
+      :poin_carry_over="year.poin_carry_over"
+      :perolehan="year.total_achv"
+      :poin_tersedia="year.sisa_point"
+      :penukaran_poin="year.total_redeem"
       title="POIN PER QUARTER"
       class="mt-3"
     />
     <Tarif
-      :contentFor="'Quarter'"
-      :rebate_medio="points.total_rebate_medio"
-      :rebate_bulanan="points.total_rebate"
-      :tarif_medio="points.tarif_rebate_medio"
-      :tarif_bulanan="points.tarif_rebate"
-      :total_rebate="points.total_rebate + points.total_rebate_medio"
+      :contentFor="'MonthToYear'"
+      :rebate_medio="year.total_rebate_medio"
+      :rebate_bulanan="year.total_rebate"
+      :tarif_medio="year.tarif_rebate_medio"
+      :tarif_bulanan="year.tarif_rebate"
+      :total_rebate="year.total_rebate + year.total_rebate_medio"
       title
       class="mt-3"
     />
-    <BulanTransaksi :contentFor="'Quarter'" />
+    <BulanTransaksi :contentFor="'MonthToYear'" />
     <div></div>
   </div>
 </template>
@@ -47,6 +47,7 @@ import DetailPenjualan from "@/components/Quarter/DetailPenjualan.vue";
 import Poin from "@/components/Quarter/Poin.vue";
 import BulanTransaksi from "@/components/Quarter/BulanTransaksi.vue";
 import Tarif from "@/components/Quarter/Tarif.vue";
+
 export default {
   components: {
     Quarter,
@@ -57,9 +58,8 @@ export default {
   },
   data() {
     return {
-      points: {
-        data: [],
-        data_rebate: []
+      year: {
+        data: []
       }
     };
   },
@@ -67,21 +67,7 @@ export default {
     normalize(badNumeric) {
       return Number(badNumeric.split(",").join(""));
     },
-    allQuarter() {
-      axios
-        .get("https://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet", {
-          headers: {
-            version: this.$route.params.version
-          },
-          params: {
-            txtKodeOutlet: this.$route.params.outlet_id,
-            token: localStorage.token
-          }
-        })
 
-        .then(res => (this.points = res.data))
-        .catch(err => console.log(err));
-    },
     monthToYear() {
       axios
         .get(
@@ -99,8 +85,7 @@ export default {
     }
   },
   mounted() {
-    this.allQuarter();
-    this.MonthToYear();
+    this.monthToYear();
   }
 };
 </script>
