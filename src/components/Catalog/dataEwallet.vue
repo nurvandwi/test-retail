@@ -1,6 +1,6 @@
 <template>
     <div class="container mt-4" data-aos="fade-up">
-        <h3 class="font18 m-0" style="font-weight:bolder;">Input Data</h3>
+        <h3 class="font18 m-0" style="font-weight:bolder;">Input Data Ewallet</h3>
         <p class="font14">Masukkan nomor handphone untuk di Top Up</p>
 
         <form>
@@ -45,7 +45,7 @@
                     </div>
                     <div v-else></div>
                 </div>
-                <div class="col-12 mt-2">
+                <div class="col-12 mt-2" v-if="no_hp.length >= 10" data-aos="fade-up" data-aos-duration="500">
                     <select
                             @change="getList()"
                             v-model="state.ewallet"

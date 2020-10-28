@@ -2,7 +2,7 @@
     <div class="col-md-12 col-12 p-0">
         <div v-if="contentFor === 'OrderDetails'">
             <div
-                    class="card mt-2 mb-3 shadow1 radius"
+                    class="card  mb-3 shadow1 radius"
                     v-for="item in cart"
                     :key="item.product.id"
             >
@@ -60,7 +60,7 @@
                             <h4 class="card-title font-weight-bold font14">
                                 {{ item.no_hp }}
                             </h4>
-                            <h5 class="card-text font14px">1 x {{ item.nominal }} poin</h5>
+                            <h5 class="card-text font14px">1 x {{ item.poin_text }} poin</h5>
                         </div>
                     </div>
                     <div class="col-md-2  col-2 align-self-center pl-2">
@@ -161,7 +161,7 @@
             </div>
         </div>
 
-        <div v-if="contentFor === 'ListTransaksi'" class="col-12 col-md-12 mt-4">
+        <div v-if="contentFor === 'ListTransaksi'" class="col-12 col-md-12 mt-0">
             <div
                     class="col-12 col-md-12 mx-0 mt-custom rounded-custom px-0 shadow-item"
                     style="background-color: white"
@@ -183,7 +183,7 @@
                             <h5 class="font12px caption4 p-0 font-weight-bold m-0 text-dark">
                                 {{ all.nama_produk }}
                             </h5>
-                            <div class="d-flex justify-content-between py-2">
+                            <div class="d-flex justify-content-between pt-2 pb-0">
                                 <div class="d-flex align-items-center"><p class="text-dark card-text font11 ">
                                     {{ all.tanggal_transaksi }}
                                 </p></div>

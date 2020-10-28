@@ -2,7 +2,7 @@
   <div class="container mt-custom mt-3">
     <div class="row text-left rows-col-3 " v-if="detailTransaksi.item=='rebate'">
       <div class="col bg-blue border-panel  font-weight-bold text-blue py-2 font-custom">
-        <h5 class="font10 font-theme font-custom font-weight-bold font18 my-2">
+        <h5 class=" font-theme font-custom font-weight-bold font16 my-2">
           Detail Penukaran Produk
         </h5>
       </div>
@@ -14,10 +14,9 @@
                 <img :src="detailTransaksi.img" class=" w-img"/>
               </div>
               <div class="col-md-10 col-10">
-                <div class="card-body pl-3 pr-0">
-                  <h5 class="card-title font14px font-weight-bold">{{ detailTransaksi.nama_produk }}</h5>
-<!--                  <div class="d-flex justify-content-between"><p class="card-text font-weight-bold font8">{{ detailTransaksi.quantity }} X 600ww</p>-->
-<!--                    <h5 class="font-weight-bold font18  text-right">600</h5></div>-->
+                <div class="card-body pl-3 pr-0 py-3">
+                  <h5 class="card-title font14px font-weight-bold mb-0">{{ detailTransaksi.nama_produk }}</h5>
+                  <p class="card-text font-weight-normal font16">{{ detailTransaksi.nominal }}</p>
                 </div>
               </div>
               <!--              <div class="col-md-3 col-2 align-self-center pl-3">-->
