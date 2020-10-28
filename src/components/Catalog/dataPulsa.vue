@@ -62,7 +62,7 @@
                         <div class="col-md-6 col-6 px-2 pb-3" v-for="(list,i) in nominalPulsa.data" :value="list.id"
                              :key="i">
                             <button class="btn py-0 col-12 col-md-12 px-0"
-                                    @click="addToPulsa(list.kd_produk,list.poin)">
+                                    @click="addToPulsa(list.kd_produk,list.poin,list.poin_text)">
                                 <router-link
                                         v-bind:to="'/pulsadetails/' + `${$route.params.outlet_id}/`+  list.nominal "
                                         style="color: #FFF;"
@@ -70,7 +70,7 @@
                                 >
                                     <div class="card border w-100">
                                         <div class="card-body p-3">
-                                            <h5 class="card-title text-center m-0">{{list.nominal}}</h5>
+                                            <h5 class="card-title text-center m-0">{{list.nominal_text}}</h5>
                                         </div>
                                     </div>
                                 </router-link>
@@ -102,13 +102,14 @@
             };
         },
         methods: {
-            addToPulsa(kd_produk, poin) {
+            addToPulsa(kd_produk, poin, poin_text) {
                 // console.log(this.no_hp)
                 this.$store.dispatch("addPulsaToCart", {
                     no_hp: this.no_hp,
                     nominal: this.$route.params.nominal,
                     kd_produk,
                     poin,
+                    poin_text,
                     quantity: 1
                 });
             },

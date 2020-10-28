@@ -14,7 +14,7 @@ export function plsTotalPrice(state) {
     // console.log(state.cartPulsa.nominal)
     let total = 0
     state.cartPulsa.forEach(item => {
-        total = item.nominal
+        total = item.poin_text
     })
     return total
 }

@@ -28,7 +28,7 @@ export function ADD_TO_CART(state, {product, quantity}) {
     });
 };
 
-export function ADD_TO_PULSA(state, {no_hp, nominal, poin, kd_produk, quantity}) {
+export function ADD_TO_PULSA(state, {no_hp, nominal, poin,poin_text, kd_produk, quantity}) {
     let pulsaInCart = state.cartPulsa.find((item) => {
         return item.no_hp.id === no_hp.id;
     });
@@ -42,7 +42,8 @@ export function ADD_TO_PULSA(state, {no_hp, nominal, poin, kd_produk, quantity})
         nominal,
         kd_produk,
         quantity,
-        poin
+        poin,
+        poin_text
     });
 // console.log(state.cartPulsa)
 };

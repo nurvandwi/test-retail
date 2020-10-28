@@ -93,13 +93,13 @@ export function addProductToCart({commit}, {product, quantity}) {
 
 }
 
-export function addPulsaToCart({commit}, {no_hp, poin, nominal, kd_produk, quantity}) {
+export function addPulsaToCart({commit}, {no_hp, poin, poin_text, nominal, kd_produk, quantity}) {
     commit("ADD_TO_PULSA", {
         no_hp,
         nominal,
         kd_produk,
         quantity,
-        poin
+        poin, poin_text
     });
 }
 

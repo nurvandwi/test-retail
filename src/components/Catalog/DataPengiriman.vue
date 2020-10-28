@@ -4,7 +4,7 @@
             <div
                     class="col bg-blue d-flex justify-content-between border-panel font-weight-bold text-blue py-2 font-custom"
             >
-                <h5 class="font10 font-theme font-custom font-weight-bold font16 my-2">
+                <h5 class=" font-theme font-custom font-weight-bold font16 my-2">
                     {{ detailTransaksi.kode_transaksi }}
                 </h5>
 
@@ -16,22 +16,33 @@
             <div class="table-bordered col-12" style="background-color: white"
                  v-if="detailTransaksi.item == 'rebate' || detailTransaksi.item =='pointocash' ">
                 <div class="row text-left mt-2 mb-3">
-                    <div class="col-6 font10">
+                    <div class="col-12 font10">
                         <h5 class="font16 font-gray font-custom font-weight-light">
                             Penerima
                         </h5>
-                        <h5 class="font14 text-black font-weight-bolder break-word">
+                        <h5 class="font14 text-success font-weight-bolder break-word">
                             {{ detailTransaksi.nama_penerima }}
                         </h5>
                     </div>
 
                 </div>
                 <div class="row text-left mb-3">
+                    <div class="col-12">
+                        <h5 class="font16 font-gray font-custom font-weight-light">
+                            No.Referensi
+                        </h5>
+
+                        <h5 class="font14 text-success font-weight-bolder">
+                                    {{ detailTransaksi.noreferensi }}
+                        </h5>
+                    </div>
+                </div>
+                <div class="row text-left mb-3">
                     <div class="col-6">
                         <h5 class="font16 font-gray font-custom font-weight-light">
                             Tgl Transfer
                         </h5>
-                        <h5 class="font14 text-black font-weight-bolder">
+                        <h5 class="font14 text-success font-weight-bolder">
                             {{ detailTransaksi.tanggal_terima }}
                         </h5>
                     </div>
@@ -72,17 +83,6 @@
                         <h5 class="font14 text-black font-weight-bolder"> {{ data_user.kota_bank }}</h5>
                     </div>
                 </div>
-                <div class="row text-left mb-3">
-                    <div class="col-12">
-                        <h5 class="font16 font-gray font-custom font-weight-light">
-                            No.Referensi
-                        </h5>
-
-                        <h5 class="font14 text-black font-weight-bolder">
-                            <!--              {{ data_user.alamat2 }}--> 19292922222229733737
-                        </h5>
-                    </div>
-                </div>
 
 
             </div>
@@ -92,7 +92,7 @@
                         <h5 class="font16 font-gray font-custom font-weight-light">
                             Penerima
                         </h5>
-                        <h5 class="font14 text-black font-weight-bolder">
+                        <h5 class="font14 text-success font-weight-bolder">
                             {{ detailTransaksi.nama_penerima }}
                         </h5>
                     </div>
@@ -103,25 +103,22 @@
                         <h5 class="font16 font-gray font-custom font-weight-light">
                             Tgl Terima
                         </h5>
-                        <h5 class="font14 text-black font-weight-bolder">
+                        <h5 class="font14 text-success font-weight-bolder">
                             {{ detailTransaksi.tanggal_terima }}
                         </h5>
                     </div>
                 </div>
                 <div class="row text-left  mb-3">
-                    <div class="col-6">
+                    <div class="col-12">
                         <h5 class="font16 font-gray font-custom font-weight-light">
-                            No.Telepon
+                            Alamat
                         </h5>
-                        <h5 class="font14 text-black font-weight-bolder">{{ data_user.telepon2 }}</h5>
-                    </div>
-                    <div class="col-6">
-                        <h5 class="font16 font-gray font-custom font-weight-light">
-                            Provinsi
+                        <h5 class="font14 text-black font-weight-bolder">
+                            {{ data_user.alamat2 }}
                         </h5>
-                        <h5 class="font14 text-black font-weight-bolder">{{ data_user.propinsi }}</h5>
                     </div>
                 </div>
+
                 <div class="row text-left  mb-3">
                     <div class="col-6">
                         <h5 class="font16 font-gray font-custom font-weight-light">
@@ -137,15 +134,21 @@
                     </div>
                 </div>
                 <div class="row text-left  mb-3">
-                    <div class="col-12">
+                    <div class="col-6">
                         <h5 class="font16 font-gray font-custom font-weight-light">
-                            Alamat
+                            Provinsi
                         </h5>
-                        <h5 class="font14 text-black font-weight-bolder">
-                            {{ data_user.alamat2 }}
-                        </h5>
+                        <h5 class="font14 text-black font-weight-bolder">{{ data_user.propinsi }}</h5>
                     </div>
+                    <div class="col-6">
+                        <h5 class="font16 font-gray font-custom font-weight-light">
+                            No.Telepon
+                        </h5>
+                        <h5 class="font14 text-black font-weight-bolder">{{ data_user.telepon2 }}</h5>
+                    </div>
+
                 </div>
+
             </div>
         </div>
     </div>

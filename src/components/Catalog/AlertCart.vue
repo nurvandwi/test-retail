@@ -21,7 +21,7 @@
                 <div class="col-md-8 col-8">
                     <div class="card-body py-2">
                         <h1 class="card-title font14 mb-1">Total Penukaran Poin</h1>
-                        <p class="card-text font14 font-weight-bold">{{plsTotalPrice}} poin</p>
+                        <p class="card-text font14 font-weight-bold">{{plsTotalPrice}} Poin</p>
                     </div>
                 </div>
             </div>
