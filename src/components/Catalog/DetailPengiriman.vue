@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="contentFor === 'OrderDetails'" class="card mt-4 mb-details">
+    <div v-if="contentFor === 'OrderDetails'" class="card mt-3 mb-details">
       <div class="row no-gutters bg radius">
         <div class="col-md-12 col-12 mb-5" >
           <h4 class="card-title font18 font-weight-bold pt-3 px-3">
@@ -96,76 +96,94 @@
         </div>
       </div>
     </div>
-    <div v-if="contentFor === 'PulsaDetails'" class="card mt-4 mb-details" >
+    <div v-if="contentFor === 'PulsaDetails'" class="card mt-3 mb-details" >
       <div class="card mt-4" v-for="item in cartPulsa"
            :key="item.id">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
-            <h5 class="card-title font16 font-weight-bold pt-3">
+            <h4 class="card-title font18 font-weight-bold pt-3 px-3">
               Detail Pengiriman
-            </h5>
-            <table class="table table-borderless">
-              <tbody class>
-                <tr>
-                  <td class="py-1" scope="row">No HP</td>
+            </h4>
+            <div class="px-1"> <table class="table table-borderless">
+              <tbody class="py-0">
+              <tr>
+                <td class="py-0" scope="row">
+                  <h4 class="font16">No Hp</h4>
+                </td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
+                <td class="py-0" colspan="10">
+                  <h4 class="font16">{{item.no_hp}}</h4>
+                </td>
+              </tr>
 
-                  <td class="py-1" colspan="10">{{item.no_hp}}</td>
-                </tr>
-                <tr>
-                  <td class="py-1" colspan="9" scope="row">Status</td>
-                  <td colspan></td>
-                  <td
-                    class="py-1 mt-2 mr-custom font-weight-bold rounded-pill badge badge-info"
-                  >
-                    Proses
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-1" scope="row">No S/N</td>
 
-                  <td class="py-1" colspan="10">12345676890</td>
-                </tr>
+              <tr>
+                <td class="py-0" scope="row">
+                  <h4 class="font16 py-1">Status</h4>
+                </td>
+                <td class="py-0" scope="row"><h4 class="font16 py-1">:</h4></td>
+                <td
+                        class="py-1 px-4 font14 ml-2 bg-process font-weight-bold rounded-pill badge badge-info text-center"
+                        colspan="12"
+                >
+                  <h4 class="font14 mb-0">Proses</h4>
+                </td>
+              </tr>
+<!--              <tr>-->
+<!--                <td class="py-0" scope="row">-->
+<!--                  <h4 class="font16">No S/N</h4>-->
+<!--                </td>-->
+<!--                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>-->
+<!--                <td class="py-0" colspan="10">-->
+<!--                  <h4 class="font16">1343535</h4>-->
+<!--                </td>-->
+<!--              </tr>-->
               </tbody>
-            </table>
+            </table></div>
           </div>
         </div>
       </div>
     </div>
-    <div v-if="contentFor === 'EwalletDetails'" class="card mt-4 mb-details">
-      <div class="card mt-4">
+    <div v-if="contentFor === 'EwalletDetails'" class="card mt-3 mb-details">
+      <div class="card mt-4" v-for="item in cartEwallet"  :key="item.id">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
-            <h5 class="card-title font16 font-weight-bold pt-3">
+            <h4 class="card-title font18 font-weight-bold pt-3 px-3">
               Detail Pengiriman
-            </h5>
-            <table class="table table-borderless">
-              <tbody class>
-                <tr>
-                  <td class="py-1" scope="row">No HP</td>
+            </h4>
+            <div class="px-1"> <table class="table table-borderless">
+              <tbody class="py-0">
+              <tr>
+                <td class="py-0" scope="row">
+                  <h4 class="font16">No Hp</h4>
+                </td>
+                <td class="py-0" scope="row"><h4 class="font16">:</h4></td>
+                <td class="py-0" colspan="10">
+                  <h4 class="font16">{{item.no_hp}}</h4>
+                </td>
+              </tr>
 
-                  <td class="py-1" colspan="10">0817777777777</td>
-                </tr>
-                <tr>
-                  <td class="py-1" colspan="9" scope="row">Status</td>
-                  <td colspan></td>
-                  <td
-                    class="py-1 mt-2 mr-custom font-weight-bold rounded-pill badge badge-info"
-                  >
-                    Proses
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-1" scope="row">No S/N</td>
 
-                  <td class="py-1" colspan="10">12345676890</td>
-                </tr>
+              <tr>
+                <td class="py-0" scope="row">
+                  <h4 class="font16 py-1">Status</h4>
+                </td>
+                <td class="py-0" scope="row"><h4 class="font16 py-1">:</h4></td>
+                <td
+                        class="py-1 px-4 font14 ml-2 bg-process font-weight-bold rounded-pill badge badge-info text-center"
+                        colspan="12"
+                >
+                  <h4 class="font14 mb-0">Proses</h4>
+                </td>
+              </tr>
+
               </tbody>
-            </table>
+            </table></div>
           </div>
         </div>
       </div>
     </div>
-    <div v-if="contentFor === 'PointCashDetails'" class="card mt-4 mb-details">
+    <div v-if="contentFor === 'PointCashDetails'" class="card mt-3 mb-details">
       <div class="card mt-4">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
@@ -220,7 +238,7 @@
         </div>
       </div>
     </div>
-    <div v-if="contentFor === 'RebateDetails'" class="card mt-4 mb-details">
+    <div v-if="contentFor === 'RebateDetails'" class="card mt-3 mb-details">
       <div class="card mt-4">
         <div class="row no-gutters bg radius">
           <div class="col-md-12 col-12">
@@ -290,7 +308,7 @@ export default {
   methods: {
     getDetailUser() {
       axios
-        .get(`https://www.inosis.co.id/mvg2020_api/api_reg.php/detail-outlet`, {
+        .get(`https://inosis.co.id/mv_demo_api/api_reg.php/detail-outlet`, {
           params: {
             txtKodeOutlet: this.$route.params.outlet_id
           }
@@ -306,6 +324,9 @@ export default {
     cartPulsa() {
       return this.$store.state.cartPulsa;
     },
+    cartEwallet() {
+      return this.$store.state.cartEwallet;
+    }
   }
 };
 </script>

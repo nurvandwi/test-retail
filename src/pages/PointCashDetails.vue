@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Point To Cash" />
-    <Cart :contentFor="'PointCashDetails'" class="pt-4" />
+    <Cart :contentFor="'PointCashDetails'"  />
     <Item :contentFor="'PointCashDetails'" />
     <DetailPengiriman :contentFor="'PointCashDetails'" />
     <FooterProduct v-for="itempoin in poincash" :key="itempoin.id"

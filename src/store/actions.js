@@ -93,12 +93,25 @@ export function addProductToCart({commit}, {product, quantity}) {
 
 }
 
-export function addPulsaToCart({commit}, {no_hp, nominal}) {
+export function addPulsaToCart({commit}, {no_hp, poin, poin_text, nominal, kd_produk, quantity}) {
     commit("ADD_TO_PULSA", {
         no_hp,
-        nominal
+        nominal,
+        kd_produk,
+        quantity,
+        poin, poin_text
     });
+}
 
+export function addEwalletToCart({commit}, {no_hp, poin, ewallet, nominal, kd_produk, quantity}) {
+    commit("ADD_TO_EWALLET", {
+        no_hp,
+        kd_produk,
+        quantity,
+        nominal,
+        ewallet,
+        poin
+    });
 }
 
 export function addPoinCashToCart({commit}, {poincash, quantity}) {
@@ -183,18 +196,18 @@ export function checkOutPoinCash({state}, {outlet_id, token}) {
     return state.cartPoincash = []
 }
 
-export function checkOutPulsa({state}, {outlet_id, token, no_hp, nominal}) {
+export function checkOutPulsa({state}, {outlet_id, token}) {
     console.log(outlet_id, token);
     let data = {
         outlet_id: outlet_id,
-        data: state.cartPoincash.map(function (x) {
-            return {kd_produk: x.poincash.kd_produk, quantity: x.quantity};
+        data: state.cartPulsa.map(function (x) {
+            return {kd_produk: x.kd_produk, quantity: 1, no_hp: x.no_hp};
         })
     };
 
     console.log(data);
     axios.post(
-        "https://www.inosis.co.id/mv_demo_api/api.php/post-pointocash-hadiah",
+        "https://www.inosis.co.id/mv_demo_api/api.php/post-pulsa-hadiah",
         data,
         {
             params: {
@@ -205,10 +218,36 @@ export function checkOutPulsa({state}, {outlet_id, token, no_hp, nominal}) {
             }
         }
     );
-    return state.cartPoincash = []
+    return state.cartPulsa = []
 }
 
-export function addEwalletToCart({commit}, {ewallet, quantity}) {
+export function checkOutEwallet({state}, {outlet_id, token}) {
+    console.log(outlet_id, token);
+    let data = {
+        outlet_id: outlet_id,
+        data: state.cartEwallet.map(function (x) {
+            return {kd_produk: x.kd_produk, quantity: 1, no_hp: x.no_hp};
+        })
+    };
+
+    console.log(data);
+    axios.post(
+        "https://www.inosis.co.id/mv_demo_api/api.php/post-ewallet-hadiah",
+        data,
+        {
+            params: {
+                token
+            },
+            headers: {
+                "content-type": "application/json"
+            }
+        }
+    );
+    return state.cartEwallet = []
+}
+
+
+export function addEwalletToCartw({commit}, {ewallet, quantity}) {
     commit("ADD_TO_EWALLET", {
         ewallet,
         quantity
@@ -289,6 +328,10 @@ export function removePoincashFromCart({commit}, poincash) {
 
 export function removePulsaFromCart({commit}) {
     commit("REMOVE_PULSA_FROM_CART");
+}
+
+export function removeEwalletFromCart({commit}) {
+    commit("REMOVE_EWALLET_FROM_CART");
 }
 
 export function clearCartItems({commit}) {

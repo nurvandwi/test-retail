@@ -1,6 +1,6 @@
 <template>
     <div class="container mt-4" data-aos="fade-up">
-        <h3 class="font18 m-0" style="font-weight:bolder;">Input Data</h3>
+        <h3 class="font18 m-0" style="font-weight:bolder;">Input Data Pulsa</h3>
 
         <p class="font14">Masukkan nomor handphone untuk di Top Up</p>
         <div class="d-flex align-items-center"></div>
@@ -13,113 +13,80 @@
                             type="number"
                             class="form-control"
                             placeholder="Nomor Pulsa"
+                            style="background-color: white !important;"
                     />
                 </div>
                 <div class="col-md-4 col-4 d-flex align-items-center">
-                    <div v-if="no_hp.slice(0, 4) === '0877'">
+                    <div v-if="no_hp.slice(0, 4) === '0817' ||no_hp.slice(0, 4) === '0818' ||no_hp.slice(0, 4) === '0819'||no_hp.slice(0, 4) === '0859'||no_hp.slice(0, 4) === '0877'||no_hp.slice(0, 4) === '0878'||no_hp.slice(0, 4) === '0879'||no_hp.slice(0, 4) === '0817'">
                         <img src="../../assets/xl.png" class="icon-pulsa pl-2" alt="..."/>
                     </div>
-                    <div v-else-if="no_hp.slice(0, 4) === '0856'">
+                    <div v-else-if="no_hp.slice(0, 4) === '0814'||no_hp.slice(0, 4) === '0815'||no_hp.slice(0, 4) === '0816'||no_hp.slice(0, 4) === '0855'||no_hp.slice(0, 4) === '0856'||no_hp.slice(0, 4) === '0857'||no_hp.slice(0, 4) === '0858'">
                         <img
                                 src="../../assets/indosat.png"
                                 class="icon-pulsa pl-2"
                                 alt="..."
                         />
                     </div>
+                    <div v-else-if="no_hp.slice(0, 4) === '0811'||no_hp.slice(0, 4) === '0812'||no_hp.slice(0, 4) === '0813'||no_hp.slice(0, 4) === '0821'||no_hp.slice(0, 4) === '0822'||no_hp.slice(0, 4) === '0823'||no_hp.slice(0, 4) === '0851'||no_hp.slice(0, 4) === '0852'||no_hp.slice(0, 4) === '0853'">
+                        <img
+                                src="../../assets/icon-simpati.png"
+                                class="icon-pulsa px-0"
+                                alt="..."
+                        />
+                    </div>
+                    <div v-else-if="no_hp.slice(0, 4) === '0831'||no_hp.slice(0, 4) === '0832'||no_hp.slice(0, 4) === '0838'">
+                        <img
+                                src="../../assets/icon-axis.png"
+                                class="icon-pulsa px-0"
+                                alt="..."
+                        />
+                    </div>
+                    <div v-else-if="no_hp.slice(0, 4) === '0881'||no_hp.slice(0, 4) === '0882'||no_hp.slice(0, 4) === '0883'||no_hp.slice(0, 4) === '0884'||no_hp.slice(0, 4) === '0885'||no_hp.slice(0, 4) === '0886'||no_hp.slice(0, 4) === '0887'||no_hp.slice(0, 4) === '0888'||no_hp.slice(0, 4) === '0889'">
+                        <img
+                                src="../../assets/icon-smartfren.png"
+                                class="icon-pulsa px-0"
+                                alt="..."
+                        />
+                    </div>
+                    <div v-else-if="no_hp.slice(0, 4) === '0895'||no_hp.slice(0, 4) === '0896'||no_hp.slice(0, 4) === '0897'||no_hp.slice(0, 4) === '0898'||no_hp.slice(0, 4) === '0899'">
+                        <img
+                                src="../../assets/icon-3.png"
+                                class="icon-pulsa px-0"
+                                alt="..."
+                        />
+                    </div>
                     <div v-else></div>
                 </div>
-                <div class="col-md-12 mt-3" v-if="no_hp.slice(0, 4) === '0877'">
+                <div class="col-md-12 mt-3" v-if="no_hp.length>=10 ">
                     <div class="row px-2 pt-2">
-                        <div class="col-md-6 col-6 px-2 pb-3">
-                            <div class="card border w-100">
-                                <div class="card-body p-3">
-                                    <h5 class="card-title text-center m-0">5.000</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6 px-2 pb-3">
-                            <button class="btn py-0 col-12 col-md-12 px-0" @click="addToPulsa()">
+                        <div class="col-md-6 col-6 px-2 pb-3" v-for="(list,i) in nominalPulsa.data" :value="list.id"
+                             :key="i">
+                            <button class="btn py-0 col-12 col-md-12 px-0"
+                                    @click="addToPulsa(list.kd_produk,list.poin,list.poin_text)">
                                 <router-link
-                                        v-bind:to="'/pulsadetails/' + `${$route.params.outlet_id}`+ '/10000/'  "
+                                        v-bind:to="'/pulsadetails/' + `${$route.params.outlet_id}/`+  list.nominal "
                                         style="color: #FFF;"
                                         class="mx-auto font18 text-dark"
                                 >
                                     <div class="card border w-100">
                                         <div class="card-body p-3">
-                                            <h5 class="card-title text-center m-0">10.000</h5>
+                                            <h5 class="card-title text-center m-0">{{list.nominal_text}}</h5>
                                         </div>
                                     </div>
                                 </router-link>
                             </button>
                         </div>
-                        <div class="col-md-6 col-6 px-2 pb-3">
-                            <div class="card border w-100">
-                                <div class="card-body p-3">
-                                    <h5 class="card-title text-center m-0">25000</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6 px-2 pb-3">
-                            <div class="card border w-100">
-                                <div class="card-body p-3">
-                                    <h5 class="card-title text-center m-0">50000</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6 px-2 pb-3">
-                            <div class="card border w-100">
-                                <div class="card-body p-3">
-                                    <h5 class="card-title text-center m-0">100000</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6 px-2 pb-3">
-                            <div class="card border w-100">
-                                <div class="card-body p-3">
-                                    <h5 class="card-title text-center m-0">150000</h5>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div class="col-md-12 mt-3" v-if="no_hp.slice(0, 4) === '0856'">
-                    <div class="row px-2 pt-2">
-                        <div class="col-md-6 col-6 px-2 pb-3">
-                            <div class="card border w-100">
-                                <div class="card-body p-3">
-                                    <h5 class="card-title text-center m-0">5.000</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6 px-2 pb-3">
-                            <div class="card border w-100">
-                                <div class="card-body p-3">
-                                    <h5 class="card-title text-center m-0">10.000</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6 px-2 pb-3">
-                            <div class="card border w-100">
-                                <div class="card-body p-3">
-                                    <h5 class="card-title text-center m-0">25000</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6 px-2 pb-3">
-                            <div class="card border w-100">
-                                <div class="card-body p-3">
-                                    <h5 class="card-title text-center m-0">50000</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div v-else></div>
             </div>
         </form>
     </div>
 </template>
 
 <script>
+    import axios from 'axios'
+
     export default {
         data() {
             return {
@@ -130,18 +97,40 @@
                     {text: "Pilih Jenis Provider", value: "Pulsa"},
                     {text: "Indosat", value: "Indosat"},
                     {text: "Xl", value: "Xl"}
-                ]
+                ],
+                nominalPulsa: []
             };
         },
         methods: {
-            addToPulsa() {
-              // console.log(this.no_hp)
+            addToPulsa(kd_produk, poin, poin_text) {
+                // console.log(this.no_hp)
                 this.$store.dispatch("addPulsaToCart", {
                     no_hp: this.no_hp,
-                    nominal: this.$route.params.nominal
+                    nominal: this.$route.params.nominal,
+                    kd_produk,
+                    poin,
+                    poin_text,
+                    quantity: 1
                 });
+            },
+            getNominalPulsa() {
+                axios
+                    .get(
+                        `https://www.inosis.co.id/mv_demo_api/api.php/list-pulsa-hadiah`,
+                        {
+                            params: {
+                                outlet_id: this.$route.params.outlet_id,
+                                token: localStorage.token
+                            }
+                        }
+                    )
+                    .then(res => (this.nominalPulsa = res.data))
+                    .catch(err => console.log(err))
             }
 
+        },
+        mounted() {
+            this.getNominalPulsa()
         }
     };
 </script>

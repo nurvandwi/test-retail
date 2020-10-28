@@ -28,17 +28,41 @@ export function ADD_TO_CART(state, {product, quantity}) {
     });
 };
 
-export function ADD_TO_PULSA(state, {no_hp, nominal}) {
+export function ADD_TO_PULSA(state, {no_hp, nominal, poin,poin_text, kd_produk, quantity}) {
     let pulsaInCart = state.cartPulsa.find((item) => {
         return item.no_hp.id === no_hp.id;
     });
     if (pulsaInCart) {
-        pulsaInCart.nominal += nominal;
+        pulsaInCart.no_hp != no_hp;
+        alert("Cart kamu masih berisi, silahkan check out terlebih dahulu.");
         return;
     }
     state.cartPulsa.push({
         no_hp,
         nominal,
+        kd_produk,
+        quantity,
+        poin,
+        poin_text
+    });
+// console.log(state.cartPulsa)
+};
+
+export function ADD_TO_EWALLET(state, {ewallet, poin, no_hp, kd_produk, nominal, quantity}) {
+    let ewalletInCart = state.cartEwallet.find((item) => {
+        return item.no_hp.id === no_hp.id;
+    });
+    if (ewalletInCart) {
+        ewalletInCart.kd_produk += kd_produk;
+        return;
+    }
+    state.cartEwallet.push({
+        no_hp,
+        kd_produk,
+        quantity,
+        nominal,
+        ewallet,
+        poin
     });
 // console.log(state.cartPulsa)
 };
@@ -59,7 +83,7 @@ export function CHECKOUT_CART(state, {product, quantity}) {
     console.log(productInCart)
     // return state.cart=[]
 };
-export const ADD_TO_EWALLET = (state, {ewallet, quantity}) => {
+export const ADD_TO_EWALLEWT = (state, {ewallet, quantity}) => {
     let ewalletInCart = state.cartEwallet.find(item => {
         return item.ewallet.id === ewallet.id;
     });
@@ -72,6 +96,7 @@ export const ADD_TO_EWALLET = (state, {ewallet, quantity}) => {
         quantity
     });
 };
+
 export const ADD_TO_POINCASH = (state, {poincash, quantity}) => {
     let poincashInCart = state.cartPoincash.find(item => {
         return item.poincash.kd_produk === poincash.kd_produk;
@@ -129,6 +154,11 @@ export const REMOVE_POINCASH_FROM_CART = (state, poincash) => {
 };
 export const REMOVE_PULSA_FROM_CART = (state) => {
     state.cartPulsa = state.cartPulsa.filter(item => {
+        return item.id !== item.id;
+    });
+};
+export const REMOVE_EWALLET_FROM_CART = (state) => {
+    state.cartEwallet = state.cartEwallet.filter(item => {
         return item.id !== item.id;
     });
 };

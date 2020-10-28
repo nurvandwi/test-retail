@@ -106,7 +106,6 @@
             </h5>
             <h5 class="font14 text-black font-weight-bolder break-word">
               {{ detailTransaksi.nama_penerima }}
-              asdasdasdasdasdasdadasd
             </h5>
           </div>
         </div>
