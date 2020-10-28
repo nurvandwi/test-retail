@@ -1,6 +1,6 @@
 <template>
     <div class="container mt-4" data-aos="fade-up">
-        <h3 class="font18 m-0" style="font-weight:bolder;">Input Data</h3>
+        <h3 class="font18 m-0" style="font-weight:bolder;">Input Data Pulsa</h3>
 
         <p class="font14">Masukkan nomor handphone untuk di Top Up</p>
         <div class="d-flex align-items-center"></div>
@@ -57,7 +57,7 @@
                     </div>
                     <div v-else></div>
                 </div>
-                <div class="col-md-12 mt-3" v-if="no_hp.length>3 ">
+                <div class="col-md-12 mt-3" v-if="no_hp.length>=10 ">
                     <div class="row px-2 pt-2">
                         <div class="col-md-6 col-6 px-2 pb-3" v-for="(list,i) in nominalPulsa.data" :value="list.id"
                              :key="i">

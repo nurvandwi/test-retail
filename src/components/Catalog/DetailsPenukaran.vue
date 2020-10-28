@@ -16,8 +16,7 @@
               <div class="col-md-10 col-10">
                 <div class="card-body pl-3 pr-0">
                   <h5 class="card-title font14px font-weight-bold">{{ detailTransaksi.nama_produk }}</h5>
-<!--                  <div class="d-flex justify-content-between"><p class="card-text font-weight-bold font8">{{ detailTransaksi.quantity }} X 600ww</p>-->
-<!--                    <h5 class="font-weight-bold font18  text-right">600</h5></div>-->
+                  <p class="card-text font-weight-normal font16">{{ detailTransaksi.nominal }}</p>
                 </div>
               </div>
               <!--              <div class="col-md-3 col-2 align-self-center pl-3">-->

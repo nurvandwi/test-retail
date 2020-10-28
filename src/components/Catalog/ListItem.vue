@@ -2,7 +2,7 @@
     <div class="col-md-12 col-12 p-0">
         <div v-if="contentFor === 'OrderDetails'">
             <div
-                    class="card mt-2 mb-3 shadow1 radius"
+                    class="card  mb-3 shadow1 radius"
                     v-for="item in cart"
                     :key="item.product.id"
             >
