@@ -1,12 +1,14 @@
 <template>
   <div class="container">
     <Quarter
+      :contentFor="'Quarter'"
       :sisa_point="points.sisa_point"
       :nama_outlet="points.outlet_name"
       :id_outlet="points.outlet_id"
       :saldo_rebate="points.saldo_rebate"
     />
     <DetailPenjualan
+      :contentFor="'Quarter'"
       title="PENJUALAN PER QUARTER"
       class="mt-custom"
       :historikal="points.total_last"
@@ -15,6 +17,7 @@
       :target_penjualan="points.total_target"
     />
     <Poin
+      :contentFor="'Quarter'"
       :poin_carry_over="points.poin_carry_over"
       :perolehan="points.total_achv"
       :poin_tersedia="points.sisa_point"
@@ -23,6 +26,7 @@
       class="mt-3"
     />
     <Tarif
+      :contentFor="'Quarter'"
       :rebate_medio="points.total_rebate_medio"
       :rebate_bulanan="points.total_rebate"
       :tarif_medio="points.tarif_rebate_medio"
@@ -31,7 +35,7 @@
       title
       class="mt-3"
     />
-    <BulanTransaksi />
+    <BulanTransaksi :contentFor="'Quarter'" />
     <div></div>
   </div>
 </template>
@@ -62,23 +66,41 @@ export default {
   methods: {
     normalize(badNumeric) {
       return Number(badNumeric.split(",").join(""));
+    },
+    allQuarter() {
+      axios
+        .get("https://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet", {
+          headers: {
+            version: this.$route.params.version
+          },
+          params: {
+            txtKodeOutlet: this.$route.params.outlet_id,
+            token: localStorage.token
+          }
+        })
+
+        .then(res => (this.points = res.data))
+        .catch(err => console.log(err));
+    },
+    monthToYear() {
+      axios
+        .get(
+          "https://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet-mty",
+          {
+            params: {
+              txtKodeOutlet: this.$route.params.outlet_id,
+              token: localStorage.token
+            }
+          }
+        )
+
+        .then(res => (this.year = res.data))
+        .catch(err => console.log(err));
     }
   },
   mounted() {
-    axios
-      .get("https://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet", {
-        headers: {
-          version: this.$route.params.version,
-          bulan: this.$route.params.bulan
-        },
-        params: {
-          txtKodeOutlet: this.$route.params.outlet_id,
-          token: localStorage.token
-        }
-      })
-
-      .then(res => (this.points = res.data))
-      .catch(err => console.log(err));
+    this.allQuarter();
+    this.MonthToYear();
   }
 };
 </script>
@@ -94,7 +116,7 @@ export default {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .mt-custom {
-    margin-top: 41vh;
+    margin-top: 26vh;
   }
 }
 </style>
