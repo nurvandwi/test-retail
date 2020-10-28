@@ -35,44 +35,19 @@
             class="card-title font18 font-weight-bolder mb-0"
             data-aos="fade-down"
           >
-            Hai, {{ outlet_name }}
+        Hai,   {{outlet_name}}
           </h1>
-          <p class="mb-0 font12px font-weight-normal" data-aos="fade-down">
+          <p class="mb-0 font12px font-weight-normal"   data-aos="fade-down">
             Ini Jumlah Poin dan Rebate anda.
           </p>
           <div class="d-flex mt-4" data-aos="zoom-in">
             <img class="img-logo" src="../../assets/poin-logo.png" alt="" />
-            <p class="font18 align-self-center mb-0 px-2">{{ outlet_point }}</p>
+            <p class="font18 align-self-center mb-0 px-2">{{outlet_point}}</p>
           </div>
           <div class="d-flex mt-2" data-aos="zoom-in">
             <img class="img-logo" src="../../assets/rebate-logo.png" alt="" />
-            <p class="font18 align-self-center mb-0 px-2">
-              {{ outlet_rebate }}
-            </p>
+            <p class="font18 align-self-center mb-0 px-2">{{outlet_rebate}}</p>
           </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="card text-white justify-content-center"
-      v-if="contentFor === 'QuarterDetails'"
-    >
-      <img
-        class=" img-Hero"
-        src="../../assets/Header-new.png"
-        alt="Card image"
-      />
-      <div class="card-img-overlay d-flex align-items-center">
-        <div class="col mb-4">
-          <h1
-            class="card-title font18 font-weight-bolder mb-0"
-            data-aos="fade-down"
-          >
-            Hai, {{ outlet_name }}
-          </h1>
-          <p class="mb-0 font12px font-weight-normal" data-aos="fade-down">
-            Ini Jumlah Poin dan Rebate anda.
-          </p>
         </div>
       </div>
     </div>
@@ -96,8 +71,8 @@
 
 <script>
 export default {
-  name: "Header",
-  props: ["contentFor", "outlet_name", "outlet_point", "outlet_rebate"]
+  name:"Header",
+  props: ["contentFor","outlet_name","outlet_point","outlet_rebate"]
 };
 </script>
 
@@ -134,6 +109,7 @@ export default {
   .font-26 {
     font-size: 26px;
   }
+
 
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .font-19 {

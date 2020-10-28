@@ -7,7 +7,7 @@
       :outlet_rebate="OutletData.Rebate"
     />
     <PromoBanner :slider="Slider" />
-    <ListPromosi :contentFor="'home'" />
+    <ListPromosi />
     <ListTransaksi class="mb-5 pb-5" />
   </div>
 </template>
