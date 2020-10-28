@@ -2,49 +2,50 @@
   <div class="nav-bar">
     <ul class="px-0">
       <li>
-        <router-link
-          v-bind:to="'/Home/' + `${$route.params.outlet_id}`"
-          style="color: #FFF;"
-          class="mx-auto font18"
-        >
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="24"
-              height="24"
-              viewBox="0 0 172 172"
-              style=" fill:#000000;"
-            >
-              <g
-                fill="none"
-                fill-rule="nonzero"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal"
+        <button type="button" class="btn p-0" v-on:click="push()">
+          <router-link
+            v-bind:to="'/Home/' + `${$route.params.outlet_id}`"
+            style="color: #FFF;"
+            class="mx-auto font18"
+          >
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="24"
+                height="24"
+                viewBox="0 0 172 172"
+                style=" fill:#000000;"
               >
-                <path d="M0,172v-172h172v172z" fill="none" />
-                <g fill="#000000">
-                  <path
-                    d="M85.82503,14.33333c-1.14611,0.03914 -2.24966,0.44378 -3.14941,1.15479l-50.92953,40.12353c-6.46397,5.09418 -10.24609,12.87841 -10.24609,21.10807v68.40527c0,4.88621 4.07212,8.95833 8.95833,8.95833h35.83333c4.88621,0 8.95833,-4.07212 8.95833,-8.95833v-35.83333c0,-1.05724 0.73442,-1.79167 1.79167,-1.79167h17.91667c1.05724,0 1.79167,0.73442 1.79167,1.79167v35.83333c0,4.88621 4.07212,8.95833 8.95833,8.95833h35.83333c4.88621,0 8.95833,-4.07212 8.95833,-8.95833v-68.40527c0,-8.22966 -3.78213,-16.01389 -10.24609,-21.10807l-50.92953,-40.12353c-0.99396,-0.7852 -2.23327,-1.19417 -3.49935,-1.15479zM86,26.55306l47.60514,37.50602c3.8847,3.06149 6.14486,7.71798 6.14486,12.66064v66.61361h-32.25v-34.04167c0,-6.86192 -5.67974,-12.54167 -12.54167,-12.54167h-17.91667c-6.86192,0 -12.54167,5.67974 -12.54167,12.54167v34.04167h-32.25v-66.61361c0,-4.94267 2.26016,-9.59916 6.14486,-12.66064z"
-                  />
+                <g
+                  fill="none"
+                  fill-rule="nonzero"
+                  stroke="none"
+                  stroke-width="1"
+                  stroke-linecap="butt"
+                  stroke-linejoin="miter"
+                  stroke-miterlimit="10"
+                  stroke-dasharray
+                  stroke-dashoffset="0"
+                  font-family="none"
+                  font-weight="none"
+                  font-size="none"
+                  text-anchor="none"
+                  style="mix-blend-mode: normal"
+                >
+                  <path d="M0,172v-172h172v172z" fill="none" />
+                  <g fill="#000000">
+                    <path
+                      d="M85.82503,14.33333c-1.14611,0.03914 -2.24966,0.44378 -3.14941,1.15479l-50.92953,40.12353c-6.46397,5.09418 -10.24609,12.87841 -10.24609,21.10807v68.40527c0,4.88621 4.07212,8.95833 8.95833,8.95833h35.83333c4.88621,0 8.95833,-4.07212 8.95833,-8.95833v-35.83333c0,-1.05724 0.73442,-1.79167 1.79167,-1.79167h17.91667c1.05724,0 1.79167,0.73442 1.79167,1.79167v35.83333c0,4.88621 4.07212,8.95833 8.95833,8.95833h35.83333c4.88621,0 8.95833,-4.07212 8.95833,-8.95833v-68.40527c0,-8.22966 -3.78213,-16.01389 -10.24609,-21.10807l-50.92953,-40.12353c-0.99396,-0.7852 -2.23327,-1.19417 -3.49935,-1.15479zM86,26.55306l47.60514,37.50602c3.8847,3.06149 6.14486,7.71798 6.14486,12.66064v66.61361h-32.25v-34.04167c0,-6.86192 -5.67974,-12.54167 -12.54167,-12.54167h-17.91667c-6.86192,0 -12.54167,5.67974 -12.54167,12.54167v34.04167h-32.25v-66.61361c0,-4.94267 2.26016,-9.59916 6.14486,-12.66064z"
+                    />
+                  </g>
                 </g>
-              </g>
-            </svg>
-
-            <span class="menu-navigation">Home</span>
-          </div>
-        </router-link>
+              </svg>
+              <span class="menu-navigation">Home</span>
+            </div>
+          </router-link>
+        </button>
       </li>
 
       <li>
@@ -106,7 +107,7 @@
       <li>
         <router-link
           :to="{
-            path: '/Quarter/1/' + `${$route.params.outlet_id}`
+            path: '/QuarterDetails/1/' + `${$route.params.outlet_id}`
           }"
           style="color: #FFF;"
           class="mx-auto font18"
@@ -215,6 +216,9 @@ export default {
     logout: function() {
       localStorage.removeItem("token");
       this.$router.push("/");
+    },
+    push() {
+      window.location.reload();
     }
   }
 };

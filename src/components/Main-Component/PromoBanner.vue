@@ -4,14 +4,14 @@
       id="carouselExampleIndicators"
       class="carousel slide"
       data-ride="carousel"
-
     >
-      <div >
+      <div>
         <h3 class="font16 ml-4 mb-0 mt-2 font-weight-bold">Promo</h3>
         <p class="font-12 ml-4">Temukan penawaran menarik dibawah ini.</p>
       </div>
-      <div class="carousel-inner px-4" >
-        <div    style="background-color: white"
+      <div class="carousel-inner px-4">
+        <div
+          style="background-color: white"
           v-bind:class="[
             'carousel-item table-bordered radius',
             { active: index === 0 }
@@ -38,9 +38,17 @@
             </div>
           </div>
         </div>
-
       </div>
-
+      <ol class="carousel-indicators">
+        <li
+          data-target="#carouselExampleIndicators"
+          data-slide-to="2"
+          data-interval="1"
+          v-bind:class="['carousel-item active', { active: index === 0 }]"
+          v-for="(list, index) in slider.data"
+          :key="index"
+        ></li>
+      </ol>
       <a
         class="carousel-control-prev"
         href="#carouselExampleIndicators"
@@ -81,6 +89,52 @@ export default {
 }
 .table-bordered {
   border: 1px solid #d3d3d3 !important;
+}
+
+.carousel-indicators {
+  position: relative !important;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+.carousel-indicators li {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 30px;
+  height: 3px;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #e19e29 !important;
+  background-clip: padding-box;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.6s linear !important;
+}
+.icon {
+  width: 50% !important;
+  z-index: 10;
+  position: relative;
 }
 @media screen and (max-width: 1000px) {
   .font-12 {
