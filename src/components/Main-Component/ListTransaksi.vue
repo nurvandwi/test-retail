@@ -1,5 +1,5 @@
 <template>
-  <div class=" mt-4 pt-1 ">
+  <div class=" mt-5 pt-0 ">
     <div
       class="col-12 align-self-center font14 bg-blue d-flex justify-content-between font-weight-bold"
     >

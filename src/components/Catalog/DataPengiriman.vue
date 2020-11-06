@@ -33,7 +33,7 @@
                         </h5>
 
                         <h5 class="font14 text-success font-weight-bolder">
-                                    {{ detailTransaksi.noreferensi }}
+                            {{ detailTransaksi.noreferensi }}
                         </h5>
                     </div>
                 </div>
@@ -99,12 +99,20 @@
                 </div>
                 <div class="row text-left mt-2 mb-3">
 
-                    <div class="col-12">
+                    <div class="col-6">
                         <h5 class="font16 font-gray font-custom font-weight-light">
                             Tgl Terima
                         </h5>
                         <h5 class="font14 text-success font-weight-bolder">
                             {{ detailTransaksi.tanggal_terima }}
+                        </h5>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="font16 font-gray font-custom font-weight-light">
+                           No Ektp
+                        </h5>
+                        <h5 class="font14 text-success font-weight-bolder">
+                            {{ data_user.no_ektp }}
                         </h5>
                     </div>
                 </div>

@@ -55,12 +55,12 @@
           >
             <div class="col font10" style="border-right:1px solid #d3d3d3;">
               <h2 class="font14 text-black font-weight-bolder">
-                Rp {{ formatPrice(monthPoint.last_monthly) }}
+                Rp {{ formatPrice(monthPoint.historikal_penjualan) }}
               </h2>
             </div>
             <div class="col">
               <h2 class="font14 text-black font-weight-bolder">
-                Rp {{ formatPrice(monthPoint.target_monthly) }}
+                Rp {{ formatPrice(monthPoint.target_penjualan) }}
               </h2>
             </div>
           </div>
@@ -90,12 +90,12 @@
                     : 'text-danger '
                 "
               >
-                Rp {{ formatPrice(monthPoint.selisih_monthly) }}
+                Rp {{ formatPrice(monthPoint.selisih_penjualan) }}
               </h2>
             </div>
             <div class="col">
               <h2 class="font14 text-black font-weight-bolder">
-                Rp {{ formatPrice(monthPoint.total_sales) }}
+                Rp {{ formatPrice(monthPoint.aktual_penjualan) }}
               </h2>
             </div>
           </div>
@@ -118,7 +118,7 @@
                     : 'text-danger '
                 "
               >
-                {{ formatPrice(monthPoint.selisih_monthly) }} %
+                {{ formatPoin(monthPoint.ratio_pencapaian) }} %
               </h2>
             </div>
           </div>
@@ -132,107 +132,107 @@
           </div>
         </div>
       </div>
-      <div class="row text-center rows-col-3 mt-3">
-        <div class="col bg-blue text-white py-2 font-custom">
-          DETAIL PENJUALAN MEDIO BULAN
-        </div>
-        <div class="table-bordered col-12">
-          <div class="row text-center mt-2">
-            <div class="col font10" style="border-right: 1px solid #d3d3d3; ">
-              <h2 class="font10 text-gray font-custom font-weight-bolder">
-                HISTORIKAL PENJUALAN
-              </h2>
-            </div>
-            <div class="col">
-              <h2 class="font10 text-gray font-custom font-weight-bolder">
-                TARGET PENJUALAN
-              </h2>
-            </div>
-          </div>
-          <div
-            class="row text-center mb-2 border-bottom"
-            v-for="monthPoint in selectTab"
-            :key="monthPoint.id"
-          >
-            <div class="col font10" style="border-right:1px solid #d3d3d3;">
-              <h2 class="font14 text-black font-weight-bolder">
-                Rp {{ formatPrice(monthPoint.last_monthly) }}
-              </h2>
-            </div>
-            <div class="col">
-              <h2 class="font14 text-black font-weight-bolder">
-                Rp {{ formatPrice(monthPoint.target_monthly) }}
-              </h2>
-            </div>
-          </div>
-          <div class="row text-center mt-2">
-            <div class="col font10" style="border-right:1px solid #d3d3d3;">
-              <h2 class="font10 text-gray font-custom font-weight-bolder">
-                SELISIH PENJUALAN
-              </h2>
-            </div>
-            <div class="col">
-              <h2 class="font10 text-gray font-custom font-weight-bolder">
-                AKTUAL PENJUALAN
-              </h2>
-            </div>
-          </div>
-          <div
-            class="row text-center mb-2 border-bottom"
-            v-for="monthPoint in selectTab"
-            :key="monthPoint.id"
-          >
-            <div class="col font10" style="border-right:1px solid #d3d3d3;">
-              <h2
-                class="font14 font-weight-bolder"
-                v-bind:class="
-                  parseInt(monthPoint.selisih_monthly) > 0
-                    ? 'text-dark '
-                    : 'text-danger '
-                "
-              >
-                Rp {{ formatPrice(monthPoint.selisih_monthly) }}
-              </h2>
-            </div>
-            <div class="col">
-              <h2 class="font14 text-black font-weight-bolder">
-                Rp{{ formatPrice(monthPoint.total_sales) }}
-              </h2>
-            </div>
-          </div>
-          <div
-            class="row text-center mt-2"
-            v-for="monthPoint in selectTab"
-            :key="monthPoint.id"
-          >
-            <div class="col font10">
-              <h2 class="font10 text-gray font-custom font-weight-bolder">
-                RATIO PENJUALAN
-              </h2>
-            </div>
-            <div class="col">
-              <h2
-                class="font14 text-black font-custom font-weight-bolder"
-                v-bind:class="
-                  parseInt(monthPoint.selisih_monthly) > 0
-                    ? 'text-dark '
-                    : 'text-danger '
-                "
-              >
-                {{ formatPrice(monthPoint.selisih_monthly) }} %
-              </h2>
-            </div>
-          </div>
-          <div class="text-center mb-2">
-            <div class="col font10">
-              <h2 class="font10 text-black-50 font-weight-bolder">
-                <!-- eslint-disable -->
-                (STATUS SUKSES >= 100%, GAGAL < 100%)
-              </h2>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!--            <div class="row text-center rows-col-3 mt-3">-->
+      <!--                <div class="col bg-blue text-white py-2 font-custom">-->
+      <!--                    DETAIL PENJUALAN MEDIO BULAN-->
+      <!--                </div>-->
+      <!--                <div class="table-bordered col-12">-->
+      <!--                    <div class="row text-center mt-2">-->
+      <!--                        <div class="col font10" style="border-right: 1px solid #d3d3d3; ">-->
+      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
+      <!--                                HISTORIKAL PENJUALAN-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                        <div class="col">-->
+      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
+      <!--                                TARGET PENJUALAN-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                    <div-->
+      <!--                            class="row text-center mb-2 border-bottom"-->
+      <!--                            v-for="monthPoint in selectTab"-->
+      <!--                            :key="monthPoint.id"-->
+      <!--                    >-->
+      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
+      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
+      <!--                                Rp {{ formatPrice(monthPoint.last_monthly) }}-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                        <div class="col">-->
+      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
+      <!--                                Rp {{ formatPrice(monthPoint.target_monthly) }}-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                    <div class="row text-center mt-2">-->
+      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
+      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
+      <!--                                SELISIH PENJUALAN-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                        <div class="col">-->
+      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
+      <!--                                AKTUAL PENJUALAN-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                    <div-->
+      <!--                            class="row text-center mb-2 border-bottom"-->
+      <!--                            v-for="monthPoint in selectTab"-->
+      <!--                            :key="monthPoint.id"-->
+      <!--                    >-->
+      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
+      <!--                            <h2-->
+      <!--                                    class="font14 font-weight-bolder"-->
+      <!--                                    v-bind:class="-->
+      <!--                  parseInt(monthPoint.selisih_monthly) > 0-->
+      <!--                    ? 'text-dark '-->
+      <!--                    : 'text-danger '-->
+      <!--                "-->
+      <!--                            >-->
+      <!--                                Rp {{ formatPrice(monthPoint.selisih_monthly) }}-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                        <div class="col">-->
+      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
+      <!--                                Rp{{ formatPrice(monthPoint.total_sales) }}-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                    <div-->
+      <!--                            class="row text-center mt-2"-->
+      <!--                            v-for="monthPoint in selectTab"-->
+      <!--                            :key="monthPoint.id"-->
+      <!--                    >-->
+      <!--                        <div class="col font10">-->
+      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
+      <!--                                RATIO PENJUALAN-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                        <div class="col">-->
+      <!--                            <h2-->
+      <!--                                    class="font14 text-black font-custom font-weight-bolder"-->
+      <!--                                    v-bind:class="-->
+      <!--                  parseInt(monthPoint.selisih_monthly) > 0-->
+      <!--                    ? 'text-dark '-->
+      <!--                    : 'text-danger '-->
+      <!--                "-->
+      <!--                            >-->
+      <!--                                {{ formatPrice(monthPoint.selisih_monthly) }} %-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                    <div class="text-center mb-2">-->
+      <!--                        <div class="col font10">-->
+      <!--                            <h2 class="font10 text-black-50 font-weight-bolder">-->
+      <!--                                &lt;!&ndash; eslint-disable &ndash;&gt;-->
+      <!--                                (STATUS SUKSES >= 100%, GAGAL < 100%)-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                </div>-->
+      <!--            </div>-->
       <div class="row text-center rows-col-3 mt-3">
         <div class="col font-custom bg-blue text-white py-2">
           POIN PER BULAN
@@ -257,11 +257,13 @@
           >
             <div class="col font10" style="border-right:1px solid #d3d3d3;">
               <h2 class="font14 text-black font-weight-bolder">
-                {{ formatPrice(monthPoint.archievement) }}
+                {{ formatPoin(monthPoint.perolehan) }}
               </h2>
             </div>
             <div class="col">
-              <h2 class="font14 text-black font-weight-bolder">0</h2>
+              <h2 class="font14 text-black font-weight-bolder">
+                {{ formatPoin(monthPoint.carry_over) }}
+              </h2>
             </div>
           </div>
           <div class="row text-center mt-2">
@@ -282,12 +284,21 @@
             :key="monthPoint.id"
           >
             <div class="col font10" style="border-right:1px solid #d3d3d3;">
-              <h2 class="font14 text-black font-weight-bolder">
-                {{ formatPrice(monthPoint.point_monthly) }}
+              <h2
+                class="font14 text-black font-weight-bolder font-custom"
+                v-bind:class="
+                  parseInt(monthPoint.poin_tersedia) > 0
+                    ? 'text-ungu'
+                    : 'text-danger '
+                "
+              >
+                {{ formatPoin(monthPoint.poin_tersedia) }}
               </h2>
             </div>
             <div class="col">
-              <h2 class="font14 text-black font-weight-bolder">0</h2>
+              <h2 class="font14 text-black font-weight-bolder">
+                {{ formatPoin(monthPoint.penukaran_poin) }}
+              </h2>
             </div>
           </div>
           <div class="row text-center mt-2">
@@ -301,8 +312,15 @@
               v-for="monthPoint in selectTab"
               :key="monthPoint.id"
             >
-              <h2 class="font14 text-black font-weight-bolder font-custom">
-                {{ formatPrice(monthPoint.archievement) }}
+              <h2
+                class="font14 text-black font-weight-bolder font-custom"
+                v-bind:class="
+                  parseInt(monthPoint.poin_tersedia) > 0
+                    ? 'text-ungu'
+                    : 'text-danger '
+                "
+              >
+                {{ formatPoin(monthPoint.sisa_poin) }}
               </h2>
             </div>
           </div>
@@ -317,30 +335,32 @@
         </div>
       </div>
       <div class="row text-center mb-custom mt-3">
-        <div class="col-12 table-top col-md-12 bg-blue d-flex">
+        <div class="col-12 table-top col-md-12 bg-blue d-flex px-0">
           <div
-            class="font12 p-0 text-white text-left border-right col-sm-4 col-4 py-2"
+            class="font12 p-0 text-white text-center border-right col-sm-4 col-4 py-2 px-0"
           >
             TYPE REBATE
           </div>
           <div
-            class="text-center p-0 font12 text-white border-right col-sm-4 col-4 py-2"
+            class="text-center p-0 font12 text-white border-right col-sm-5 col-5 py-2"
           >
             NILAI REBATE
           </div>
-          <div class="font12 p-0 text-center text-white col-sm-4 col-4 py-2">
-            TGL TRANSFER
+          <div class="font12 p-0 text-center text-white col-sm-3 col-3 py-2">
+            TRANSFER
           </div>
         </div>
         <div class="col-12 table-bordered rounded-bottom ">
           <div class="row mt-2 border-bottom">
-            <div class="col-4 col-md-4 py-0 px-0">
-              <h2 class="font12 col-12 text-left text-gray  font-weight-bolder">
+            <div class="col-4 col-md-4 py-0 px-1">
+              <h2
+                class="font12 col-12 text-left text-gray px-0  font-weight-bolder"
+              >
                 Rebate Medio
               </h2>
             </div>
             <div
-              class="col-4 text-center"
+              class="col-5 text-center"
               v-for="monthPoint in selectTab"
               :key="monthPoint.id"
             >
@@ -349,25 +369,25 @@
               </h2>
             </div>
             <div
-              class="col-4 text-center"
+              class="col-3 text-center"
               v-for="monthPoint in selectTab"
               :key="monthPoint.id"
             >
               <h2 class="font12 font-weight-bolder">
-                {{ monthPoint.rebate_tanggal_transfer }}
+                {{ monthPoint.tanggal_transfer }}
               </h2>
             </div>
           </div>
           <div class="row mt-2 border-bottom">
-            <div class="col-4 p-0 col-md-4 ">
+            <div class="col-4 p-0 col-md-4 px-1">
               <h2
-                class="font12 col-12 font-custom text-left text-gray font-weight-bolder"
+                class="font12 col-12 font-custom text-left px-0 text-gray font-weight-bolder"
               >
                 Rebate Bulanan
               </h2>
             </div>
             <div
-              class="col-4 col-md-4 text-center"
+              class="col-5 col-md-5 text-center"
               v-for="monthPoint in selectTab"
               :key="monthPoint.id"
             >
@@ -376,28 +396,28 @@
               </h2>
             </div>
             <div
-              class="col-4 col-md-4 text-center"
+              class="col-3 col-md-3 text-center"
               v-for="monthPoint in selectTab"
               :key="monthPoint.id"
             >
               <h2 class="font12 position-relative font-weight-bolder">
-                {{ monthPoint.rebate_tanggal_transfer }}
+                {{ monthPoint.tanggal_transfer }}
               </h2>
             </div>
           </div>
           <div class="row mt-2">
-            <div class="col-4 col-md-4 py-0 ">
-              <h2 class="font12 text-black text-left font-weight-bolder">
+            <div class="col-4 col-md-4 py-0 px-1">
+              <h2 class="font12 text-black text-left px-0 font-weight-bolder">
                 Total Rebate
               </h2>
             </div>
             <div
-              class="col-4 col-md-4"
+              class="col-5 col-md-5"
               v-for="monthPoint in selectTab"
               :key="monthPoint.id"
             >
               <h2 class="font12 text-black font-weight-bolder">
-                {{ formatPrice(monthPoint.rebate + monthPoint.rebate_medio) }}
+                {{ formatPrice(monthPoint.total_rebate) }}
               </h2>
             </div>
           </div>
@@ -459,12 +479,12 @@
           >
             <div class="col font10" style="border-right:1px solid #d3d3d3;">
               <h2 class="font14 text-black font-weight-bolder">
-                Rp {{ formatPrice(monthYear.last_monthly) }}
+                Rp {{ formatPrice(monthYear.historikal_penjualan) }}
               </h2>
             </div>
             <div class="col">
               <h2 class="font14 text-black font-weight-bolder">
-                Rp {{ formatPrice(monthYear.target_monthly) }}
+                Rp {{ formatPrice(monthYear.target_penjualan) }}
               </h2>
             </div>
           </div>
@@ -494,12 +514,12 @@
                     : 'text-danger '
                 "
               >
-                Rp {{ formatPrice(monthYear.selisih_monthly) }}
+                Rp {{ formatPrice(monthYear.selisih_penjualan) }}
               </h2>
             </div>
             <div class="col">
               <h2 class="font14 text-black font-weight-bolder">
-                Rp {{ formatPrice(monthYear.total_sales) }}
+                Rp {{ formatPrice(monthYear.aktual_penjualan) }}
               </h2>
             </div>
           </div>
@@ -522,7 +542,7 @@
                     : 'text-danger '
                 "
               >
-                {{ formatPrice(monthYear.selisih_monthly) }} %
+                {{ formatPoin(monthYear.ratio_pencapaian) }} %
               </h2>
             </div>
           </div>
@@ -536,107 +556,107 @@
           </div>
         </div>
       </div>
-      <div class="row text-center rows-col-3 mt-3">
-        <div class="col bg-blue text-white py-2 font-custom">
-          DETAIL PENJUALAN MEDIO BULAN
-        </div>
-        <div class="table-bordered col-12">
-          <div class="row text-center mt-2">
-            <div class="col font10" style="border-right: 1px solid #d3d3d3; ">
-              <h2 class="font10 text-gray font-custom font-weight-bolder">
-                HISTORIKAL PENJUALAN
-              </h2>
-            </div>
-            <div class="col">
-              <h2 class="font10 text-gray font-custom font-weight-bolder">
-                TARGET PENJUALAN
-              </h2>
-            </div>
-          </div>
-          <div
-            class="row text-center mb-2 border-bottom"
-            v-for="monthYear in selectTabYear"
-            :key="monthYear.id"
-          >
-            <div class="col font10" style="border-right:1px solid #d3d3d3;">
-              <h2 class="font14 text-black font-weight-bolder">
-                Rp {{ formatPrice(monthYear.last_monthly) }}
-              </h2>
-            </div>
-            <div class="col">
-              <h2 class="font14 text-black font-weight-bolder">
-                Rp {{ formatPrice(monthYear.target_monthly) }}
-              </h2>
-            </div>
-          </div>
-          <div class="row text-center mt-2">
-            <div class="col font10" style="border-right:1px solid #d3d3d3;">
-              <h2 class="font10 text-gray font-custom font-weight-bolder">
-                SELISIH PENJUALAN
-              </h2>
-            </div>
-            <div class="col">
-              <h2 class="font10 text-gray font-custom font-weight-bolder">
-                AKTUAL PENJUALAN
-              </h2>
-            </div>
-          </div>
-          <div
-            class="row text-center mb-2 border-bottom"
-            v-for="monthYear in selectTabYear"
-            :key="monthYear.id"
-          >
-            <div class="col font10" style="border-right:1px solid #d3d3d3;">
-              <h2
-                class="font14 font-weight-bolder"
-                v-bind:class="
-                  parseInt(monthYear.selisih_monthly) > 0
-                    ? 'text-dark '
-                    : 'text-danger '
-                "
-              >
-                Rp {{ formatPrice(monthYear.selisih_monthly) }}
-              </h2>
-            </div>
-            <div class="col">
-              <h2 class="font14 text-black font-weight-bolder">
-                Rp{{ formatPrice(monthYear.total_sales) }}
-              </h2>
-            </div>
-          </div>
-          <div
-            class="row text-center mt-2"
-            v-for="monthYear in selectTabYear"
-            :key="monthYear.id"
-          >
-            <div class="col font10">
-              <h2 class="font10 text-gray font-custom font-weight-bolder">
-                RATIO PENJUALAN
-              </h2>
-            </div>
-            <div class="col">
-              <h2
-                class="font14 text-black font-custom font-weight-bolder"
-                v-bind:class="
-                  parseInt(monthYear.selisih_monthly) > 0
-                    ? 'text-dark '
-                    : 'text-danger '
-                "
-              >
-                {{ formatPrice(monthYear.selisih_monthly) }} %
-              </h2>
-            </div>
-          </div>
-          <div class="text-center mb-2">
-            <div class="col font10">
-              <h2 class="font10 text-black-50 font-weight-bolder">
-                <!-- eslint-disable -->
-                (STATUS SUKSES >= 100%, GAGAL < 100%)
-              </h2>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!--            <div class="row text-center rows-col-3 mt-3">-->
+      <!--                <div class="col bg-blue text-white py-2 font-custom">-->
+      <!--                    DETAIL PENJUALAN MEDIO BULAN-->
+      <!--                </div>-->
+      <!--                <div class="table-bordered col-12">-->
+      <!--                    <div class="row text-center mt-2">-->
+      <!--                        <div class="col font10" style="border-right: 1px solid #d3d3d3; ">-->
+      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
+      <!--                                HISTORIKAL PENJUALAN-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                        <div class="col">-->
+      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
+      <!--                                TARGET PENJUALAN-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                    <div-->
+      <!--                            class="row text-center mb-2 border-bottom"-->
+      <!--                            v-for="monthYear in selectTabYear"-->
+      <!--                            :key="monthYear.id"-->
+      <!--                    >-->
+      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
+      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
+      <!--                                Rp {{ formatPrice(monthYear.last_monthly) }}-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                        <div class="col">-->
+      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
+      <!--                                Rp {{ formatPrice(monthYear.target_monthly) }}-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                    <div class="row text-center mt-2">-->
+      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
+      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
+      <!--                                SELISIH PENJUALAN-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                        <div class="col">-->
+      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
+      <!--                                AKTUAL PENJUALAN-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                    <div-->
+      <!--                            class="row text-center mb-2 border-bottom"-->
+      <!--                            v-for="monthYear in selectTabYear"-->
+      <!--                            :key="monthYear.id"-->
+      <!--                    >-->
+      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
+      <!--                            <h2-->
+      <!--                                    class="font14 font-weight-bolder"-->
+      <!--                                    v-bind:class="-->
+      <!--                  parseInt(monthYear.selisih_monthly) > 0-->
+      <!--                    ? 'text-dark '-->
+      <!--                    : 'text-danger '-->
+      <!--                "-->
+      <!--                            >-->
+      <!--                                Rp {{ formatPrice(monthYear.selisih_monthly) }}-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                        <div class="col">-->
+      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
+      <!--                                Rp{{ formatPrice(monthYear.total_sales) }}-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                    <div-->
+      <!--                            class="row text-center mt-2"-->
+      <!--                            v-for="monthYear in selectTabYear"-->
+      <!--                            :key="monthYear.id"-->
+      <!--                    >-->
+      <!--                        <div class="col font10">-->
+      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
+      <!--                                RATIO PENJUALAN-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                        <div class="col">-->
+      <!--                            <h2-->
+      <!--                                    class="font14 text-black font-custom font-weight-bolder"-->
+      <!--                                    v-bind:class="-->
+      <!--                  parseInt(monthYear.selisih_monthly) > 0-->
+      <!--                    ? 'text-dark '-->
+      <!--                    : 'text-danger '-->
+      <!--                "-->
+      <!--                            >-->
+      <!--                                {{ formatPrice(monthYear.selisih_monthly) }} %-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                    <div class="text-center mb-2">-->
+      <!--                        <div class="col font10">-->
+      <!--                            <h2 class="font10 text-black-50 font-weight-bolder">-->
+      <!--                                &lt;!&ndash; eslint-disable &ndash;&gt;-->
+      <!--                                (STATUS SUKSES >= 100%, GAGAL < 100%)-->
+      <!--                            </h2>-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                </div>-->
+      <!--            </div>-->
       <div class="row text-center rows-col-3 mt-3">
         <div class="col font-custom bg-blue text-white py-2">
           POIN PER BULAN
@@ -661,11 +681,13 @@
           >
             <div class="col font10" style="border-right:1px solid #d3d3d3;">
               <h2 class="font14 text-black font-weight-bolder">
-                {{ formatPrice(monthYear.archievement) }}
+                {{ formatPoin(monthYear.perolehan) }}
               </h2>
             </div>
             <div class="col">
-              <h2 class="font14 text-black font-weight-bolder">0</h2>
+              <h2 class="font14 text-black font-weight-bolder">
+                {{ formatPoin(monthYear.carry_over) }}
+              </h2>
             </div>
           </div>
           <div class="row text-center mt-2">
@@ -686,12 +708,21 @@
             :key="monthYear.id"
           >
             <div class="col font10" style="border-right:1px solid #d3d3d3;">
-              <h2 class="font14 text-black font-weight-bolder">
-                {{ formatPrice(monthYear.point_monthly) }}
+              <h2
+                class="font14 text-black font-weight-bolder font-custom"
+                v-bind:class="
+                  parseInt(monthYear.poin_tersedia) > 0
+                    ? 'text-ungu'
+                    : 'text-danger '
+                "
+              >
+                {{ formatPoin(monthYear.poin_tersedia) }}
               </h2>
             </div>
             <div class="col">
-              <h2 class="font14 text-black font-weight-bolder">0</h2>
+              <h2 class="font14 text-black font-weight-bolder">
+                {{ formatPrice(monthYear.penukaran_poin) }}
+              </h2>
             </div>
           </div>
           <div class="row text-center mt-2">
@@ -705,8 +736,15 @@
               v-for="monthYear in selectTabYear"
               :key="monthYear.id"
             >
-              <h2 class="font14 text-black font-weight-bolder font-custom">
-                {{ formatPrice(monthYear.archievement) }}
+              <h2
+                class="font14 text-black font-weight-bolder font-custom"
+                v-bind:class="
+                  parseInt(monthYear.poin_tersedia) > 0
+                    ? 'text-ungu'
+                    : 'text-danger '
+                "
+              >
+                {{ formatPoin(monthYear.sisa_poin) }}
               </h2>
             </div>
           </div>
@@ -721,30 +759,32 @@
         </div>
       </div>
       <div class="row text-center mb-custom mt-3">
-        <div class="col-12 table-top col-md-12 bg-blue d-flex">
+        <div class="col-12 table-top col-md-12 bg-blue d-flex px-1">
           <div
-            class="font12 p-0 text-white text-left border-right col-sm-4 col-4 py-2"
+            class="font12 px-0 text-white text-center border-right col-sm-4 col-4 py-2"
           >
             TYPE REBATE
           </div>
           <div
-            class="text-center p-0 font12 text-white border-right col-sm-4 col-4 py-2"
+            class="text-center p-0 font12 text-white border-right col-sm-5 col-5 py-2"
           >
             NILAI REBATE
           </div>
-          <div class="font12 p-0 text-center text-white col-sm-4 col-4 py-2">
-            TGL TRANSFER
+          <div class="font12 p-0 text-center text-white col-sm-3 col-3 py-2">
+            TRANSFER
           </div>
         </div>
         <div class="col-12 table-bordered rounded-bottom ">
           <div class="row mt-2 border-bottom">
             <div class="col-4 col-md-4 py-0 px-0">
-              <h2 class="font12 col-12 text-left text-gray  font-weight-bolder">
+              <h2
+                class="font12 col-12 px-1 text-left text-gray  font-weight-bolder"
+              >
                 Rebate Medio
               </h2>
             </div>
             <div
-              class="col-4 text-center"
+              class="col-5 text-center"
               v-for="monthYear in selectTabYear"
               :key="monthYear.id"
             >
@@ -753,25 +793,25 @@
               </h2>
             </div>
             <div
-              class="col-4 text-center"
+              class="col-3 text-center"
               v-for="monthYear in selectTabYear"
               :key="monthYear.id"
             >
               <h2 class="font12 font-weight-bolder">
-                {{ monthYear.rebate_tanggal_transfer }}
+                {{ monthYear.tanggal_transfer }}
               </h2>
             </div>
           </div>
           <div class="row mt-2 border-bottom">
             <div class="col-4 p-0 col-md-4 ">
               <h2
-                class="font12 col-12 font-custom text-left text-gray font-weight-bolder"
+                class="font12 px-1 col-12 font-custom text-left text-gray font-weight-bolder"
               >
                 Rebate Bulanan
               </h2>
             </div>
             <div
-              class="col-4 col-md-4 text-center"
+              class="col-5 col-md-5 text-center"
               v-for="monthYear in selectTabYear"
               :key="monthYear.id"
             >
@@ -780,28 +820,28 @@
               </h2>
             </div>
             <div
-              class="col-4 col-md-4 text-center"
+              class="col-3 col-md-3 text-center"
               v-for="monthYear in selectTabYear"
               :key="monthYear.id"
             >
               <h2 class="font12 position-relative font-weight-bolder">
-                {{ monthYear.rebate_tanggal_transfer }}
+                {{ monthYear.tanggal_transfer }}
               </h2>
             </div>
           </div>
           <div class="row mt-2">
-            <div class="col-4 col-md-4 py-0 ">
-              <h2 class="font12 text-black text-left font-weight-bolder">
+            <div class="col-4 col-md-4 py-0 px-0">
+              <h2 class="font12 px-1 text-black text-left font-weight-bolder">
                 Total Rebate
               </h2>
             </div>
             <div
-              class="col-4 col-md-4"
+              class="col-5 col-md-5"
               v-for="monthYear in selectTabYear"
               :key="monthYear.id"
             >
               <h2 class="font12 text-black font-weight-bolder">
-                {{ formatPrice(monthYear.rebate + monthYear.rebate_medio) }}
+                {{ formatPrice(monthYear.total_rebate) }}
               </h2>
             </div>
           </div>
@@ -1187,6 +1227,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
   props: ["contentFor", "bulan"],
   data() {
@@ -1256,7 +1297,11 @@ export default {
     },
 
     formatPrice(value) {
-      const val = (value / 1).toFixed(2).replace(".", ",");
+      const val = (value / 1).toFixed(0).replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
+    formatPoin(value) {
+      const val = value.toFixed(2).replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
   },
@@ -1293,6 +1338,7 @@ export default {
 .btn-outline-warning {
   border-color: #d3d3d3;
 }
+
 .font11 {
   font-size: 11px;
 }
@@ -1324,6 +1370,7 @@ export default {
 .section-stats {
   background-color: #41009a;
 }
+
 .btn-month {
   margin-top: -18px;
 }

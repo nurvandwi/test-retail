@@ -18,12 +18,12 @@
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
             <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(perolehan) }}
+              {{ formatPoin(perolehan) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(poin_carry_over) }}
+              {{ formatPoin(poin_carry_over) }}
             </h2>
           </div>
         </div>
@@ -41,13 +41,18 @@
         </div>
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(poin_tersedia) }}
+            <h2
+              class="font14 text-black font-weight-bolder"
+              v-bind:class="
+                parseInt(poin_tersedia) > 0 ? 'text-ungu' : 'text-danger '
+              "
+            >
+              {{ formatPoin(poin_tersedia) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(penukaran_poin) }}
+              {{ formatPoin(penukaran_poin) }}
             </h2>
           </div>
         </div>
@@ -58,8 +63,13 @@
             </h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-weight-bolder font-custom">
-              {{ formatPrice(poin_tersedia) }}
+            <h2
+              class="font14 text-black font-weight-bolder font-custom"
+              v-bind:class="
+                parseInt(poin_tersedia) > 0 ? 'text-ungu' : 'text-danger '
+              "
+            >
+              {{ formatPoin(sisa_poin) }}
             </h2>
           </div>
         </div>
@@ -91,12 +101,12 @@
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
             <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(perolehan) }}
+              {{ formatPoin(perolehan) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(poin_carry_over) }}
+              {{ formatPoin(poin_carry_over) }}
             </h2>
           </div>
         </div>
@@ -114,13 +124,18 @@
         </div>
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(poin_tersedia) }}
+            <h2
+              class="font14 text-black font-weight-bolder font-custom"
+              v-bind:class="
+                parseInt(poin_tersedia) > 0 ? 'text-ungu' : 'text-danger '
+              "
+            >
+              {{ formatPoin(poin_tersedia) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(penukaran_poin) }}
+              {{ formatPoin(penukaran_poin) }}
             </h2>
           </div>
         </div>
@@ -131,8 +146,13 @@
             </h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-weight-bolder font-custom">
-              {{ formatPrice(poin_tersedia) }}
+            <h2
+              class="font14 text-black font-weight-bolder font-custom"
+              v-bind:class="
+                parseInt(poin_tersedia) > 0 ? 'text-ungu' : 'text-danger '
+              "
+            >
+              {{ formatPoin(sisa_poin) }}
             </h2>
           </div>
         </div>
@@ -167,12 +187,12 @@
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
             <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(perolehan) }}
+              {{ formatPoin(perolehan) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(poin_carry_over) }}
+              {{ formatPoin(poin_carry_over) }}
             </h2>
           </div>
         </div>
@@ -190,13 +210,18 @@
         </div>
         <div class="row text-center mb-2 border-bottom">
           <div class="col font10" style="border-right:1px solid #d3d3d3;">
-            <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(poin_tersedia) }}
+            <h2
+              class="font14 text-black font-weight-bolder font-custom"
+              v-bind:class="
+                parseInt(poin_tersedia) > 0 ? 'text-ungu' : 'text-danger '
+              "
+            >
+              {{ formatPoin(poin_tersedia) }}
             </h2>
           </div>
           <div class="col">
             <h2 class="font14 text-black font-weight-bolder">
-              {{ formatPrice(penukaran_poin) }}
+              {{ formatPoin(penukaran_poin) }}
             </h2>
           </div>
         </div>
@@ -207,8 +232,13 @@
             </h2>
           </div>
           <div class="col">
-            <h2 class="font14 text-black font-weight-bolder font-custom">
-              {{ formatPrice(poin_tersedia) }}
+            <h2
+              class="font14 text-black font-weight-bolder font-custom"
+              v-bind:class="
+                parseInt(poin_tersedia) > 0 ? 'text-ungu' : 'text-danger '
+              "
+            >
+              {{ formatPoin(sisa_poin) }}
             </h2>
           </div>
         </div>
@@ -233,10 +263,15 @@ export default {
     "poin_carry_over",
     "perolehan",
     "penukaran_poin",
-    "poin_tersedia"
+    "poin_tersedia",
+    "sisa_poin"
   ],
   methods: {
     formatPrice(value) {
+      const val = (value / 1).toFixed(0).replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
+    formatPoin(value) {
       const val = (value / 1).toFixed(2).replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
@@ -245,6 +280,9 @@ export default {
 </script>
 
 <style scoped>
+.text-ungu {
+  color: #41009a;
+}
 .bg-blue {
   background-color: #6a813d;
   border-top-left-radius: 18px;

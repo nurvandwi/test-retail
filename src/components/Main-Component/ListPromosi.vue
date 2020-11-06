@@ -1,252 +1,254 @@
 <template>
- <div>   <div class="mb-3" v-if="contentFor === 'home'">
-   <h3 class="font16 font-weight-bold mt-4 mb-0 ml-4">Data Kegiatan</h3>
-   <p class="font-12 ml-4">Lengkapi data dibawah ini.</p>
-   <div class="col-12">
-     <router-link v-bind:to="'/registrasi/' + `${$route.params.outlet_id}`">
-       <div style="background-color: white"
-            class="col shadow1 br text-left d-flex flex-row align-items-center my-3 py-2 px-3"
-       >
-         <img class="imagecustom pr-3" src="../../assets/icon-ktp.png" alt/>
+    <div>
+        <div class="mt-4" v-if="contentFor === 'home'">
+            <h3 class="font16 font-weight-bold  mb-0 ml-4">Data Kegiatan</h3>
+            <p class="font-12 ml-4">Lengkapi data dibawah ini.</p>
+            <div class="col-12">
+                <router-link v-bind:to="'/registrasi/' + `${$route.params.outlet_id}`">
+                    <div style="background-color: white"
+                         class="col shadow1 br text-left d-flex flex-row align-items-center my-3 py-2 px-3"
+                    >
+                        <img class="imagecustom pr-3" src="../../assets/icon-ktp.png" alt/>
 
-         <div class="align-items-center">
-           <h5
-                   class="font14 formh2 caption4 p-0 m-0 text-dark font-weight-bold"
-           >
-             Data E-KTP & Data Bank
-           </h5>
-         </div>
-         <img
-                 class="iconcustom ml-auto"
-                 src="https://i.imgur.com/5qg2kk5.png"
-                 alt
-         />
-       </div>
-     </router-link>
-   </div>
-   <div class="col-12">
-     <router-link v-bind:to="'/posm/' + `${$route.params.outlet_id}`">
-       <div style="background-color: white"
-            class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
-       >
-         <img class="imagecustom pr-3" src="../../assets/icon-posm.png" alt/>
+                        <div class="align-items-center">
+                            <h5
+                                    class="font14 formh2 caption4 p-0 m-0 text-dark font-weight-bold"
+                            >
+                                Data E-KTP & Data Bank
+                            </h5>
+                        </div>
+                        <img
+                                class="iconcustom ml-auto"
+                                src="https://i.imgur.com/5qg2kk5.png"
+                                alt
+                        />
+                    </div>
+                </router-link>
+            </div>
+            <div class="col-12">
+                <router-link v-bind:to="'/posm/' + `${$route.params.outlet_id}`">
+                    <div style="background-color: white"
+                         class="col shadow1 text-left br d-flex flex-row align-items-center mt-3 mb-0 py-2 px-3"
+                    >
+                        <img class="imagecustom pr-3" src="../../assets/icon-posm.png" alt/>
 
-         <div class="align-items-center">
-           <h5 class="font14 caption4 p-0 m-0 text-dark font-weight-bold">
-             Upload Foto POSM & INVOICE
-           </h5>
-         </div>
-         <img
-                 class="iconcustom ml-auto"
-                 src="https://i.imgur.com/5qg2kk5.png"
-                 alt
-         />
-       </div>
-     </router-link>
-   </div>
- </div>
-   <div class="mb-3" v-if="contentFor === 'QuarterDetails'">
-     <h3 class="font16 font-weight-bold mt-2 mb-0 ml-4">Data Penjualan</h3>
-     <p class="font-12 ml-4">Pilih Data Penjualan Anda :</p>
-     <div class="col-12">
-       <router-link v-bind:to="'/MonthToYear/' + `${$route.params.outlet_id}`">
-         <div
-                 style="background-color: white"
-                 class="col shadow1 br text-left d-flex flex-row align-items-center my-3 py-2 px-3"
-         >
-           <img class="imagecustom pr-3" src="../../assets/icon-ktp.png" alt />
+                        <div class="align-items-center">
+                            <h5 class="font14 caption4 p-0 m-0 text-dark font-weight-bold">
+                                Upload Foto POSM & INVOICE
+                            </h5>
+                        </div>
+                        <img
+                                class="iconcustom ml-auto"
+                                src="https://i.imgur.com/5qg2kk5.png"
+                                alt
+                        />
+                    </div>
+                </router-link>
+            </div>
+        </div>
+        <div class="mb-3" v-if="contentFor === 'QuarterDetails'">
+            <h3 class="font16 font-weight-bold mt-2 mb-0 ml-4">Data Penjualan</h3>
+            <p class="font-12 ml-4">Pilih Data Penjualan Anda :</p>
+            <div class="col-12">
+                <router-link v-bind:to="'/MonthToYear/' + `${$route.params.outlet_id}`">
+                    <div
+                            style="background-color: white"
+                            class="col shadow1 br text-left d-flex flex-row align-items-center my-3 py-2 px-3"
+                    >
+                        <img class="imagecustom pr-3" src="../../assets/icon-ktp.png" alt/>
 
-           <div class="align-items-center line-height">
-             <h5
-                     class="font14 py-1 formh2 caption4 p-0 m-0 text-dark font-weight-bold"
-             >
-               Month To Year
-             </h5>
-             <p class="text-dark m-auto">
-               <small
-               >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
-                 per tahun
-               </small>
-             </p>
-           </div>
-           <img
-                   class="iconcustom ml-auto"
-                   src="https://i.imgur.com/5qg2kk5.png"
-                   alt
-           />
-         </div>
-       </router-link>
-     </div>
-     <div class="col-12">
-       <router-link
-               v-bind:to="
+                        <div class="align-items-center line-height">
+                            <h5
+                                    class="font14 py-1 formh2 caption4 p-0 m-0 text-dark font-weight-bold"
+                            >
+                                Year To Month
+                            </h5>
+                            <p class="text-dark m-auto">
+                                <small
+                                >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
+                                    per tahun
+                                </small>
+                            </p>
+                        </div>
+                        <img
+                                class="iconcustom ml-auto"
+                                src="https://i.imgur.com/5qg2kk5.png"
+                                alt
+                        />
+                    </div>
+                </router-link>
+            </div>
+            <div class="col-12">
+                <router-link
+                        v-bind:to="
             '/MonthToMonth/' + currenttime + `/${$route.params.outlet_id}`
           "
-       >
-         <div
-                 style="background-color: white"
-                 class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
-         >
-           <img
-                   class="imagecustom pr-3"
-                   src="../../assets/icon-posm.png"
-                   alt
-           />
+                >
+                    <div
+                            style="background-color: white"
+                            class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
+                    >
+                        <img
+                                class="imagecustom pr-3"
+                                src="../../assets/icon-posm.png"
+                                alt
+                        />
 
-           <div class="align-items-center line-height">
-             <h5
-                     class="font14 caption4 py-1 p-0 m-0 text-dark font-weight-bold"
-             >
-               Month To Month
-             </h5>
-             <p class="text-dark m-auto">
-               <small
-               >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
-                 bulan berjalan
-               </small>
-             </p>
-           </div>
-           <img
-                   class="iconcustom ml-auto"
-                   src="https://i.imgur.com/5qg2kk5.png"
-                   alt
-           />
-         </div>
-       </router-link>
-     </div>
-     <div class="col-12">
-       <router-link v-bind:to="'/Quarter/1/' + `${$route.params.outlet_id}`">
-         <div
-                 style="background-color: white"
-                 class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
-         >
-           <img
-                   class="imagecustom pr-3"
-                   src="../../assets/icon-posm.png"
-                   alt
-           />
+                        <div class="align-items-center line-height">
+                            <h5
+                                    class="font14 caption4 py-1 p-0 m-0 text-dark font-weight-bold"
+                            >
+                                Month To Month
+                            </h5>
+                            <p class="text-dark m-auto">
+                                <small
+                                >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
+                                    bulan berjalan
+                                </small>
+                            </p>
+                        </div>
+                        <img
+                                class="iconcustom ml-auto"
+                                src="https://i.imgur.com/5qg2kk5.png"
+                                alt
+                        />
+                    </div>
+                </router-link>
+            </div>
+            <div class="col-12">
+                <router-link v-bind:to="'/Quarter/1/' + `${$route.params.outlet_id}`">
+                    <div
+                            style="background-color: white"
+                            class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
+                    >
+                        <img
+                                class="imagecustom pr-3"
+                                src="../../assets/icon-posm.png"
+                                alt
+                        />
 
-           <div class="align-items-center line-height">
-             <h5
-                     class="font14 caption4 py-1 p-0 m-0 text-dark font-weight-bold"
-             >
-               Quarter 1 to Month
-             </h5>
-             <p class="text-dark m-auto">
-               <small
-               >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
-                 bulan berjalan Quarter 1
-               </small>
-             </p>
-           </div>
-           <img
-                   class="iconcustom ml-auto"
-                   src="https://i.imgur.com/5qg2kk5.png"
-                   alt
-           />
-         </div>
-       </router-link>
-     </div>
-     <div class="col-12">
-       <router-link v-bind:to="'/Quarter/2/' + `${$route.params.outlet_id}`">
-         <div
-                 style="background-color: white"
-                 class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
-         >
-           <img
-                   class="imagecustom pr-3"
-                   src="../../assets/icon-posm.png"
-                   alt
-           />
+                        <div class="align-items-center line-height">
+                            <h5
+                                    class="font14 caption4 py-1 p-0 m-0 text-dark font-weight-bold"
+                            >
+                                Quarter 1 to Month
+                            </h5>
+                            <p class="text-dark m-auto">
+                                <small
+                                >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
+                                    Quarter 1
+                                </small>
+                            </p>
+                        </div>
+                        <img
+                                class="iconcustom ml-auto"
+                                src="https://i.imgur.com/5qg2kk5.png"
+                                alt
+                        />
+                    </div>
+                </router-link>
+            </div>
+            <div class="col-12">
+                <router-link v-bind:to="'/Quarter/2/' + `${$route.params.outlet_id}`">
+                    <div
+                            style="background-color: white"
+                            class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
+                    >
+                        <img
+                                class="imagecustom pr-3"
+                                src="../../assets/icon-posm.png"
+                                alt
+                        />
 
-           <div class="align-items-center line-height">
-             <h5
-                     class="font14 caption4 py-1 p-0 m-0 text-dark font-weight-bold"
-             >
-               Quarter 2 to Month
-             </h5>
-             <p class="text-dark m-auto">
-               <small
-               >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
-                 bulan berjalan Quarter 2
-               </small>
-             </p>
-           </div>
-           <img
-                   class="iconcustom ml-auto"
-                   src="https://i.imgur.com/5qg2kk5.png"
-                   alt
-           />
-         </div>
-       </router-link>
-     </div>
-     <div class="col-12">
-       <router-link v-bind:to="'/Quarter/3/' + `${$route.params.outlet_id}`">
-         <div
-                 style="background-color: white"
-                 class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
-         >
-           <img
-                   class="imagecustom pr-3"
-                   src="../../assets/icon-posm.png"
-                   alt
-           />
+                        <div class="align-items-center line-height">
+                            <h5
+                                    class="font14 caption4 py-1 p-0 m-0 text-dark font-weight-bold"
+                            >
+                                Quarter 2 to Month
+                            </h5>
+                            <p class="text-dark m-auto">
+                                <small
+                                >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
+                                    Quarter 2
+                                </small>
+                            </p>
+                        </div>
+                        <img
+                                class="iconcustom ml-auto"
+                                src="https://i.imgur.com/5qg2kk5.png"
+                                alt
+                        />
+                    </div>
+                </router-link>
+            </div>
+            <div class="col-12">
+                <router-link v-bind:to="'/Quarter/3/' + `${$route.params.outlet_id}`">
+                    <div
+                            style="background-color: white"
+                            class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
+                    >
+                        <img
+                                class="imagecustom pr-3"
+                                src="../../assets/icon-posm.png"
+                                alt
+                        />
 
-           <div class="align-items-center line-height">
-             <h5
-                     class="font14 caption4 py-1 p-0 m-0 text-dark font-weight-bold"
-             >
-               Quarter 3 to Month
-             </h5>
-             <p class="text-dark m-auto">
-               <small
-               >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
-                 bulan berjalan Quarter 3</small
-               >
-             </p>
-           </div>
-           <img
-                   class="iconcustom ml-auto"
-                   src="https://i.imgur.com/5qg2kk5.png"
-                   alt
-           />
-         </div>
-       </router-link>
-     </div>
-     <div class="col-12 mb-custom">
-       <router-link v-bind:to="'/Quarter/4/' + `${$route.params.outlet_id}`">
-         <div
-                 style="background-color: white"
-                 class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
-         >
-           <img
-                   class="imagecustom pr-3"
-                   src="../../assets/icon-posm.png"
-                   alt
-           />
+                        <div class="align-items-center line-height">
+                            <h5
+                                    class="font14 caption4 py-1 p-0 m-0 text-dark font-weight-bold"
+                            >
+                                Quarter 3 to Month
+                            </h5>
+                            <p class="text-dark m-auto">
+                                <small
+                                >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
+                                    Quarter 3</small
+                                >
+                            </p>
+                        </div>
+                        <img
+                                class="iconcustom ml-auto"
+                                src="https://i.imgur.com/5qg2kk5.png"
+                                alt
+                        />
+                    </div>
+                </router-link>
+            </div>
+            <div class="col-12 mb-custom">
+                <router-link v-bind:to="'/Quarter/4/' + `${$route.params.outlet_id}`">
+                    <div
+                            style="background-color: white"
+                            class="col shadow1 text-left br d-flex flex-row align-items-center my-3 py-2 px-3"
+                    >
+                        <img
+                                class="imagecustom pr-3"
+                                src="../../assets/icon-posm.png"
+                                alt
+                        />
 
-           <div class="align-items-center line-height">
-             <h5
-                     class="font14 caption4 py-1 p-0 m-0 text-dark font-weight-bold"
-             >
-               Quarter 4 to Month
-             </h5>
-             <p class="text-dark m-auto  ">
-               <small
-               >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
-                 bulan berjalan Quarter 4
-               </small>
-             </p>
-           </div>
-           <img
-                   class="iconcustom ml-auto"
-                   src="https://i.imgur.com/5qg2kk5.png"
-                   alt
-           />
-         </div>
-       </router-link>
-     </div>
-   </div></div>
+                        <div class="align-items-center line-height">
+                            <h5
+                                    class="font14 caption4 py-1 p-0 m-0 text-dark font-weight-bold"
+                            >
+                                Quarter 4 to Month
+                            </h5>
+                            <p class="text-dark m-auto  ">
+                                <small
+                                >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
+                                    Quarter 4
+                                </small>
+                            </p>
+                        </div>
+                        <img
+                                class="iconcustom ml-auto"
+                                src="https://i.imgur.com/5qg2kk5.png"
+                                alt
+                        />
+                    </div>
+                </router-link>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
     /* eslint-disable */
