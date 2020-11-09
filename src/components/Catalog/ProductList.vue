@@ -11,7 +11,6 @@
                         :key="product.id"
                         :product="product"
                         :contentFor="'product'"
-                        :poin="points.Poin"
                 />
             </div>
         </div>

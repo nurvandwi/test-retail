@@ -19,16 +19,17 @@ export function getProducts({ commit }, { outlet_id, token }) {
 export function getPoin({ commit }, { outlet_id, token }) {
   console.log(this);
   console.log(outlet_id);
-  axios
-    .get("https://www.inosis.co.id/mv_demo_api/api.php/status-poin-rebate", {
-      params: {
-        outlet_id,
-        token
-      }
-    })
-    .then(response => {
-      commit("SET_POIN", response.data.data);
-    });
+  commit("SET_POIN", Poin);
+  // axios
+  //   .get("https://www.inosis.co.id/mv_demo_api/api.php/status-poin-rebate", {
+  //     params: {
+  //       outlet_id,
+  //       token
+  //     }
+  //   })
+  //   .then(response => {
+  //     commit("SET_POIN", response.data.data);
+  //   });
 }
 
 export function getEwallets({ commit }) {
@@ -102,13 +103,14 @@ export function checkOutCartItems({ commit }, { outlet_id, token }) {
 
 export function addProductToCart(
   { commit },
-  { product, quantity, poin, cartTotalPrice }
+  { product, quantity, poin, cartTotalPrice, pointItem }
 ) {
   commit("ADD_TO_CART", {
     product,
     quantity,
     poin,
-    cartTotalPrice
+    cartTotalPrice,
+    pointItem
   });
 }
 
@@ -128,7 +130,16 @@ export function addPulsaToCart(
 
 export function addEwalletToCart(
   { commit },
-  { no_hp, poin, ewallet, nominal, kd_produk, quantity }
+  {
+    no_hp,
+    poin,
+    ewallet,
+    nominal,
+    kd_produk,
+    quantity,
+    cartTotalPrice,
+    pointItem
+  }
 ) {
   commit("ADD_TO_EWALLET", {
     no_hp,
@@ -136,14 +147,22 @@ export function addEwalletToCart(
     quantity,
     nominal,
     ewallet,
-    poin
+    poin,
+    cartTotalPrice,
+    pointItem
   });
 }
 
-export function addPoinCashToCart({ commit }, { poincash, quantity }) {
+export function addPoinCashToCart(
+  { commit },
+  { poincash, quantity, poin, pointItem, cartPoincashPrice }
+) {
   commit("ADD_TO_POINCASH", {
     poincash,
-    quantity
+    quantity,
+    poin,
+    pointItem,
+    cartPoincashPrice
   });
 }
 

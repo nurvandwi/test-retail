@@ -29,8 +29,7 @@
           <h5 class="card-title m-0 font18 font-weight-bold">
             {{ product.poin }}
           </h5>
-
-          <button class="btn" @click="addToCart(cartTotalPrice)">
+          <button class="btn" @click="addToCart(cartTotalPrice, points.Poin)">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
         </div>
@@ -60,7 +59,10 @@
           class="card-body d-flex justify-content-between align-items-center pb-0"
         >
           <h5 class="card-title m-0 font16">{{ ewallet.price }} Poin</h5>
-          <button class="btn" @click="addToEwallet()">
+          <button
+            class="btn"
+            @click="addToEwallet(cartTotalPrice, points.Poin)"
+          >
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
         </div>
@@ -96,7 +98,10 @@
           <h5 class="card-title m-0 font16 font-weight-bold">
             {{ poincash.poin }} Poin
           </h5>
-          <button class="btn" @click="addToPoinCash()">
+          <button
+            class="btn"
+            @click="addToPoinCash(cartPoincashPrice, points.Poin)"
+          >
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
         </div>
@@ -141,31 +146,44 @@
 <script>
 export default {
   name: "ItemProduct",
-  props: ["product", "ewallet", "poincash", "contentFor", "rebate", "poin"],
+  props: ["product", "ewallet", "poincash", "contentFor", "rebate"],
   methods: {
-    addToCart(cartTotalPrice) {
-      console.log(this.product.poin);
-      if (3000 > this.product.poin) {
+    addToCart(cartTotalPrice, poin) {
+      console.log(poin);
+      if (poin >= this.product.poin || poin >= cartTotalPrice) {
         this.$store.dispatch("addProductToCart", {
           product: this.product,
           quantity: 1,
+          pointItem: this.product.poin,
           cartTotalPrice
         });
       } else {
         alert("Poin anda Tidak cukup");
       }
     },
-    addToEwallet() {
-      this.$store.dispatch("addEwalletToCart", {
-        ewallet: this.ewallet,
-        quantity: 1
-      });
+    addToEwallet(cartTotalPrice, poin) {
+      console.log(poin);
+      if (poin >= this.product.poin || poin >= cartTotalPrice) {
+        this.$store.dispatch("addEwalletToCart", {
+          ewallet: this.ewallet,
+          quantity: 1,
+          pointItem: this.product.poin,
+          cartTotalPrice
+        });
+      }
     },
-    addToPoinCash() {
-      this.$store.dispatch("addPoinCashToCart", {
-        poincash: this.poincash,
-        quantity: 1
-      });
+    addToPoinCash(cartPoincashPrice, poin) {
+      console.log(poin);
+      if (poin >= this.poincash.poin || poin >= cartPoincashPrice) {
+        this.$store.dispatch("addPoinCashToCart", {
+          poincash: this.poincash,
+          quantity: 1,
+          pointItem: this.poincash.poin,
+          cartPoincashPrice
+        });
+      } else {
+        alert("Poin anda Tidak cukup");
+      }
     },
     addToRebate() {
       this.$store.dispatch("addRebateToCart", {
@@ -177,7 +195,19 @@ export default {
   computed: {
     cartTotalPrice() {
       return this.$store.getters.cartTotalPrice;
+    },
+    cartPoincashPrice() {
+      return this.$store.getters.cartPoincashPrice;
+    },
+    points() {
+      return this.$store.state.points;
     }
+  },
+  mounted() {
+    this.$store.dispatch("getPoin", {
+      outlet_id: this.$route.params.outlet_id,
+      token: localStorage.token
+    });
   }
 };
 </script>

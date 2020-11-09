@@ -1,3 +1,5 @@
+// import { cartPoincashCount } from "./getters";
+
 export const SET_PRODUCTS = (state, products) => {
   state.products = products;
 };
@@ -18,18 +20,27 @@ export const SET_PRODUCT = (state, product) => {
   state.product = product;
 };
 
-export function ADD_TO_CART(state, { product, quantity }) {
+export function ADD_TO_CART(
+  state,
+  { product, quantity, cartTotalPrice, pointItem }
+) {
   let productInCart = state.cart.find(item => {
     return item.product.id === product.id;
   });
-  if (productInCart) {
+  if ((cartTotalPrice != 0, productInCart)) {
+    state.points.Poin -= cartTotalPrice.toFixed(2);
     productInCart.quantity += quantity;
     return;
+  } else {
+    state.points.Poin -= pointItem.toFixed(2);
   }
   state.cart.push({
     product,
     quantity
   });
+
+  // console.log(pointItem.toFixed(2));
+  // console.log(cartTotalPrice);
 }
 
 export function ADD_TO_PULSA(
@@ -107,18 +118,26 @@ export const ADD_TO_EWALLEWT = (state, { ewallet, quantity }) => {
   });
 };
 
-export const ADD_TO_POINCASH = (state, { poincash, quantity }) => {
+export const ADD_TO_POINCASH = (
+  state,
+  { poincash, quantity, cartPoincashPrice, pointItem }
+) => {
   let poincashInCart = state.cartPoincash.find(item => {
     return item.poincash.kd_produk === poincash.kd_produk;
   });
-  if (poincashInCart) {
+  if ((cartPoincashPrice != 0, poincashInCart)) {
+    state.points.Poin -= cartPoincashPrice.toFixed(2);
     poincashInCart.quantity += quantity;
     return;
+  } else {
+    state.points.Poin -= pointItem.toFixed(2);
   }
   state.cartPoincash.push({
     poincash,
     quantity
   });
+  console.log(pointItem.toFixed(2));
+  console.log(cartPoincashPrice);
 };
 export const ADD_TO_REBATE = (state, { rebate, quantity }) => {
   let rebateInCart = state.cartRebate.find(item => {
