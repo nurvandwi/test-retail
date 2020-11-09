@@ -19,17 +19,17 @@ export function getProducts({ commit }, { outlet_id, token }) {
 export function getPoin({ commit }, { outlet_id, token }) {
   console.log(this);
   console.log(outlet_id);
-  commit("SET_POIN", Poin);
-  // axios
-  //   .get("https://www.inosis.co.id/mv_demo_api/api.php/status-poin-rebate", {
-  //     params: {
-  //       outlet_id,
-  //       token
-  //     }
-  //   })
-  //   .then(response => {
-  //     commit("SET_POIN", response.data.data);
-  //   });
+  // commit("SET_POIN", Poin);
+  axios
+    .get("https://www.inosis.co.id/mv_demo_api/api.php/status-poin-rebate", {
+      params: {
+        outlet_id,
+        token
+      }
+    })
+    .then(response => {
+      commit("SET_POIN", response.data.data);
+    });
 }
 
 export function getEwallets({ commit }) {
