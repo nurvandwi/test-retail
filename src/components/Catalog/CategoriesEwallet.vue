@@ -1,6 +1,6 @@
 <template>
   <div class="marginTitle container">
-    <h3 style="font-weight:bolder;" class="font18 mb-0">Kategori Reward</h3>
+    <h3 style="font-weight:bolder;" class="font16 mb-0">Kategori Reward</h3>
     <p class="font14">Pilih salah satu kategori reward.</p>
     <p></p>
     <div class="row mt-4 px-2">

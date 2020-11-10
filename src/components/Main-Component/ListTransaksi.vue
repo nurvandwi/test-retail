@@ -3,11 +3,18 @@
     <div
       class="col-12 align-self-center font14 bg-blue d-flex justify-content-between font-weight-bold"
     >
-      <h3 class="font16 m-0 align-self-center font-weight-bold py-0 px-2">
+      <h3 class="font14  m-0 align-self-center font-weight-bold py-0 px-2">
         List Transaksi
       </h3>
-      <router-link class="text-white" :to="'/TransactionProduct/' + `${$route.params.outlet_id}`">
-        <p class="rounded-pill  m-0 font14 py-2 px-3  bg-purple">Lihat Semua</p>
+      <router-link
+        class="text-white"
+        :to="'/TransactionProduct/' + `${$route.params.outlet_id}`"
+      >
+        <h3
+          class="rounded-pill  m-0 font14 py-2 px-3 font-weight-bold  bg-purple"
+        >
+          Lihat Semua
+        </h3>
       </router-link>
     </div>
     <listItem :contentFor="'ListTransaksi'" :alltransaction="myLastArray" />
@@ -20,7 +27,7 @@ export default {
   data() {
     return {
       alltransaction: {
-        data:[]
+        data: []
       }
     };
   },
@@ -45,16 +52,16 @@ export default {
   computed: {
     filterArray() {
       let arrData = this.alltransaction.data.length;
-      let filterData= this.alltransaction.data.slice(arrData - 3, arrData);
-      return filterData
+      let filterData = this.alltransaction.data.slice(arrData - 3, arrData);
+      return filterData;
     },
     myLastArray() {
       if (!Array.isArray(this.alltransaction.data)) {
-        return []
+        return [];
       }
       // let length = this.alltransaction.data.length
       // return this.alltransaction.data.slice(length - 5, length)
-      return this.alltransaction.data.slice(0, 5)
+      return this.alltransaction.data.slice(0, 5);
     }
   },
   mounted() {

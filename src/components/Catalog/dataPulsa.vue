@@ -1,7 +1,6 @@
 <template>
   <div class="container mt-4" data-aos="fade-up">
-    <h3 class="font18 m-0" style="font-weight:bolder;">Input Data Pulsa</h3>
-
+    <h3 class="font16 m-0" style="font-weight:bolder;">Input Data Pulsa</h3>
     <p class="font14">Masukkan nomor handphone untuk di Top Up</p>
     <div class="d-flex align-items-center"></div>
 

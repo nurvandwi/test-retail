@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="mt-4" v-if="contentFor === 'home'">
-            <h3 class="font16 font-weight-bold  mb-0 ml-4">Data Kegiatan</h3>
+            <h3 class="font14 font-weight-bold  mb-0 ml-4">Data Kegiatan</h3>
             <p class="font-12 ml-4">Lengkapi data dibawah ini.</p>
             <div class="col-12">
                 <router-link v-bind:to="'/registrasi/' + `${$route.params.outlet_id}`">

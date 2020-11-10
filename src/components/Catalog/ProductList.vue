@@ -1,9 +1,11 @@
 <template>
   <div class="m-0 p-0">
     <div class="" v-if="contentFor === 'product'" style="margin-bottom: 6.5rem">
-      <h4 class="font18 margin-wrapper px-2  space-card mb-1 font-weight-bold">
+      <h5
+        class="font16px margin-wrapper px-2  space-card mb-1 font-weight-bold"
+      >
         Produk Reward
-      </h4>
+      </h5>
       <p class="px-2 mb-3 font14">Pilih Produk Dibawah ini</p>
       <div class="d-flex align-items-stretch   flex-wrap top-card">
         <ItemProduct
@@ -31,9 +33,11 @@
       v-if="contentFor === 'PoinCash'"
       style="margin-bottom: 6.5rem"
     >
-      <h4 class="font18 margin-wrapper px-2  space-card mb-1 font-weight-bold">
+      <h5
+        class="font16px margin-wrapper px-2  space-card mb-1 font-weight-bold"
+      >
         Poin Cash
-      </h4>
+      </h5>
       <p class="px-2 mb-3 font14">Pilih nominal poin2cash dibawah ini.</p>
       <div class="d-flex align-items-stretch   flex-wrap top-card">
         <ItemProduct
@@ -45,10 +49,14 @@
       </div>
     </div>
     <div v-if="contentFor === 'Rebate'" style="margin-bottom: 6.5rem">
-      <h4 class="font18 margin-wrapper px-2  space-card mb-1 font-weight-bold">
+      <h5
+        class="font16px margin-wrapper px-2  space-card mb-1 font-weight-bold"
+      >
         Rebate Reward
-      </h4>
-      <p class="px-2 mb-3 font14">Pilih bulan atau quarter rebate dibawah ini.</p>
+      </h5>
+      <p class="px-2 mb-3 font14">
+        Pilih bulan atau quarter rebate dibawah ini.
+      </p>
       <div class="d-flex align-items-stretch   flex-wrap top-card">
         <ItemProduct
           v-for="rebate in rebates"
@@ -129,6 +137,9 @@ export default {
   .font18 {
     font-size: 18px;
   }
+  .font16px {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
@@ -142,6 +153,9 @@ export default {
 
   .font18 {
     font-size: 18px;
+  }
+  .font16px {
+    font-size: 160px;
   }
 }
 </style>

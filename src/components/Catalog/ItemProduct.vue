@@ -18,8 +18,8 @@
           />
         </div>
         <div class="card-body pb-0">
-          <p class="card-title m-0 font14">{{ product.kd_produk }}</p>
-          <h5 class="card-title mb-0 font16" style="font-weight:bolder">
+          <p class="card-title mb-1 font14">{{ product.kd_produk }}</p>
+          <h5 class="card-title mb-0 font14" style="font-weight:bolder">
             {{ product.nama_produk }}
           </h5>
         </div>
@@ -87,7 +87,7 @@
           />
         </div>
         <div class="card-body pb-0">
-          <p class="card-title m-0 font12px">{{ poincash.kd_produk }}</p>
+          <p class="card-title mb-1 font14">{{ poincash.kd_produk }}</p>
           <h5 class="card-title mb-0 font12px" style="font-weight:bolder">
             {{ poincash.nama_produk }}
           </h5>
@@ -126,7 +126,7 @@
           />
         </div>
         <div class="card-body pb-0">
-          <h5 class="card-title mb-0 font16" style="font-weight:bolder">
+          <h5 class="card-title mb-0 font14" style="font-weight:bolder">
             {{ rebate.periode }}
           </h5>
         </div>
@@ -149,8 +149,8 @@ export default {
   props: ["product", "ewallet", "poincash", "contentFor", "rebate"],
   methods: {
     addToCart(cartTotalPrice, poin) {
-      console.log(poin);
-      if (poin >= this.product.poin || poin >= cartTotalPrice) {
+      console.log(this.product.poin);
+      if (poin >= this.product.poin ) {
         this.$store.dispatch("addProductToCart", {
           product: this.product,
           quantity: 1,
@@ -163,7 +163,7 @@ export default {
     },
     addToEwallet(cartTotalPrice, poin) {
       console.log(poin);
-      if (poin >= this.product.poin || poin >= cartTotalPrice) {
+      if (poin >= this.product.poin) {
         this.$store.dispatch("addEwalletToCart", {
           ewallet: this.ewallet,
           quantity: 1,
@@ -174,7 +174,7 @@ export default {
     },
     addToPoinCash(cartPoincashPrice, poin) {
       console.log(poin);
-      if (poin >= this.poincash.poin || poin >= cartPoincashPrice) {
+      if (poin >= this.poincash.poin) {
         this.$store.dispatch("addPoinCashToCart", {
           poincash: this.poincash,
           quantity: 1,
