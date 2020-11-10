@@ -79,6 +79,7 @@
                 @click="addToEwallet(row.kd_produk, row.poin, points.Poin)"
               >
                 <router-link
+                  :class="{ nonActive: row.poin > points.Poin }"
                   v-bind:to="
                     '/ewalletdetails/' +
                       `${$route.params.outlet_id}/` +
@@ -89,13 +90,14 @@
                     <div class="card-body p-3 d-flex flex-column">
                       <h5
                         class="card-title text-center m-0"
-                        :class="{ danger: cekPoin }"
+                        :class="{ danger: row.poin > points.Poin }"
                       >
                         {{ row.nominal }}
                       </h5>
-                      <p class="font12 mb-0" :class="{ danger: cekPoin }">
-                        {{ cekPoin ? "Poin Tidak Cukup" : " " }}
-                      </p>
+                      <p
+                        class="font12 mb-0"
+                        :class="{ danger: row.poin > points.Poin }"
+                      ></p>
                     </div>
                   </div>
                 </router-link>
@@ -198,6 +200,9 @@ export default {
 </script>
 
 <style scoped>
+.nonActive {
+  pointer-events: none;
+}
 .danger {
   color: red;
 }
