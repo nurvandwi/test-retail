@@ -92,7 +92,7 @@
                         class="card-title text-center m-0"
                         :class="{ danger: row.poin > points.Poin }"
                       >
-                        {{ row.nominal }}
+                        {{ row.nominal_text }}
                       </h5>
                       <p
                         class="font12 mb-0"

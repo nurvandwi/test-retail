@@ -58,7 +58,7 @@
           <div class="card-body py-2">
             <h3 class="card-title font14 mb-1">Total Penukaran Poin</h3>
             <h4 class="card-text font14 font-weight-bold">
-              {{ poincashTotalPrice }} Poin
+              Rp. {{ poincashTotalPrice }}
             </h4>
           </div>
         </div>
@@ -73,7 +73,7 @@
           <div class="card-body py-2">
             <h3 class="card-title font14 mb-1">Total Penukaran Poin</h3>
             <h4 class="card-text font14 font-weight-bold">
-              {{ rebateTotalPrice }} Poin
+              Rp. {{ rebateTotalPrice }}
             </h4>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
-import "./registerServiceWorker";
+import VueSlickCarousel from "vue-slick-carousel";
 import router from "./router";
 import store from "./store";
 import "bootstrap";
@@ -9,7 +9,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ImageUploader from "vue-image-upload-resize";
 import { Tabs, Tab } from "vue-tabs-component";
-
+import wb from "./registerServiceWorker";
+Vue.prototype.$workbox = wb;
+Vue.use(VueSlickCarousel);
 Vue.component("tabs", Tabs);
 Vue.component("tab", Tab);
 Vue.config.productionTip = false;
@@ -20,5 +22,5 @@ new Vue({
   },
   router,
   store,
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount("#app");
