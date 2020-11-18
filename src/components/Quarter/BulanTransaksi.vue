@@ -405,6 +405,33 @@
               </h2>
             </div>
           </div>
+          <div class="row mt-2 border-bottom">
+            <div class="col-4 p-0 col-md-4 px-1">
+              <h2
+                      class="font12 col-12 font-custom text-left px-0 text-gray font-weight-bolder"
+              >
+                Rebate Quarter
+              </h2>
+            </div>
+            <div
+                    class="col-5 col-md-5 text-center"
+                    v-for="monthPoint in selectTab"
+                    :key="monthPoint.id"
+            >
+              <h2 class="font12 position-relative font-weight-bolder">
+                {{ formatPrice(monthPoint.rebate_quarter) }}
+              </h2>
+            </div>
+            <div
+                    class="col-3 col-md-3 text-center"
+                    v-for="monthPoint in selectTab"
+                    :key="monthPoint.id"
+            >
+              <h2 class="font12 position-relative font-weight-bolder">
+                {{ monthPoint.tanggal_transfer }}
+              </h2>
+            </div>
+          </div>
           <div class="row mt-2">
             <div class="col-4 col-md-4 py-0 px-1">
               <h2 class="font12 text-black text-left px-0 font-weight-bolder">

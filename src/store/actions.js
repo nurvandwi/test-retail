@@ -8,10 +8,10 @@ export function getProducts({ commit }, { outlet_id, token }) {
     .get("https://www.inosis.co.id/mv_demo_api/api.php/list-produk-hadiah", {
       params: {
         outlet_id,
-        token
-      }
+        token,
+      },
     })
-    .then(response => {
+    .then((response) => {
       commit("SET_PRODUCTS", response.data.data);
     });
 }
@@ -24,10 +24,10 @@ export function getPoin({ commit }, { outlet_id, token }) {
     .get("https://www.inosis.co.id/mv_demo_api/api.php/status-poin-rebate", {
       params: {
         outlet_id,
-        token
-      }
+        token,
+      },
     })
-    .then(response => {
+    .then((response) => {
       commit("SET_POIN", response.data.data);
     });
 }
@@ -36,7 +36,7 @@ export function getEwallets({ commit }) {
   console.log(this);
   axios
     .get("http://shayna-backend.belajarkoding.com/api/products")
-    .then(response => {
+    .then((response) => {
       commit("SET_EWALLETS", response.data.data.data);
     });
 }
@@ -49,11 +49,11 @@ export function getPoinCashs({ commit }, { outlet_id, token }) {
       {
         params: {
           outlet_id,
-          token
-        }
+          token,
+        },
       }
     )
-    .then(response => {
+    .then((response) => {
       commit("SET_POINCASHS", response.data.data);
     });
 }
@@ -64,10 +64,10 @@ export function getRebates({ commit }, { outlet_id, token }) {
     .get("https://www.inosis.co.id/mv_demo_api/api.php/list-rebate-hadiah", {
       params: {
         outlet_id,
-        token
-      }
+        token,
+      },
     })
-    .then(response => {
+    .then((response) => {
       commit("SET_REBATES", response.data.data);
     });
 }
@@ -77,10 +77,10 @@ export function getProduct({ commit }, { id }) {
   axios
     .get("http://shayna-backend.belajarkoding.com/api/products", {
       params: {
-        id
-      }
+        id,
+      },
     })
-    .then(response => {
+    .then((response) => {
       commit("SET_PRODUCT", response.data.data);
     });
 }
@@ -89,13 +89,13 @@ export function checkOutCartItems({ commit }, { outlet_id, token }) {
   axios
     .get("https://www.inosis.co.id/mv_demo_api/api.php/post-produk-hadiah", {
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
       },
       params: {
-        token
-      }
+        token,
+      },
     })
-    .then(response => {
+    .then((response) => {
       commit("SET_CARTV2", response.data);
     });
   console.log(SET_CARTV2);
@@ -110,7 +110,7 @@ export function addProductToCart(
     quantity,
     poin,
     cartTotalPrice,
-    pointItem
+    pointItem,
   });
 }
 
@@ -124,7 +124,7 @@ export function addPulsaToCart(
     kd_produk,
     quantity,
     poin,
-    poin_text
+    poin_text,
   });
 }
 
@@ -138,7 +138,7 @@ export function addEwalletToCart(
     kd_produk,
     quantity,
     cartTotalPrice,
-    pointItem
+    pointItem,
   }
 ) {
   commit("ADD_TO_EWALLET", {
@@ -149,7 +149,7 @@ export function addEwalletToCart(
     ewallet,
     poin,
     cartTotalPrice,
-    pointItem
+    pointItem,
   });
 }
 
@@ -162,7 +162,7 @@ export function addPoinCashToCart(
     quantity,
     poin,
     pointItem,
-    cartPoincashPrice
+    cartPoincashPrice,
   });
 }
 
@@ -172,7 +172,7 @@ export function checkOutCart({ state }, { outlet_id, token }) {
     outlet_id: outlet_id,
     data: state.cart.map(function(x) {
       return { kd_produk: x.product.kd_produk, quantity: x.quantity };
-    })
+    }),
   };
 
   console.log(data);
@@ -181,11 +181,11 @@ export function checkOutCart({ state }, { outlet_id, token }) {
     data,
     {
       params: {
-        token
+        token,
       },
       headers: {
-        "content-type": "application/json"
-      }
+        "content-type": "application/json",
+      },
     }
   );
   return (state.cart = []);
@@ -197,7 +197,7 @@ export function checkOutRebate({ state }, { outlet_id, token }) {
     outlet_id: outlet_id,
     data: state.cartRebate.map(function(x) {
       return { periode: x.rebate.periode, quantity: x.quantity };
-    })
+    }),
   };
 
   console.log(data);
@@ -206,11 +206,11 @@ export function checkOutRebate({ state }, { outlet_id, token }) {
     data,
     {
       params: {
-        token
+        token,
       },
       headers: {
-        "content-type": "application/json"
-      }
+        "content-type": "application/json",
+      },
     }
   );
   return (state.cartRebate = []);
@@ -222,7 +222,7 @@ export function checkOutPoinCash({ state }, { outlet_id, token }) {
     outlet_id: outlet_id,
     data: state.cartPoincash.map(function(x) {
       return { kd_produk: x.poincash.kd_produk, quantity: x.quantity };
-    })
+    }),
   };
 
   console.log(data);
@@ -231,11 +231,11 @@ export function checkOutPoinCash({ state }, { outlet_id, token }) {
     data,
     {
       params: {
-        token
+        token,
       },
       headers: {
-        "content-type": "application/json"
-      }
+        "content-type": "application/json",
+      },
     }
   );
   return (state.cartPoincash = []);
@@ -247,7 +247,7 @@ export function checkOutPulsa({ state }, { outlet_id, token }) {
     outlet_id: outlet_id,
     data: state.cartPulsa.map(function(x) {
       return { kd_produk: x.kd_produk, quantity: 1, no_hp: x.no_hp };
-    })
+    }),
   };
 
   console.log(data);
@@ -256,11 +256,11 @@ export function checkOutPulsa({ state }, { outlet_id, token }) {
     data,
     {
       params: {
-        token
+        token,
       },
       headers: {
-        "content-type": "application/json"
-      }
+        "content-type": "application/json",
+      },
     }
   );
   return (state.cartPulsa = []);
@@ -272,7 +272,7 @@ export function checkOutEwallet({ state }, { outlet_id, token }) {
     outlet_id: outlet_id,
     data: state.cartEwallet.map(function(x) {
       return { kd_produk: x.kd_produk, quantity: 1, no_hp: x.no_hp };
-    })
+    }),
   };
 
   console.log(data);
@@ -281,11 +281,11 @@ export function checkOutEwallet({ state }, { outlet_id, token }) {
     data,
     {
       params: {
-        token
+        token,
       },
       headers: {
-        "content-type": "application/json"
-      }
+        "content-type": "application/json",
+      },
     }
   );
   return (state.cartEwallet = []);
@@ -294,29 +294,29 @@ export function checkOutEwallet({ state }, { outlet_id, token }) {
 export function addEwalletToCartw({ commit }, { ewallet, quantity }) {
   commit("ADD_TO_EWALLET", {
     ewallet,
-    quantity
+    quantity,
   });
   axios.post("http://shayna-backend.belajarkoding.com/api/cart", {
     ewallet_id: ewallet.id,
-    quantity
+    quantity,
   });
 }
 
 export function addRebateToCart({ commit }, { rebate, quantity }) {
   commit("ADD_TO_REBATE", {
     rebate,
-    quantity
+    quantity,
   });
   axios.post("http://shayna-backend.belajarkoding.com/api/cart", {
     rebate_id: rebate.id,
-    quantity
+    quantity,
   });
 }
 
 export function getCartItems({ commit }) {
   axios
     .get("http://shayna-backend.belajarkoding.com/api/cart")
-    .then(response => {
+    .then((response) => {
       commit("SET_CART", response.data);
     });
 }
@@ -324,7 +324,7 @@ export function getCartItems({ commit }) {
 export function getEwalletItems({ commit }) {
   axios
     .get("http://shayna-backend.belajarkoding.com/api/cart")
-    .then(response => {
+    .then((response) => {
       commit("SET_EWALLET", response.data);
     });
 }
@@ -332,7 +332,7 @@ export function getEwalletItems({ commit }) {
 export function getPoincashItems({ commit }) {
   axios
     .get("http://shayna-backend.belajarkoding.com/api/cart")
-    .then(response => {
+    .then((response) => {
       commit("SET_POINCASH", response.data);
     });
 }
@@ -340,7 +340,7 @@ export function getPoincashItems({ commit }) {
 export function getRebateItems({ commit }) {
   axios
     .get("http://shayna-backend.belajarkoding.com/api/cart")
-    .then(response => {
+    .then((response) => {
       commit("SET_REBATE", response.data);
     });
 }

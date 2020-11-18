@@ -1,5 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
+Vue.config.devtools = true
 import VueSlickCarousel from "vue-slick-carousel";
 import router from "./router";
 import store from "./store";

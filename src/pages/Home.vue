@@ -3,11 +3,11 @@
     <Header
       :contentFor="'home'"
       :outlet_name="OutletData.outlet_name"
-      :outlet_point="points.Poin"
-      :outlet_rebate="OutletData.Rebate"
+      :outlet_point="points.Poin_text"
+      :outlet_rebate="OutletData.Rebate_text"
     />
     <PromoBanner :slider="Slider" />
-    <ListPromosi :contentFor="'home'" />
+    <ListPromosi :contentFor="'home'" :status="OutletData.status_registrasi"/>
     <ListTransaksi class="mb-5 pb-5" />
   </div>
 </template>

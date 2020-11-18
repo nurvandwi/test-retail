@@ -195,7 +195,6 @@
                 <div class="col-md-10 col-10">
                   <h5 class="text-white m-0 font16">Checkout</h5>
                 </div>
-                ss
                 <div class="col-md-2 col-2">
                   <img
                     src="../../assets/icon-next.png"

@@ -141,7 +141,7 @@
         :key="Poincash.id"
       >
         <div class="row no-gutters bg">
-          <div class="col-md-2 col-3 px-2 align-self-center  ">
+          <div class="col-md-2 col-3 px-2 d-flex align-self-center  ">
             <img :src="Poincash.poincash.img" class="w-60 m-auto " />
           </div>
           <div class="col-md-8 col-6 ">
@@ -150,7 +150,7 @@
                 {{ Poincash.poincash.nama_produk }}
               </h5>
               <h5 class="card-text font14px">
-                {{ Poincash.quantity }} x Rp. {{ Poincash.poincash.poin }}
+                {{ Poincash.quantity }} x {{ Poincash.poincash.poin }} Poin
               </h5>
             </div>
           </div>

@@ -75,7 +75,7 @@ import ItemProduct from "./ItemProduct.vue";
 export default {
   props: ["contentFor"],
   components: {
-    ItemProduct
+    ItemProduct,
   },
   computed: {
     products() {
@@ -92,27 +92,27 @@ export default {
     },
     points() {
       return this.$store.state.points;
-    }
+    },
   },
   mounted() {
     this.$store.dispatch("getProducts", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
+      token: localStorage.token,
     });
     this.$store.dispatch("getEwallets");
     this.$store.dispatch("getPoinCashs", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
+      token: localStorage.token,
     });
     this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
+      token: localStorage.token,
     });
     this.$store.dispatch("getRebates", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
+      token: localStorage.token,
     });
-  }
+  },
 };
 </script>
 

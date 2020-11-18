@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-12 col-12 p-0">
+  <div class="col-md-12 col-12 p-0 mt-3">
     <div>
       <h3 class="font16 ml-4 mb-0 mt-2 font-weight-bold">Promo</h3>
       <p class="font-12 ml-4">Temukan penawaran menarik dibawah ini.</p>
@@ -54,7 +54,7 @@ export default {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 3000,
+        speed: 1000,
         autoplaySpeed: 4000,
         cssEase: "linear"
       }
