@@ -370,7 +370,7 @@ export default {
     "tarif_quarter",
     "tarif_rebate_quarter",
     "rebate_quarter",
-    "saldo_rebate"
+    "saldo_rebate",
   ],
   methods: {
     formatPrice(value) {
@@ -384,8 +384,8 @@ export default {
     formatRebate(value) {
       const val = (value / 1).toFixed(2).replace(".", ".");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    }
-  }
+    },
+  },
 };
 </script>
 

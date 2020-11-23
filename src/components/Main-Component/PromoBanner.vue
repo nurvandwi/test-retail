@@ -41,7 +41,7 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 export default {
   components: {
-    VueSlickCarousel
+    VueSlickCarousel,
   },
   name: "PromoBanner",
   props: ["slider"],
@@ -56,10 +56,10 @@ export default {
         autoplay: true,
         speed: 1000,
         autoplaySpeed: 4000,
-        cssEase: "linear"
-      }
+        cssEase: "linear",
+      },
     };
-  }
+  },
 };
 </script>
 

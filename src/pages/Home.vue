@@ -7,7 +7,7 @@
       :outlet_rebate="OutletData.Rebate_text"
     />
     <PromoBanner :slider="Slider" />
-    <ListPromosi :contentFor="'home'" :status="OutletData.status_registrasi"/>
+    <ListPromosi :contentFor="'home'" :status="OutletData.status_registrasi" />
     <ListTransaksi class="mb-5 pb-5" />
   </div>
 </template>
@@ -24,19 +24,19 @@ export default {
     Header,
     PromoBanner,
     ListPromosi,
-    ListTransaksi
+    ListTransaksi,
   },
   data() {
     return {
       OutletData: {
-        data: []
+        data: [],
       },
       AllTransaction: {
-        data: []
+        data: [],
       },
       Slider: {
-        data: []
-      }
+        data: [],
+      },
     };
   },
   mounted() {
@@ -45,7 +45,7 @@ export default {
     this.getSlider();
     this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
+      token: localStorage.token,
     });
   },
   methods: {
@@ -55,11 +55,11 @@ export default {
         .get("https://www.inosis.co.id/mv_demo_api/api.php/banner", {
           params: {
             outlet_id: this.$route.params.outlet_id,
-            token: localStorage.token
-          }
+            token: localStorage.token,
+          },
         })
-        .then(res => (this.Slider = res.data))
-        .catch(err => console.log(err));
+        .then((res) => (this.Slider = res.data))
+        .catch((err) => console.log(err));
     },
     getOutlet() {
       axios
@@ -68,30 +68,30 @@ export default {
           {
             params: {
               outlet_id: this.$route.params.outlet_id,
-              token: localStorage.token
-            }
+              token: localStorage.token,
+            },
           }
         )
-        .then(res => (this.OutletData = res.data.data))
-        .catch(err => console.log(err));
+        .then((res) => (this.OutletData = res.data.data))
+        .catch((err) => console.log(err));
     },
     getAllTransaction() {
       axios
         .get("https://www.inosis.co.id/mv_demo_api/api.php/view_transaksi", {
           params: {
             outlet_id: this.$route.params.outlet_id,
-            token: localStorage.token
-          }
+            token: localStorage.token,
+          },
         })
-        .then(res => (this.AllTransaction = res.data))
-        .catch(err => console.log(err));
-    }
+        .then((res) => (this.AllTransaction = res.data))
+        .catch((err) => console.log(err));
+    },
   },
   computed: {
     points() {
       return this.$store.state.points;
-    }
-  }
+    },
+  },
 };
 </script>
 

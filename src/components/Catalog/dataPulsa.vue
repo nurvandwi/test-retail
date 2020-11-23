@@ -169,6 +169,7 @@
 import axios from "axios";
 
 export default {
+  props: ["status"],
   data() {
     return {
       no_hp: [],
@@ -177,25 +178,29 @@ export default {
       options: [
         { text: "Pilih Jenis Provider", value: "Pulsa" },
         { text: "Indosat", value: "Indosat" },
-        { text: "Xl", value: "Xl" }
+        { text: "Xl", value: "Xl" },
       ],
-      nominalPulsa: []
+      nominalPulsa: [],
     };
   },
   methods: {
     addToPulsa(kd_produk, poin, poin_text, points) {
       console.log(poin);
-      if (points >= poin) {
-        this.$store.dispatch("addPulsaToCart", {
-          no_hp: this.no_hp,
-          nominal: this.$route.params.nominal,
-          kd_produk,
-          poin,
-          poin_text,
-          quantity: 1
-        });
+      if (this.status != 0) {
+        if (points >= poin) {
+          this.$store.dispatch("addPulsaToCart", {
+            no_hp: this.no_hp,
+            nominal: this.$route.params.nominal,
+            kd_produk,
+            poin,
+            poin_text,
+            quantity: 1,
+          });
+        } else {
+          alert("Poin anda tidak cukup");
+        }
       } else {
-        alert("Poin anda tidak cukup");
+        alert("Data anda belum lengkap");
       }
     },
     getNominalPulsa() {
@@ -203,25 +208,25 @@ export default {
         .get(`https://www.inosis.co.id/mv_demo_api/api.php/list-pulsa-hadiah`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
-            token: localStorage.token
-          }
+            token: localStorage.token,
+          },
         })
-        .then(res => (this.nominalPulsa = res.data))
-        .catch(err => console.log(err));
-    }
+        .then((res) => (this.nominalPulsa = res.data))
+        .catch((err) => console.log(err));
+    },
   },
   mounted() {
     this.getNominalPulsa();
     this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
+      token: localStorage.token,
     });
   },
   computed: {
     points() {
       return this.$store.state.points;
-    }
-  }
+    },
+  },
 };
 </script>
 

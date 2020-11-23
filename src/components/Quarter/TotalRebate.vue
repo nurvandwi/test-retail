@@ -3,12 +3,12 @@
     <div class="row text-center">
       <div class="col-12 table-top col-md-12 bg-blue d-flex">
         <div
-                class="font12 p-0 text-white text-left border-right col-sm-4 col-4 py-2"
+          class="font12 p-0 text-white text-left border-right col-sm-4 col-4 py-2"
         >
           TYPE REBATE
         </div>
         <div
-                class="text-center p-0 font12 text-white border-right col-sm-4 col-4 py-2"
+          class="text-center p-0 font12 text-white border-right col-sm-4 col-4 py-2"
         >
           NILAI REBATE
         </div>
@@ -33,7 +33,7 @@
         <div class="row mt-2 border-bottom">
           <div class="col-4 p-0 col-md-4 ">
             <h2
-                    class="font12 col-12 font-custom text-left text-gray font-weight-bolder"
+              class="font12 col-12 font-custom text-left text-gray font-weight-bolder"
             >
               Rebate Bulanan
             </h2>
@@ -65,54 +65,54 @@
 </template>
 
 <script>
-  export default {};
+export default {};
 </script>
 
 <style scoped>
-  .rounded {
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-  }
+.rounded {
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
 
-  .table-top {
-    border: 1px solid #6a813d;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-  }
+.table-top {
+  border: 1px solid #6a813d;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
 
-  .table-bordereds {
-    border: 1px solid #6a813d;
-    border-bottom-left-radius: 12px !important;
-    border-bottom-right-radius: 12px !important;
-  }
+.table-bordereds {
+  border: 1px solid #6a813d;
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
 
-  .text-gray {
-    color: #6c757d;
-  }
+.text-gray {
+  color: #6c757d;
+}
 
-  .font10 {
-    font-size: 10px;
-  }
+.font10 {
+  font-size: 10px;
+}
 
-  .font12 {
-    font-size: 12px;
-  }
+.font12 {
+  font-size: 12px;
+}
 
-  .font14 {
-    font-size: 14px;
-  }
+.font14 {
+  font-size: 14px;
+}
 
-  .font13 {
-    font-size: 13px;
-  }
-  .bg-blue {
-    background-color: #6a813d;
-  }
+.font13 {
+  font-size: 13px;
+}
+.bg-blue {
+  background-color: #6a813d;
+}
 
-  .text-blue {
-    color: #68cdff;
-  }
+.text-blue {
+  color: #68cdff;
+}
 
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+}
 </style>

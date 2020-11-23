@@ -114,6 +114,7 @@
 import axios from "axios";
 
 export default {
+  props: ["status"],
   data() {
     return {
       no: "",
@@ -122,13 +123,13 @@ export default {
       options: [
         { text: "Pilih Jenis E-wallet", value: "Pilih Jenis E-wallet" },
         { text: "Dana", value: "Dana" },
-        { text: "Ovo", value: "Ovo" }
+        { text: "Ovo", value: "Ovo" },
       ],
       list: [],
       listContents: [],
       state: {
-        ewallet: "Test"
-      }
+        ewallet: "Test",
+      },
     };
   },
   methods: {
@@ -137,11 +138,11 @@ export default {
         .get(`https://www.inosis.co.id/mv_demo_api/api.php/list-ewallet`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
-            token: localStorage.token
-          }
+            token: localStorage.token,
+          },
         })
-        .then(res => (this.list = res.data.data))
-        .catch(err => console.log(err));
+        .then((res) => (this.list = res.data.data))
+        .catch((err) => console.log(err));
     },
     getList() {
       axios
@@ -150,36 +151,41 @@ export default {
           {
             params: {
               outlet_id: this.$route.params.outlet_id,
-              token: localStorage.token
-            }
+              token: localStorage.token,
+            },
           }
         )
-        .then(res => (this.listContents = res.data))
-        .catch(err => console.log(err));
+        .then((res) => (this.listContents = res.data))
+        .catch((err) => console.log(err));
     },
     addToEwallet(kd_produk, poin, points) {
       // console.log(this.state.ewallet)
+      console.log(this.status);
       console.log(points);
-      if (points >= poin) {
-        this.$store.dispatch("addEwalletToCart", {
-          no_hp: this.no_hp,
-          ewallet: this.state.ewallet,
-          nominal: this.$route.params.nominal,
-          kd_produk,
-          poin,
-          quantity: 1
-        });
+      if (this.status != 0) {
+        if (points >= poin) {
+          this.$store.dispatch("addEwalletToCart", {
+            no_hp: this.no_hp,
+            ewallet: this.state.ewallet,
+            nominal: this.$route.params.nominal,
+            kd_produk,
+            poin,
+            quantity: 1,
+          });
+        } else {
+          alert("Poin anda tidak cukup");
+        }
       } else {
-        alert("Poin anda tidak cukup");
+        alert("Data anda belum lengkap");
       }
-    }
+    },
   },
   mounted() {
     this.getEwallet();
     this.getList();
     this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
+      token: localStorage.token,
     });
   },
   computed: {
@@ -194,8 +200,8 @@ export default {
     },
     points() {
       return this.$store.state.points;
-    }
-  }
+    },
+  },
 };
 </script>
 

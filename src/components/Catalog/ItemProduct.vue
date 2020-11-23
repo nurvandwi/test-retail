@@ -146,19 +146,24 @@
 <script>
 export default {
   name: "ItemProduct",
-  props: ["product", "ewallet", "poincash", "contentFor", "rebate"],
+  props: ["product", "ewallet", "poincash", "contentFor", "rebate", "status"],
   methods: {
     addToCart(cartTotalPrice, poin) {
       console.log(this.product.poin);
-      if (poin >= this.product.poin ) {
-        this.$store.dispatch("addProductToCart", {
-          product: this.product,
-          quantity: 1,
-          pointItem: this.product.poin,
-          cartTotalPrice
-        });
+      console.log(this.status);
+      if (this.status != 0) {
+        if (poin >= this.product.poin) {
+          this.$store.dispatch("addProductToCart", {
+            product: this.product,
+            quantity: 1,
+            pointItem: this.product.poin,
+            cartTotalPrice,
+          });
+        } else {
+          alert("Poin anda Tidak cukup");
+        }
       } else {
-        alert("Poin anda Tidak cukup");
+        alert("Data anda belum lengkap");
       }
     },
     addToEwallet(cartTotalPrice, poin) {
@@ -168,29 +173,38 @@ export default {
           ewallet: this.ewallet,
           quantity: 1,
           pointItem: this.product.poin,
-          cartTotalPrice
+          cartTotalPrice,
         });
       }
     },
     addToPoinCash(cartPoincashPrice, poin) {
       console.log(poin);
-      if (poin >= this.poincash.poin) {
-        this.$store.dispatch("addPoinCashToCart", {
-          poincash: this.poincash,
-          quantity: 1,
-          pointItem: this.poincash.poin,
-          cartPoincashPrice
-        });
+      console.log(this.status);
+      if (this.status != 0) {
+        if (poin >= this.poincash.poin) {
+          this.$store.dispatch("addPoinCashToCart", {
+            poincash: this.poincash,
+            quantity: 1,
+            pointItem: this.poincash.poin,
+            cartPoincashPrice,
+          });
+        } else {
+          alert("Poin anda Tidak cukup");
+        }
       } else {
-        alert("Poin anda Tidak cukup");
+        alert("Data anda belum lengkap");
       }
     },
     addToRebate() {
-      this.$store.dispatch("addRebateToCart", {
-        rebate: this.rebate,
-        quantity: 1
-      });
-    }
+      if (this.status != 0) {
+        this.$store.dispatch("addRebateToCart", {
+          rebate: this.rebate,
+          quantity: 1,
+        });
+      } else {
+        alert("Data anda belum lengkap");
+      }
+    },
   },
   computed: {
     cartTotalPrice() {
@@ -201,14 +215,14 @@ export default {
     },
     points() {
       return this.$store.state.points;
-    }
+    },
   },
   mounted() {
     this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
+      token: localStorage.token,
     });
-  }
+  },
 };
 </script>
 

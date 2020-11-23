@@ -13,6 +13,7 @@
           :key="product.id"
           :product="product"
           :contentFor="'product'"
+          :status="OutletData.status_registrasi"
         />
       </div>
     </div>
@@ -45,6 +46,7 @@
           :key="Itempoincash.id"
           :poincash="Itempoincash"
           :contentFor="'PoinCash'"
+          :status="OutletData.status_registrasi"
         />
       </div>
     </div>
@@ -63,6 +65,7 @@
           :key="rebate.id"
           :rebate="rebate"
           :contentFor="'Rebate'"
+          :status="OutletData.status_registrasi"
         />
       </div>
     </div>
@@ -71,11 +74,18 @@
 
 <script>
 import ItemProduct from "./ItemProduct.vue";
-
+import axios from "axios";
 export default {
   props: ["contentFor"],
   components: {
     ItemProduct,
+  },
+  data() {
+    return {
+      OutletData: {
+        data: [],
+      },
+    };
   },
   computed: {
     products() {
@@ -92,6 +102,22 @@ export default {
     },
     points() {
       return this.$store.state.points;
+    },
+  },
+  methods: {
+    getOutlet() {
+      axios
+        .get(
+          "https://www.inosis.co.id/mv_demo_api/api.php/status-poin-rebate",
+          {
+            params: {
+              outlet_id: this.$route.params.outlet_id,
+              token: localStorage.token,
+            },
+          }
+        )
+        .then((res) => (this.OutletData = res.data.data))
+        .catch((err) => console.log(err));
     },
   },
   mounted() {
@@ -112,6 +138,7 @@ export default {
       outlet_id: this.$route.params.outlet_id,
       token: localStorage.token,
     });
+    this.getOutlet();
   },
 };
 </script>
