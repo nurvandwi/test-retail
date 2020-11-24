@@ -6,10 +6,70 @@
       >
         Produk Reward
       </h5>
-      <p class="px-2 mb-3 font14">Pilih Produk Dibawah ini</p>
+
+      <p class="px-2 mb-1  font14">Pilih Produk Dibawah ini</p>
+      <div class="content mb-3">
+        <table class="table px-0  mx-0">
+          <thead>
+            <tr>
+              <th scope="col px-0">
+                <button
+                  @click="selected = null"
+                  type="button"
+                  class="btn font-custom rounded-pill px-0 font-weight-bolder btn-menu"
+                >
+                  <h5 class="font14 mb-0 font-weight-bold px-3 py-1">Semua</h5>
+                </button>
+              </th>
+              <th scope="col px-0">
+                <button
+                  @click="selected = 'PRODUK'"
+                  type="button"
+                  class="btn font-custom rounded-pill px-0 font-weight-bolder btn-menu"
+                >
+                  <h5 class="font14 mb-0 font-weight-bold px-3 py-1">Produk</h5>
+                </button>
+              </th>
+              <th scope="col px-0">
+                <button
+                  @click="selected = 'VOUCHER ONLINE'"
+                  type="button"
+                  class="btn font-custom  rounded-pill font-weight-bolder btn-menu"
+                >
+                  <h5 class="font14 mb-0 d-flex font-weight-bold px-2 py-1">
+                    Voucher <span class="px-2"> Online</span>
+                  </h5>
+                </button>
+              </th>
+              <th scope="col px-0">
+                <button
+                  @click="selected = 'VOUCHER TOUR'"
+                  type="button"
+                  class="btn font-custom rounded-pill font-weight-bolder btn-menu"
+                >
+                  <h5 class="font14 mb-0 d-flex font-weight-bold px-2 py-1">
+                    Voucher <span class="px-2"> Tour</span>
+                  </h5>
+                </button>
+              </th>
+              <th scope="col px-0">
+                <button
+                  @click="selected = 'VOUCHER BELANJA'"
+                  type="button"
+                  class="btn font-custom rounded-pill font-weight-bolder btn-menu"
+                >
+                  <h5 class="font14 mb-0 d-flex font-weight-bold px-2 py-1">
+                    Voucher <span class="px-2"> Belanja</span>
+                  </h5>
+                </button>
+              </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
       <div class="d-flex align-items-stretch   flex-wrap top-card">
         <ItemProduct
-          v-for="product in products"
+          v-for="product in selectedTab"
           :key="product.id"
           :product="product"
           :contentFor="'product'"
@@ -85,6 +145,7 @@ export default {
       OutletData: {
         data: [],
       },
+      selected: null,
     };
   },
   computed: {
@@ -102,6 +163,13 @@ export default {
     },
     points() {
       return this.$store.state.points;
+    },
+    selectedTab() {
+      if (this.selected == null) {
+        return this.products;
+      } else {
+        return this.products.filter((x) => x.category === this.selected);
+      }
     },
   },
   methods: {
@@ -144,8 +212,95 @@ export default {
 </script>
 
 <style scoped>
+table td,
+.table th {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  padding-right: 0.3rem !important;
+  padding-left: 0.3rem !important;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.imagecustom {
+  width: 15%;
+}
+
+.shadow-item {
+  box-shadow: 0 0.1rem 0.8rem rgba(150, 142, 255, 0.15) !important;
+}
+
+.btn-menu {
+  color: #212529;
+  background-color: #f1f5ff;
+}
+
+.btn:hover {
+  background-color: #4e37b2;
+  border-color: #4e37b2;
+  color: white;
+}
+
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(75, 55, 178, 0.2);
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: none;
+}
+
+.table td,
+.table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: none;
+}
+
+.content {
+  /* This is the magic bit for Firefox */
+  overflow-x: scroll;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+
+.content::-webkit-scrollbar {
+  /* This is the magic bit for WebKit */
+  display: flex;
+}
+
+.mb-card {
+  margin-bottom: 10rem;
+}
+
+.shadow1 {
+  box-shadow: 0 0.1rem 0.3rem rgba(182, 189, 255, 0.308) !important;
+}
+
+.shadow-item {
+  box-shadow: 0 0.1rem 0.8rem rgba(150, 142, 255, 0.15) !important;
+}
+
+.card {
+  border: none !important;
+}
+
+.marginTitle {
+  margin-top: 4rem;
+}
+
+.text-violet {
+  color: #4e37b2;
+}
+
+.text-violet:hover {
+  color: #4e37b2;
+  text-decoration: underline;
+}
 .margin-wrapper {
-  margin-bottom: 8rem !important;
+  margin-bottom: 0rem !important;
 }
 
 .space-card {
@@ -167,6 +322,34 @@ export default {
   .font16px {
     font-size: 16px;
   }
+  .content {
+    /* This is the magic bit for Firefox */
+    overflow-x: scroll;
+    scrollbar-width: none;
+    max-width: 95%;
+  }
+
+  .content::-webkit-scrollbar {
+    /* This is the magic bit for WebKit */
+    display: none;
+  }
+
+  .imagecustom {
+    width: 17%;
+  }
+
+  .size-delete {
+    width: 40%;
+  }
+
+  .padding-card {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .size-icon {
+    width: 2.5rem;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
@@ -183,6 +366,34 @@ export default {
   }
   .font16px {
     font-size: 160px;
+  }
+  .content {
+    /* This is the magic bit for Firefox */
+    overflow-x: scroll;
+    scrollbar-width: none;
+    max-width: 95%;
+  }
+
+  .content::-webkit-scrollbar {
+    /* This is the magic bit for WebKit */
+    display: none;
+  }
+
+  .imagecustom {
+    width: 17%;
+  }
+
+  .size-delete {
+    width: 40%;
+  }
+
+  .padding-card {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .size-icon {
+    width: 2.5rem;
   }
 }
 </style>

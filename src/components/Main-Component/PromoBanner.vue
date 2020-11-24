@@ -1,8 +1,15 @@
 <template>
   <div class="col-md-12 col-12 p-0 mt-3">
-    <div>
-      <h3 class="font16 ml-4 mb-0 mt-2 font-weight-bold">Promo</h3>
-      <p class="font-12 ml-4">Temukan penawaran menarik dibawah ini.</p>
+    <div class="d-flex flex-row ml-3 mb-3">
+      <img class="img-fluid w-icon" src="../../assets/mvg-icon.png" alt="" />
+      <div class="d-flex align-items-center">
+        <div class="d-flex flex-column">
+          <h3 class="font16 ml-1 my-0 font-weight-bold">Promo</h3>
+          <p class="font-12 ml-1 my-0">
+            Temukan penawaran menarik dibawah ini.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div
@@ -122,7 +129,14 @@ export default {
   z-index: 10;
   position: relative;
 }
+.w-icon {
+  width: 10%;
+}
 @media screen and (max-width: 1000px) {
+  .w-icon {
+    width: 16%;
+    height: 16%;
+  }
   .font-12 {
     font-size: 12px;
   }

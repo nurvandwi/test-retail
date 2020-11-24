@@ -51,9 +51,11 @@ export default {
 }
 
 .mb-custom {
-  margin-bottom: 6rem !important;
+  margin-bottom: 3rem !important;
 }
-
+/*.mb-custom {
+  margin-bottom: 6rem !important;
+}*/
 @media screen and (max-width: 1000px) {
   .mb-custom {
     margin-bottom: 3rem !important;
