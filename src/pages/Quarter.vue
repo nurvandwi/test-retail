@@ -77,7 +77,7 @@ export default {
     },
     allQuarter() {
       axios
-        .get("https://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet", {
+        .get(`${process.env.VUE_APP_URL}dashboard-outlet`, {
           headers: {
             version: this.$route.params.version,
           },
@@ -92,15 +92,12 @@ export default {
     },
     monthToYear() {
       axios
-        .get(
-          "https://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet-mty",
-          {
-            params: {
-              txtKodeOutlet: this.$route.params.outlet_id,
-              token: localStorage.token,
-            },
-          }
-        )
+        .get(`${process.env.VUE_APP_URL}dashboard-outlet-mty`, {
+          params: {
+            txtKodeOutlet: this.$route.params.outlet_id,
+            token: localStorage.token,
+          },
+        })
 
         .then((res) => (this.year = res.data))
         .catch((err) => console.log(err));

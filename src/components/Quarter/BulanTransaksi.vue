@@ -132,107 +132,6 @@
           </div>
         </div>
       </div>
-      <!--            <div class="row text-center rows-col-3 mt-3">-->
-      <!--                <div class="col bg-blue text-white py-2 font-custom">-->
-      <!--                    DETAIL PENJUALAN MEDIO BULAN-->
-      <!--                </div>-->
-      <!--                <div class="table-bordered col-12">-->
-      <!--                    <div class="row text-center mt-2">-->
-      <!--                        <div class="col font10" style="border-right: 1px solid #d3d3d3; ">-->
-      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
-      <!--                                HISTORIKAL PENJUALAN-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                        <div class="col">-->
-      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
-      <!--                                TARGET PENJUALAN-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                    <div-->
-      <!--                            class="row text-center mb-2 border-bottom"-->
-      <!--                            v-for="monthPoint in selectTab"-->
-      <!--                            :key="monthPoint.id"-->
-      <!--                    >-->
-      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
-      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
-      <!--                                Rp {{ formatPrice(monthPoint.last_monthly) }}-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                        <div class="col">-->
-      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
-      <!--                                Rp {{ formatPrice(monthPoint.target_monthly) }}-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                    <div class="row text-center mt-2">-->
-      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
-      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
-      <!--                                SELISIH PENJUALAN-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                        <div class="col">-->
-      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
-      <!--                                AKTUAL PENJUALAN-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                    <div-->
-      <!--                            class="row text-center mb-2 border-bottom"-->
-      <!--                            v-for="monthPoint in selectTab"-->
-      <!--                            :key="monthPoint.id"-->
-      <!--                    >-->
-      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
-      <!--                            <h2-->
-      <!--                                    class="font14 font-weight-bolder"-->
-      <!--                                    v-bind:class="-->
-      <!--                  parseInt(monthPoint.selisih_monthly) > 0-->
-      <!--                    ? 'text-dark '-->
-      <!--                    : 'text-danger '-->
-      <!--                "-->
-      <!--                            >-->
-      <!--                                Rp {{ formatPrice(monthPoint.selisih_monthly) }}-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                        <div class="col">-->
-      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
-      <!--                                Rp{{ formatPrice(monthPoint.total_sales) }}-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                    <div-->
-      <!--                            class="row text-center mt-2"-->
-      <!--                            v-for="monthPoint in selectTab"-->
-      <!--                            :key="monthPoint.id"-->
-      <!--                    >-->
-      <!--                        <div class="col font10">-->
-      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
-      <!--                                RATIO PENJUALAN-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                        <div class="col">-->
-      <!--                            <h2-->
-      <!--                                    class="font14 text-black font-custom font-weight-bolder"-->
-      <!--                                    v-bind:class="-->
-      <!--                  parseInt(monthPoint.selisih_monthly) > 0-->
-      <!--                    ? 'text-dark '-->
-      <!--                    : 'text-danger '-->
-      <!--                "-->
-      <!--                            >-->
-      <!--                                {{ formatPrice(monthPoint.selisih_monthly) }} %-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                    <div class="text-center mb-2">-->
-      <!--                        <div class="col font10">-->
-      <!--                            <h2 class="font10 text-black-50 font-weight-bolder">-->
-      <!--                                &lt;!&ndash; eslint-disable &ndash;&gt;-->
-      <!--                                (STATUS SUKSES >= 100%, GAGAL < 100%)-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                </div>-->
-      <!--            </div>-->
       <div class="row text-center rows-col-3 mt-3">
         <div class="col font-custom bg-blue text-white py-2">
           POIN PER BULAN
@@ -408,24 +307,24 @@
           <div class="row mt-2 border-bottom">
             <div class="col-4 p-0 col-md-4 px-1">
               <h2
-                      class="font12 col-12 font-custom text-left px-0 text-gray font-weight-bolder"
+                class="font12 col-12 font-custom text-left px-0 text-gray font-weight-bolder"
               >
                 Rebate Quarter
               </h2>
             </div>
             <div
-                    class="col-5 col-md-5 text-center"
-                    v-for="monthPoint in selectTab"
-                    :key="monthPoint.id"
+              class="col-5 col-md-5 text-center"
+              v-for="monthPoint in selectTab"
+              :key="monthPoint.id"
             >
               <h2 class="font12 position-relative font-weight-bolder">
                 {{ formatPrice(monthPoint.rebate_quarter) }}
               </h2>
             </div>
             <div
-                    class="col-3 col-md-3 text-center"
-                    v-for="monthPoint in selectTab"
-                    :key="monthPoint.id"
+              class="col-3 col-md-3 text-center"
+              v-for="monthPoint in selectTab"
+              :key="monthPoint.id"
             >
               <h2 class="font12 position-relative font-weight-bolder">
                 {{ monthPoint.tanggal_transfer }}
@@ -583,107 +482,7 @@
           </div>
         </div>
       </div>
-      <!--            <div class="row text-center rows-col-3 mt-3">-->
-      <!--                <div class="col bg-blue text-white py-2 font-custom">-->
-      <!--                    DETAIL PENJUALAN MEDIO BULAN-->
-      <!--                </div>-->
-      <!--                <div class="table-bordered col-12">-->
-      <!--                    <div class="row text-center mt-2">-->
-      <!--                        <div class="col font10" style="border-right: 1px solid #d3d3d3; ">-->
-      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
-      <!--                                HISTORIKAL PENJUALAN-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                        <div class="col">-->
-      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
-      <!--                                TARGET PENJUALAN-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                    <div-->
-      <!--                            class="row text-center mb-2 border-bottom"-->
-      <!--                            v-for="monthYear in selectTabYear"-->
-      <!--                            :key="monthYear.id"-->
-      <!--                    >-->
-      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
-      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
-      <!--                                Rp {{ formatPrice(monthYear.last_monthly) }}-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                        <div class="col">-->
-      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
-      <!--                                Rp {{ formatPrice(monthYear.target_monthly) }}-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                    <div class="row text-center mt-2">-->
-      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
-      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
-      <!--                                SELISIH PENJUALAN-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                        <div class="col">-->
-      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
-      <!--                                AKTUAL PENJUALAN-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                    <div-->
-      <!--                            class="row text-center mb-2 border-bottom"-->
-      <!--                            v-for="monthYear in selectTabYear"-->
-      <!--                            :key="monthYear.id"-->
-      <!--                    >-->
-      <!--                        <div class="col font10" style="border-right:1px solid #d3d3d3;">-->
-      <!--                            <h2-->
-      <!--                                    class="font14 font-weight-bolder"-->
-      <!--                                    v-bind:class="-->
-      <!--                  parseInt(monthYear.selisih_monthly) > 0-->
-      <!--                    ? 'text-dark '-->
-      <!--                    : 'text-danger '-->
-      <!--                "-->
-      <!--                            >-->
-      <!--                                Rp {{ formatPrice(monthYear.selisih_monthly) }}-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                        <div class="col">-->
-      <!--                            <h2 class="font14 text-black font-weight-bolder">-->
-      <!--                                Rp{{ formatPrice(monthYear.total_sales) }}-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                    <div-->
-      <!--                            class="row text-center mt-2"-->
-      <!--                            v-for="monthYear in selectTabYear"-->
-      <!--                            :key="monthYear.id"-->
-      <!--                    >-->
-      <!--                        <div class="col font10">-->
-      <!--                            <h2 class="font10 text-gray font-custom font-weight-bolder">-->
-      <!--                                RATIO PENJUALAN-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                        <div class="col">-->
-      <!--                            <h2-->
-      <!--                                    class="font14 text-black font-custom font-weight-bolder"-->
-      <!--                                    v-bind:class="-->
-      <!--                  parseInt(monthYear.selisih_monthly) > 0-->
-      <!--                    ? 'text-dark '-->
-      <!--                    : 'text-danger '-->
-      <!--                "-->
-      <!--                            >-->
-      <!--                                {{ formatPrice(monthYear.selisih_monthly) }} %-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                    <div class="text-center mb-2">-->
-      <!--                        <div class="col font10">-->
-      <!--                            <h2 class="font10 text-black-50 font-weight-bolder">-->
-      <!--                                &lt;!&ndash; eslint-disable &ndash;&gt;-->
-      <!--                                (STATUS SUKSES >= 100%, GAGAL < 100%)-->
-      <!--                            </h2>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                </div>-->
-      <!--            </div>-->
+
       <div class="row text-center rows-col-3 mt-3">
         <div class="col font-custom bg-blue text-white py-2">
           POIN PER BULAN
@@ -1263,64 +1062,58 @@ export default {
       selectedYear: 1,
       selectedMonth: 1,
       points: {
-        data: []
+        data: [],
       },
       years: {
-        data: []
+        data: [],
       },
       months: {
-        data: []
-      }
+        data: [],
+      },
     };
   },
 
   methods: {
     monthTabs() {
       axios
-        .get(`https://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet`, {
+        .get(`${process.env.VUE_APP_URL}dashboard-outlet`, {
           headers: {
-            version: this.$route.params.version
+            version: this.$route.params.version,
           },
           params: {
             txtKodeOutlet: this.$route.params.outlet_id,
-            token: localStorage.token
-          }
+            token: localStorage.token,
+          },
         })
-        .then(res => (this.points = res.data))
-        .catch(err => console.log(err));
+        .then((res) => (this.points = res.data))
+        .catch((err) => console.log(err));
     },
     monthToYear() {
       axios
-        .get(
-          "https://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet-mty",
-          {
-            params: {
-              txtKodeOutlet: this.$route.params.outlet_id,
-              token: localStorage.token
-            }
-          }
-        )
+        .get(`${process.env.VUE_APP_URL}dashboard-outlet-mty`, {
+          params: {
+            txtKodeOutlet: this.$route.params.outlet_id,
+            token: localStorage.token,
+          },
+        })
 
-        .then(res => (this.years = res.data))
-        .catch(err => console.log(err));
+        .then((res) => (this.years = res.data))
+        .catch((err) => console.log(err));
     },
     monthToMonth() {
       axios
-        .get(
-          "https://www.inosis.co.id/mv_demo_api/api.php/dashboard-outlet-mtm",
-          {
-            headers: {
-              bulan: this.$route.params.bulan
-            },
-            params: {
-              txtKodeOutlet: this.$route.params.outlet_id,
-              token: localStorage.token
-            }
-          }
-        )
+        .get(`${process.env.VUE_APP_URL}dashboard-outlet-mtm`, {
+          headers: {
+            bulan: this.$route.params.bulan,
+          },
+          params: {
+            txtKodeOutlet: this.$route.params.outlet_id,
+            token: localStorage.token,
+          },
+        })
 
-        .then(res => (this.months = res.data))
-        .catch(err => console.log(err));
+        .then((res) => (this.months = res.data))
+        .catch((err) => console.log(err));
     },
 
     formatPrice(value) {
@@ -1330,24 +1123,24 @@ export default {
     formatPoin(value) {
       const val = value.toFixed(2).replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    }
+    },
   },
   computed: {
     selectTab() {
-      return this.points.data.filter(x => x.id === this.selected);
+      return this.points.data.filter((x) => x.id === this.selected);
     },
     selectTabYear() {
-      return this.years.data.filter(x => x.id === this.selectedYear);
+      return this.years.data.filter((x) => x.id === this.selectedYear);
     },
     selectTabMonth() {
-      return this.months.data.filter(x => x.id === this.selectedMonth);
-    }
+      return this.months.data.filter((x) => x.id === this.selectedMonth);
+    },
   },
   mounted() {
     this.monthTabs();
     this.monthToYear();
     this.monthToMonth();
-  }
+  },
 };
 </script>
 

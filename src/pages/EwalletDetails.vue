@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="E-wallet Details" />
-    <div >
+    <div>
       <Cart :contentFor="'EwalletDetails'" />
     </div>
     <Item :contentFor="'EwalletDetails'" />
@@ -22,8 +22,8 @@ export default {
     Cart,
     Item,
     DetailPengiriman,
-    FooterProduct
-  }
+    FooterProduct,
+  },
 };
 </script>
 

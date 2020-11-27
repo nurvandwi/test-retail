@@ -210,7 +210,7 @@ export default {
   methods: {
     getUser() {
       axios
-        .get(`https://www.inosis.co.id/mv_demo_api/api.php/cek-posm`, {
+        .get(`${process.env.VUE_APP_URL}cek-posm`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
             token: localStorage.token,
@@ -253,15 +253,11 @@ export default {
       if (this.file != null || this.data_outlet.file != null)
         if (this.file2 != null || this.data_outlet.file2 != null) {
           axios
-            .post(
-              `https://www.inosis.co.id/mv_demo_api/api.php/upload-posm`,
-              formData,
-              {
-                params: {
-                  token: localStorage.token,
-                },
-              }
-            )
+            .post(`${process.env.VUE_APP_URL}upload-posm`, formData, {
+              params: {
+                token: localStorage.token,
+              },
+            })
             .then((res) => {
               console.log(res.data);
               this.$router.push(`/Home/${this.$route.params.outlet_id}`);

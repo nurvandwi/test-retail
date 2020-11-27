@@ -135,7 +135,7 @@ export default {
   methods: {
     getEwallet() {
       axios
-        .get(`https://www.inosis.co.id/mv_demo_api/api.php/list-ewallet`, {
+        .get(`${process.env.VUE_APP_URL}list-ewallet`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
             token: localStorage.token,
@@ -147,7 +147,7 @@ export default {
     getList() {
       axios
         .get(
-          `https://www.inosis.co.id/mv_demo_api/api.php/list-ewallet-hadiah?nama_ewallet=${this.state.ewallet}`,
+          `${process.env.VUE_APP_URL}list-ewallet-hadiah?nama_ewallet=${this.state.ewallet}`,
           {
             params: {
               outlet_id: this.$route.params.outlet_id,

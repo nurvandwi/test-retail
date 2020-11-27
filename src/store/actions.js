@@ -5,7 +5,7 @@ import { SET_CARTV } from "./mutations";
 export function getProducts({ commit }, { outlet_id, token }) {
   console.log(this);
   axios
-    .get("https://www.inosis.co.id/mv_demo_api/api.php/list-produk-hadiah", {
+    .get(`${process.env.VUE_APP_URL}list-produk-hadiah`, {
       params: {
         outlet_id,
         token,
@@ -21,7 +21,7 @@ export function getPoin({ commit }, { outlet_id, token }) {
   console.log(outlet_id);
   // commit("SET_POIN", Poin);
   axios
-    .get("https://www.inosis.co.id/mv_demo_api/api.php/status-poin-rebate", {
+    .get(`${process.env.VUE_APP_URL}status-poin-rebate`, {
       params: {
         outlet_id,
         token,
@@ -44,15 +44,12 @@ export function getEwallets({ commit }) {
 export function getPoinCashs({ commit }, { outlet_id, token }) {
   console.log(this);
   axios
-    .get(
-      "https://www.inosis.co.id/mv_demo_api/api.php/list-pointocash-hadiah",
-      {
-        params: {
-          outlet_id,
-          token,
-        },
-      }
-    )
+    .get(`${process.env.VUE_APP_URL}list-pointocash-hadiah`, {
+      params: {
+        outlet_id,
+        token,
+      },
+    })
     .then((response) => {
       commit("SET_POINCASHS", response.data.data);
     });
@@ -61,7 +58,7 @@ export function getPoinCashs({ commit }, { outlet_id, token }) {
 export function getRebates({ commit }, { outlet_id, token }) {
   console.log(this);
   axios
-    .get("https://www.inosis.co.id/mv_demo_api/api.php/list-rebate-hadiah", {
+    .get(`${process.env.VUE_APP_URL}list-rebate-hadiah`, {
       params: {
         outlet_id,
         token,
@@ -87,7 +84,7 @@ export function getProduct({ commit }, { id }) {
 
 export function checkOutCartItems({ commit }, { outlet_id, token }) {
   axios
-    .get("https://www.inosis.co.id/mv_demo_api/api.php/post-produk-hadiah", {
+    .get(`${process.env.VUE_APP_URL}post-produk-hadiah`, {
       headers: {
         "content-type": "application/json",
       },
@@ -176,18 +173,14 @@ export function checkOutCart({ state }, { outlet_id, token }) {
   };
 
   console.log(data);
-  axios.post(
-    "https://www.inosis.co.id/mv_demo_api/api.php/post-produk-hadiah",
-    data,
-    {
-      params: {
-        token,
-      },
-      headers: {
-        "content-type": "application/json",
-      },
-    }
-  );
+  axios.post(`${process.env.VUE_APP_URL}post-produk-hadiah`, data, {
+    params: {
+      token,
+    },
+    headers: {
+      "content-type": "application/json",
+    },
+  });
   return (state.cart = []);
 }
 
@@ -201,18 +194,14 @@ export function checkOutRebate({ state }, { outlet_id, token }) {
   };
 
   console.log(data);
-  axios.post(
-    "https://www.inosis.co.id/mv_demo_api/api.php/post-rebate-hadiah",
-    data,
-    {
-      params: {
-        token,
-      },
-      headers: {
-        "content-type": "application/json",
-      },
-    }
-  );
+  axios.post(`${process.env.VUE_APP_URL}post-rebate-hadiah`, data, {
+    params: {
+      token,
+    },
+    headers: {
+      "content-type": "application/json",
+    },
+  });
   return (state.cartRebate = []);
 }
 
@@ -226,18 +215,14 @@ export function checkOutPoinCash({ state }, { outlet_id, token }) {
   };
 
   console.log(data);
-  axios.post(
-    "https://www.inosis.co.id/mv_demo_api/api.php/post-pointocash-hadiah",
-    data,
-    {
-      params: {
-        token,
-      },
-      headers: {
-        "content-type": "application/json",
-      },
-    }
-  );
+  axios.post(`${process.env.VUE_APP_URL}post-pointocash-hadiah`, data, {
+    params: {
+      token,
+    },
+    headers: {
+      "content-type": "application/json",
+    },
+  });
   return (state.cartPoincash = []);
 }
 
@@ -251,18 +236,14 @@ export function checkOutPulsa({ state }, { outlet_id, token }) {
   };
 
   console.log(data);
-  axios.post(
-    "https://www.inosis.co.id/mv_demo_api/api.php/post-pulsa-hadiah",
-    data,
-    {
-      params: {
-        token,
-      },
-      headers: {
-        "content-type": "application/json",
-      },
-    }
-  );
+  axios.post(`${process.env.VUE_APP_URL}post-pulsa-hadiah`, data, {
+    params: {
+      token,
+    },
+    headers: {
+      "content-type": "application/json",
+    },
+  });
   return (state.cartPulsa = []);
 }
 
@@ -276,18 +257,14 @@ export function checkOutEwallet({ state }, { outlet_id, token }) {
   };
 
   console.log(data);
-  axios.post(
-    "https://www.inosis.co.id/mv_demo_api/api.php/post-ewallet-hadiah",
-    data,
-    {
-      params: {
-        token,
-      },
-      headers: {
-        "content-type": "application/json",
-      },
-    }
-  );
+  axios.post(`${process.env.VUE_APP_URL}post-ewallet-hadiah`, data, {
+    params: {
+      token,
+    },
+    headers: {
+      "content-type": "application/json",
+    },
+  });
   return (state.cartEwallet = []);
 }
 

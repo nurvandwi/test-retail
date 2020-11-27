@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Detail Penukaran" class="pt-3" />
-    <TrackRecord :detailTransaksi="detailTransaksi"/>
+    <TrackRecord :detailTransaksi="detailTransaksi" />
     <DataPengiriman :detailTransaksi="detailTransaksi" />
     <DetailsPenukaran class="mb-5" :detailTransaksi="detailTransaksi" />
   </div>
@@ -19,25 +19,25 @@ export default {
     Header,
     TrackRecord,
     DetailsPenukaran,
-    DataPengiriman
+    DataPengiriman,
   },
   data() {
     return {
-      detailTransaksi: []
+      detailTransaksi: [],
     };
   },
   mounted() {
     axios
-      .get("https://www.inosis.co.id/mv_demo_api/api.php/detail-transaksi", {
+      .get(`${process.env.VUE_APP_URL}detail-transaksi`, {
         params: {
           outlet_id: this.$route.params.outlet_id,
           kode_transaksi: this.$route.params.kode_transaksi,
-          token: localStorage.token
-        }
+          token: localStorage.token,
+        },
       })
-      .then(res => (this.detailTransaksi = res.data))
-      .catch(err => console.log(err));
-  }
+      .then((res) => (this.detailTransaksi = res.data))
+      .catch((err) => console.log(err));
+  },
 };
 </script>
 

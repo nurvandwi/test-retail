@@ -2,8 +2,9 @@
   <div class="container mb-5 pb-3">
     <div class="row">
       <div class="col-md-10 col-12 m-auto ">
-        <div class="row " >
+        <div class="row ">
           <div
+            v-if="points.PRODUK == 'true'"
             class="col-md-6 col-6 p-0 "
             data-aos="fade-up"
             data-aos-anchor-placement="bottom-bottom"
@@ -42,12 +43,16 @@
             </div>
           </div>
           <div
+            v-if="points.REBATE == 'true'"
             class="col-md-6 col-6 p-0"
             data-aos="fade-up"
             data-aos-anchor-placement="bottom-bottom"
           >
             <div class="card text-white">
-              <router-link class="text-white background-theme" v-bind:to="'/rebate/'+ `${$route.params.outlet_id}`">
+              <router-link
+                class="text-white background-theme"
+                v-bind:to="'/rebate/' + `${$route.params.outlet_id}`"
+              >
                 <div>
                   <img
                     src="../../assets/rebate.png"
@@ -76,17 +81,17 @@
               </router-link>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-10 col-12 m-auto">
-        <div class="row">
           <div
+            v-if="points.EWALLET == 'true'"
             class="col-md-6 col-6 p-0"
             data-aos="fade-up"
             data-aos-anchor-placement="bottom-bottom"
           >
             <div class="card text-white">
-              <router-link class="text-white background-theme" v-bind:to="'/Ewallet/' + `${$route.params.outlet_id}`">
+              <router-link
+                class="text-white background-theme"
+                v-bind:to="'/Ewallet/' + `${$route.params.outlet_id}`"
+              >
                 <div>
                   <img
                     src="../../assets/e-wallet.png"
@@ -116,12 +121,16 @@
             </div>
           </div>
           <div
+            v-if="points.P2C == 'true'"
             class="col-md-6 col-6 p-0"
             data-aos="fade-up"
             data-aos-anchor-placement="bottom-bottom"
           >
             <div class="card text-white">
-              <router-link class="text-white background-theme" v-bind:to="'/PoinCash/'+ `${$route.params.outlet_id}`">
+              <router-link
+                class="text-white background-theme"
+                v-bind:to="'/PoinCash/' + `${$route.params.outlet_id}`"
+              >
                 <div>
                   <img src="../../assets/cash.png" class="card-img" alt="..." />
                 </div>
@@ -153,7 +162,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    points() {
+      return this.$store.state.points;
+    },
+  },
+  mounted() {
+    this.$store.dispatch("getPoin", {
+      outlet_id: this.$route.params.outlet_id,
+      token: localStorage.token,
+    });
+  },
+};
 </script>
 
 <style scoped>

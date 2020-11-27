@@ -38,7 +38,10 @@ export default {
     async update() {
       this.prompt = false;
       await this.$workbox.messageSW({ type: "SKIP_WAITING" });
-    }
-  }
+    },
+  },
+  mounted() {
+    console.log(process.env.VUE_APP_URL);
+  },
 };
 </script>

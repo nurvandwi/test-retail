@@ -205,7 +205,7 @@ export default {
     },
     getNominalPulsa() {
       axios
-        .get(`https://www.inosis.co.id/mv_demo_api/api.php/list-pulsa-hadiah`, {
+        .get(`${process.env.VUE_APP_URL}list-pulsa-hadiah`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
             token: localStorage.token,

@@ -21,7 +21,7 @@ export default {
       urlencoded.append("username", username);
       urlencoded.append("password", password);
       axios
-        .post("https://www.inosis.co.id/mv_demo_api/api.php/login", urlencoded)
+        .post(`${process.env.VUE_APP_URL}login`, urlencoded)
         .then((response) => {
           let result = response.data;
           if (result.api_status === 1) {

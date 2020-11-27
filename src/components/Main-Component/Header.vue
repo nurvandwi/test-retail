@@ -42,12 +42,14 @@
           </p>
           <div class="d-flex mt-4" data-aos="zoom-in">
             <img class="img-logo" src="../../assets/poin-logo.png" alt="" />
-            <p class="font18 align-self-center mb-0 px-2">{{ outlet_point }}</p>
+            <p class="font18 align-self-center mb-0 px-2">
+              {{ outlet_point }} Poin
+            </p>
           </div>
           <div class="d-flex mt-2" data-aos="zoom-in">
             <img class="img-logo" src="../../assets/rebate-logo.png" alt="" />
             <p class="font18 align-self-center mb-0 px-2">
-              {{ outlet_rebate }}
+              Rp. {{ outlet_rebate }}
             </p>
           </div>
         </div>

@@ -52,7 +52,7 @@ export default {
     getSlider() {
       axios
 
-        .get("https://www.inosis.co.id/mv_demo_api/api.php/banner", {
+        .get(`${process.env.VUE_APP_URL}banner`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
             token: localStorage.token,
@@ -63,21 +63,18 @@ export default {
     },
     getOutlet() {
       axios
-        .get(
-          "https://www.inosis.co.id/mv_demo_api/api.php/status-poin-rebate",
-          {
-            params: {
-              outlet_id: this.$route.params.outlet_id,
-              token: localStorage.token,
-            },
-          }
-        )
+        .get(`${process.env.VUE_APP_URL}status-poin-rebate`, {
+          params: {
+            outlet_id: this.$route.params.outlet_id,
+            token: localStorage.token,
+          },
+        })
         .then((res) => (this.OutletData = res.data.data))
         .catch((err) => console.log(err));
     },
     getAllTransaction() {
       axios
-        .get("https://www.inosis.co.id/mv_demo_api/api.php/view_transaksi", {
+        .get(`${process.env.VUE_APP_URL}view_transaksi`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
             token: localStorage.token,

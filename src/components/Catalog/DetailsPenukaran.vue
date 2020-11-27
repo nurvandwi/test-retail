@@ -31,9 +31,6 @@
                   </p>
                 </div>
               </div>
-              <!--              <div class="col-md-3 col-2 align-self-center pl-3">-->
-              <!--                -->
-              <!--              </div>-->
             </div>
           </div>
         </div>
@@ -71,9 +68,6 @@
                   </div>
                 </div>
               </div>
-              <!--              <div class="col-md-3 col-2 align-self-center pl-3">-->
-              <!--                -->
-              <!--              </div>-->
             </div>
           </div>
         </div>
@@ -88,8 +82,8 @@ export default {
   computed: {
     totalRedemp() {
       return this.detailTransaksi.quantity * this.detailTransaksi.poin;
-    }
-  }
+    },
+  },
 };
 </script>
 

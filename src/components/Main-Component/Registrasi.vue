@@ -158,7 +158,12 @@
               @change="getKabupaten()"
               v-model="state.provinsi"
               name="dataProvinsi"
-              class="form-control"
+              class="form-control "
+              v-bind:class="
+                state.provinsi === 0 && data_outlet.data.propinsi == null
+                  ? 'border-red'
+                  : ''
+              "
             >
               <option disabled selected value="0">Pilih Provinsi</option>
 
@@ -176,6 +181,11 @@
               class="form-control"
               @change="getKecamatan()"
               v-model="state.kabupaten"
+              v-bind:class="
+                state.kabupaten === 0 && data_outlet.data.kabupaten == null
+                  ? 'border-red'
+                  : ''
+              "
             >
               <option disabled selected value="0">Pilih Kabupaten</option>
               <option
@@ -189,6 +199,11 @@
 
           <div class="form-group col-md-12 col-12 text-left p-0 mb-4">
             <select
+              v-bind:class="
+                state.kecamatan === 0 && data_outlet.data.kecamatan == null
+                  ? 'border-red'
+                  : ''
+              "
               @change="getKelurahan()"
               v-model="state.kecamatan"
               name="dataKecamatan"
@@ -206,7 +221,15 @@
           </div>
 
           <div class="form-group col-md-12 col-12 text-left p-0 mb-4">
-            <select class="form-control" v-model="state.kelurahan">
+            <select
+              class="form-control"
+              v-model="state.kelurahan"
+              v-bind:class="
+                state.kelurahan === 0 && data_outlet.data.kelurahan == null
+                  ? 'border-red'
+                  : ''
+              "
+            >
               <option disabled selected value="0">Pilih Kelurahan</option>
               <option
                 v-for="(row, i) in dataKelurahans.data"
@@ -301,6 +324,11 @@
           </div>
           <div class="form-group col-md-12 col-12 text-left p-0 mb-1">
             <select
+              v-bind:class="
+                state.nama_bank == '0' || data_outlet.data.nama_bank == null
+                  ? 'border-red'
+                  : ''
+              "
               @change="getBank()"
               v-model="state.nama_bank"
               name="dataBank"
@@ -386,14 +414,13 @@
                 </label>
               </image-uploader>
             </div>
-
-            <div>
-              <img
-                v-bind:src="data_outlet.data.file2"
-                class="w-100 h-100 p-0 m-0"
-                alt
-              />
-            </div>
+          </div>
+          <div class="d-flex justify-content-center mx-auto">
+            <img
+              v-bind:src="data_outlet.data.file2"
+              class="w-100 h-100 p-0 m-0"
+              alt
+            />
           </div>
           <div
             v-if="data_outlet.data.file == null"
@@ -472,7 +499,7 @@ export default {
     },
     getTelephone() {
       axios
-        .get(`https://inosis.co.id/mv_demo_api/api_reg.php/detail-outlet`, {
+        .get(`${process.env.VUE_APP_URL}detail-outlet`, {
           params: {
             txtKodeOutlet: this.$route.params.outlet_id,
           },
@@ -481,40 +508,44 @@ export default {
           this.data_outlet = res.data;
           this.state.nama_bank = this.data_outlet.data.nama_bank;
           this.state.provinsi = this.data_outlet.data.id_propinsi;
-          if (this.state.provinsi == null) {
+          if (this.state.provinsi == "") {
             this.state.provinsi = 0;
           } else {
             this.getKabupaten();
           }
           this.state.kabupaten = this.data_outlet.data.id_kota;
-          if (this.state.kabupaten == null) {
+          if (this.state.kabupaten == "") {
             this.state.kabupaten = 0;
           } else {
             this.getKecamatan();
           }
           this.state.kecamatan = this.data_outlet.data.id_kecamatan;
-          if (this.state.kecamatan == null) {
+          if (this.state.kecamatan == "") {
             this.state.kecamatan = 0;
           } else {
             this.getKelurahan();
           }
           this.state.kelurahan = this.data_outlet.data.id_kelurahan;
-          if (this.state.kelurahan == null) {
+          if (this.state.kelurahan == "") {
             this.state.kelurahan = 0;
+          }
+          this.state.nama_bank = this.data_outlet.data.nama_bank;
+          if (this.state.nama_bank == "") {
+            this.state.nama_bank = "0";
           }
         })
         .catch((err) => console.log(err));
     },
     getProvinsi() {
       axios
-        .get("https://www.inosis.co.id/mvg2020_api/api_reg.php/list-province")
+        .get(`${process.env.VUE_APP_URL}list-province`)
         .then((res) => (this.dataProvinsis = res.data))
         .catch((err) => console.log(err));
     },
     getKabupaten() {
       axios
         .get(
-          `https://www.inosis.co.id/mvg2020_api/api_reg.php/list-cities?id_provinsi=${this.state.provinsi}`
+          `${process.env.VUE_APP_URL}list-cities?id_provinsi=${this.state.provinsi}`
         )
         .then((res) => {
           this.dataKabupatens = res.data;
@@ -524,7 +555,7 @@ export default {
     getKecamatan() {
       axios
         .get(
-          `https://www.inosis.co.id/mvg2020_api/api_reg.php/list-district?id_city=${this.state.kabupaten}`
+          `${process.env.VUE_APP_URL}list-district?id_city=${this.state.kabupaten}`
         )
         .then((res) => (this.dataKecamatans = res.data))
         .catch((err) => console.log(err));
@@ -532,14 +563,14 @@ export default {
     getKelurahan() {
       axios
         .get(
-          `https://www.inosis.co.id/mvg2020_api/api_reg.php/list-subdistricts?id_district=${this.state.kecamatan}`
+          `${process.env.VUE_APP_URL}list-subdistricts?id_district=${this.state.kecamatan}`
         )
         .then((res) => (this.dataKelurahans = res.data))
         .catch((err) => console.log(err));
     },
     getBank() {
       axios
-        .get(`https://www.inosis.co.id/mgc2020_api/api_reg.php/list-bank`)
+        .get(`${process.env.VUE_APP_URL}list-bank`)
         .then((res) => (this.data_bank = res.data))
         .catch((err) => console.log(err));
     },
@@ -639,10 +670,7 @@ export default {
           if (this.file2 != null || this.data_outlet.data.file2 != null)
             if (this.file != null || this.data_outlet.data.file != null) {
               axios
-                .post(
-                  `https://www.inosis.co.id/mv_demo_api/api_reg.php/update-outlet-ms-demo`,
-                  formData
-                )
+                .post(`${process.env.VUE_APP_URL}update-outlet-ms`, formData)
                 .then((res) => {
                   console.log(res.data);
                   this.$router.push(`/Home/${this.$route.params.outlet_id}`);
@@ -664,6 +692,12 @@ export default {
 </script>
 
 <style>
+.border-black {
+  border: 1px solid black !important;
+}
+.border-red {
+  border: 1px solid red !important;
+}
 .mb-submit {
   margin-bottom: 6rem;
 }

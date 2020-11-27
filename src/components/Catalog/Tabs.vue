@@ -86,7 +86,7 @@ export default {
   methods: {
     allItem() {
       axios
-        .get(`https://www.inosis.co.id/mv_demo_api/api.php/view_transaksi`, {
+        .get(`${process.env.VUE_APP_URL}view_transaksi`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
             token: localStorage.token,

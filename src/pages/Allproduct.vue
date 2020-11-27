@@ -25,10 +25,10 @@ export default {
   computed: {
     product() {
       return this.$store.state.product;
-    }
+    },
   },
   components: {
-    AppHeader
+    AppHeader,
   },
   mounted() {
     this.$store.dispatch("getProduct", { id: this.id });
@@ -37,10 +37,10 @@ export default {
     addToCart() {
       this.$store.dispatch("addProductToCart", {
         product: this.product,
-        quantity: 1
+        quantity: 1,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
