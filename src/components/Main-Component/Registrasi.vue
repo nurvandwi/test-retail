@@ -325,7 +325,7 @@
           <div class="form-group col-md-12 col-12 text-left p-0 mb-1">
             <select
               v-bind:class="
-                state.nama_bank == '0' || data_outlet.data.nama_bank == null
+                state.nama_bank === 0 && data_outlet.data.nama_bank == null
                   ? 'border-red'
                   : ''
               "
@@ -530,8 +530,8 @@ export default {
             this.state.kelurahan = 0;
           }
           this.state.nama_bank = this.data_outlet.data.nama_bank;
-          if (this.state.nama_bank == "") {
-            this.state.nama_bank = "0";
+          if (this.state.nama_bank == null) {
+            this.state.nama_bank = 0;
           }
         })
         .catch((err) => console.log(err));

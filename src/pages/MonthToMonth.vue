@@ -10,7 +10,7 @@
     />
     <DetailPenjualan
       :contentFor="'monthToMonth'"
-      title="AKUMULASI PENJUALAN"
+      title="PENJUALAN"
       class="mt-custom"
       :historikal="month.total_historikal_penjualan"
       :target_penjualan="month.total_target_penjualan"
