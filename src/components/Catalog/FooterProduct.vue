@@ -2,13 +2,15 @@
   <div class="container">
     <nav
       v-if="$route.name != 'categories' && $route.name != 'ewallet'"
-      class="navbar-Container mx-auto mb-4 margin-desktop navbar navbar-expand navbar-dark backtheme footerstyle col-md-8 col-10 col-sm-10 col-lg-5"
+      class="navbar-Container mx-auto mb-2 margin-desktop navbar navbar-expand navbar-dark backtheme footerstyle col-md-8 col-10 col-sm-10 col-lg-5"
     >
       <div
         class="container justify-content-center py-2"
         v-if="contentFor === 'product'"
       >
-        <router-link v-bind:to="'/productdetail'">
+        <router-link
+          v-bind:to="'/productdetail/' + `${$route.params.outlet_id}`"
+        >
           <div class="nav navbar-nav">
             <div class="d-flex align-items-center">
               <div class="col-md-5 col-5">
@@ -66,7 +68,9 @@
         class="container justify-content-center py-2"
         v-if="contentFor === 'PoinCash'"
       >
-        <router-link v-bind:to="'/pointcashdetails'">
+        <router-link
+          v-bind:to="'/pointcashdetails/' + `${$route.params.outlet_id}`"
+        >
           <div class="nav navbar-nav">
             <div class="d-flex align-items-center">
               <div class="col-md-5 col-5">
@@ -96,7 +100,9 @@
         class="container justify-content-center py-2"
         v-if="contentFor === 'Rebate'"
       >
-        <router-link v-bind:to="'/rebatedetails'">
+        <router-link
+          v-bind:to="'/rebatedetails/' + `${$route.params.outlet_id}`"
+        >
           <div class="nav navbar-nav">
             <div class="d-flex align-items-center">
               <div class="col-md-5 col-5">
@@ -105,9 +111,7 @@
                 </h5>
               </div>
               <div class="col-md-5 col-5">
-                <h5 class="text-white m-0 font16">
-                  {{ cartRebatePrice }} Poin
-                </h5>
+                <h5 class="text-white m-0 font16">Rp {{ cartRebatePrice }}</h5>
               </div>
 
               <div class="col-md-2 col-2">
@@ -126,133 +130,143 @@
         class="container justify-content-center py-2"
         v-if="contentFor === 'RebateDetails'"
       >
-        <router-link
-          v-bind:to="'/SuccessPage'"
-          style="color: #FFF;"
-          class="mx-auto font18"
-        >
-          <div class="nav navbar-nav">
-            <div class="d-flex align-items-center">
-              <div class="col-md-10 col-10">
-                <h5 class="text-white m-0 font16">Checkout</h5>
-              </div>
-              <div class="col-md-2 col-2">
-                <img
-                  src="../../assets/icon-next.png"
-                  class="mr-5 img-cart"
-                  alt
-                />
+        <button class="btn py-0" @click="checkOutRebateFromCart()">
+          <router-link
+            v-bind:to="'/SuccessPage/' + `${$route.params.outlet_id}`"
+            style="color: #FFF;"
+            class="mx-auto font18"
+          >
+            <div class="nav navbar-nav">
+              <div class="d-flex align-items-center">
+                <div class="col-md-10 col-10">
+                  <h5 class="text-white m-0 font16">Checkout</h5>
+                </div>
+                <div class="col-md-2 col-2">
+                  <img
+                    src="../../assets/icon-next.png"
+                    class="mr-5 img-cart"
+                    alt
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </router-link>
+          </router-link>
+        </button>
       </div>
       <div
         class="container justify-content-center py-2"
         v-if="contentFor === 'EwalletDetails'"
       >
-        <router-link
-          v-bind:to="'/SuccessPage'"
-          style="color: #FFF;"
-          class="mx-auto font18"
-        >
-          <div class="nav navbar-nav">
-            <div class="d-flex align-items-center">
-              <div class="col-md-10 col-10">
-                <h5 class="text-white m-0 font16">Checkout</h5>
-              </div>
-              <div class="col-md-2 col-2">
-                <img
-                  src="../../assets/icon-next.png"
-                  class="mr-5 img-cart"
-                  alt
-                />
+        <button class="btn py-0" @click="checkOutEwalletFromCart()">
+          <router-link
+            v-bind:to="'/SuccessPage/' + `${$route.params.outlet_id}`"
+            style="color: #FFF;"
+            class="mx-auto font18"
+          >
+            <div class="nav navbar-nav">
+              <div class="d-flex align-items-center">
+                <div class="col-md-10 col-10">
+                  <h5 class="text-white m-0 font16">Checkout</h5>
+                </div>
+                <div class="col-md-2 col-2">
+                  <img
+                    src="../../assets/icon-next.png"
+                    class="mr-5 img-cart"
+                    alt
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </router-link>
+          </router-link>
+        </button>
       </div>
       <div
         class="container justify-content-center py-2"
         v-if="contentFor === 'PointCashDetails'"
       >
-        <router-link
-          v-bind:to="'/SuccessPage'"
-          style="color: #FFF;"
-          class="mx-auto font18"
-        >
-          <div class="nav navbar-nav">
-            <div class="d-flex align-items-center">
-              <div class="col-md-10 col-10">
-                <h5 class="text-white m-0 font16">Checkout</h5>
-              </div>
-              <div class="col-md-2 col-2">
-                <img
-                  src="../../assets/icon-next.png"
-                  class="mr-5 img-cart"
-                  alt
-                />
+        <button class="btn py-0" @click="checkOutPoinCashFromCart()">
+          <router-link
+            v-bind:to="'/SuccessPage/' + `${$route.params.outlet_id}`"
+            style="color: #FFF;"
+            class="mx-auto font18"
+          >
+            <div class="nav navbar-nav">
+              <div class="d-flex align-items-center">
+                <div class="col-md-10 col-10">
+                  <h5 class="text-white m-0 font16">Checkout</h5>
+                </div>
+                <div class="col-md-2 col-2">
+                  <img
+                    src="../../assets/icon-next.png"
+                    class="mr-5 img-cart"
+                    alt
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </router-link>
+          </router-link>
+        </button>
       </div>
       <div
         class="container justify-content-center py-2"
         v-if="contentFor === 'ProductDetails'"
       >
-        <router-link
-          v-bind:to="'/SuccessPage'"
-          style="color: #FFF;"
-          class="mx-auto font18"
-        >
-          <div class="nav navbar-nav">
-            <div class="d-flex align-items-center">
-              <div class="col-md-10 col-10">
-                <h5 class="text-white m-0 font16">Checkout</h5>
-              </div>
-              <div class="col-md-2 col-2">
-                <img
-                  src="../../assets/icon-next.png"
-                  class="mr-5 img-cart"
-                  alt
-                />
+        <button class="btn py-0" @click="checkOutFromCart()">
+          <router-link
+            v-bind:to="'/SuccessPage/' + `${$route.params.outlet_id}`"
+            style="color: #FFF;"
+            class="mx-auto font18"
+          >
+            <div class="nav navbar-nav">
+              <div class="d-flex align-items-center">
+                <div class="col-md-10 col-10">
+                  <h5 class="text-white m-0 font18">Checkout</h5>
+                </div>
+                <div class="col-md-2 col-2">
+                  <img
+                    src="../../assets/icon-next.png"
+                    class="mr-5 img-cart"
+                    alt
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </router-link>
+          </router-link>
+        </button>
       </div>
       <div
         class="container justify-content-center py-2"
         v-if="contentFor === 'PulsaDetails'"
       >
-        <router-link
-          v-bind:to="'/SuccessPage'"
-          style="color: #FFF;"
-          class="mx-auto font18"
-        >
-          <div class="nav navbar-nav">
-            <div class="d-flex align-items-center">
-              <div class="col-md-10 col-10">
-                <h5 class="text-white m-0 font16">Checkout</h5>
-              </div>
-              <div class="col-md-2 col-2">
-                <img
-                  src="../../assets/icon-next.png"
-                  class="mr-5 img-cart"
-                  alt
-                />
+        <button class="btn py-0" @click="checkOutPulsaFromCart()">
+          <router-link
+            v-bind:to="'/SuccessPage/' + `${$route.params.outlet_id}`"
+            style="color: #FFF;"
+            class="mx-auto font18"
+          >
+            <div class="nav navbar-nav">
+              <div class="d-flex align-items-center">
+                <div class="col-md-10 col-10">
+                  <h5 class="text-white m-0 font16">Checkout</h5>
+                </div>
+                <div class="col-md-2 col-2">
+                  <img
+                    src="../../assets/icon-next.png"
+                    class="mr-5 img-cart"
+                    alt
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </router-link>
+          </router-link>
+        </button>
       </div>
       <div
         class="container justify-content-center py-2"
         v-if="contentFor === 'Success'"
       >
         <router-link
-          v-bind:to="'/Categories'"
+          v-bind:to="'/Categories/' + `${$route.params.outlet_id}`"
           style="color: #FFF;"
           class="mx-auto font18"
         >
@@ -272,7 +286,59 @@
 <script>
 export default {
   props: ["contentFor"],
+  methods: {
+    checkOutFromCart() {
+      // console.log(this.$route.params.outlet_id);
+      this.$store.dispatch("checkOutCart", {
+        outlet_id: this.$route.params.outlet_id,
+        token: localStorage.token,
+      });
+    },
+    checkOutRebateFromCart() {
+      // console.log(this.$route.params.outlet_id);
+      this.$store.dispatch("checkOutRebate", {
+        outlet_id: this.$route.params.outlet_id,
+        token: localStorage.token,
+      });
+    },
+    checkOutPoinCashFromCart() {
+      // console.log(this.$route.params.outlet_id);
+      this.$store.dispatch("checkOutPoinCash", {
+        outlet_id: this.$route.params.outlet_id,
+        token: localStorage.token,
+      });
+    },
+    checkOutPulsaFromCart() {
+      // console.log(this.$route.params.outlet_id);
+      this.$store.dispatch("checkOutPulsa", {
+        outlet_id: this.$route.params.outlet_id,
+        token: localStorage.token,
+      });
+    },
+    checkOutEwalletFromCart() {
+      // console.log(this.$route.params.outlet_id);
+      this.$store.dispatch("checkOutEwallet", {
+        outlet_id: this.$route.params.outlet_id,
+        token: localStorage.token,
+      });
+    },
+  },
   computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
+    cartPulsa() {
+      return this.$store.state.cartPulsa;
+    },
+    cartEwallet() {
+      return this.$store.state.cartEwallet;
+    },
+    cartRebates() {
+      return this.$store.state.cartRebate;
+    },
+    cartPoinCash() {
+      return this.$store.state.cartPoincash;
+    },
     cartItemCount() {
       return this.$store.getters.cartItemCount;
     },
@@ -306,6 +372,7 @@ export default {
   background: #4e37b2;
   border-radius: 100px;
 }
+
 .footerstyle {
   position: fixed !important;
   bottom: 0 !important;
@@ -320,14 +387,12 @@ export default {
     background: #4e37b2;
     border-radius: 100px;
   }
-  .font16 {
-    font-size: 16px !important;
-  }
 
   .img-cart {
     width: 30px;
     height: 30px;
   }
+
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
     .footerstyle {
       position: fixed !important;
@@ -337,6 +402,14 @@ export default {
       min-height: 70px;
       max-width: 100vw;
       z-index: 1030 !important;
+    }
+
+    .font16 {
+      font-size: 16px !important;
+    }
+
+    .font18 {
+      font-size: 18px !important;
     }
   }
 }

@@ -7,8 +7,13 @@
         data-aos="zoom-in"
         data-aos-easing="linear"
       />
-      <div class="card-body text-center font-violet pt-5" data-aos="fade-down">
-        <h4 class="card-text font18 font-weight-bold">Penukaran hadiah sukses</h4>
+      <div
+        class="card-body text-center font-violet pt-5 background-theme"
+        data-aos="fade-down"
+      >
+        <h4 class="card-text font18 font-weight-bold">
+          Penukaran hadiah sukses
+        </h4>
         <h4 class="card-text font18 font-weight-bold">Terima Kasih</h4>
       </div>
       <FooterProduct :contentFor="'Success'" />
@@ -20,8 +25,8 @@
 import FooterProduct from "@/components/Catalog/FooterProduct.vue";
 export default {
   components: {
-    FooterProduct
-  }
+    FooterProduct,
+  },
 };
 </script>
 

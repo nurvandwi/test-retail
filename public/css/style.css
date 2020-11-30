@@ -8,9 +8,15 @@ body {
     max-width: 750px;
     margin: 0 auto !important;
     font-family: "Montserrat", sans-serif !important;
+    background-color: #FAF9FF !important;
 }
 
-
+.background-theme{
+     background-color: #FAF9FF !important;
+ }
+.black{
+    background-color: black;
+}
 
 @media screen and (max-width: 1000px) {
     body {

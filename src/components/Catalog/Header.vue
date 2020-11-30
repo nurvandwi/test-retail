@@ -1,6 +1,6 @@
 <template>
-  <div class="mb-5">
-    <router-link v-bind:to="'/categories/'">
+  <div class="mb-custom">
+    <router-link v-bind:to="'/categories/' + `${$route.params.outlet_id}`">
       <nav
         class="navbar m-auto navbar-Container navbar-light backtheme py-3 d-flex justify-content-center footerstyle"
       >
@@ -32,6 +32,7 @@ export default {
 .backtheme {
   background: #4e37b2;
 }
+
 .footerstyle {
   position: fixed !important;
   top: 0 !important;
@@ -40,16 +41,30 @@ export default {
   margin: auto;
   z-index: 1030 !important;
 }
+
 .navbar-Container {
   max-width: 750px;
 }
+
 .img-back {
   width: 12% !important;
 }
+
+.mb-custom {
+  margin-bottom: 3rem !important;
+}
+/*.mb-custom {
+  margin-bottom: 6rem !important;
+}*/
 @media screen and (max-width: 1000px) {
+  .mb-custom {
+    margin-bottom: 3rem !important;
+  }
+
   .img-back {
     width: 15% !important;
   }
+
   .footerstyle {
     position: fixed !important;
     top: 0 !important;
@@ -57,9 +72,11 @@ export default {
     right: 0;
     z-index: 1030 !important;
   }
+
   .font20 {
     font-size: 20px !important;
   }
+
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
     .navbar-Container {
       max-width: 100vw;
@@ -68,6 +85,7 @@ export default {
     .img-back {
       width: 15% !important;
     }
+
     .fontipad {
       font-size: 30px !important;
     }

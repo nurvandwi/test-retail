@@ -1,5 +1,6 @@
 export default {
   products: [],
+  points: {},
   ewallets: [],
   poincashs: [],
   rebates: [],
@@ -8,9 +9,11 @@ export default {
   ewallet: [],
   poincash: [],
   rebate: [],
+  pulsa: [],
 
   cart: [],
   cartEwallet: [],
   cartPoincash: [],
   cartRebate: [],
+  cartPulsa: [],
 };

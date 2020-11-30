@@ -1,10 +1,15 @@
 <template>
   <div class="container">
     <Header title="Rebate" />
-    <Cart :contentFor="'RebateDetails'" class="pt-4" />
+    <Cart :contentFor="'RebateDetails'" />
     <Item :contentFor="'RebateDetails'" />
     <DetailPengiriman :contentFor="'RebateDetails'" />
-    <FooterProduct :contentFor="'RebateDetails'" />
+    <FooterProduct
+      v-for="rebate in cartRebates"
+      :key="rebate.id"
+      :contentFor="'RebateDetails'"
+      :rebate="rebate"
+    />
   </div>
 </template>
 
@@ -21,6 +26,14 @@ export default {
     DetailPengiriman,
     Cart,
     FooterProduct
+  },
+  computed: {
+    cartRebates(){
+      return this.$store.state.cartRebate
+    },
+  },
+  mounted() {
+    this.$store.dispatch("getRebateItems");
   }
 };
 </script>

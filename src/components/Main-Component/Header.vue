@@ -35,19 +35,43 @@
             class="card-title font18 font-weight-bolder mb-0"
             data-aos="fade-down"
           >
-            Hi, Adam Jaya
+            Hai, {{ outlet_name }}
           </h1>
-          <p class="mb-0 font12 font-weight-normal"   data-aos="fade-down">
+          <p class="mb-0 font12px font-weight-normal" data-aos="fade-down">
             Ini Jumlah Poin dan Rebate anda.
           </p>
           <div class="d-flex mt-4" data-aos="zoom-in">
             <img class="img-logo" src="../../assets/poin-logo.png" alt="" />
-            <p class="font18 align-self-center mb-0 px-2">100 Poin</p>
+            <p class="font18 align-self-center mb-0 px-2">
+              {{ outlet_point }} Poin
+            </p>
           </div>
           <div class="d-flex mt-2" data-aos="zoom-in">
             <img class="img-logo" src="../../assets/rebate-logo.png" alt="" />
-            <p class="font18 align-self-center mb-0 px-2">Rp. 1.000.000.000</p>
+            <p class="font18 align-self-center mb-0 px-2">
+              Rp. {{ outlet_rebate }}
+            </p>
           </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="card text-white justify-content-center"
+      v-if="contentFor === 'QuarterDetails'"
+    >
+      <img
+        class=" img-Hero"
+        src="../../assets/Header-new.png"
+        alt="Card image"
+      />
+      <div class="card-img-overlay d-flex align-items-center">
+        <div class="col mb-4">
+          <h1
+            class="card-title font18 font-weight-bolder mb-0"
+            data-aos="fade-down"
+          >
+            Hai, {{ outlet_name }}
+          </h1>
         </div>
       </div>
     </div>
@@ -55,7 +79,7 @@
       <div class="row d-flex">
         <div class="col-md-8 col-7 align-self-center">
           <h1 class="font-26 font-19 font-weight-bold">Hi, Selamat Datang</h1>
-          <p class="font12">Pantau Poin Anda Sekarang</p>
+          <p class="font12px">Pantau Poin Anda Sekarang</p>
         </div>
         <div class="col-md-4 col-5 p-0 m-0">
           <img
@@ -71,7 +95,8 @@
 
 <script>
 export default {
-  props: ["contentFor"]
+  name: "Header",
+  props: ["contentFor", "outlet_name", "outlet_point", "outlet_rebate"],
 };
 </script>
 
@@ -79,38 +104,41 @@ export default {
 .img-logo {
   width: 5%;
 }
+
 .card {
   border: none !important;
 }
+
 .img-Hero {
   max-width: 100% !important;
   min-height: auto !important;
 }
+
 @media screen and (max-width: 1000px) {
   .img-logo {
     width: 8%;
     height: 10%;
   }
+
   .img-Hero {
     max-width: 100vw;
     min-height: 10vh !important;
   }
-  .font12 {
+
+  .font12px {
     font-size: 12px;
   }
+
   .font18 {
     font-size: 18px;
   }
+
   .font14 {
     font-size: 14px;
   }
 
   .font-26 {
     font-size: 26px;
-  }
-
-  .font12 {
-    font-size: 12px;
   }
 
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {

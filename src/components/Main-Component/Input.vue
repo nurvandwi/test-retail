@@ -7,25 +7,52 @@
             <img class="height-icon" src="../../assets/user-login.png" />
           </div>
           <div class="div">
-            <input placeholder="Username" type="text" class="input" />
+            <input
+              placeholder="Username"
+              type="text"
+              class="input"
+              v-model="username"
+            />
           </div>
         </div>
         <div class="input-div pass">
-          <div class="i d-flex justify-content-center height-icon align-items-center">
+          <div
+            class="i d-flex justify-content-center height-icon align-items-center"
+          >
             <img class="height-icon" src="../../assets/user-password.png" />
           </div>
           <div class="div">
-            <input placeholder="Password" type="password" class="input" />
+            <input
+              placeholder="Password"
+              type="password"
+              class="input"
+              v-model="password"
+            />
           </div>
         </div>
-        <button type="button" class="btn text-white mt-5">login</button>
+        <button @click="getLogin" type="button" class="btn text-white mt-5">
+          login
+        </button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Login",
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    getLogin() {
+      this.$emit("getLogin", this.username, this.password);
+    },
+  },
+};
 </script>
 
 <style scoped>

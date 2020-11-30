@@ -1,10 +1,15 @@
 <template>
   <div class="container">
     <Header title="Point To Cash" />
-    <Cart :contentFor="'PointCashDetails'" class="pt-4" />
+    <Cart :contentFor="'PointCashDetails'" />
     <Item :contentFor="'PointCashDetails'" />
     <DetailPengiriman :contentFor="'PointCashDetails'" />
-    <FooterProduct :contentFor="'PointCashDetails'" />
+    <FooterProduct
+      v-for="itempoin in poincash"
+      :key="itempoin.id"
+      :contentFor="'PointCashDetails'"
+      :poincash="itempoin"
+    />
   </div>
 </template>
 
@@ -21,8 +26,16 @@ export default {
     DetailPengiriman,
     Cart,
     Item,
-    FooterProduct
-  }
+    FooterProduct,
+  },
+  computed: {
+    poincash() {
+      return this.$store.state.cartPoincash;
+    },
+  },
+  mounted() {
+    this.$store.dispatch("getPoincashItems");
+  },
 };
 </script>
 

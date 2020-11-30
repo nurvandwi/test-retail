@@ -1,19 +1,36 @@
 <template>
   <div class="marginTitle container">
-    <h3 style="font-weight:bolder;" class="font22">List Category</h3>
+    <h3 style="font-weight:bolder;" class="font16 mb-0">Kategori Reward</h3>
+    <p class="font14">Pilih salah satu kategori reward.</p>
+    <p></p>
     <div class="row mt-4 px-2">
       <div class="col-md-6 col-6 px-1 ">
         <div class="card text-white">
-          <router-link class="text-white" v-bind:to="'/pulsa'">
+          <router-link
+            class="text-white"
+            v-bind:to="'/pulsa/' + `${$route.params.outlet_id}`"
+          >
             <div>
-              <img src="../../assets/Banner-Pulsa.png" class="card-img" alt="..." />
+              <img
+                src="../../assets/Banner-Pulsa.png"
+                class="card-img"
+                alt="..."
+              />
             </div>
             <div class="card-img-overlay d-flex">
               <div class="row">
-                <div class="col-md-12 col-12 d-flex align-items-center space-content">
+                <div
+                  class="col-md-12 col-12 d-flex align-items-center space-content"
+                >
                   <div class="align-self-center d-flex flex-column">
-                    <h4 class="card-title font-weight-normal font20 pb-1 m-0">Pulsa</h4>
-                    <img src="../../assets/pulsa-icon.png" class="card-img size-icon" alt="..." />
+                    <h4 class="card-title font-weight-normal font20 pb-1 m-0">
+                      Pulsa
+                    </h4>
+                    <img
+                      src="../../assets/pulsa-icon.png"
+                      class="card-img size-icon"
+                      alt="..."
+                    />
                   </div>
                 </div>
               </div>
@@ -23,16 +40,33 @@
       </div>
       <div class="col-md-6 col-6 px-1">
         <div class="card text-white">
-          <router-link class="text-white" v-bind:to="'/Ewallet'">
+          <router-link
+            class="text-white"
+            v-bind:to="'/Ewallet/' + `${$route.params.outlet_id}`"
+          >
             <div>
-              <img id="wallet" src="../../assets/Banner-Ewallet.png" class="card-img" alt="..." />
+              <img
+                id="wallet"
+                src="../../assets/Banner-Ewallet.png"
+                class="card-img"
+                alt="..."
+              />
             </div>
             <div class="card-img-overlay d-flex">
               <div class="row">
-                <div class="col-md-12 col-12 d-flex align-items-center space-content">
+                <div
+                  class="col-md-12 col-12 d-flex align-items-center space-content"
+                >
                   <div class="align-self-center d-flex flex-column">
-                    <h4 class="card-title font-weight-normal font20 pb-1 m-0">E-wallet</h4>
-                    <img id="pulsa" src="../../assets/e-wallet-icon.png" class="card-img size-icon" alt="..." />
+                    <h4 class="card-title font-weight-normal font20 pb-1 m-0">
+                      E-wallet
+                    </h4>
+                    <img
+                      id="pulsa"
+                      src="../../assets/e-wallet-icon.png"
+                      class="card-img size-icon"
+                      alt="..."
+                    />
                   </div>
                 </div>
               </div>
@@ -55,11 +89,11 @@ export default {};
 .size-icon {
   width: 5rem;
 }
-a:active{
+a:active {
   box-shadow: 0px 4px 10px rgba(78, 55, 178, 0.25);
 }
 
-a:focus{
+a:focus {
   box-shadow: 0px 4px 10px rgba(78, 55, 178, 0.25);
 }
 
