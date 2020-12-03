@@ -93,16 +93,13 @@
         </router-link>
       </li>
       <li>
-        <router-link
-          v-bind:to="'/categories'"
-          style="color: #FFF; height:40px"
-          class="mx-auto font18"
-        >
-          <div class="whatsapp-icon">
-            <img class="size-wa" src="../../assets/icon-wa v-2.png" />
-            <span class="menu-navigation"></span>
-          </div>
-        </router-link>
+
+          <a :href="linkWa" target="_blank">
+            <div class="whatsapp-icon">
+              <img class="size-wa" src="../../assets/icon-wa v-2.png" />
+              <span class="menu-navigation"></span>
+            </div>
+          </a>
       </li>
       <li>
         <router-link
@@ -217,10 +214,24 @@ export default {
       localStorage.removeItem("token");
       this.$router.push("/");
     },
-    // push() {
+    // linkwa() {
     //     window.location.reload();
     // }
   },
+  computed: {
+    linkWa() {
+      return `https://api.whatsapp.com/send?phone=${this.points.whatapps}`
+    },
+    points() {
+      return this.$store.state.points;
+    },
+    },
+  mounted() {
+    this.$store.dispatch("getPoin", {
+      outlet_id: this.$route.params.outlet_id,
+      token: localStorage.token,
+    });
+  }
 };
 </script>
 <style scoped>
