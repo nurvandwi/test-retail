@@ -13,16 +13,17 @@
     </div>
 
     <div
-      class=" mx-4 rounded-custom"
+      class="mx-4 rounded-custom"
       v-if="slider.data.length > 0"
       style="background-color: white"
     >
       <VueSlickCarousel :arrows="true" :dots="true" v-bind="settings">
         <div v-for="(list, index) in slider.data" :key="index" class="radius">
           <img
+            @click="details(index)"
             v-bind:src="list.img_url"
             class="w-100 radius-img"
-            style="min-height:100%"
+            style="min-height: 100%"
             alt=""
           />
           <div class="row justify-content-center d-flex spaceCarousel mt-3">
@@ -66,6 +67,14 @@ export default {
         cssEase: "linear",
       },
     };
+  },
+  methods: {
+    details(index) {
+      this.$router.push(
+        `/PromoDetails/${this.$route.params.outlet_id}/` + index
+      );
+      console.log(index);
+    },
   },
 };
 </script>
