@@ -5,11 +5,10 @@
       :src="Slider.data[$route.params.index].img_url"
       alt="promo"
       srcset=""
-      style="height: 50vh"
     />
     <div class="container">
       <div class="pt-4">
-        <h3 class="font-weight-bold">
+        <h3 class="font-weight-bold font-20">
           {{ Slider.data[$route.params.index].title }}
         </h3>
         <p
@@ -52,12 +51,16 @@ export default {
 
 <style scoped>
 img {
-  height: fit-content;
 }
 
 .font-14 {
   font-size: 14px;
   letter-spacing: 0.00001px;
   text-align: justify;
+}
+@media screen and (max-width: 1000px) {
+  .font-20{
+    font-size: 20px;
+  }
 }
 </style>

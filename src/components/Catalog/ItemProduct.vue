@@ -17,19 +17,19 @@
             alt="Card image cap"
           />
         </div>
-        <div class="card-body pb-0">
-          <p class="card-title mb-1 font14">{{ product.kd_produk }}</p>
-          <h5 class="card-title mb-0 font14" style="font-weight:bolder">
+        <div class="card-body pb-0 pt-2 " style="height: 70px">
+          <p class="card-title mb-1 font12">{{ product.kd_produk }}</p>
+          <h5 class="card-title mb-0 font12 heightText" style="font-weight:bolder">
             {{ product.nama_produk }}
           </h5>
         </div>
         <div
-          class="card-body d-flex justify-content-between align-items-center pb-0"
+          class="card-body d-flex justify-content-between align-items-center py-0"
         >
-          <h5 class="card-title m-0 font18 font-weight-bold">
+          <h5 class="card-title m-0 font16 font-weight-bold">
             {{ product.poin }}
           </h5>
-          <button class="btn" @click="addToCart(cartTotalPrice, points.Poin)">
+          <button class="btn py-0 px-0" @click="addToCart(cartTotalPrice, points.Poin)">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
         </div>
@@ -264,6 +264,14 @@ export default {
 }
 
 @media screen and (max-width: 1000px) {
+  .heightText{
+    font-weight: bolder;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .w-rebate {
     width: 75%;
   }

@@ -82,12 +82,12 @@
                     </div>
 
                     <div class="form-group mb-0 col-md-12 col-12 pl-0 mb-0 px-0">
-                        <div class="form-check form-check-inline col-6 col-md-12 px-0 mx-0 my-3">
+                        <div class="form-check form-check-inline col-6 col-md-6 px-0 mx-0 my-3">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="EKTP"
                                    value="EKTP" v-model="picked" :required="data_outlet.data.no_npwp==''||data_outlet.data.no_ektp==''">
                             <label class="form-check-label" for="EKTP">EKTP</label>
                         </div>
-                        <div class="form-check form-check-inline col-6 col-md-12 px-0 mx-0 my-3">
+                        <div class="form-check form-check-inline col-6 col-md-6 px-0 mx-0 my-3">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="NPWP"
                                    value="NPWP" v-model="picked" :required="data_outlet.data.no_npwp==''||data_outlet.data.no_ektp==''">
                             <label class="form-check-label" for="NPWP">NPWP</label>
