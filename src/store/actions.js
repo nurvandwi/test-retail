@@ -181,7 +181,7 @@ export function checkOutCart({ state }, { outlet_id, token }) {
       "content-type": "application/json",
     },
   });
-  return (state.cart = []);
+  return (state.cartEwallet = [],state.cart = [],state.cartRebate = [],state.cartPoincash = [],state.cartPulsa = []);
 }
 
 export function checkOutRebate({ state }, { outlet_id, token }) {
@@ -202,7 +202,7 @@ export function checkOutRebate({ state }, { outlet_id, token }) {
       "content-type": "application/json",
     },
   });
-  return (state.cartRebate = []);
+  return (state.cartEwallet = [],state.cart = [],state.cartRebate = [],state.cartPoincash = [],state.cartPulsa = []);
 }
 
 export function checkOutPoinCash({ state }, { outlet_id, token }) {
@@ -223,7 +223,7 @@ export function checkOutPoinCash({ state }, { outlet_id, token }) {
       "content-type": "application/json",
     },
   });
-  return (state.cartPoincash = []);
+  return (state.cartEwallet = [],state.cart = [],state.cartRebate = [],state.cartPoincash = [],state.cartPulsa = []);
 }
 
 export function checkOutPulsa({ state }, { outlet_id, token }) {
@@ -244,7 +244,7 @@ export function checkOutPulsa({ state }, { outlet_id, token }) {
       "content-type": "application/json",
     },
   });
-  return (state.cartPulsa = []);
+  return (state.cartEwallet = [],state.cart = [],state.cartRebate = [],state.cartPoincash = [],state.cartPulsa = []);
 }
 
 export function checkOutEwallet({ state }, { outlet_id, token }) {
@@ -265,7 +265,7 @@ export function checkOutEwallet({ state }, { outlet_id, token }) {
       "content-type": "application/json",
     },
   });
-  return (state.cartEwallet = []);
+  return (state.cartEwallet = [],state.cart = [],state.cartRebate = [],state.cartPoincash = [],state.cartPulsa = []);
 }
 
 export function addEwalletToCartw({ commit }, { ewallet, quantity }) {

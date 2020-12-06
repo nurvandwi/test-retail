@@ -1,10 +1,9 @@
 <template>
   <div>
     <img
-      class="img-fluid"
+      class="img-fluid w-100"
       :src="Slider.data[$route.params.index].img_url"
       alt="promo"
-      srcset=""
     />
     <div class="container">
       <div class="pt-4">
@@ -21,32 +20,32 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios'
 export default {
-  data() {
+  data () {
     return {
-      Slider: {},
-    };
+      Slider: {}
+    }
   },
 
   methods: {
-    getSlider() {
+    getSlider () {
       axios
         .get(`${process.env.VUE_APP_URL}banner`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => (this.Slider = res.data))
-        .catch((err) => console.log(err));
-    },
+        .then(res => (this.Slider = res.data))
+        .catch(err => console.log(err))
+    }
   },
 
-  mounted() {
-    this.getSlider();
-  },
-};
+  mounted () {
+    this.getSlider()
+  }
+}
 </script>
 
 <style scoped>
@@ -59,7 +58,7 @@ img {
   text-align: justify;
 }
 @media screen and (max-width: 1000px) {
-  .font-20{
+  .font-20 {
     font-size: 20px;
   }
 }
