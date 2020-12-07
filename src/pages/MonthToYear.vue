@@ -41,7 +41,7 @@
       title
       class="mt-3"
     />
-    <BulanTransaksi :contentFor="'MonthToYear'" />
+    <BulanTransaksi :contentFor="'MonthToYear'" :statusPoints="points" />
     <div></div>
   </div>
 </template>
@@ -89,6 +89,15 @@ export default {
   },
   mounted() {
     this.monthToYear();
+    this.$store.dispatch("getPoin", {
+      outlet_id: this.$route.params.outlet_id,
+      token: localStorage.token,
+    });
+  },
+  computed: {
+    points() {
+      return this.$store.state.points;
+    },
   },
 };
 </script>
