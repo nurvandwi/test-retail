@@ -233,7 +233,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row text-center mb-custom mt-3">
+            <div class="row text-center mb-custom mt-3" v-if="statusPoints.REBATE=='true'">
                 <div class="col-12 table-top col-md-12 bg-blue d-flex px-0">
                     <div
                             class="font12 p-0 text-white text-center border-right col-sm-4 col-4 py-2 px-0"
@@ -676,7 +676,7 @@
           <div v-else class="mb-custom"></div>
         </div>
         <div v-if="contentFor === 'monthToMonth'">
-            <div class="row text-center rows-col-3 mt-3">
+            <div class="row text-center rows-col-3 mt-3" v-if="statusPoints.REBATE=='true'">
                 <div class="col bg-blue text-white py-2 font-custom">
                     PENJUALAN PER BULAN
                 </div>
