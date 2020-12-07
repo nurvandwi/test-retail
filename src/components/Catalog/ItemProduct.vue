@@ -30,7 +30,7 @@
           class="card-body d-flex justify-content-between align-items-center py-0"
         >
           <h5 class="card-title m-0 font16 font-weight-bold">
-            {{ product.poin }}
+            {{ product.poin_text }}
           </h5>
           <button
             class="btn py-0 px-0"
@@ -132,14 +132,14 @@
           />
         </div>
         <div class="card-body pb-0">
-          <h5 class="card-title mb-0 font14" style="font-weight:bolder">
+          <h5 class="card-title mb-0 font14 font-weight-bold" style="font-weight:bolder">
             {{ rebate.periode }}
           </h5>
         </div>
         <div
           class="card-body d-flex justify-content-between align-items-center pb-0"
         >
-          <h5 class="card-title m-0 font16">Rp. {{ rebate.rebate_text }}</h5>
+          <h5 class="card-title m-0 font16 font-weight-bold">Rp. {{ rebate.rebate_text }}</h5>
           <button class="btn ml-auto py-0" @click="addToRebate()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
