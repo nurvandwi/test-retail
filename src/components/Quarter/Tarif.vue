@@ -1,7 +1,7 @@
 <template>
   <div class="container ">
-    <div class="row text-center" v-if="contentFor === 'Quarter'">
-      <div class="col-12 table-top col-md-12 bg-blue d-flex px-1">
+    <div class="row text-center mb-quarter" v-if="contentFor === 'Quarter'">
+      <div class="col-12 table-top col-md-12 bg-blue d-flex px-1 "  v-if="points.REBATE=='true'">
         <div
           class="font12 p-0 text-white text-center border-right col-sm-4 col-4 py-2"
         >
@@ -119,7 +119,7 @@
       </div>
     </div>
     <div class="row text-center" v-if="contentFor === 'MonthToYear'">
-      <div class="col-12 table-top col-md-12 bg-blue d-flex px-1">
+      <div class="col-12 table-top col-md-12 bg-blue d-flex px-1" v-if="points.REBATE=='true'">
         <div
           class="font12 p-0 text-white text-center border-right col-sm-4 col-4 py-2"
         >
@@ -236,8 +236,8 @@
         </div>
       </div>
     </div>
-    <div class="row text-center" v-if="contentFor === 'monthToMonth'">
-      <div class="col-12 table-top col-md-12 bg-blue d-flex px-1">
+    <div class="row text-center mb-quarter" v-if="contentFor === 'monthToMonth'">
+      <div class="col-12 table-top col-md-12 bg-blue d-flex px-1" v-if="points.REBATE=='true'">
         <div
           class="font12 p-0 text-white text-center border-right col-sm-4 col-4 py-2"
         >
@@ -386,10 +386,25 @@ export default {
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
   },
+  mounted () {
+    this.$store.dispatch('getPoin', {
+      outlet_id: this.$route.params.outlet_id,
+      token: localStorage.token
+    })
+  },
+  computed:{
+    points () {
+      console.log(this.$store.state.points, 'dari tarif')
+      return this.$store.state.points
+    }
+  }
 };
 </script>
 
 <style scoped>
+  .mb-quarter{
+    margin-bottom: 7rem;
+  }
 .rounded {
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
