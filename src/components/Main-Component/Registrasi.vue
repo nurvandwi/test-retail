@@ -140,8 +140,8 @@
                 type="text"
                 :required="data_outlet.data.no_ektp == ''"
                 class="col-md-12 col-12"
-                maxlength="16"
-                minlength="16"
+                maxlength="15"
+                minlength="15"
               />
               <span class="placeholder">NPWP</span>
             </label>
@@ -152,7 +152,7 @@
               class="custom-field one col-md-12 col-12 px-0 d-flex justify-content-center pb-0 mb-0"
             >
               <input
-                type="text"
+                type="number"
                 required
                 class="col-md-12 col-12"
                 v-model="data_outlet.data.telepon2"
@@ -364,7 +364,7 @@
               class="custom-field one col-md-12 col-12 px-0 d-flex justify-content-center pb-0 mb-0"
             >
               <input
-                type="text"
+                type="number"
                 required
                 class="col-md-12 col-12"
                 v-model="data_outlet.data.nomor_rekening"
@@ -741,6 +741,12 @@ export default {
 </script>
 
 <style>
+  input:valid+.placeholder {
+    top: 20px;
+    font-size: 10px;
+    color: #000;
+    background: #FAF9FF !important;
+  }
 .border-black {
   border: 1px solid black !important;
 }
