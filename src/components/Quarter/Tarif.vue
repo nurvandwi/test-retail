@@ -16,7 +16,7 @@
           TARIF
         </div>
       </div>
-      <div class="col-12 table-bordereds rounded-bottom ">
+      <div class="col-12 table-bordereds rounded-bottom " v-if="points.REBATE=='true'">
         <div class="row mt-2  border-bottom">
           <div class="col-4 col-md-4 px-0 p-0">
             <h2
@@ -134,7 +134,7 @@
           TARIF
         </div>
       </div>
-      <div class="col-12 table-bordereds rounded-bottom ">
+      <div class="col-12 table-bordereds rounded-bottom " v-if="points.REBATE=='true'">
         <div class="row mt-2  border-bottom">
           <div class="col-4 col-md-4 px-0 p-0">
             <h2
@@ -252,7 +252,7 @@
           TARIF
         </div>
       </div>
-      <div class="col-12 table-bordereds rounded-bottom ">
+      <div class="col-12 table-bordereds rounded-bottom " v-if="points.REBATE=='true'">
         <div class="row mt-2  border-bottom">
           <div class="col-4 col-md-4 px-0 p-0">
             <h2
