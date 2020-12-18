@@ -56,7 +56,7 @@
               No EKTP
             </h5>
             <h5 class="font14 text-black font-weight-bolder">
-              {{ data_user.no_ektp }}
+              {{ detailTransaksi.ektp }}
             </h5>
           </div>
         </div>
@@ -66,7 +66,7 @@
               Bank
             </h5>
             <h5 class="font14 text-black font-weight-bolder">
-              {{ data_user.nama_bank }}
+              {{ detailTransaksi.rekening_bank }}
             </h5>
           </div>
           <div class="col-6">
@@ -74,7 +74,7 @@
               No Rekening
             </h5>
             <h5 class="font14 text-black font-weight-bolder">
-              {{ data_user.nomor_rekening }}
+              {{ detailTransaksi.rekening_nomor }}
             </h5>
           </div>
         </div>
@@ -84,7 +84,7 @@
               Cabank Bank
             </h5>
             <h5 class="font14 text-black font-weight-bolder">
-              {{ data_user.cabang_bank }}
+              {{ detailTransaksi.rekening_cabang }}
             </h5>
           </div>
           <div class="col-6">
@@ -92,7 +92,7 @@
               Kota Bank
             </h5>
             <h5 class="font14 text-black font-weight-bolder">
-              {{ data_user.kota_bank }}
+              {{ detailTransaksi.rekening_kota }}
             </h5>
           </div>
         </div>
@@ -122,7 +122,7 @@
               No Ektp
             </h5>
             <h5 class="font14 text-success font-weight-bolder">
-              {{ data_user.no_ektp }}
+              {{ detailTransaksi.ektp }}
             </h5>
           </div>
         </div>
@@ -132,7 +132,7 @@
               Alamat
             </h5>
             <h5 class="font14 text-black font-weight-bolder">
-              {{ data_user.alamat2 }}
+              {{ detailTransaksi.outlet_alamat }}
             </h5>
           </div>
         </div>
@@ -143,7 +143,7 @@
               Kecamatan
             </h5>
             <h5 class="font14 text-black font-weight-bolder">
-              {{ data_user.kelurahan }}
+              {{ detailTransaksi.outlet_kecamatan }}
             </h5>
           </div>
           <div class="col-6">
@@ -151,7 +151,7 @@
               Kota/Kab
             </h5>
             <h5 class="font14 text-black font-weight-bolder">
-              {{ data_user.kota }}
+              {{ detailTransaksi.outlet_kabupaten }}
             </h5>
           </div>
         </div>
@@ -161,7 +161,7 @@
               Provinsi
             </h5>
             <h5 class="font14 text-black font-weight-bolder">
-              {{ data_user.propinsi }}
+              {{ detailTransaksi.outlet_propinsi }}
             </h5>
           </div>
           <div class="col-6">
@@ -169,7 +169,7 @@
               No.Telepon
             </h5>
             <h5 class="font14 text-black font-weight-bolder">
-              {{ data_user.telepon2 }}
+              {{ detailTransaksi.outlet_handphone }}
             </h5>
           </div>
         </div>
