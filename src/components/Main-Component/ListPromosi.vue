@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mt-5" v-if="contentFor === 'home'">
-      <h3 class="font14 font-weight-bold  mb-0 ml-4">Data Kegiatan</h3>
+      <h3 class="font14 font-weight-bold mb-0 ml-4">Data Kegiatan</h3>
       <p class="font-12 ml-4">Lengkapi data dibawah ini.</p>
       <div class="col-12">
         <router-link v-bind:to="'/registrasi/' + `${$route.params.outlet_id}`">
@@ -13,21 +13,21 @@
 
             <div class="align-items-center">
               <h5
-                class="font14 formh2 caption4 p-0 m-0  font-weight-bold"
+                class="font14 formh2 caption4 p-0 m-0 font-weight-bold"
                 v-bind:class="status == 0 ? 'text-danger' : 'text-dark'"
               >
                 Data E-KTP & Data Bank
               </h5>
               <p
                 v-if="status == 0"
-                class="font-10 mb-0 "
+                class="font-10 mb-0"
                 v-bind:class="status == 0 ? 'text-danger' : 'text-dark'"
               >
                 Mohon lengkapi data anda.
               </p>
             </div>
             <img
-              class=" iconcustom ml-auto"
+              class="iconcustom ml-auto"
               src="https://i.imgur.com/5qg2kk5.png"
               alt
             />
@@ -45,7 +45,7 @@
 
             <div class="align-items-center">
               <h5 class="font14 caption4 p-0 m-0 text-dark font-weight-bold">
-                Promosi
+                Promosi Sell Out
               </h5>
             </div>
             <img
@@ -57,7 +57,7 @@
         </a>
       </div>
       <div class="col-12">
-        <router-link v-bind:to="'/posm/' + `${$route.params.outlet_id}`">
+        <a href="http://demooutlet.inosis.biz/">
           <div
             style="background-color: white"
             class="col shadow1 text-left br d-flex flex-row align-items-center mt-3 mb-0 py-2 px-3"
@@ -70,7 +70,7 @@
 
             <div class="align-items-center">
               <h5 class="font14 caption4 p-0 m-0 text-dark font-weight-bold">
-                Monitoring Rak Outlet
+                Mondelez Blocking Display
               </h5>
             </div>
             <img
@@ -79,7 +79,7 @@
               alt
             />
           </div>
-        </router-link>
+        </a>
       </div>
     </div>
     <div class="mb-3" v-if="contentFor === 'QuarterDetails'">
@@ -268,7 +268,7 @@
               >
                 Quarter 4 to Month
               </h5>
-              <p class="text-dark m-auto  ">
+              <p class="text-dark m-auto">
                 <small
                   >Akumulasi aktual penjualan bulan berjalan vs Target penjualan
                   Quarter 4
@@ -300,7 +300,7 @@ export default {
     setInterval(this.getNow);
   },
   methods: {
-    getNow: function() {
+    getNow: function () {
       const today = new Date();
 
       const date = today.getMonth() + 1;
