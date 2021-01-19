@@ -7,7 +7,7 @@
       :outlet_rebate="OutletData.Rebate_text"
     />
     <PromoBanner :slider="Slider" :icon="OutletData.icon" />
-    <ListPromosi :contentFor="'home'" :status="OutletData.status_registrasi" />
+    <ListPromosi :contentFor="'home'" :status="OutletData.status_registrasi" :status_mbd="points.program_mbd" :status_sell="points.program_promo_sell_out"  />
     <ListTransaksi class="mb-5 pb-5" />
   </div>
 </template>
