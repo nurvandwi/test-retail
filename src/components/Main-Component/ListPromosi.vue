@@ -34,8 +34,8 @@
           </div>
         </router-link>
       </div>
-      <div class="col-12" v-if="status_sell !==0">
-        <a href="http://www.inosis.co.id/demo_promosi/#/" target="_blank">
+      <div class="col-12" v-if="status_sell !== 0">
+        <a href="https://mvpromosi2021.inosis.biz/" target="_blank">
           <div
             style="background-color: white"
             class="col shadow1 text-left br d-flex flex-row align-items-center mt-3 mb-0 py-2 px-3"
@@ -55,8 +55,8 @@
           </div>
         </a>
       </div>
-      <div class="col-12" v-if="status_mbd !==0">
-        <a href="http://demooutlet.inosis.biz/">
+      <div class="col-12" v-if="status_mbd !== 0">
+        <a href="http://mbdoutlet2021.inosis.biz/">
           <div
             style="background-color: white"
             class="col shadow1 text-left br d-flex flex-row align-items-center mt-3 mb-0 py-2 px-3"
@@ -289,7 +289,7 @@
 /* eslint-disable */
 
 export default {
-  props: ["contentFor", "status","status_mbd",'status_sell'],
+  props: ["contentFor", "status", "status_mbd", "status_sell"],
   data() {
     return {
       currenttime: "",
