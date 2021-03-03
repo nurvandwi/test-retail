@@ -5,7 +5,7 @@
       v-if="contentFor === 'Quarter'"
     >
       <section class="section-stats row justify-content-center">
-        <div class="col-12 col-md-12 stats-details mt-3 ">
+        <div class="col-12 col-md-12 stats-details mt-3">
           <p
             class="font22 text-top text-white font-custom font-weight-bolder text-center mb-0"
           >
@@ -19,7 +19,7 @@
       </section>
       <section>
         <div
-          class=" d-flex justify-content-center quarterstyle text-center mb-3 btn-month"
+          class="d-flex justify-content-center quarterstyle text-center mb-3 btn-month"
         >
           <div class="row col-md-10 col-10 table-bordered bg-violet round h-53">
             <div class="col py-1 col-md-6 stats-details border-right">
@@ -55,7 +55,7 @@
       v-if="contentFor === 'MonthToYear'"
     >
       <section class="section-stats row justify-content-center">
-        <div class="col-12 col-md-12 stats-details mt-3 ">
+        <div class="col-12 col-md-12 stats-details mt-3">
           <p
             class="font22 text-top text-white font-custom font-weight-bolder text-center mb-0"
           >
@@ -69,7 +69,7 @@
       </section>
       <section>
         <div
-          class=" d-flex justify-content-center quarterstyle text-center mb-3 btn-month"
+          class="d-flex justify-content-center quarterstyle text-center mb-3 btn-month"
         >
           <div class="row col-md-10 col-10 table-bordered bg-violet round h-53">
             <div class="col py-1 col-md-6 stats-details border-right">
@@ -105,7 +105,7 @@
       v-if="contentFor === 'MonthToMonth'"
     >
       <section class="section-statsMonth row justify-content-center">
-        <div class="col-12 col-md-12 stats-details mt-3 ">
+        <div class="col-12 col-md-12 stats-details mt-3">
           <p
             class="font22 text-top text-white font-custom font-weight-bolder text-center mb-0"
           >
@@ -118,8 +118,8 @@
         </div>
       </section>
       <section>
-        <div class=" quarterstyle text-center mb-3 btn-monthv2">
-          <div class=" d-flex justify-content-center">
+        <div class="quarterstyle text-center mb-3 btn-monthv2">
+          <div class="d-flex justify-content-center">
             <div
               class="row col-md-10 col-10 table-bordered bg-violet round h-53"
             >
@@ -165,11 +165,15 @@
                       <router-link
                         v-bind:to="
                           '/MonthToMonth/' +
-                            itemBulan.id +
-                            `/${$route.params.outlet_id}`
+                          itemBulan.id +
+                          `/${$route.params.outlet_id}`
                         "
                         type="button"
-                        class="btn font-custom rounded-pill font-weight-bolder btn-light"
+                        :class="
+                          itemBulan.id === $route.params.bulan
+                            ? 'btn font-custom rounded-pill font-weight-bolder btn-warning'
+                            : 'btn font-custom rounded-pill font-weight-bolder '
+                        "
                       >
                         <h3 class="font12 mb-0 font-weight-bold">
                           {{ itemBulan.nama_bulan }}
