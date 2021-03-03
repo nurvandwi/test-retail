@@ -179,6 +179,11 @@
 
     },
     mounted() {
+      this.$store.dispatch("resetCart");
+      this.$store.dispatch("resetCartEwallet");
+      this.$store.dispatch("resetCartRebate");
+      this.$store.dispatch("resetCartPoinCash");
+      this.$store.dispatch("resetCartPulsa");
       this.$store.dispatch("getPoin", {
         outlet_id: this.$route.params.outlet_id,
         token: localStorage.token,

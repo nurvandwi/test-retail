@@ -7,6 +7,21 @@ export const SET_POIN = (state, points) => {
   state.points = points;
   console.log(points);
 };
+export const RESET_CART = (state) => {
+  state.cart= [];
+};
+export const RESET_EWALLET = (state) => {
+  state.cartEwallet= [];
+};
+export const RESET_CARTPOINCASH = (state) => {
+  state.cartPoincash= [];
+};
+export const RESET_CARTREBATE = (state) => {
+  state.cartRebate= [];
+};
+export const RESET_CARTPULSA = (state) => {
+  state.cartPulsa= [];
+};
 export const SET_EWALLETS = (state, ewallets) => {
   state.ewallets = ewallets;
 };

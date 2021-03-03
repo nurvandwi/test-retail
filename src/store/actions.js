@@ -31,7 +31,22 @@ export function getPoin({ commit }, { outlet_id, token }) {
       commit("SET_POIN", response.data.data);
     });
 }
+export function resetCart({ commit }) {
+  commit("RESET_CART");
+}
+export function resetCartEwallet({ commit }) {
+  commit("RESET_EWALLET");
+}
+export function resetCartRebate({ commit }) {
+  commit("RESET_CARTREBATE");
+}
 
+export function resetCartPoinCash({ commit }) {
+  commit("RESET_CARTPOINCASH");
+}
+export function resetCartPulsa({ commit }) {
+  commit("RESET_CARTPULSA");
+}
 export function getEwallets({ commit }) {
   console.log(this);
   axios
