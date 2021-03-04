@@ -155,6 +155,7 @@ export default {
   props: ['product', 'ewallet', 'poincash', 'contentFor', 'rebate', 'status'],
   methods: {
     addToCart (cartTotalPrice, poin) {
+      console.log(cartTotalPrice,'cart total',poin)
       console.log(this.product.poin)
       console.log(this.status)
       if (this.status != 0) {
@@ -223,12 +224,12 @@ export default {
       return this.$store.state.points
     }
   },
-  mounted () {
-    this.$store.dispatch('getPoin', {
-      outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
-    })
-  }
+  // mounted () {
+  //   this.$store.dispatch('getPoin', {
+  //     outlet_id: this.$route.params.outlet_id,
+  //     token: localStorage.token
+  //   })
+  // }
 }
 </script>
 

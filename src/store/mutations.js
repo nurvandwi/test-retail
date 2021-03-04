@@ -43,7 +43,7 @@ export function ADD_TO_CART(
     return item.product.id === product.id;
   });
   if ((cartTotalPrice != 0, productInCart)) {
-    state.points.Poin -= cartTotalPrice.toFixed(2);
+    state.points.Poin -= pointItem.toFixed(2);
     productInCart.quantity += quantity;
     return;
   } else {
@@ -141,7 +141,7 @@ export const ADD_TO_POINCASH = (
     return item.poincash.kd_produk === poincash.kd_produk;
   });
   if ((cartPoincashPrice != 0, poincashInCart)) {
-    state.points.Poin -= cartPoincashPrice.toFixed(2);
+    state.points.Poin -= pointItem.toFixed(2);
     poincashInCart.quantity += quantity;
     return;
   } else {
