@@ -30,8 +30,8 @@ export default {
         .get(`${process.env.VUE_APP_URL}status-poin-rebate`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
-            token: localStorage.token,
           },
+          headers: { token: localStorage.token },
         })
         .then((res) => (this.OutletData = res.data.data))
         .catch((err) => console.log(err));

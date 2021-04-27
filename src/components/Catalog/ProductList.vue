@@ -1,15 +1,13 @@
 <template>
   <div class="m-0 p-0">
     <div class="" v-if="contentFor === 'product'" style="margin-bottom: 6.5rem">
-      <h5
-        class="font16px margin-wrapper px-2  space-card mb-1 font-weight-bold"
-      >
+      <h5 class="font16px margin-wrapper px-2 space-card mb-1 font-weight-bold">
         Produk Reward
       </h5>
 
-      <p class="px-2 mb-1  font14">Pilih Produk Dibawah ini</p>
+      <p class="px-2 mb-1 font14">Pilih Produk Dibawah ini</p>
       <div class="content mb-3">
-        <table class="table px-0  mx-0 mb-0">
+        <table class="table px-0 mx-0 mb-0">
           <thead>
             <tr>
               <th scope="col px-0" v-for="item in Kategori.data" :key="item.id">
@@ -20,8 +18,8 @@
                   class="btn font-custom rounded-pill px-0 font-weight-bolder btn-menu"
                 >
                   <h5
-                    class="font14 mb-0 font-weight-bold px-3 py-1 "
-                    style="white-space: nowrap;"
+                    class="font14 mb-0 font-weight-bold px-3 py-1"
+                    style="white-space: nowrap"
                   >
                     {{ item.nama_produk }}
                   </h5>
@@ -31,7 +29,7 @@
           </thead>
         </table>
       </div>
-      <div class="d-flex align-items-stretch   flex-wrap top-card">
+      <div class="d-flex align-items-stretch flex-wrap top-card">
         <ItemProduct
           v-for="product in selectedTab"
           :key="product.id"
@@ -58,13 +56,11 @@
       v-if="contentFor === 'PoinCash'"
       style="margin-bottom: 6.5rem"
     >
-      <h5
-        class="font16px margin-wrapper px-2  space-card mb-1 font-weight-bold"
-      >
+      <h5 class="font16px margin-wrapper px-2 space-card mb-1 font-weight-bold">
         Poin Cash
       </h5>
       <p class="px-2 mb-3 font14">Pilih nominal poin2cash dibawah ini.</p>
-      <div class="d-flex align-items-stretch   flex-wrap top-card">
+      <div class="d-flex align-items-stretch flex-wrap top-card">
         <ItemProduct
           v-for="Itempoincash in poincashs"
           :key="Itempoincash.id"
@@ -75,15 +71,13 @@
       </div>
     </div>
     <div v-if="contentFor === 'Rebate'" style="margin-bottom: 6.5rem">
-      <h5
-        class="font16px margin-wrapper px-2  space-card mb-1 font-weight-bold"
-      >
+      <h5 class="font16px margin-wrapper px-2 space-card mb-1 font-weight-bold">
         Rebate Reward
       </h5>
       <p class="px-2 mb-3 font14">
         Pilih bulan atau quarter rebate dibawah ini.
       </p>
-      <div class="d-flex align-items-stretch   flex-wrap top-card">
+      <div class="d-flex align-items-stretch flex-wrap top-card">
         <ItemProduct
           v-for="rebate in rebates"
           :key="rebate.id"
@@ -97,93 +91,95 @@
 </template>
 
 <script>
-import ItemProduct from './ItemProduct.vue'
-import axios from 'axios'
+import ItemProduct from "./ItemProduct.vue";
+import axios from "axios";
 
 export default {
-  props: ['contentFor'],
+  props: ["contentFor"],
   components: {
-    ItemProduct
+    ItemProduct,
   },
-  data () {
+  data() {
     return {
       OutletData: {
-        data: []
+        data: [],
       },
-      selected: 'SEMUA',
-      Kategori: {}
-    }
+      selected: "SEMUA",
+      Kategori: {},
+    };
   },
   computed: {
-    products () {
-      return this.$store.state.products
+    products() {
+      return this.$store.state.products;
     },
-    ewallets () {
-      return this.$store.state.ewallets
+    ewallets() {
+      return this.$store.state.ewallets;
     },
-    poincashs () {
-      return this.$store.state.poincashs
+    poincashs() {
+      return this.$store.state.poincashs;
     },
-    rebates () {
-      return this.$store.state.rebates
+    rebates() {
+      return this.$store.state.rebates;
     },
-    points () {
-      return this.$store.state.points
+    points() {
+      return this.$store.state.points;
     },
-    selectedTab () {
-      console.log(this.selected)
-      if (this.selected == 'SEMUA') {
-        return this.products
+    selectedTab() {
+      console.log(this.selected);
+      if (this.selected == "SEMUA") {
+        return this.products;
       } else {
-        return this.products.filter(x => x.category === this.selected)
+        return this.products.filter((x) => x.category === this.selected);
       }
-    }
+    },
   },
   methods: {
-    getOutlet () {
+    getOutlet() {
       axios
         .get(`${process.env.VUE_APP_URL}status-poin-rebate`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
-            token: localStorage.token
-          }
+          },
+          headers: {
+            token: localStorage.token,
+          },
         })
-        .then(res => (this.OutletData = res.data.data))
-        .catch(err => console.log(err))
+        .then((res) => (this.OutletData = res.data.data))
+        .catch((err) => console.log(err));
     },
-    getKategori () {
+    getKategori() {
       axios
         .get(`${process.env.VUE_APP_URL}jenis-produk`, {
-          params: {
-            token: localStorage.token
-          }
+          headers: {
+            token: localStorage.token,
+          },
         })
-        .then(res => (this.Kategori = res.data))
-        .catch(err => console.log(err))
-    }
+        .then((res) => (this.Kategori = res.data))
+        .catch((err) => console.log(err));
+    },
   },
-  mounted () {
-    this.$store.dispatch('getProducts', {
+  mounted() {
+    this.$store.dispatch("getProducts", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
-    })
-    this.getKategori()
-    this.$store.dispatch('getEwallets')
-    this.$store.dispatch('getPoinCashs', {
+      token: localStorage.token,
+    });
+    this.getKategori();
+    this.$store.dispatch("getEwallets");
+    this.$store.dispatch("getPoinCashs", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
-    })
-    this.$store.dispatch('getPoin', {
+      token: localStorage.token,
+    });
+    this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
-    })
-    this.$store.dispatch('getRebates', {
+      token: localStorage.token,
+    });
+    this.$store.dispatch("getRebates", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token
-    })
-    this.getOutlet()
-  }
-}
+      token: localStorage.token,
+    });
+    this.getOutlet();
+  },
+};
 </script>
 
 <style scoped>

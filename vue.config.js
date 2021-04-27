@@ -1,6 +1,6 @@
 module.exports = {
   pwa: {
-    name: "Mondelez Vaganza",
+    name: "PZCussons Loyalti Retail",
     themeColor: "#632DB4",
     msTileColor: "#632DB4",
     appleMobileWebAppCache: "yes",

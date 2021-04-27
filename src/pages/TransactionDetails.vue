@@ -32,6 +32,8 @@ export default {
         params: {
           outlet_id: this.$route.params.outlet_id,
           kode_transaksi: this.$route.params.kode_transaksi,
+        },
+        headers: {
           token: localStorage.token,
         },
       })
