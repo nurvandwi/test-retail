@@ -10,38 +10,39 @@
         <div class="d-flex flex-column">
           <h3 class="font16 ml-1 my-0 font-weight-bold">Promo</h3>
           <p class="font-12 ml-1 my-0">
-            Temukan penawaran menarik dibawah ini.
+            Temukan penawaran dan informasi dibawah ini.
           </p>
         </div>
       </div>
     </div>
-
-    <div
-      class="mx-4 rounded-custom"
-      v-if="slider.data.length > 0"
-      style="background-color: white"
-    >
-      <VueSlickCarousel :arrows="true" :dots="true" v-bind="settings">
-        <div v-for="(list, index) in slider.data" :key="index" class="radius">
-          <img
-            @click="details(index)"
-            v-bind:src="list.img_url"
-            class="w-100 radius-img"
-            style="min-height: 100%"
-            alt=""
-          />
-          <div class="row justify-content-center d-flex spaceCarousel mt-3">
-            <div class="col px-4">
-              <h4 class="font-weight-bold font-12 text-left font13 my-0 py-0">
-                {{ list.title }}
-              </h4>
-              <p class="font-12 text-left font10 text-black-50">
-                {{ list.deskripsi }}
-              </p>
+    <div class="container" style="overflow: hidden">
+      <div
+        class="rounded-custom"
+        v-if="slider.data.length > 0"
+        style="background-color: white"
+      >
+        <VueSlickCarousel :arrows="true" :dots="true" v-bind="settings">
+          <div v-for="(list, index) in slider.data" :key="index" class="radius">
+            <img
+              @click="details(index)"
+              v-bind:src="list.img_url"
+              class="w-100 radius-img"
+              style="min-height: 100%"
+              alt=""
+            />
+            <div class="row justify-content-center d-flex spaceCarousel mt-3">
+              <div class="col px-4">
+                <h4 class="font-weight-bold font-12 text-left font13 my-0 py-0">
+                  {{ list.title }}
+                </h4>
+                <p class="font-12 text-left font10 text-black-50">
+                  {{ list.deskripsi }}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </VueSlickCarousel>
+        </VueSlickCarousel>
+      </div>
     </div>
   </div>
 </template>
@@ -144,6 +145,10 @@ export default {
 }
 .w-icon {
   width: 10%;
+}
+/deep/ .slick-dots {
+  position: relative;
+  bottom: 0vh;
 }
 @media screen and (max-width: 1000px) {
   .w-icon {

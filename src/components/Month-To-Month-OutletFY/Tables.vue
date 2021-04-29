@@ -21,7 +21,7 @@
               <h2 class="font12 text-gray font-custom">POIN REWARD</h2>
             </div>
           </div>
-          <div class="row text-center border-bottom">
+          <div class="row text-center">
             <div class="col">
               <h2 class="font16 text-black font-weight-bolder">
                 {{ table.aktual_paket_joss_1 }}
@@ -34,6 +34,7 @@
               </h2>
             </div>
           </div>
+          <hr />
           <div class="row text-center pt-2">
             <div class="col">
               <h2 class="font12 text-gray font-custom">AKTUAL PAKET JOSS 2</h2>
@@ -117,7 +118,7 @@
               <h2 class="font12 text-gray font-custom">PENUKARAN POIN</h2>
             </div>
           </div>
-          <div class="row text-center border-bottom">
+          <div class="row text-center">
             <div class="col">
               <h2 class="font16 text-black font-weight-bolder">
                 {{ table.poin_perolehan }}
@@ -130,6 +131,7 @@
               </h2>
             </div>
           </div>
+          <hr />
           <div class="row text-center pt-2">
             <div class="col">
               <h2 class="font12 m-0 text-gray font-custom">POIN TERSEDIA</h2>
@@ -155,6 +157,11 @@ export default {
 <style scoped>
 .text-ungu {
   color: #41009a;
+}
+
+hr {
+  margin: 0 0 0.6rem 0;
+  border-top: 0.5px solid #d3d3d3;
 }
 
 .bg-grey {
