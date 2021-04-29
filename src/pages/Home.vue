@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :contentFor="'home'" />
+    <Header :contentFor="'home'" :points="points" />
     <PromoBanner :slider="Slider" />
     <ListPromosi :contentFor="'home'" />
     <ListTransaksi class="mb-5 pb-5" />
