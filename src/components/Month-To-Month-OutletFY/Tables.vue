@@ -23,13 +23,13 @@
           </div>
           <div class="row text-center">
             <div class="col">
-              <h2 class="font16 text-black font-weight-bolder">
+              <h2 class="font18 text-black font-weight-bolder">
                 {{ table.aktual_paket_joss_1 }}
               </h2>
             </div>
             <div style="border-right: 1px solid #d3d3d3; height: 18px"></div>
             <div class="col">
-              <h2 class="font16 text-black font-weight-bolder">
+              <h2 class="font18 text-black font-weight-bolder">
                 {{ table.point_joss_1 }}
               </h2>
             </div>
@@ -46,13 +46,13 @@
           </div>
           <div class="row text-center">
             <div class="col">
-              <h2 class="font16 text-black font-weight-bolder">
+              <h2 class="font18 text-black font-weight-bolder">
                 {{ table.aktual_paket_joss_2 }}
               </h2>
             </div>
             <div style="border-right: 1px solid #d3d3d3; height: 18px"></div>
             <div class="col">
-              <h2 class="font16 text-black font-weight-bolder">
+              <h2 class="font18 text-black font-weight-bolder">
                 {{ table.point_joss_2 }}
               </h2>
             </div>
@@ -88,7 +88,7 @@
               </h2>
             </div>
             <div class="col">
-              <h2 class="font16 text-black font-weight-bolder">
+              <h2 class="font18 text-black font-weight-bolder">
                 {{ table.poin_reward }}
               </h2>
             </div>
@@ -120,13 +120,13 @@
           </div>
           <div class="row text-center">
             <div class="col">
-              <h2 class="font16 text-black font-weight-bolder">
+              <h2 class="font18 text-black font-weight-bolder">
                 {{ table.poin_perolehan }}
               </h2>
             </div>
             <div style="border-right: 1px solid #d3d3d3; height: 18px"></div>
             <div class="col">
-              <h2 class="font16 text-black font-weight-bolder">
+              <h2 class="font18 text-black font-weight-bolder">
                 {{ table.poin_penukaran }}
               </h2>
             </div>
@@ -137,7 +137,7 @@
               <h2 class="font12 m-0 text-gray font-custom">POIN TERSEDIA</h2>
             </div>
             <div class="col">
-              <h2 class="font16 m-0 text-black font-weight-bolder">
+              <h2 class="font18 m-0 text-black font-weight-bolder">
                 {{ table.sisa_poin_tersedia }}
               </h2>
             </div>
