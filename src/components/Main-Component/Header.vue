@@ -24,11 +24,7 @@
       class="card text-white justify-content-center"
       v-if="contentFor === 'home'"
     >
-      <img
-        class="img-Hero"
-        src="../../assets/Header-pz-2.svg"
-        alt="Card image"
-      />
+      <img class="img-Hero" src="../../assets/Header.png" alt="Card image" />
       <div class="card-img-overlay d-flex align-items-center">
         <div class="col mb-4">
           <h1
@@ -70,16 +66,15 @@
       </div>
     </div>
     <div v-if="contentFor === 'Login'">
-      <div class="row d-flex">
+      <div class="row d-flex mt-2">
         <div class="col-md-8 col-7 align-self-center">
           <h1 class="font-26 font-19 font-weight-bold">Hi, Selamat Datang</h1>
-          <p class="font12px">Pantau Poin Anda Sekarang</p>
+          <p class="font12px">Di Progam Distributor</p>
         </div>
-        <div class="col-md-4 col-5 p-0 m-0">
+        <div class="col-md-4 col-5 p-0 m-0 d-flex">
           <img
-            src="../../assets/hero-login.png"
-            class="img-fluid"
-            style="max-width: 100"
+            src="../../assets/pz.png"
+            class="img-fluid w-logo-responsive2 ml-auto mr-3 align-self-center"
           />
         </div>
       </div>
