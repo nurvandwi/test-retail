@@ -16,7 +16,7 @@
                 class="font14 formh2 caption4 p-0 m-0 font-weight-bold"
                 v-bind:class="status == 0 ? 'text-danger' : 'text-dark'"
               >
-                Data E-KTP & Data Bank
+                Data E-KTP
               </h5>
               <p
                 v-if="status == 0"
@@ -120,7 +120,7 @@ export default {
 }
 
 @media screen and (max-width: 1000px) {
-  .mb-custom{
+  .mb-custom {
     margin-bottom: 6rem;
   }
   .imagecustom {

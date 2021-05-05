@@ -24,7 +24,11 @@
       class="card text-white justify-content-center"
       v-if="contentFor === 'home'"
     >
-      <img class="img-Hero" src="../../assets/Header-Retail.png" alt="Card image" />
+      <img
+        class="img-Hero"
+        src="../../assets/Header-Retail.png"
+        alt="Card image"
+      />
       <div class="card-img-overlay d-flex align-items-center">
         <div class="col mb-4">
           <h1
@@ -69,7 +73,7 @@
       <div class="row d-flex mt-2">
         <div class="col-md-8 col-7 align-self-center">
           <h1 class="font-26 font-19 font-weight-bold">Hi, Selamat Datang</h1>
-          <p class="font12px">Di Progam Loyalti Distributor</p>
+          <p class="font12px">Di Progam Loyalti Retail</p>
         </div>
         <div class="col-md-4 col-5 p-0 m-0 d-flex">
           <img
