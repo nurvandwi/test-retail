@@ -283,6 +283,7 @@ form {
 
   .w-logo-responsive {
     width: 12rem;
+    height: 20vh;
   }
 
   .login-content h2 {
