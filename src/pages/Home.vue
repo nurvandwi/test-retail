@@ -2,7 +2,7 @@
   <div>
     <Header :contentFor="'home'" :points="points" />
     <PromoBanner :slider="Slider" />
-    <ListPromosi :contentFor="'home'" />
+    <ListPromosi :contentFor="'home'" :status="points.status_registrasi" />
   </div>
 </template>
 

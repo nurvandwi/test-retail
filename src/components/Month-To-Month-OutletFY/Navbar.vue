@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="card text-white justify-content-center">
-      <img class="img-Hero" src="../../assets/Header-Retail.png" alt="Card image" />
+      <img
+        class="img-Hero"
+        src="../../assets/Header-Retail.png"
+        alt="Card image"
+      />
       <div class="card-img-overlay d-flex align-items-center">
         <div class="col mb-4">
           <h1
