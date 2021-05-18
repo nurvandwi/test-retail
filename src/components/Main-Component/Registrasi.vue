@@ -126,9 +126,7 @@
                   data_outlet.data.no_ektp == ''
                 "
               />
-              <label class="form-check-label" for="NPWP"
-                >NPWP Badan / Personal</label
-              >
+              <label class="form-check-label" for="NPWP">NPWP</label>
             </div>
 
             <label
