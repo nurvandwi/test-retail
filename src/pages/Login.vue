@@ -27,9 +27,11 @@ export default {
             let result = response.data;
             if (result.api_status === 1) {
               localStorage.token = result.token;
+              localStorage.userId = result.userId;
 
               // this.$router.push(`/MonthToYear/${bulan}/${username}`);
-              this.$router.push(`/MonthToYear/1/` + `${username}`);
+              this.$router.push(`/MonthToYear/1/` + `${localStorage.userId}`);
+              console.log(response.data, "----------");
             } else {
               console.log(alert("user Id dan password anda salah"));
               window.location.reload();

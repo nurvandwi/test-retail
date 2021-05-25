@@ -132,7 +132,7 @@ export default {
 
 /* #f7f79fd8 */
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+@media only screen and (min-width: 120px) and (max-width: 1024px) {
   .mb-custom {
     margin-bottom: 13rem;
   }
@@ -188,6 +188,9 @@ export default {
   .btn {
     line-height: 25px;
     padding: 0px 6px;
+  }
+  .rounded-pill {
+    border-radius: 50rem !important;
   }
 }
 </style>

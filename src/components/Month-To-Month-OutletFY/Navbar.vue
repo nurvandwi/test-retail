@@ -88,4 +88,9 @@ export default {
     height: 10%;
   }
 }
+@media screen and (min-width: 320px) and (max-width: 1000px) {
+  .img-Hero {
+    height: 30vh;
+  }
+}
 </style>
