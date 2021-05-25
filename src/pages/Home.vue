@@ -3,6 +3,7 @@
     <Header :contentFor="'home'" :points="points" />
     <PromoBanner :slider="Slider" />
     <ListPromosi :contentFor="'home'" :status="points.status_registrasi" />
+    <ListTransaksi class="mb-5 pb-5" />
   </div>
 </template>
 
@@ -11,12 +12,14 @@ import axios from "axios";
 import Header from "../components/Main-Component/Header.vue";
 import PromoBanner from "../components/Main-Component/PromoBanner.vue";
 import ListPromosi from "../components/Main-Component/ListPromosi.vue";
+import ListTransaksi from "../components/Main-Component/ListTransaksi";
 
 export default {
   components: {
     Header,
     PromoBanner,
     ListPromosi,
+    ListTransaksi,
   },
   data() {
     return {

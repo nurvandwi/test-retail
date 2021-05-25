@@ -1,6 +1,6 @@
 <template>
   <div class="marginTitle">
-    <div class="content m-0 col-md-12  px-0">
+    <div class="content m-0 col-md-12 px-0">
       <table class="table px-0 mb-1 mx-0">
         <thead>
           <tr>
@@ -89,6 +89,8 @@ export default {
         .get(`${process.env.VUE_APP_URL}view_transaksi`, {
           params: {
             outlet_id: this.$route.params.outlet_id,
+          },
+          headers: {
             token: localStorage.token,
           },
         })
