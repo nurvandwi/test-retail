@@ -35,7 +35,7 @@
             class="card-title font18 font-weight-bolder mb-0"
             data-aos="fade-down"
           >
-            Hai, {{ points.outlet_name }}
+            Hai, {{ points.outlet_id }}
           </h1>
           <p class="mb-0 font12px font-weight-normal" data-aos="fade-down">
             Berikut jumlah poin perolehan anda.
