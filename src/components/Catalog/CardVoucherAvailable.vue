@@ -1,11 +1,8 @@
 <template>
   <div class="container mt-3">
     <div
-      class="card shadow-lg mx-auto"
-      style="
-        background: linear-gradient(to right, #a2a2a2, #5f5f5f);
-        max-width: 330px;
-      "
+      class="card shadow-lg mx-auto bg_custom media"
+      style="max-width: 330px"
     >
       <div class="container">
         <div class="row text-white">
@@ -53,4 +50,11 @@ export default {};
 </script>
 
 <style scoped>
+.bg_custom {
+  background: url("../../assets/Group 2.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 </style>

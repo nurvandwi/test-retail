@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <Header :title="'Voucher Cashback'" />
     <Demo class="mt-custom" />
   </div>
