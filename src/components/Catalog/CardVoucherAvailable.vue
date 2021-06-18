@@ -1,8 +1,8 @@
 <template>
   <div class="container mt-3">
     <div
-      class="card shadow-lg mx-auto bg_custom media"
-      style="max-width: 330px"
+      class="card shadow-lg mx-auto max-width bg_custom"
+      :style="backgroundColor"
     >
       <div class="container">
         <div class="row text-white">
@@ -21,7 +21,7 @@
         <div class="col-8">
           <div
             class="font-weight-thin float-right text-white"
-            style="font-size: 12px"
+            style="font-size: 13px"
           >
             ALS10A07 - ADIJAYA MAKMUR SANJAYA PERKOSA
           </div>
@@ -33,8 +33,8 @@
           </div>
         </div>
         <div class="col-4 mb-4 pl-4">
-          <div class="float-left" style="background: #9c9c9c; padding: 5px">
-            <img
+          <div class="text-center">
+            <expandable-image
               width="55"
               src="https://img.icons8.com/metro/26/000000/qr-code.png"
             />
@@ -46,15 +46,30 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["color"],
+  computed: {
+    backgroundColor() {
+      return `background-image: ${this.color}`;
+    },
+  },
+};
 </script>
 
 <style scoped>
-.bg_custom {
-  background: url("../../assets/Group 2.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.max-width {
+  max-width: 342px;
+}
+
+.expandable-image.expanded /deep/ {
+  background: white !important;
+}
+
+.expandable-image /deep/ img {
+  width: 75% !important;
+}
+
+.expandable-image.expanded /deep/ img {
+  width: 50% !important;
 }
 </style>

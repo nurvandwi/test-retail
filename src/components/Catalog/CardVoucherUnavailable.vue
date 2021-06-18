@@ -1,12 +1,5 @@
 <template>
-  <div
-    class="card mt-3 shadow-lg mx-auto"
-    style="
-      background: linear-gradient(to right, #a2a2a2, #5f5f5f);
-      max-width: 330px;
-      max-height: 34vh;
-    "
-  >
+  <div class="card mt-3 shadow-lg mx-auto max-height-width" :style="style">
     <div class="container">
       <div class="row text-white">
         <div class="col-8 p-3">
@@ -54,8 +47,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["color"],
+  computed: {
+    style() {
+      return "background-image: " + this.color;
+    },
+  },
+};
 </script>
 
-<style>
+<style scoped>
+.max-height-width {
+  max-width: 342px;
+  max-height: 34vh;
+}
 </style>

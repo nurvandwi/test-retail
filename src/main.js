@@ -11,7 +11,10 @@ import "aos/dist/aos.css";
 import ImageUploader from "vue-image-upload-resize";
 import { Tabs, Tab } from "vue-tabs-component";
 import wb from "./registerServiceWorker";
+import VueExpandableImage from "vue-expandable-image";
 Vue.prototype.$workbox = wb;
+
+Vue.use(VueExpandableImage);
 Vue.use(VueSlickCarousel);
 Vue.component("tabs", Tabs);
 Vue.component("tab", Tab);
