@@ -2,10 +2,28 @@
   <div>
     <tabs>
       <tab title="Tersedia">
-        <CardVoucherAvailable />
+        <CardVoucherAvailable
+          :color="'linear-gradient(to right top, #e7104b, #ec2a5f, #ef3c72, #f14d84, #f15c95)'"
+        />
+        <CardVoucherAvailable
+          :color="'linear-gradient(to right top, #6962ff, #766fff, #827bff, #8e87fe, #9993fd)'"
+        />
+        <CardVoucherAvailable
+          :color="'linear-gradient(to right top, #1082ed, #2192f3, #36a1f7, #4db0fb, #65bffe)'"
+          class="mb-5"
+        />
       </tab>
       <tab title="Terpakai">
-        <CardVoucherUnavailable />
+        <CardVoucherUnavailable
+          :color="'linear-gradient(to right top, #e7104b, #ec2a5f, #ef3c72, #f14d84, #f15c95)'"
+        />
+        <CardVoucherUnavailable
+          :color="'linear-gradient(to right top, #6962ff, #766fff, #827bff, #8e87fe, #9993fd)'"
+        />
+        <CardVoucherUnavailable
+          :color="'linear-gradient(to right top, #1082ed, #2192f3, #36a1f7, #4db0fb, #65bffe)'"
+          class="mb-5"
+        />
       </tab>
     </tabs>
   </div>
@@ -26,5 +44,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>

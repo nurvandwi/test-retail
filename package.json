@@ -21,6 +21,7 @@
     "serve-static": "^1.10.0",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
+    "vue-expandable-image": "^0.1.0",
     "vue-image-upload-resize": "^2.3.0",
     "vue-nav-tabs": "^0.5.7",
     "vue-router": "^3.2.0",
