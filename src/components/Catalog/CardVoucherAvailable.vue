@@ -36,7 +36,7 @@
           <div class="text-center">
             <expandable-image
               width="55"
-              src="https://img.icons8.com/metro/26/000000/qr-code.png"
+              :src="require('../../assets/qr.png')"
             />
           </div>
         </div>
