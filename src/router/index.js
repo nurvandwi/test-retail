@@ -211,7 +211,7 @@ const routes = [
     props: true,
   },
   {
-    path: "/voucherqr/:outlet_id",
+    path: "/voucherqr/:outlet_id/:page",
     component: VoucherQR,
     name: "VoucherQR",
     props: true,

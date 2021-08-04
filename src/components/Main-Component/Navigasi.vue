@@ -103,7 +103,7 @@
       </li>
       <li>
         <router-link
-          v-bind:to="'/voucherqr/' + `${$route.params.outlet_id}`"
+          v-bind:to="'/voucherqr/' + `${$route.params.outlet_id}/0`"
           style="color: #fff"
           class="mx-auto font18"
         >

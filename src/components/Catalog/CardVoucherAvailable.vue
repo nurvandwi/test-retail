@@ -5,6 +5,7 @@
       :style="backgroundColor"
       v-for="voucher in dataVouchers"
       :key="voucher"
+      v-show="voucher.tgl_scan === null"
     >
       <div class="container">
         <div class="row text-white">
@@ -36,7 +37,7 @@
           <div class="text-center">
             <expandable-image
               width="55"
-              :src="require('../../assets/qr.png')"
+              :src="require('../../assets/qr-retail.png')"
             />
           </div>
         </div>
@@ -64,7 +65,7 @@ export default {
               token: localStorage.token,
             },
             params: {
-              page: 0,
+              page: this.$route.params.page,
             },
           }
         )

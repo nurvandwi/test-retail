@@ -71,7 +71,7 @@ export default {
               token: localStorage.token,
             },
             params: {
-              page: 0,
+              page: this.$route.params.page,
             },
           }
         )
