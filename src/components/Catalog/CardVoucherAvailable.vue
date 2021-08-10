@@ -37,7 +37,7 @@
           <div class="text-center">
             <expandable-image
               width="55"
-              :src="require('../../assets/qr-retail.png')"
+              :src="require('../../assets/qr-retails.png')"
             />
           </div>
         </div>
