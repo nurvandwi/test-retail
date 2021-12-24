@@ -82,8 +82,8 @@ export default {
   computed: {
     totalRedemp() {
       return this.detailTransaksi.quantity * this.detailTransaksi.poin;
-    },
-  },
+    }
+  }
 };
 </script>
 

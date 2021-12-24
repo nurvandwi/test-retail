@@ -7,19 +7,19 @@ export const SET_POIN = (state, points) => {
   state.points = points;
   console.log(points);
 };
-export const RESET_CART = (state) => {
+export const RESET_CART = state => {
   state.cart = [];
 };
-export const RESET_EWALLET = (state) => {
+export const RESET_EWALLET = state => {
   state.cartEwallet = [];
 };
-export const RESET_CARTPOINCASH = (state) => {
+export const RESET_CARTPOINCASH = state => {
   state.cartPoincash = [];
 };
-export const RESET_CARTREBATE = (state) => {
+export const RESET_CARTREBATE = state => {
   state.cartRebate = [];
 };
-export const RESET_CARTPULSA = (state) => {
+export const RESET_CARTPULSA = state => {
   state.cartPulsa = [];
 };
 export const SET_EWALLETS = (state, ewallets) => {
@@ -39,7 +39,7 @@ export function ADD_TO_CART(
   state,
   { product, quantity, cartTotalPrice, pointItem }
 ) {
-  let productInCart = state.cart.find((item) => {
+  let productInCart = state.cart.find(item => {
     return item.product.id === product.id;
   });
   if ((cartTotalPrice != 0, productInCart)) {
@@ -51,7 +51,7 @@ export function ADD_TO_CART(
   }
   state.cart.push({
     product,
-    quantity,
+    quantity
   });
 
   // console.log(pointItem.toFixed(2));
@@ -62,7 +62,7 @@ export function ADD_TO_PULSA(
   state,
   { no_hp, nominal, poin, poin_text, kd_produk, quantity }
 ) {
-  let pulsaInCart = state.cartPulsa.find((item) => {
+  let pulsaInCart = state.cartPulsa.find(item => {
     return item.no_hp.id === no_hp.id;
   });
   if (pulsaInCart) {
@@ -76,7 +76,7 @@ export function ADD_TO_PULSA(
     kd_produk,
     quantity,
     poin,
-    poin_text,
+    poin_text
   });
   // console.log(state.cartPulsa)
 }
@@ -85,7 +85,7 @@ export function ADD_TO_EWALLET(
   state,
   { ewallet, poin, no_hp, kd_produk, nominal, quantity }
 ) {
-  let ewalletInCart = state.cartEwallet.find((item) => {
+  let ewalletInCart = state.cartEwallet.find(item => {
     return item.no_hp.id === no_hp.id;
   });
   if (ewalletInCart) {
@@ -98,13 +98,13 @@ export function ADD_TO_EWALLET(
     quantity,
     nominal,
     ewallet,
-    poin,
+    poin
   });
   // console.log(state.cartPulsa)
 }
 
 export function CHECKOUT_CART(state, { product, quantity }) {
-  let productInCart = state.cart.find((item) => {
+  let productInCart = state.cart.find(item => {
     return item.product.id === product.id;
   });
   if (productInCart) {
@@ -113,14 +113,14 @@ export function CHECKOUT_CART(state, { product, quantity }) {
   }
   state.cart.push({
     product,
-    quantity,
+    quantity
   });
   console.log("hai");
   console.log(productInCart);
   // return state.cart=[]
 }
 export const ADD_TO_EWALLEWT = (state, { ewallet, quantity }) => {
-  let ewalletInCart = state.cartEwallet.find((item) => {
+  let ewalletInCart = state.cartEwallet.find(item => {
     return item.ewallet.id === ewallet.id;
   });
   if (ewalletInCart) {
@@ -129,7 +129,7 @@ export const ADD_TO_EWALLEWT = (state, { ewallet, quantity }) => {
   }
   state.cartEwallet.push({
     ewallet,
-    quantity,
+    quantity
   });
 };
 
@@ -137,7 +137,7 @@ export const ADD_TO_POINCASH = (
   state,
   { poincash, quantity, cartPoincashPrice, pointItem }
 ) => {
-  let poincashInCart = state.cartPoincash.find((item) => {
+  let poincashInCart = state.cartPoincash.find(item => {
     return item.poincash.kd_produk === poincash.kd_produk;
   });
   if ((cartPoincashPrice != 0, poincashInCart)) {
@@ -149,13 +149,13 @@ export const ADD_TO_POINCASH = (
   }
   state.cartPoincash.push({
     poincash,
-    quantity,
+    quantity
   });
   console.log(pointItem.toFixed(2));
   console.log(cartPoincashPrice);
 };
 export const ADD_TO_REBATE = (state, { rebate, quantity }) => {
-  let rebateInCart = state.cartRebate.find((item) => {
+  let rebateInCart = state.cartRebate.find(item => {
     return item.rebate.periode === rebate.periode;
   });
   if (rebateInCart) {
@@ -166,7 +166,7 @@ export const ADD_TO_REBATE = (state, { rebate, quantity }) => {
 
   state.cartRebate.push({
     rebate,
-    quantity,
+    quantity
   });
 };
 export const SET_CART = (state, cartItems) => {
@@ -182,31 +182,31 @@ export const SET_REBATE = (state, rebateItems) => {
   state.rebate = rebateItems;
 };
 export const REMOVE_PRODUCT_FROM_CART = (state, product) => {
-  state.cart = state.cart.filter((item) => {
+  state.cart = state.cart.filter(item => {
     return item.product.id !== product.id;
   });
 };
 export const REMOVE_REBATE_FROM_CART = (state, rebate) => {
-  state.cartRebate = state.cartRebate.filter((item) => {
+  state.cartRebate = state.cartRebate.filter(item => {
     return item.rebate.id !== rebate.id;
   });
 };
 export const REMOVE_POINCASH_FROM_CART = (state, poincash) => {
-  state.cartPoincash = state.cartPoincash.filter((item) => {
+  state.cartPoincash = state.cartPoincash.filter(item => {
     return item.poincash.id !== poincash.id;
   });
 };
-export const REMOVE_PULSA_FROM_CART = (state) => {
-  state.cartPulsa = state.cartPulsa.filter((item) => {
+export const REMOVE_PULSA_FROM_CART = state => {
+  state.cartPulsa = state.cartPulsa.filter(item => {
     return item.id !== item.id;
   });
 };
-export const REMOVE_EWALLET_FROM_CART = (state) => {
-  state.cartEwallet = state.cartEwallet.filter((item) => {
+export const REMOVE_EWALLET_FROM_CART = state => {
+  state.cartEwallet = state.cartEwallet.filter(item => {
     return item.id !== item.id;
   });
 };
-export const CLEAR_CART_ITEMS = (state) => {
+export const CLEAR_CART_ITEMS = state => {
   state.cart = [];
 };
 

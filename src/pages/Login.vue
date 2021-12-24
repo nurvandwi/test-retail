@@ -13,7 +13,7 @@ import Header from "@/components/Main-Component/Header.vue";
 export default {
   components: {
     Header,
-    Input,
+    Input
   },
   methods: {
     getLogin(username, password, check) {
@@ -23,7 +23,7 @@ export default {
         urlencoded.append("password", password);
         axios
           .post(`${process.env.VUE_APP_URL}login`, urlencoded)
-          .then((response) => {
+          .then(response => {
             let result = response.data;
             if (result.api_status === 1) {
               localStorage.token = result.token;
@@ -37,16 +37,16 @@ export default {
               window.location.reload();
             }
           })
-          .catch((error) => console.log(error));
+          .catch(error => console.log(error));
       } else {
         alert("Silahkan input isian dibawah dengan benar");
         window.location.reload();
       }
-    },
+    }
   },
   bulan() {
     return localStorage.bulanAktive;
-  },
+  }
 };
 </script>
 

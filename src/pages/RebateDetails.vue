@@ -28,9 +28,9 @@ export default {
     FooterProduct
   },
   computed: {
-    cartRebates(){
-      return this.$store.state.cartRebate
-    },
+    cartRebates() {
+      return this.$store.state.cartRebate;
+    }
   },
   mounted() {
     this.$store.dispatch("getRebateItems");

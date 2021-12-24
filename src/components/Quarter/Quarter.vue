@@ -165,8 +165,8 @@
                       <router-link
                         v-bind:to="
                           '/MonthToMonth/' +
-                          itemBulan.id +
-                          `/${$route.params.outlet_id}`
+                            itemBulan.id +
+                            `/${$route.params.outlet_id}`
                         "
                         type="button"
                         :class="
@@ -202,11 +202,11 @@ export default {
     "id_outlet",
     "sisa_point",
     "saldo_rebate",
-    "bulan",
+    "bulan"
   ],
   data() {
     return {
-      selected: this.$route.params.bulan,
+      selected: this.$route.params.bulan
     };
   },
   methods: {
@@ -219,28 +219,28 @@ export default {
       axios
         .get(`${process.env.VUE_APP_URL}dashboard-outlet`, {
           headers: {
-            version: this.$route.params.version,
+            version: this.$route.params.version
           },
           params: {
             txtKodeOutlet: this.$route.params.outlet_id,
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
 
-        .then((res) => (this.points = res.data))
-        .catch((err) => console.log(err));
+        .then(res => (this.points = res.data))
+        .catch(err => console.log(err));
     },
     monthToYear() {
       axios
         .get(`${process.env.VUE_APP_URL}dashboard-outlet-mty`, {
           params: {
             txtKodeOutlet: this.$route.params.outlet_id,
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
 
-        .then((res) => (this.year = res.data))
-        .catch((err) => console.log(err));
+        .then(res => (this.year = res.data))
+        .catch(err => console.log(err));
     },
     formatPrice(value) {
       const val = (value / 1).toFixed(2).replace(".", ",");
@@ -249,7 +249,7 @@ export default {
     formatRebate(value) {
       const val = (value / 1).toFixed(0).replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    },
+    }
   },
 
   computed: {
@@ -299,7 +299,7 @@ export default {
     btnHover12() {
       console.log(this.selected);
       return 12 == this.$route.params.bulan;
-    },
+    }
   },
   mounted() {
     this.allQuarter();
@@ -312,8 +312,8 @@ export default {
       this.allQuarter();
       this.monthToYear();
       this.monthToMonth();
-    },
-  },
+    }
+  }
 };
 </script>
 

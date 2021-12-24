@@ -18,13 +18,13 @@ import ListPromosi from "../components/Main-Component/ListPromosi.vue";
 export default {
   components: {
     Header,
-    ListPromosi,
+    ListPromosi
   },
   data() {
     return {
       OutletData: {
-        data: [],
-      },
+        data: []
+      }
     };
   },
   mounted() {
@@ -35,16 +35,16 @@ export default {
       axios
         .get(`${process.env.VUE_APP_URL}status-poin-rebate`, {
           params: {
-            outlet_id: this.$route.params.outlet_id,
+            outlet_id: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => (this.OutletData = res.data.data))
-        .catch((err) => console.log(err));
-    },
-  },
+        .then(res => (this.OutletData = res.data.data))
+        .catch(err => console.log(err));
+    }
+  }
 };
 </script>
 

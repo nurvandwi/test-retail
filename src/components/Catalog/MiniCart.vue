@@ -3,20 +3,22 @@
     class="dropdown-menu p-2"
     style="min-width:320px;right:0;left:auto"
     aria-labelledby="triggerId"
-  ><h1>hai</h1>
+  >
+    <h1>hai</h1>
     <div v-for="item in cart" :key="item.product.id">
       <div class="px-2 d-flex justify-content-between">
         <div>
-          <strong>{{item.product.name}}</strong>
+          <strong>{{ item.product.name }}</strong>
           <br />
-          {{item.quantity}}X{{item.product.price}}
+          {{ item.quantity }}X{{ item.product.price }}
         </div>
         <div>
           <a
             href="#"
             class="badge badge-secondary"
             @click.prevent="removeProductFromCart(item.product)"
-          >Remove</a>
+            >Remove</a
+          >
         </div>
       </div>
 
@@ -24,7 +26,7 @@
     </div>
 
     <div class="d-flex justify-content-between">
-      <span>Total: {{cartTotalPrice}}</span>
+      <span>Total: {{ cartTotalPrice }}</span>
       <a href="#" @click.prevent="clearCartItems()">Clear Cart</a>
     </div>
   </div>
@@ -54,5 +56,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

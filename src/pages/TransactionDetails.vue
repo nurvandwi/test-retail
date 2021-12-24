@@ -19,11 +19,11 @@ export default {
     Header,
     TrackRecord,
     DetailsPenukaran,
-    DataPengiriman,
+    DataPengiriman
   },
   data() {
     return {
-      detailTransaksi: [],
+      detailTransaksi: []
     };
   },
   mounted() {
@@ -31,15 +31,15 @@ export default {
       .get(`${process.env.VUE_APP_URL}detail-transaksi`, {
         params: {
           outlet_id: this.$route.params.outlet_id,
-          kode_transaksi: this.$route.params.kode_transaksi,
+          kode_transaksi: this.$route.params.kode_transaksi
         },
         headers: {
-          token: localStorage.token,
-        },
+          token: localStorage.token
+        }
       })
-      .then((res) => (this.detailTransaksi = res.data))
-      .catch((err) => console.log(err));
-  },
+      .then(res => (this.detailTransaksi = res.data))
+      .catch(err => console.log(err));
+  }
 };
 </script>
 

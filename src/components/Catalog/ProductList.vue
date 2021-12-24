@@ -97,15 +97,15 @@ import axios from "axios";
 export default {
   props: ["contentFor"],
   components: {
-    ItemProduct,
+    ItemProduct
   },
   data() {
     return {
       OutletData: {
-        data: [],
+        data: []
       },
       selected: "SEMUA",
-      Kategori: {},
+      Kategori: {}
     };
   },
   computed: {
@@ -129,56 +129,56 @@ export default {
       if (this.selected == "SEMUA") {
         return this.products;
       } else {
-        return this.products.filter((x) => x.category === this.selected);
+        return this.products.filter(x => x.category === this.selected);
       }
-    },
+    }
   },
   methods: {
     getOutlet() {
       axios
         .get(`${process.env.VUE_APP_URL}status-poin-rebate`, {
           params: {
-            outlet_id: this.$route.params.outlet_id,
+            outlet_id: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => (this.OutletData = res.data.data))
-        .catch((err) => console.log(err));
+        .then(res => (this.OutletData = res.data.data))
+        .catch(err => console.log(err));
     },
     getKategori() {
       axios
         .get(`${process.env.VUE_APP_URL}jenis-produk`, {
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => (this.Kategori = res.data))
-        .catch((err) => console.log(err));
-    },
+        .then(res => (this.Kategori = res.data))
+        .catch(err => console.log(err));
+    }
   },
   mounted() {
     this.$store.dispatch("getProducts", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token,
+      token: localStorage.token
     });
     this.getKategori();
     this.$store.dispatch("getEwallets");
     this.$store.dispatch("getPoinCashs", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token,
+      token: localStorage.token
     });
     this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token,
+      token: localStorage.token
     });
     this.$store.dispatch("getRebates", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token,
+      token: localStorage.token
     });
     this.getOutlet();
-  },
+  }
 };
 </script>
 

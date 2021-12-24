@@ -46,7 +46,7 @@
           <div
             v-bind:class="[
               'form-group justify-content-center grid-image   mb-3 p-0 col-md-12 col-12',
-              { cameraform: data_outlet.file == null },
+              { cameraform: data_outlet.file == null }
             ]"
           >
             <div class>
@@ -105,7 +105,7 @@
           <div
             v-bind:class="[
               'form-group justify-content-center grid-image   mb-3 p-0 col-md-12 col-12',
-              { cameraform: data_outlet.file2 == null },
+              { cameraform: data_outlet.file2 == null }
             ]"
             v-if="data_outlet.file != null"
           >
@@ -197,14 +197,14 @@ import ImageUploader from "vue-image-upload-resize";
 export default {
   name: "Registrasi",
   components: {
-    ImageUploader,
+    ImageUploader
   },
   data() {
     return {
       data_outlet: [],
       file2: null,
       file: null,
-      errors: [],
+      errors: []
     };
   },
   methods: {
@@ -212,22 +212,22 @@ export default {
       axios
         .get(`${process.env.VUE_APP_URL}cek-posm`, {
           params: {
-            outlet_id: this.$route.params.outlet_id,
+            outlet_id: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => {
+        .then(res => {
           this.data_outlet = res.data;
         })
-        .catch((err) => console.log(err));
+        .catch(err => console.log(err));
     },
-    setImage: function (file) {
+    setImage: function(file) {
       this.hasImage = true;
       this.file = file;
     },
-    setImage2: function (file2) {
+    setImage2: function(file2) {
       this.hasImage2 = true;
       this.file2 = file2;
     },
@@ -257,20 +257,20 @@ export default {
           axios
             .post(`${process.env.VUE_APP_URL}upload-posm`, formData, {
               headers: {
-                token: localStorage.token,
-              },
+                token: localStorage.token
+              }
             })
-            .then((res) => {
+            .then(res => {
               console.log(res.data);
               this.$router.push(`/Home/${this.$route.params.outlet_id}`);
             })
-            .catch((err) => console.log(err));
+            .catch(err => console.log(err));
         }
-    },
+    }
   },
   mounted() {
     this.getUser();
-  },
+  }
 };
 </script>
 

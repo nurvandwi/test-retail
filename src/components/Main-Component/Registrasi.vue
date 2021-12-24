@@ -106,7 +106,7 @@
                 v-model="picked"
                 :required="
                   data_outlet.data.no_npwp == '' &&
-                  data_outlet.data.no_ektp == ''
+                    data_outlet.data.no_ektp == ''
                 "
               />
               <label class="form-check-label" for="EKTP">EKTP</label>
@@ -123,7 +123,7 @@
                 v-model="picked"
                 :required="
                   data_outlet.data.no_npwp == '' &&
-                  data_outlet.data.no_ektp == ''
+                    data_outlet.data.no_ektp == ''
                 "
               />
               <label class="form-check-label" for="NPWP">NPWP</label>
@@ -191,7 +191,7 @@ export default {
         provinsi: 0,
         kabupaten: 0,
         kecamatan: 0,
-        kelurahan: 0,
+        kelurahan: 0
       },
       file2: null,
       file: null,
@@ -203,15 +203,15 @@ export default {
       dataNama_Konsumen: [],
       data_outlet: [],
       errors: [],
-      picked: "",
+      picked: ""
     };
   },
   methods: {
-    setImage: function (file) {
+    setImage: function(file) {
       this.hasImage = true;
       this.file = file;
     },
-    setImage2: function (file2) {
+    setImage2: function(file2) {
       this.hasImage2 = true;
       this.file2 = file2;
     },
@@ -219,13 +219,13 @@ export default {
       axios
         .get(`${process.env.VUE_APP_URL}detail-outlet`, {
           params: {
-            txtKodeOutlet: this.$route.params.outlet_id,
+            txtKodeOutlet: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => {
+        .then(res => {
           console.log(res.data.data, "ini res");
           this.data_outlet = res.data;
           this.state.provinsi = this.data_outlet.data.id_propinsi;
@@ -251,39 +251,39 @@ export default {
             this.state.kelurahan = 0;
           }
         })
-        .catch((err) => console.log(err));
+        .catch(err => console.log(err));
     },
     getProvinsi() {
       axios
         .get(`${process.env.VUE_APP_URL}list-province`)
-        .then((res) => (this.dataProvinsis = res.data))
-        .catch((err) => console.log(err));
+        .then(res => (this.dataProvinsis = res.data))
+        .catch(err => console.log(err));
     },
     getKabupaten() {
       axios
         .get(
           `${process.env.VUE_APP_URL}list-cities?id_provinsi=${this.state.provinsi}`
         )
-        .then((res) => {
+        .then(res => {
           this.dataKabupatens = res.data;
         })
-        .catch((err) => console.log(err));
+        .catch(err => console.log(err));
     },
     getKecamatan() {
       axios
         .get(
           `${process.env.VUE_APP_URL}list-district?id_city=${this.state.kabupaten}`
         )
-        .then((res) => (this.dataKecamatans = res.data))
-        .catch((err) => console.log(err));
+        .then(res => (this.dataKecamatans = res.data))
+        .catch(err => console.log(err));
     },
     getKelurahan() {
       axios
         .get(
           `${process.env.VUE_APP_URL}list-subdistricts?id_district=${this.state.kecamatan}`
         )
-        .then((res) => (this.dataKelurahans = res.data))
-        .catch((err) => console.log(err));
+        .then(res => (this.dataKelurahans = res.data))
+        .catch(err => console.log(err));
     },
 
     formSubmit(e) {
@@ -319,16 +319,16 @@ export default {
         axios
           .post(`${process.env.VUE_APP_URL}update-outlet-ms`, formData, {
             headers: {
-              token: localStorage.token,
-            },
+              token: localStorage.token
+            }
           })
-          .then((res) => {
+          .then(res => {
             console.log(res.data);
             this.$router.push(`/Home/${this.$route.params.outlet_id}`);
             window.location.reload();
           })
-          .catch((err) => console.log(err));
-    },
+          .catch(err => console.log(err));
+    }
   },
   mounted() {
     this.getKecamatan();
@@ -336,7 +336,7 @@ export default {
     this.getProvinsi();
     this.getTelephone();
     this.getKelurahan();
-  },
+  }
 };
 </script>
 

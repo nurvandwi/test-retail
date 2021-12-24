@@ -12,14 +12,23 @@
         </div>
         <div class="col-md-8 col-8">
           <p class="card-title mb-0 font16" style="font-weight:bolder">
-            <router-link class="text-dark" v-bind:to="'/product/' + product.id">{{product.name}}</router-link>
+            <router-link
+              class="text-dark"
+              v-bind:to="'/product/' + product.id"
+              >{{ product.name }}</router-link
+            >
           </p>
-          <button class="btn btn-info center-block col-md-6 col-6 mt-3" @click="addToCart()">Tukar</button>
+          <button
+            class="btn btn-info center-block col-md-6 col-6 mt-3"
+            @click="addToCart()"
+          >
+            Tukar
+          </button>
         </div>
       </div>
       <div class="card-body px-3 py-0" style="border-top: 2px #e8e8e8 solid;">
         <p class="card-text mb-0 mt-2 font14">
-          <strong class="text-dark">{{product.price}} Poin</strong>
+          <strong class="text-dark">{{ product.price }} Poin</strong>
         </p>
       </div>
     </div>

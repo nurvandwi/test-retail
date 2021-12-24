@@ -33,12 +33,14 @@
             <span class="font-weight-bold"> {{ voucher.periode }}</span>
           </div>
         </div>
-        <div class="col-4 mb-4 pl-4">
-          <div class="text-center">
-            <expandable-image
-              width="55"
-              :src="require('../../assets/qr-retails.png')"
-            />
+        <div class="col-4 mb-4 px-5">
+          <div class="popover__wrapper text-center">
+            <a href="#">
+              <vue-qrcode width="40" :value="voucher.kode_qr" />
+            </a>
+            <div class="popover__content">
+              <vue-qrcode width="250" :value="voucher.kode_qr" />
+            </div>
           </div>
         </div>
       </div>
@@ -47,9 +49,13 @@
 </template>
 
 <script>
+import VueQrcode from "vue-qrcode";
 import axios from "axios";
 export default {
   props: ["color"],
+  components: {
+    VueQrcode,
+  },
   data() {
     return {
       dataVouchers: [],
@@ -77,6 +83,7 @@ export default {
         });
     },
   },
+
   mounted() {
     this.getVoucher();
   },
@@ -91,17 +98,45 @@ export default {
 <style scoped>
 .max-width {
   max-width: 342px;
+  min-height: 27vh;
 }
 
-.expandable-image.expanded /deep/ {
-  background: white !important;
+a {
+  text-decoration: none;
 }
 
-.expandable-image /deep/ img {
-  width: 75% !important;
+.popover__title {
+  font-size: 24px;
+  line-height: 36px;
+  text-decoration: none;
+  color: rgb(228, 68, 68);
+  text-align: center;
+  padding: 15px 0;
 }
 
-.expandable-image.expanded /deep/ img {
-  width: 50% !important;
+.popover__wrapper {
+  position: relative;
+
+  display: inline-block;
+}
+.popover__content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  transform: translate(0, 10px);
+  background-color: #bfbfbf;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  width: auto;
+  top: 0;
+}
+
+.popover__wrapper:hover .popover__content {
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -20px);
+  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
 }
 </style>

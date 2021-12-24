@@ -313,7 +313,7 @@ export default {
   props: ["contentFor"],
   data() {
     return {
-      data_user: {},
+      data_user: {}
     };
   },
   methods: {
@@ -321,12 +321,12 @@ export default {
       axios
         .get(`${process.env.VUE_APP_URL}detail-outlet`, {
           params: {
-            txtKodeOutlet: this.$route.params.outlet_id,
-          },
+            txtKodeOutlet: this.$route.params.outlet_id
+          }
         })
-        .then((res) => (this.data_user = res.data.data))
-        .catch((err) => console.log(err));
-    },
+        .then(res => (this.data_user = res.data.data))
+        .catch(err => console.log(err));
+    }
   },
   mounted() {
     this.getDetailUser();
@@ -337,8 +337,8 @@ export default {
     },
     cartEwallet() {
       return this.$store.state.cartEwallet;
-    },
-  },
+    }
+  }
 };
 </script>
 

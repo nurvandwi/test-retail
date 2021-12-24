@@ -26,16 +26,16 @@ export default {
     DetailPengiriman,
     Cart,
     Item,
-    FooterProduct,
+    FooterProduct
   },
   computed: {
     poincash() {
       return this.$store.state.cartPoincash;
-    },
+    }
   },
   mounted() {
     this.$store.dispatch("getPoincashItems");
-  },
+  }
 };
 </script>
 

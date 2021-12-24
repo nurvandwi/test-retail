@@ -274,7 +274,7 @@
                       'text-center font10 py-1 m-0 px-3 text-white rounded-pill badge bg-success float-right':
                         all.status === 'Sukses',
                       'text-center font10 py-1 m-0 px-3 text-white rounded-pill badge bg-otorisasi float-right':
-                        all.status === 'Otorisasi',
+                        all.status === 'Otorisasi'
                     }"
                   >
                     {{ all.status }}
@@ -313,7 +313,7 @@ export default {
     },
     cartTotalPrice() {
       return this.$store.getters.cartTotalPrice;
-    },
+    }
   },
   methods: {
     removeProductFromCart(product) {
@@ -330,8 +330,8 @@ export default {
     },
     removeEwalletFromCart() {
       this.$store.dispatch("removeEwalletFromCart");
-    },
-  },
+    }
+  }
 };
 </script>
 

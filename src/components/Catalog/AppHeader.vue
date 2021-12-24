@@ -3,7 +3,9 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <div class="container">
         <div class="nav navbar-nav">
-          <router-link to="/catalog" class="nav-item nav-link active">Catalog</router-link>
+          <router-link to="/catalog" class="nav-item nav-link active"
+            >Catalog</router-link
+          >
           <a class="nav-item nav-link" href="#">Product</a>
         </div>
         <div>
@@ -15,9 +17,10 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-            >{{cartItemCount}} Cart</button>
-            <div @click="$event.stopPropagation()
-            ">
+            >
+              {{ cartItemCount }} Cart
+            </button>
+            <div @click="$event.stopPropagation()">
               <mini-cart />
             </div>
           </div>
@@ -41,5 +44,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

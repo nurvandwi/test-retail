@@ -116,7 +116,7 @@ export default {
       password: "",
       check: "",
       wa: "",
-      toc: "",
+      toc: ""
     };
   },
   methods: {
@@ -126,18 +126,18 @@ export default {
     getInfo() {
       axios
         .get(`https://www.inosis.biz/api_pzc_retail_2021/initial.php`)
-        .then((response) => {
+        .then(response => {
           this.wa = response.data.no_whatapps;
           this.toc = response.data.toc;
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err);
         });
-    },
+    }
   },
   mounted() {
     this.getInfo();
-  },
+  }
 };
 </script>
 

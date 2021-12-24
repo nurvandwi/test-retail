@@ -22,8 +22,8 @@ export default {
     Cart,
     Item,
     DetailPengiriman,
-    FooterProduct,
-  },
+    FooterProduct
+  }
 };
 </script>
 

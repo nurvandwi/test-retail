@@ -54,7 +54,7 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 export default {
   components: {
-    VueSlickCarousel,
+    VueSlickCarousel
   },
   name: "PromoBanner",
   props: ["slider", "icon"],
@@ -69,8 +69,8 @@ export default {
         autoplay: true,
         speed: 1000,
         autoplaySpeed: 4000,
-        cssEase: "linear",
-      },
+        cssEase: "linear"
+      }
     };
   },
   methods: {
@@ -79,8 +79,8 @@ export default {
         `/PromoDetails/${this.$route.params.outlet_id}/` + index
       );
       console.log(index);
-    },
-  },
+    }
+  }
 };
 </script>
 

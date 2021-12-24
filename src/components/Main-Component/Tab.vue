@@ -9,16 +9,15 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Tab",
-    },
+      default: "Tab"
+    }
   },
   data() {
     return {
-      isActive: true,
+      isActive: true
     };
-  },
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>

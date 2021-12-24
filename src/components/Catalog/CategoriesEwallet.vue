@@ -4,7 +4,7 @@
     <p class="font14">Pilih salah satu kategori reward.</p>
     <p></p>
     <div class="row mt-4 px-2">
-      <div class="col-md-6 col-6 px-1 "  v-if="points.PULSA2 == 'true'">
+      <div class="col-md-6 col-6 px-1 " v-if="points.PULSA2 == 'true'">
         <div class="card text-white">
           <router-link
             class="text-white"
@@ -83,14 +83,14 @@ export default {
   computed: {
     points() {
       return this.$store.state.points;
-    },
+    }
   },
   mounted() {
     this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token,
+      token: localStorage.token
     });
-  },
+  }
 };
 </script>
 

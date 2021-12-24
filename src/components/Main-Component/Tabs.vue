@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       selectedIndex: 0,
-      tabs: [],
+      tabs: []
     };
   },
   created() {
@@ -41,8 +41,8 @@ export default {
       this.tabs.forEach((tab, index) => {
         tab.isActive = index === i;
       });
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -24,7 +24,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      Slider: {},
+      Slider: {}
     };
   },
 
@@ -33,20 +33,20 @@ export default {
       axios
         .get(`${process.env.VUE_APP_URL}banner`, {
           params: {
-            outlet_id: this.$route.params.outlet_id,
+            outlet_id: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => (this.Slider = res.data))
-        .catch((err) => console.log(err));
-    },
+        .then(res => (this.Slider = res.data))
+        .catch(err => console.log(err));
+    }
   },
 
   mounted() {
     this.getSlider();
-  },
+  }
 };
 </script>
 

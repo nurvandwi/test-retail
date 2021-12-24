@@ -38,8 +38,8 @@ export default {
   computed: {
     cartItemCount() {
       return this.$store.getters.cartItemCount;
-    },
-  },
+    }
+  }
 };
 </script>
 

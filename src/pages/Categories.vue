@@ -11,8 +11,8 @@ import ListMenu from "../components/Main-Component/ListMenu.vue";
 export default {
   components: {
     Header,
-    ListMenu,
-  },
+    ListMenu
+  }
 };
 </script>
 

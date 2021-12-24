@@ -19,13 +19,13 @@
           <div
             v-if="
               no_hp.slice(0, 4) === '0817' ||
-              no_hp.slice(0, 4) === '0818' ||
-              no_hp.slice(0, 4) === '0819' ||
-              no_hp.slice(0, 4) === '0859' ||
-              no_hp.slice(0, 4) === '0877' ||
-              no_hp.slice(0, 4) === '0878' ||
-              no_hp.slice(0, 4) === '0879' ||
-              no_hp.slice(0, 4) === '0817'
+                no_hp.slice(0, 4) === '0818' ||
+                no_hp.slice(0, 4) === '0819' ||
+                no_hp.slice(0, 4) === '0859' ||
+                no_hp.slice(0, 4) === '0877' ||
+                no_hp.slice(0, 4) === '0878' ||
+                no_hp.slice(0, 4) === '0879' ||
+                no_hp.slice(0, 4) === '0817'
             "
           >
             <img src="../../assets/xl.png" class="icon-pulsa pl-2" alt="..." />
@@ -33,12 +33,12 @@
           <div
             v-else-if="
               no_hp.slice(0, 4) === '0814' ||
-              no_hp.slice(0, 4) === '0815' ||
-              no_hp.slice(0, 4) === '0816' ||
-              no_hp.slice(0, 4) === '0855' ||
-              no_hp.slice(0, 4) === '0856' ||
-              no_hp.slice(0, 4) === '0857' ||
-              no_hp.slice(0, 4) === '0858'
+                no_hp.slice(0, 4) === '0815' ||
+                no_hp.slice(0, 4) === '0816' ||
+                no_hp.slice(0, 4) === '0855' ||
+                no_hp.slice(0, 4) === '0856' ||
+                no_hp.slice(0, 4) === '0857' ||
+                no_hp.slice(0, 4) === '0858'
             "
           >
             <img
@@ -50,14 +50,14 @@
           <div
             v-else-if="
               no_hp.slice(0, 4) === '0811' ||
-              no_hp.slice(0, 4) === '0812' ||
-              no_hp.slice(0, 4) === '0813' ||
-              no_hp.slice(0, 4) === '0821' ||
-              no_hp.slice(0, 4) === '0822' ||
-              no_hp.slice(0, 4) === '0823' ||
-              no_hp.slice(0, 4) === '0851' ||
-              no_hp.slice(0, 4) === '0852' ||
-              no_hp.slice(0, 4) === '0853'
+                no_hp.slice(0, 4) === '0812' ||
+                no_hp.slice(0, 4) === '0813' ||
+                no_hp.slice(0, 4) === '0821' ||
+                no_hp.slice(0, 4) === '0822' ||
+                no_hp.slice(0, 4) === '0823' ||
+                no_hp.slice(0, 4) === '0851' ||
+                no_hp.slice(0, 4) === '0852' ||
+                no_hp.slice(0, 4) === '0853'
             "
           >
             <img
@@ -69,8 +69,8 @@
           <div
             v-else-if="
               no_hp.slice(0, 4) === '0831' ||
-              no_hp.slice(0, 4) === '0832' ||
-              no_hp.slice(0, 4) === '0838'
+                no_hp.slice(0, 4) === '0832' ||
+                no_hp.slice(0, 4) === '0838'
             "
           >
             <img
@@ -82,14 +82,14 @@
           <div
             v-else-if="
               no_hp.slice(0, 4) === '0881' ||
-              no_hp.slice(0, 4) === '0882' ||
-              no_hp.slice(0, 4) === '0883' ||
-              no_hp.slice(0, 4) === '0884' ||
-              no_hp.slice(0, 4) === '0885' ||
-              no_hp.slice(0, 4) === '0886' ||
-              no_hp.slice(0, 4) === '0887' ||
-              no_hp.slice(0, 4) === '0888' ||
-              no_hp.slice(0, 4) === '0889'
+                no_hp.slice(0, 4) === '0882' ||
+                no_hp.slice(0, 4) === '0883' ||
+                no_hp.slice(0, 4) === '0884' ||
+                no_hp.slice(0, 4) === '0885' ||
+                no_hp.slice(0, 4) === '0886' ||
+                no_hp.slice(0, 4) === '0887' ||
+                no_hp.slice(0, 4) === '0888' ||
+                no_hp.slice(0, 4) === '0889'
             "
           >
             <img
@@ -101,10 +101,10 @@
           <div
             v-else-if="
               no_hp.slice(0, 4) === '0895' ||
-              no_hp.slice(0, 4) === '0896' ||
-              no_hp.slice(0, 4) === '0897' ||
-              no_hp.slice(0, 4) === '0898' ||
-              no_hp.slice(0, 4) === '0899'
+                no_hp.slice(0, 4) === '0896' ||
+                no_hp.slice(0, 4) === '0897' ||
+                no_hp.slice(0, 4) === '0898' ||
+                no_hp.slice(0, 4) === '0899'
             "
           >
             <img
@@ -138,8 +138,8 @@
                   :class="{ nonActive: list.poin > points.Poin }"
                   v-bind:to="
                     '/pulsadetails/' +
-                    `${$route.params.outlet_id}/` +
-                    list.nominal
+                      `${$route.params.outlet_id}/` +
+                      list.nominal
                   "
                   style="color: #fff"
                   class="mx-auto font18 text-dark"
@@ -178,9 +178,9 @@ export default {
       options: [
         { text: "Pilih Jenis Provider", value: "Pulsa" },
         { text: "Indosat", value: "Indosat" },
-        { text: "Xl", value: "Xl" },
+        { text: "Xl", value: "Xl" }
       ],
-      nominalPulsa: [],
+      nominalPulsa: []
     };
   },
   methods: {
@@ -194,7 +194,7 @@ export default {
             kd_produk,
             poin,
             poin_text,
-            quantity: 1,
+            quantity: 1
           });
         } else {
           alert("Poin anda tidak cukup");
@@ -207,28 +207,28 @@ export default {
       axios
         .get(`${process.env.VUE_APP_URL}list-pulsa-hadiah`, {
           params: {
-            outlet_id: this.$route.params.outlet_id,
+            outlet_id: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => (this.nominalPulsa = res.data))
-        .catch((err) => console.log(err));
-    },
+        .then(res => (this.nominalPulsa = res.data))
+        .catch(err => console.log(err));
+    }
   },
   mounted() {
     this.getNominalPulsa();
     this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token,
+      token: localStorage.token
     });
   },
   computed: {
     points() {
       return this.$store.state.points;
-    },
-  },
+    }
+  }
 };
 </script>
 

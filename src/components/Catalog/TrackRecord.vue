@@ -8,7 +8,7 @@
               Proses
             </h4>
             <p class="card-text font16 font-weight-light font-theme">
-              {{detailTransaksi.tanggal_transaksi}}
+              {{ detailTransaksi.tanggal_transaksi }}
             </p>
           </div>
         </div>
@@ -18,7 +18,7 @@
               Selesai
             </h4>
             <p class="card-text font16 font-weight-light font-theme">
-              {{detailTransaksi.tanggal_terima}}
+              {{ detailTransaksi.tanggal_terima }}
             </p>
           </div>
         </div>
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  props: ["detailTransaksi"],
+  props: ["detailTransaksi"]
 };
 </script>
 

@@ -1,8 +1,17 @@
 <template>
   <div class="mb-custom">
-    <router-link v-bind:to="'/categories/' + `${$route.params.outlet_id}`">
+    <router-link v-bind:to="'/home/' + `${$route.params.outlet_id}`">
       <nav
-        class="navbar m-auto navbar-Container navbar-light backtheme py-3 d-flex justify-content-center footerstyle"
+        class="
+          navbar
+          m-auto
+          navbar-Container navbar-light
+          backtheme
+          py-3
+          d-flex
+          justify-content-center
+          footerstyle
+        "
       >
         <div class="col-md-3 col-2 pl-0 pr-0">
           <img class="img-back" src="../../assets/icon-back.png" alt />
@@ -23,8 +32,8 @@ export default {
   computed: {
     cartItemCount() {
       return this.$store.getters.cartItemCount;
-    },
-  },
+    }
+  }
 };
 </script>
 

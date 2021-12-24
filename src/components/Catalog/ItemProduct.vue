@@ -132,14 +132,19 @@
           />
         </div>
         <div class="card-body pb-0">
-          <h5 class="card-title mb-0 font14 font-weight-bold" style="font-weight:bolder">
+          <h5
+            class="card-title mb-0 font14 font-weight-bold"
+            style="font-weight:bolder"
+          >
             {{ rebate.periode }}
           </h5>
         </div>
         <div
           class="card-body d-flex justify-content-between align-items-center pb-0"
         >
-          <h5 class="card-title m-0 font16 font-weight-bold">Rp. {{ rebate.rebate_text }}</h5>
+          <h5 class="card-title m-0 font16 font-weight-bold">
+            Rp. {{ rebate.rebate_text }}
+          </h5>
           <button class="btn ml-auto py-0" @click="addToRebate()">
             <img src="../../assets/icon-add.png" class="img-cart" alt />
           </button>
@@ -151,86 +156,86 @@
 
 <script>
 export default {
-  name: 'ItemProduct',
-  props: ['product', 'ewallet', 'poincash', 'contentFor', 'rebate', 'status'],
+  name: "ItemProduct",
+  props: ["product", "ewallet", "poincash", "contentFor", "rebate", "status"],
   methods: {
-    addToCart (cartTotalPrice, poin) {
-      console.log(cartTotalPrice,'cart total',poin)
-      console.log(this.product.poin)
-      console.log(this.status)
+    addToCart(cartTotalPrice, poin) {
+      console.log(cartTotalPrice, "cart total", poin);
+      console.log(this.product.poin);
+      console.log(this.status);
       if (this.status != 0) {
         if (poin >= this.product.poin) {
-          this.$store.dispatch('addProductToCart', {
+          this.$store.dispatch("addProductToCart", {
             product: this.product,
             quantity: 1,
             pointItem: this.product.poin,
             cartTotalPrice
-          })
+          });
         } else {
-          alert('Poin anda Tidak cukup')
+          alert("Poin anda Tidak cukup");
         }
       } else {
-        alert('Data anda belum lengkap')
+        alert("Data anda belum lengkap");
       }
     },
-    addToEwallet (cartTotalPrice, poin) {
-      console.log(poin)
+    addToEwallet(cartTotalPrice, poin) {
+      console.log(poin);
       if (poin >= this.product.poin) {
-        this.$store.dispatch('addEwalletToCart', {
+        this.$store.dispatch("addEwalletToCart", {
           ewallet: this.ewallet,
           quantity: 1,
           pointItem: this.product.poin,
           cartTotalPrice
-        })
+        });
       }
     },
-    addToPoinCash (cartPoincashPrice, poin) {
-      console.log(poin)
-      console.log(this.status)
+    addToPoinCash(cartPoincashPrice, poin) {
+      console.log(poin);
+      console.log(this.status);
       if (this.status != 0) {
         if (poin >= this.poincash.poin) {
-          this.$store.dispatch('addPoinCashToCart', {
+          this.$store.dispatch("addPoinCashToCart", {
             poincash: this.poincash,
             quantity: 1,
             pointItem: this.poincash.poin,
             cartPoincashPrice
-          })
+          });
         } else {
-          alert('Poin anda Tidak cukup')
+          alert("Poin anda Tidak cukup");
         }
       } else {
-        alert('Data anda belum lengkap')
+        alert("Data anda belum lengkap");
       }
     },
-    addToRebate () {
+    addToRebate() {
       if (this.status != 0) {
-        this.$store.dispatch('addRebateToCart', {
+        this.$store.dispatch("addRebateToCart", {
           rebate: this.rebate,
           quantity: 1
-        })
+        });
       } else {
-        alert('Data anda belum lengkap')
+        alert("Data anda belum lengkap");
       }
     }
   },
   computed: {
-    cartTotalPrice () {
-      return this.$store.getters.cartTotalPrice
+    cartTotalPrice() {
+      return this.$store.getters.cartTotalPrice;
     },
-    cartPoincashPrice () {
-      return this.$store.getters.cartPoincashPrice
+    cartPoincashPrice() {
+      return this.$store.getters.cartPoincashPrice;
     },
-    points () {
-      return this.$store.state.points
+    points() {
+      return this.$store.state.points;
     }
-  },
+  }
   // mounted () {
   //   this.$store.dispatch('getPoin', {
   //     outlet_id: this.$route.params.outlet_id,
   //     token: localStorage.token
   //   })
   // }
-}
+};
 </script>
 
 <style>

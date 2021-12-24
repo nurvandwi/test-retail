@@ -79,8 +79,8 @@ export default {
     return {
       selected: null,
       alltransaction: {
-        data: [],
-      },
+        data: []
+      }
     };
   },
   methods: {
@@ -88,17 +88,17 @@ export default {
       axios
         .get(`${process.env.VUE_APP_URL}view_transaksi`, {
           params: {
-            outlet_id: this.$route.params.outlet_id,
+            outlet_id: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => {
+        .then(res => {
           this.alltransaction = res.data;
         })
-        .catch((err) => console.log(err));
-    },
+        .catch(err => console.log(err));
+    }
   },
   computed: {
     selectTab() {
@@ -106,14 +106,14 @@ export default {
         return this.alltransaction.data;
       } else {
         return this.alltransaction.data.filter(
-          (x) => x.item === this.selected.toLocaleLowerCase()
+          x => x.item === this.selected.toLocaleLowerCase()
         );
       }
-    },
+    }
   },
   mounted() {
     this.allItem();
-  },
+  }
 };
 </script>
 

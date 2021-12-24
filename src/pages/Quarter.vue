@@ -61,14 +61,14 @@ export default {
     DetailPenjualan,
     Poin,
     BulanTransaksi,
-    Tarif,
+    Tarif
   },
   data() {
     return {
       points: {
         data: [],
-        data_rebate: [],
-      },
+        data_rebate: []
+      }
     };
   },
   methods: {
@@ -80,35 +80,35 @@ export default {
         .get(`${process.env.VUE_APP_URL}dashboard-outlet`, {
           headers: {
             version: this.$route.params.version,
-            token: localStorage.token,
+            token: localStorage.token
           },
           params: {
-            txtKodeOutlet: this.$route.params.outlet_id,
-          },
+            txtKodeOutlet: this.$route.params.outlet_id
+          }
         })
 
-        .then((res) => (this.points = res.data))
-        .catch((err) => console.log(err));
+        .then(res => (this.points = res.data))
+        .catch(err => console.log(err));
     },
     monthToYear() {
       axios
         .get(`${process.env.VUE_APP_URL}dashboard-outlet-mty`, {
           params: {
-            txtKodeOutlet: this.$route.params.outlet_id,
+            txtKodeOutlet: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
 
-        .then((res) => (this.year = res.data))
-        .catch((err) => console.log(err));
-    },
+        .then(res => (this.year = res.data))
+        .catch(err => console.log(err));
+    }
   },
   mounted() {
     this.allQuarter();
     this.MonthToYear();
-  },
+  }
 };
 </script>
 

@@ -19,19 +19,19 @@ export default {
     Header,
     PromoBanner,
     ListPromosi,
-    ListTransaksi,
+    ListTransaksi
   },
   data() {
     return {
       OutletData: {
-        data: [],
+        data: []
       },
       AllTransaction: {
-        data: [],
+        data: []
       },
       Slider: {
-        data: [],
-      },
+        data: []
+      }
     };
   },
   mounted() {
@@ -40,7 +40,7 @@ export default {
     this.getSlider();
     this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token,
+      token: localStorage.token
     });
   },
   methods: {
@@ -49,47 +49,47 @@ export default {
 
         .get(`${process.env.VUE_APP_URL}banner`, {
           params: {
-            outlet_id: this.$route.params.outlet_id,
+            outlet_id: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => (this.Slider = res.data))
-        .catch((err) => console.log(err));
+        .then(res => (this.Slider = res.data))
+        .catch(err => console.log(err));
     },
     getOutlet() {
       axios
         .get(`${process.env.VUE_APP_URL}status-poin-rebate`, {
           params: {
-            outlet_id: this.$route.params.outlet_id,
+            outlet_id: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => (this.OutletData = res.data.data))
-        .catch((err) => console.log(err));
+        .then(res => (this.OutletData = res.data.data))
+        .catch(err => console.log(err));
     },
     getAllTransaction() {
       axios
         .get(`${process.env.VUE_APP_URL}view_transaksi`, {
           params: {
-            outlet_id: this.$route.params.outlet_id,
+            outlet_id: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => (this.AllTransaction = res.data))
-        .catch((err) => console.log(err));
-    },
+        .then(res => (this.AllTransaction = res.data))
+        .catch(err => console.log(err));
+    }
   },
   computed: {
     points() {
       return this.$store.state.points;
-    },
-  },
+    }
+  }
 };
 </script>
 

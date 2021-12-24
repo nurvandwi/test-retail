@@ -9,7 +9,7 @@
 import Demo from "../components/Main-Component/Demo.vue";
 import Header from "../components/Catalog/Header.vue";
 export default {
-  components: { Header, Demo },
+  components: { Header, Demo }
 };
 </script>
 

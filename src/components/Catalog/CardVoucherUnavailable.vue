@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div
       class="card mt-3 shadow-lg mx-auto max-height-width"
       :style="style"
@@ -97,6 +97,6 @@ export default {
 <style scoped>
 .max-height-width {
   max-width: 342px;
-  max-height: 34vh;
+  min-height: 24vh;
 }
 </style>

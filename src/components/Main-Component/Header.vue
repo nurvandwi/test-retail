@@ -89,7 +89,7 @@
 <script>
 export default {
   name: "Header",
-  props: ["contentFor", "points"],
+  props: ["contentFor", "points"]
 };
 </script>
 

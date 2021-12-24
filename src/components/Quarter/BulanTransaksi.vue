@@ -1,131 +1,131 @@
 <template>
-    <div class="container">
-        <div v-if="contentFor === 'Quarter'">
-            <section
-                    class="section-stats row justify-content-center mt-3 rounded-right rounded-left"
-            >
-                <div class="col-12 col-md-12 pt-2 stats-details">
-                    <h2 class="text-white font22 font-custom m-0">Bulan Transaksi</h2>
-                    <p class="font8 pb-0 m-0 text-white font-custom font-weight-bolder">
-                        Pilih Bulan Transaksi untuk melihat Detail Penjualan, Poin, dan
-                        Rebate
-                    </p>
-                </div>
-                <div class="content m-0">
-                    <table class="table px-0 mb-1">
-                        <thead>
-                        <tr>
-                            <th scope="col" v-for="point in points.data" :key="point.id">
-                                <button
-                                        @click="selected = point.id"
-                                        type="button"
-                                        class="btn font-custom rounded-pill font-weight-bolder btn-light"
-                                >
-                                    <h3 class="font12 mb-0 font-weight-bold">
-                                        {{ point.bulan }}
-                                    </h3>
-                                </button>
-                            </th>
-                        </tr>
-                        </thead>
-                    </table>
-                </div>
-            </section>
-            <div class="row text-center rows-col-3 mt-3">
-                <div class="col bg-blue text-white py-2 font-custom">
-                    PENJUALAN PER BULAN
-                </div>
-                <div class="table-bordered col-12">
-                    <div class="row text-center mt-2">
-                        <div class="col font10" style="border-right: 1px solid #d3d3d3; ">
-                            <h2 class="font10 text-gray font-custom font-weight-bolder">
-                                HISTORIKAL PENJUALAN
-                            </h2>
-                        </div>
-                        <div class="col">
-                            <h2 class="font10 text-gray font-custom font-weight-bolder">
-                                TARGET PENJUALAN
-                            </h2>
-                        </div>
-                    </div>
-                    <div
-                            class="row text-center mb-2 border-bottom"
-                            v-for="monthPoint in selectTab"
-                            :key="monthPoint.id"
-                    >
-                        <div class="col font10" style="border-right:1px solid #d3d3d3;">
-                            <h2 class="font14 text-black font-weight-bolder">
-                                Rp {{ formatPrice(monthPoint.historikal_penjualan) }}
-                            </h2>
-                        </div>
-                        <div class="col">
-                            <h2 class="font14 text-black font-weight-bolder">
-                                Rp {{ formatPrice(monthPoint.target_penjualan) }}
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="row text-center mt-2">
-                        <div class="col font10" style="border-right:1px solid #d3d3d3;">
-                            <h2 class="font10 text-gray font-custom font-weight-bolder">
-                                SELISIH PENJUALAN
-                            </h2>
-                        </div>
-                        <div class="col">
-                            <h2 class="font10 text-gray font-custom font-weight-bolder">
-                                AKTUAL PENJUALAN
-                            </h2>
-                        </div>
-                    </div>
-                    <div
-                            class="row text-center mb-2 border-bottom"
-                            v-for="monthPoint in selectTab"
-                            :key="monthPoint.id"
-                    >
-                        <div class="col font10" style="border-right:1px solid #d3d3d3;">
-                            <h2
-                                    class="font14 font-weight-bolder"
-                                    v-bind:class="
+  <div class="container">
+    <div v-if="contentFor === 'Quarter'">
+      <section
+        class="section-stats row justify-content-center mt-3 rounded-right rounded-left"
+      >
+        <div class="col-12 col-md-12 pt-2 stats-details">
+          <h2 class="text-white font22 font-custom m-0">Bulan Transaksi</h2>
+          <p class="font8 pb-0 m-0 text-white font-custom font-weight-bolder">
+            Pilih Bulan Transaksi untuk melihat Detail Penjualan, Poin, dan
+            Rebate
+          </p>
+        </div>
+        <div class="content m-0">
+          <table class="table px-0 mb-1">
+            <thead>
+              <tr>
+                <th scope="col" v-for="point in points.data" :key="point.id">
+                  <button
+                    @click="selected = point.id"
+                    type="button"
+                    class="btn font-custom rounded-pill font-weight-bolder btn-light"
+                  >
+                    <h3 class="font12 mb-0 font-weight-bold">
+                      {{ point.bulan }}
+                    </h3>
+                  </button>
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </section>
+      <div class="row text-center rows-col-3 mt-3">
+        <div class="col bg-blue text-white py-2 font-custom">
+          PENJUALAN PER BULAN
+        </div>
+        <div class="table-bordered col-12">
+          <div class="row text-center mt-2">
+            <div class="col font10" style="border-right: 1px solid #d3d3d3; ">
+              <h2 class="font10 text-gray font-custom font-weight-bolder">
+                HISTORIKAL PENJUALAN
+              </h2>
+            </div>
+            <div class="col">
+              <h2 class="font10 text-gray font-custom font-weight-bolder">
+                TARGET PENJUALAN
+              </h2>
+            </div>
+          </div>
+          <div
+            class="row text-center mb-2 border-bottom"
+            v-for="monthPoint in selectTab"
+            :key="monthPoint.id"
+          >
+            <div class="col font10" style="border-right:1px solid #d3d3d3;">
+              <h2 class="font14 text-black font-weight-bolder">
+                Rp {{ formatPrice(monthPoint.historikal_penjualan) }}
+              </h2>
+            </div>
+            <div class="col">
+              <h2 class="font14 text-black font-weight-bolder">
+                Rp {{ formatPrice(monthPoint.target_penjualan) }}
+              </h2>
+            </div>
+          </div>
+          <div class="row text-center mt-2">
+            <div class="col font10" style="border-right:1px solid #d3d3d3;">
+              <h2 class="font10 text-gray font-custom font-weight-bolder">
+                SELISIH PENJUALAN
+              </h2>
+            </div>
+            <div class="col">
+              <h2 class="font10 text-gray font-custom font-weight-bolder">
+                AKTUAL PENJUALAN
+              </h2>
+            </div>
+          </div>
+          <div
+            class="row text-center mb-2 border-bottom"
+            v-for="monthPoint in selectTab"
+            :key="monthPoint.id"
+          >
+            <div class="col font10" style="border-right:1px solid #d3d3d3;">
+              <h2
+                class="font14 font-weight-bolder"
+                v-bind:class="
                   parseInt(monthPoint.selisih_monthly) > 0
                     ? 'text-dark '
                     : 'text-danger '
                 "
-                            >
-                                Rp {{ formatPrice(monthPoint.selisih_penjualan) }}
-                            </h2>
-                        </div>
-                        <div class="col">
-                            <h2 class="font14 text-black font-weight-bolder">
-                                Rp {{ formatPrice(monthPoint.aktual_penjualan) }}
-                            </h2>
-                        </div>
-                    </div>
-                    <div
-                            class="row text-center mt-2"
-                            v-for="monthPoint in selectTab"
-                            :key="monthPoint.id"
-                    >
-                        <div class="col font10">
-                            <h2 class="font10 text-gray font-custom font-weight-bolder">
-                                RATIO PENCAPAIAN
-                            </h2>
-                        </div>
-                        <div class="col">
-                            <h2
-                                    class="font14 text-black font-custom font-weight-bolder"
-                                    v-bind:class="
+              >
+                Rp {{ formatPrice(monthPoint.selisih_penjualan) }}
+              </h2>
+            </div>
+            <div class="col">
+              <h2 class="font14 text-black font-weight-bolder">
+                Rp {{ formatPrice(monthPoint.aktual_penjualan) }}
+              </h2>
+            </div>
+          </div>
+          <div
+            class="row text-center mt-2"
+            v-for="monthPoint in selectTab"
+            :key="monthPoint.id"
+          >
+            <div class="col font10">
+              <h2 class="font10 text-gray font-custom font-weight-bolder">
+                RATIO PENCAPAIAN
+              </h2>
+            </div>
+            <div class="col">
+              <h2
+                class="font14 text-black font-custom font-weight-bolder"
+                v-bind:class="
                   parseInt(monthPoint.selisih_monthly) > 0
                     ? 'text-dark '
                     : 'text-danger '
                 "
-                            >
-                                {{ formatPoin(monthPoint.ratio_pencapaian) }} %
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="text-center mb-2">
-                        <div class="col font10">
-                            <h2 class="font10 text-black-50 font-weight-bolder">
-                                <!-- eslint-disable -->
+              >
+                {{ formatPoin(monthPoint.ratio_pencapaian) }} %
+              </h2>
+            </div>
+          </div>
+          <div class="text-center mb-2">
+            <div class="col font10">
+              <h2 class="font10 text-black-50 font-weight-bolder">
+                <!-- eslint-disable -->
                                 (STATUS SUKSES >= 100%, GAGAL < 100%)
                             </h2>
                         </div>
@@ -1053,200 +1053,200 @@
 </template>
 
 <script>
-    import axios from "axios";
+import axios from "axios";
 
-    export default {
-        props: ["contentFor", "bulan", "statusPoints"],
-        data() {
-            return {
-                selected: 1,
-                selectedYear: 1,
-                selectedMonth: 1,
-                points: {
-                    data: [],
-                },
-                years: {
-                    data: [],
-                },
-                months: {
-                    data: [],
-                },
-            };
-        },
-
-        methods: {
-            monthTabs() {
-                axios
-                    .get(`${process.env.VUE_APP_URL}dashboard-outlet`, {
-                        headers: {
-                            version: this.$route.params.version,
-                        },
-                        params: {
-                            txtKodeOutlet: this.$route.params.outlet_id,
-                            token: localStorage.token,
-                        },
-                    })
-                    .then((res) => (this.points = res.data))
-                    .catch((err) => console.log(err));
-            },
-            monthToYear() {
-                axios
-                    .get(`${process.env.VUE_APP_URL}dashboard-outlet-mty`, {
-                        params: {
-                            txtKodeOutlet: this.$route.params.outlet_id,
-                            token: localStorage.token,
-                        },
-                    })
-
-                    .then((res) => (this.years = res.data))
-                    .catch((err) => console.log(err));
-            },
-            monthToMonth() {
-                axios
-                    .get(`${process.env.VUE_APP_URL}dashboard-outlet-mtm`, {
-                        headers: {
-                            bulan: this.$route.params.bulan,
-                        },
-                        params: {
-                            txtKodeOutlet: this.$route.params.outlet_id,
-                            token: localStorage.token,
-                        },
-                    })
-
-                    .then((res) => (this.months = res.data))
-                    .catch((err) => console.log(err));
-            },
-
-            formatPrice(value) {
-                const val = (value / 1).toFixed(0).replace(".", ",");
-                return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-            },
-            formatPoin(value) {
-                const val = value.toFixed(2).replace(".", ",");
-                return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-            },
-        },
-        computed: {
-            selectTab() {
-                return this.points.data.filter((x) => x.id === this.selected);
-            },
-            selectTabYear() {
-                return this.years.data.filter((x) => x.id === this.selectedYear);
-            },
-            selectTabMonth() {
-                return this.months.data.filter((x) => x.id === this.selectedMonth);
-            },
-        },
-        mounted() {
-            this.monthTabs();
-            this.monthToYear();
-            this.monthToMonth();
-        },
+export default {
+  props: ["contentFor", "bulan", "statusPoints"],
+  data() {
+    return {
+      selected: 1,
+      selectedYear: 1,
+      selectedMonth: 1,
+      points: {
+        data: []
+      },
+      years: {
+        data: []
+      },
+      months: {
+        data: []
+      }
     };
+  },
+
+  methods: {
+    monthTabs() {
+      axios
+        .get(`${process.env.VUE_APP_URL}dashboard-outlet`, {
+          headers: {
+            version: this.$route.params.version
+          },
+          params: {
+            txtKodeOutlet: this.$route.params.outlet_id,
+            token: localStorage.token
+          }
+        })
+        .then(res => (this.points = res.data))
+        .catch(err => console.log(err));
+    },
+    monthToYear() {
+      axios
+        .get(`${process.env.VUE_APP_URL}dashboard-outlet-mty`, {
+          params: {
+            txtKodeOutlet: this.$route.params.outlet_id,
+            token: localStorage.token
+          }
+        })
+
+        .then(res => (this.years = res.data))
+        .catch(err => console.log(err));
+    },
+    monthToMonth() {
+      axios
+        .get(`${process.env.VUE_APP_URL}dashboard-outlet-mtm`, {
+          headers: {
+            bulan: this.$route.params.bulan
+          },
+          params: {
+            txtKodeOutlet: this.$route.params.outlet_id,
+            token: localStorage.token
+          }
+        })
+
+        .then(res => (this.months = res.data))
+        .catch(err => console.log(err));
+    },
+
+    formatPrice(value) {
+      const val = (value / 1).toFixed(0).replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
+    formatPoin(value) {
+      const val = value.toFixed(2).replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+  },
+  computed: {
+    selectTab() {
+      return this.points.data.filter(x => x.id === this.selected);
+    },
+    selectTabYear() {
+      return this.years.data.filter(x => x.id === this.selectedYear);
+    },
+    selectTabMonth() {
+      return this.months.data.filter(x => x.id === this.selectedMonth);
+    }
+  },
+  mounted() {
+    this.monthTabs();
+    this.monthToYear();
+    this.monthToMonth();
+  }
+};
 </script>
 
 <style scoped>
-    .content {
-        overflow-x: scroll;
-        scrollbar-width: none;
-        max-width: 100%;
-    }
+.content {
+  overflow-x: scroll;
+  scrollbar-width: none;
+  max-width: 100%;
+}
 
-    .content::-webkit-scrollbar {
-        display: none;
-    }
+.content::-webkit-scrollbar {
+  display: none;
+}
 
-    .btn-outline-warning {
-        border-color: #d3d3d3;
-    }
+.btn-outline-warning {
+  border-color: #d3d3d3;
+}
 
-    .font11 {
-        font-size: 11px;
-    }
+.font11 {
+  font-size: 11px;
+}
 
-    .table th {
-        border: none !important;
-    }
+.table th {
+  border: none !important;
+}
 
-    .font9 {
-        font-size: 9px;
-    }
+.font9 {
+  font-size: 9px;
+}
 
-    .font8 {
-        font-size: 8px;
-    }
+.font8 {
+  font-size: 8px;
+}
 
-    .font22 {
-        font-size: 22px;
-    }
+.font22 {
+  font-size: 22px;
+}
 
-    .font-weight-500 {
-        font-weight: 500;
-    }
+.font-weight-500 {
+  font-weight: 500;
+}
 
-    .text-top {
-        margin-top: -10px;
-    }
+.text-top {
+  margin-top: -10px;
+}
 
-    .section-stats {
-        background-color: #41009a;
-    }
+.section-stats {
+  background-color: #41009a;
+}
 
-    .btn-month {
-        margin-top: -18px;
-    }
+.btn-month {
+  margin-top: -18px;
+}
 
-    .rounded-right {
-        border-top-left-radius: 18px !important;
-        border-top-right-radius: 18px !important;
-    }
+.rounded-right {
+  border-top-left-radius: 18px !important;
+  border-top-right-radius: 18px !important;
+}
 
-    .btn-light:hover {
-        background-color: #ffcc00;
-    }
+.btn-light:hover {
+  background-color: #ffcc00;
+}
 
-    /* detail-pejualan */
+/* detail-pejualan */
 
-    .mb-custom {
-        margin-bottom: 5rem;
-    }
+.mb-custom {
+  margin-bottom: 5rem;
+}
 
-    .bg-blue {
-        background-color: #6a813d;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-    }
+.bg-blue {
+  background-color: #6a813d;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
 
-    .mt-custom {
-        margin-top: -2rem;
-    }
+.mt-custom {
+  margin-top: -2rem;
+}
 
-    .table-bordered {
-        border-color: #6a813d !important;
-        border-bottom-left-radius: 12px !important;
-        border-bottom-right-radius: 12px !important;
-    }
+.table-bordered {
+  border-color: #6a813d !important;
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
 
-    .text-blue {
-        color: #7fceeb;
-    }
+.text-blue {
+  color: #7fceeb;
+}
 
-    .text-gray {
-        color: #6c757d;
-    }
+.text-gray {
+  color: #6c757d;
+}
 
-    .text-yellow {
-        color: #ffcc00;
-    }
+.text-yellow {
+  color: #ffcc00;
+}
 
-    .font10 {
-        font-size: 10px;
-    }
+.font10 {
+  font-size: 10px;
+}
 
-    .font14 {
-        font-size: 14px;
-    }
+.font14 {
+  font-size: 14px;
+}
 
-    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+}
 </style>

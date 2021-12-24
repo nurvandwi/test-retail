@@ -25,8 +25,8 @@
 import FooterProduct from "@/components/Catalog/FooterProduct.vue";
 export default {
   components: {
-    FooterProduct,
-  },
+    FooterProduct
+  }
 };
 </script>
 

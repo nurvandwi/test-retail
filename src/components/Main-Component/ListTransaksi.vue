@@ -27,29 +27,29 @@ export default {
   data() {
     return {
       alltransaction: {
-        data: [],
-      },
+        data: []
+      }
     };
   },
   components: {
-    listItem,
+    listItem
   },
   methods: {
     allItem() {
       axios
         .get(`${process.env.VUE_APP_URL}view_transaksi`, {
           params: {
-            outlet_id: this.$route.params.outlet_id,
+            outlet_id: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => {
+        .then(res => {
           this.alltransaction = res.data;
         })
-        .catch((err) => console.log(err));
-    },
+        .catch(err => console.log(err));
+    }
   },
   computed: {
     filterArray() {
@@ -64,11 +64,11 @@ export default {
       // let length = this.alltransaction.data.length
       // return this.alltransaction.data.slice(length - 5, length)
       return this.alltransaction.data.slice(0, 5);
-    },
+    }
   },
   mounted() {
     this.allItem();
-  },
+  }
 };
 </script>
 <style scoped>

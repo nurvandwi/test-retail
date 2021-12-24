@@ -183,8 +183,8 @@
 
 <script>
 export default {
-  props: ['contentFor', 'title']
-}
+  props: ["contentFor", "title"]
+};
 </script>
 
 <style scoped>

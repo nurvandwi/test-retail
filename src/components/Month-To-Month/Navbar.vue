@@ -113,13 +113,13 @@
 
 <script>
 export default {
-  props: ['title', 'kode_outlet'],
+  props: ["title", "kode_outlet"],
   computed: {
-    cartItemCount () {
-      return this.$store.getters.cartItemCount
+    cartItemCount() {
+      return this.$store.getters.cartItemCount;
     }
   }
-}
+};
 </script>
 
 <style scoped>

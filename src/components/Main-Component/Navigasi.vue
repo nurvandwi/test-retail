@@ -4,7 +4,7 @@
       <li>
         <router-link
           :to="{
-            path: '/MonthToYear/1' + `/${$route.params.outlet_id}`,
+            path: '/MonthToYear/1' + `/${$route.params.outlet_id}`
           }"
           style="color: #fff"
           class="mx-auto font18"
@@ -167,25 +167,25 @@
 let menuItems = document.querySelectorAll(".nav-bar ul li svg");
 
 // eslint-disable-next-line no-unused-vars
-const navItemClick = function (el) {
+const navItemClick = function(el) {
   let element = this;
 
-  menuItems.forEach((item) => {
+  menuItems.forEach(item => {
     item.classList.remove("active");
   });
 
   element.classList.add("active");
 };
 
-menuItems.forEach((item) => {
+menuItems.forEach(item => {
   item.addEventListener("click", navItemClick);
 });
 export default {
   methods: {
-    logout: function () {
+    logout: function() {
       localStorage.removeItem("token");
       this.$router.push("/");
-    },
+    }
     // linkwa() {
     //     window.location.reload();
     // }
@@ -199,14 +199,14 @@ export default {
     },
     bulan() {
       return localStorage.bulanAktive;
-    },
+    }
   },
   mounted() {
     this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token,
+      token: localStorage.token
     });
-  },
+  }
 };
 </script>
 <style scoped>

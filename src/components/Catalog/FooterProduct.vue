@@ -291,37 +291,37 @@ export default {
       // console.log(this.$route.params.outlet_id);
       this.$store.dispatch("checkOutCart", {
         outlet_id: this.$route.params.outlet_id,
-        token: localStorage.token,
+        token: localStorage.token
       });
     },
     checkOutRebateFromCart() {
       // console.log(this.$route.params.outlet_id);
       this.$store.dispatch("checkOutRebate", {
         outlet_id: this.$route.params.outlet_id,
-        token: localStorage.token,
+        token: localStorage.token
       });
     },
     checkOutPoinCashFromCart() {
       // console.log(this.$route.params.outlet_id);
       this.$store.dispatch("checkOutPoinCash", {
         outlet_id: this.$route.params.outlet_id,
-        token: localStorage.token,
+        token: localStorage.token
       });
     },
     checkOutPulsaFromCart() {
       // console.log(this.$route.params.outlet_id);
       this.$store.dispatch("checkOutPulsa", {
         outlet_id: this.$route.params.outlet_id,
-        token: localStorage.token,
+        token: localStorage.token
       });
     },
     checkOutEwalletFromCart() {
       // console.log(this.$route.params.outlet_id);
       this.$store.dispatch("checkOutEwallet", {
         outlet_id: this.$route.params.outlet_id,
-        token: localStorage.token,
+        token: localStorage.token
       });
-    },
+    }
   },
   computed: {
     cart() {
@@ -362,8 +362,8 @@ export default {
     },
     cartRebatePrice() {
       return this.$store.getters.cartRebatePrice;
-    },
-  },
+    }
+  }
 };
 </script>
 

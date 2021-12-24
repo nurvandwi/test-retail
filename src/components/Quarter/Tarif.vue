@@ -1,7 +1,10 @@
 <template>
   <div class="container ">
     <div class="row text-center mb-quarter" v-if="contentFor === 'Quarter'">
-      <div class="col-12 table-top col-md-12 bg-blue d-flex px-1 "  v-if="points.REBATE=='true'">
+      <div
+        class="col-12 table-top col-md-12 bg-blue d-flex px-1 "
+        v-if="points.REBATE == 'true'"
+      >
         <div
           class="font12 p-0 text-white text-center border-right col-sm-4 col-4 py-2"
         >
@@ -16,7 +19,10 @@
           TARIF
         </div>
       </div>
-      <div class="col-12 table-bordereds rounded-bottom " v-if="points.REBATE=='true'">
+      <div
+        class="col-12 table-bordereds rounded-bottom "
+        v-if="points.REBATE == 'true'"
+      >
         <div class="row mt-2  border-bottom">
           <div class="col-4 col-md-4 px-0 p-0">
             <h2
@@ -119,7 +125,10 @@
       </div>
     </div>
     <div class="row text-center" v-if="contentFor === 'MonthToYear'">
-      <div class="col-12 table-top col-md-12 bg-blue d-flex px-1" v-if="points.REBATE=='true'">
+      <div
+        class="col-12 table-top col-md-12 bg-blue d-flex px-1"
+        v-if="points.REBATE == 'true'"
+      >
         <div
           class="font12 p-0 text-white text-center border-right col-sm-4 col-4 py-2"
         >
@@ -134,7 +143,10 @@
           TARIF
         </div>
       </div>
-      <div class="col-12 table-bordereds rounded-bottom " v-if="points.REBATE=='true'">
+      <div
+        class="col-12 table-bordereds rounded-bottom "
+        v-if="points.REBATE == 'true'"
+      >
         <div class="row mt-2  border-bottom">
           <div class="col-4 col-md-4 px-0 p-0">
             <h2
@@ -236,8 +248,14 @@
         </div>
       </div>
     </div>
-    <div class="row text-center mb-quarter" v-if="contentFor === 'monthToMonth'">
-      <div class="col-12 table-top col-md-12 bg-blue d-flex px-1" v-if="points.REBATE=='true'">
+    <div
+      class="row text-center mb-quarter"
+      v-if="contentFor === 'monthToMonth'"
+    >
+      <div
+        class="col-12 table-top col-md-12 bg-blue d-flex px-1"
+        v-if="points.REBATE == 'true'"
+      >
         <div
           class="font12 p-0 text-white text-center border-right col-sm-4 col-4 py-2"
         >
@@ -252,7 +270,10 @@
           TARIF
         </div>
       </div>
-      <div class="col-12 table-bordereds rounded-bottom " v-if="points.REBATE=='true'">
+      <div
+        class="col-12 table-bordereds rounded-bottom "
+        v-if="points.REBATE == 'true'"
+      >
         <div class="row mt-2  border-bottom">
           <div class="col-4 col-md-4 px-0 p-0">
             <h2
@@ -370,7 +391,7 @@ export default {
     "tarif_quarter",
     "tarif_rebate_quarter",
     "rebate_quarter",
-    "saldo_rebate",
+    "saldo_rebate"
   ],
   methods: {
     formatPrice(value) {
@@ -384,27 +405,27 @@ export default {
     formatRebate(value) {
       const val = (value / 1).toFixed(2).replace(".", ".");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    },
+    }
   },
-  mounted () {
-    this.$store.dispatch('getPoin', {
+  mounted() {
+    this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
       token: localStorage.token
-    })
+    });
   },
-  computed:{
-    points () {
-      console.log(this.$store.state.points, 'dari tarif')
-      return this.$store.state.points
+  computed: {
+    points() {
+      console.log(this.$store.state.points, "dari tarif");
+      return this.$store.state.points;
     }
   }
 };
 </script>
 
 <style scoped>
-  .mb-quarter{
-    margin-bottom: 7rem;
-  }
+.mb-quarter {
+  margin-bottom: 7rem;
+}
 .rounded {
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;

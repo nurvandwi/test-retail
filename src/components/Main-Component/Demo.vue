@@ -3,12 +3,16 @@
     <tabs>
       <tab title="Tersedia">
         <CardVoucherAvailable
-          :color="'linear-gradient(to right top, #e7104b, #ec2a5f, #ef3c72, #f14d84, #f15c95)'"
+          :color="
+            'linear-gradient(to right top, #e7104b, #ec2a5f, #ef3c72, #f14d84, #f15c95)'
+          "
         />
       </tab>
       <tab title="Terpakai">
         <CardVoucherUnavailable
-          :color="'linear-gradient(to right top, #e7104b, #ec2a5f, #ef3c72, #f14d84, #f15c95)'"
+          :color="
+            'linear-gradient(to right top, #e7104b, #ec2a5f, #ef3c72, #f14d84, #f15c95)'
+          "
         />
       </tab>
     </tabs>
@@ -25,10 +29,9 @@ export default {
     Tab,
     Tabs,
     CardVoucherAvailable,
-    CardVoucherUnavailable,
-  },
+    CardVoucherUnavailable
+  }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

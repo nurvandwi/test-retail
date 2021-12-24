@@ -84,8 +84,8 @@
                   :class="{ nonActive: row.poin > points.Poin }"
                   v-bind:to="
                     '/ewalletdetails/' +
-                    `${$route.params.outlet_id}/` +
-                    row.nominal
+                      `${$route.params.outlet_id}/` +
+                      row.nominal
                   "
                 >
                   <div class="card border w-100">
@@ -125,13 +125,13 @@ export default {
       options: [
         { text: "Pilih Jenis E-wallet", value: "Pilih Jenis E-wallet" },
         { text: "Dana", value: "Dana" },
-        { text: "Ovo", value: "Ovo" },
+        { text: "Ovo", value: "Ovo" }
       ],
       list: [],
       listContents: [],
       state: {
-        ewallet: "Test",
-      },
+        ewallet: "Test"
+      }
     };
   },
   methods: {
@@ -139,14 +139,14 @@ export default {
       axios
         .get(`${process.env.VUE_APP_URL}list-ewallet`, {
           params: {
-            outlet_id: this.$route.params.outlet_id,
+            outlet_id: this.$route.params.outlet_id
           },
           headers: {
-            token: localStorage.token,
-          },
+            token: localStorage.token
+          }
         })
-        .then((res) => (this.list = res.data.data))
-        .catch((err) => console.log(err));
+        .then(res => (this.list = res.data.data))
+        .catch(err => console.log(err));
     },
     getList() {
       axios
@@ -154,20 +154,20 @@ export default {
           `${process.env.VUE_APP_URL}list-ewallet-hadiah?nama_ewallet=${this.state.ewallet}`,
           {
             params: {
-              outlet_id: this.$route.params.outlet_id,
+              outlet_id: this.$route.params.outlet_id
             },
             headers: {
-              token: localStorage.token,
-            },
+              token: localStorage.token
+            }
           }
         )
-        .then((res) => {
+        .then(res => {
           this.listContents = res.data;
           if (this.ewallet == "Test") {
             this.state.ewallet = "Test";
           }
         })
-        .catch((err) => console.log(err));
+        .catch(err => console.log(err));
     },
     addToEwallet(kd_produk, poin, points) {
       // console.log(this.state.ewallet)
@@ -181,7 +181,7 @@ export default {
             nominal: this.$route.params.nominal,
             kd_produk,
             poin,
-            quantity: 1,
+            quantity: 1
           });
         } else {
           alert("Poin anda tidak cukup");
@@ -189,14 +189,14 @@ export default {
       } else {
         alert("Data anda belum lengkap");
       }
-    },
+    }
   },
   mounted() {
     this.getEwallet();
     this.getList();
     this.$store.dispatch("getPoin", {
       outlet_id: this.$route.params.outlet_id,
-      token: localStorage.token,
+      token: localStorage.token
     });
   },
   computed: {
@@ -211,8 +211,8 @@ export default {
     },
     points() {
       return this.$store.state.points;
-    },
-  },
+    }
+  }
 };
 </script>
 
